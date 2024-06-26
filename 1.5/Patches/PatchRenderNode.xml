@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children</xpath>
+        <value>
+            <li Class="PawnRenderNodeProperties_Parent">
+                <debugLabel>WGApparel</debugLabel>
+                <tagDef>WGApparel</tagDef>
+                <baseLayer>70</baseLayer>
+                <children>
+                    <li Class="PawnRenderNodeProperties_Parent">
+                        <debugLabel>WGApparelBody</debugLabel>
+                        <tagDef>WGApparelBody</tagDef>
+                        <baseLayer>0</baseLayer>
+                    </li>
+                    <li Class="PawnRenderNodeProperties_Parent">
+                        <debugLabel>WGApparelHead</debugLabel>
+                        <tagDef>WGApparelHead</tagDef>
+                        <baseLayer>20</baseLayer>
+                        <nodeClass>PawnRenderNode_Head</nodeClass>
+                        <workerClass>PawnRenderNodeWorker_Head</workerClass>
+                    </li>
+                </children>
+            </li>
+        </value>
+    </Operation>
+</Patch>

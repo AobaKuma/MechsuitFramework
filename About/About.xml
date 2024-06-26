@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Mechasuit Framework</name>
+  	<author>AobaKuma, Asvc</author>
+    <supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<packageId>Aoba.Mechasuit.Framework</packageId>
+    <modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+        <li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+    	<li>brrainz.harmony</li>
+		<li>oskarpotocki.vanillafactionsexpanded.core</li>
+  	</loadAfter>
+	<description>A framework mod that allows you to make your own customizable mecha suit with a wide modifiability and repair / maintenance hanger systems.</description>
+</ModMetaData>

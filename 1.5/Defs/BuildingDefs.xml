@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- 维护坞 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>MF_Building_MaintenanceBay</defName>
+    <label>maintenance bay</label>
+    <description>A place for mecha suit storage and maintenance, it has a gantry that allows you to do mecha suit loadout modification but requires at least a connected module storage shelve.</description>
+    <thingClass>WalkerGear.Building_MaintenanceBay</thingClass>
+    <graphicData>
+      <texPath>Things/Building/MaintenanceBay_Bottom</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/MaintenanceBay</uiIconPath>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <WorkToBuild>3600</WorkToBuild>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>200</Steel>
+    </costList>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>true</useHitPoints>
+    <size>(3,3)</size>
+    <pathCost>100</pathCost>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2000</uiOrder>
+    <passability>PassThroughOnly</passability>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <inspectorTabs>
+      <li>WalkerGear.ITab_MechGear</li>
+    </inspectorTabs>
+    <building>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+      <relatedBuildCommands>
+        <li>MF_Building_ComponentStorage</li>
+      </relatedBuildCommands>
+    </building>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+          <li>MF_Building_ComponentStorage</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_ReportWorkSpeed">
+        <workSpeedStat>WorkTableWorkSpeedFactor</workSpeedStat>
+      </li>
+      <li Class="DMSLib.CompProperties_BuildingExtraRenderer">
+        <extraGraphic>
+          <li>
+            <texPath>Things/Building/MaintenanceBay_Top</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <drawOffset>(0,0.7,0)</drawOffset>
+          </li>
+        </extraGraphic>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_ReportWorkSpeedPenalties</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingCategoryDef>
+    <defName>MF_Module</defName>
+    <label>mecha suit module</label>
+    <parent>Manufactured</parent>
+  </ThingCategoryDef>
+
+  <!-- 部件櫃 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>MF_Building_ComponentStorage</defName>
+    <label>module shelve</label>
+    <description>a module storage rack, pawn can repair damaged module on it. and the maintenance bay can only select modules storaged in connected storage shelve.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/Building/ModulePlatform</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <WorkToBuild>3600</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>true</useHitPoints>
+    <size>(3,1)</size>
+    <pathCost>100</pathCost>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2000</uiOrder>
+    <passability>PassThroughOnly</passability>
+    <hasInteractionCell>false</hasInteractionCell>
+    <surfaceType>Item</surfaceType>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>1</maxItemsInCell>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <categories>
+            <li>MF_Module</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Preferred</priority>
+        <filter>
+          <categories>
+            <li>MF_Module</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+      <relatedBuildCommands>
+        <li>MF_Building_MaintenanceBay</li>
+      </relatedBuildCommands>
+    </building>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>4</maxSimultaneous>
+      </li>
+      <li>
+        <compClass>WalkerGear.CompComponentStorage</compClass>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MF_Building_Wreckage</defName>
+    <label>wreckage</label>
+    <graphicData>
+      <texPath>Things/Building/ModulePlatform</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <canOverlapZones>false</canOverlapZones>
+    <altitudeLayer>Building</altitudeLayer>
+    <useHitPoints>true</useHitPoints>
+    <size>(2,2)</size>
+    <pathCost>100</pathCost>
+    <passability>PassThroughOnly</passability>
+    <surfaceType>Item</surfaceType>
+    <comps>
+      <li>
+        <compClass>WalkerGear.CompWreckage</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

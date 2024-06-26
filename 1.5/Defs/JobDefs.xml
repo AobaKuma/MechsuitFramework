@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <JobDef>
+        <defName>WG_RepairComponent</defName>
+        <driverClass>WalkerGear.JobDriver_RepairThing</driverClass>
+        <reportString>repairing TargetA.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>WG_GetInWalkerCore</defName>
+        <driverClass>WalkerGear.JobDriver_GetInWalkerCore</driverClass>
+        <reportString>entering mecha suit</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+    
+    <JobDef>
+        <defName>WG_GetOffWalkerCore</defName>
+        <driverClass>WalkerGear.JobDriver_GetOffWalkerCore</driverClass>
+        <reportString>heading back to bay</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+    <WorkGiverDef>
+        <defName>WG_MaintainComponent</defName>
+        <label>repair damaged things</label>
+        <giverClass>WalkerGear.WorkGiver_ModuleMaintenance</giverClass>
+        <workType>Construction</workType>
+        <priorityInType>50</priorityInType>
+        <verb>repair</verb>
+        <gerund>repairing</gerund>
+        <requiredCapacities>
+          <li>Manipulation</li>
+        </requiredCapacities>
+        <nonColonistsCanDo>true</nonColonistsCanDo>
+        <canBeDoneByMechs>true</canBeDoneByMechs>
+      </WorkGiverDef>
+    
+</Defs>

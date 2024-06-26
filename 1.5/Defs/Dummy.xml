@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="DMS_ModuleApparelBase">
+    <defName>Apparel_Dummy</defName>
+    <label>whatisthis</label>
+    <description>Todo.</description>
+    <graphicData>
+      <texPath>none</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.00</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>0</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Beauty>-3</Beauty>
+      <Mass>10</Mass>
+    </statBases>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <generateCommonality>0</generateCommonality>
+    <generateAllowChance>0</generateAllowChance>
+    <drawerType>MapMeshOnly</drawerType>
+    <selectable>True</selectable>
+    <pathCost>14</pathCost>
+    <useHitPoints>false</useHitPoints>
+    <techLevel>Industrial</techLevel>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>false</smeltable>
+    <thingCategories Inherit="false" />
+    <thingSetMakerTags Inherit="false" />
+    <tradeTags />
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Styleable" />
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="VFECore.ApparelDrawPosExtension">
+        <isUnifiedApparel>true</isUnifiedApparel>
+      </li>
+    </modExtensions>
+    <apparel>
+      <wornGraphicPath>none</wornGraphicPath>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Head</li>
+        <li>Body</li>
+      </renderSkipFlags>
+    </apparel>
+  </ThingDef>
+</Defs>

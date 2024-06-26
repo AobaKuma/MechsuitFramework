@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <PawnRenderNodeTagDef>
+        <defName>WGApparel</defName>
+    </PawnRenderNodeTagDef>
+    <PawnRenderNodeTagDef>
+        <defName>WGApparelBody</defName>
+    </PawnRenderNodeTagDef>
+    <PawnRenderNodeTagDef>
+        <defName>WGApparelHead</defName>
+    </PawnRenderNodeTagDef>
+</Defs>

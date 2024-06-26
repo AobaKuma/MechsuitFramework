@@ -1,0 +1,7 @@
+D:\steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon-main\1.5\Assemblies\WalkerGear.dll
+D:\steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon-main\1.5\Assemblies\WalkerGear.pdb
+D:\steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon-main\WalkerGear\obj\Debug\WalkerGear.csproj.AssemblyReference.cache
+D:\steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon-main\WalkerGear\obj\Debug\WalkerGear.csproj.CoreCompileInputs.cache
+D:\steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon-main\WalkerGear\obj\Debug\WalkerGear.csproj.Up2Date
+D:\steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon-main\WalkerGear\obj\Debug\WalkerGear.dll
+D:\steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon-main\WalkerGear\obj\Debug\WalkerGear.pdb
