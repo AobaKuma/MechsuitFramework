@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj": {}
+    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj": {}
   },
   "projects": {
-    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\DMSLibs\\DMSLibs.csproj": {
+    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\DMSLibs\\DMSLibs.csproj",
+        "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj",
         "projectName": "DMSLibs",
-        "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\DMSLibs\\DMSLibs.csproj",
+        "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\DMSLibs\\obj\\",
+        "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj": {
+    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj",
+        "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj",
         "projectName": "WalkerGear",
-        "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj",
+        "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\WalkerGear\\obj\\",
+        "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -91,8 +91,8 @@
         "frameworks": {
           "net48": {
             "projectReferences": {
-              "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\DMSLibs\\DMSLibs.csproj": {
-                "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\DMSLibs\\DMSLibs.csproj"
+              "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj": {
+                "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj"
               }
             }
           }

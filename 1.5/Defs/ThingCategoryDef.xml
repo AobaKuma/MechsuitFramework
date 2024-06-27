@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingCategoryDef>
+    <defName>MF_Module</defName>
+    <label>mecha suit module</label>
+    <parent>Manufactured</parent>
+  </ThingCategoryDef>
+</Defs>

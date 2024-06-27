@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FQfhz3aG3FY=",
+  "dgSpecHash": "mzaGrtG6L8o=",
   "success": true,
-  "projectFilePath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dead-Man-Switch-MobileDragoon\\DMSLibs\\DMSLibs.csproj",
+  "projectFilePath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\krafs.publicizer\\2.2.1\\krafs.publicizer.2.2.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\krafs.rimworld.ref\\1.5.4085\\krafs.rimworld.ref.1.5.4085.nupkg.sha512",

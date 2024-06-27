@@ -9,7 +9,7 @@ namespace WalkerGear
     public class WorkGiver_ModuleMaintenance : WorkGiver_Scanner
     {
         public override ThingRequest PotentialWorkThingRequest =>
-            ThingRequest.ForDef(ThingDefOf.DMS_Building_ComponentStorage);
+            ThingRequest.ForDef(ThingDefOf.MF_Building_ComponentStorage);
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {            
             return JobOnThing(pawn,t,forced)!=null;

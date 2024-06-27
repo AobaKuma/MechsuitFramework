@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef ParentName="DMS_ModuleApparelBase">
+  <ThingDef>
     <defName>Apparel_Dummy</defName>
     <label>whatisthis</label>
     <description>Todo.</description>
@@ -14,7 +14,6 @@
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>0.0</Flammability>
       <Beauty>-3</Beauty>
-      <Mass>10</Mass>
     </statBases>
     <thingClass>Apparel</thingClass>
     <category>Item</category>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
   <!-- 维护坞 -->
   <ThingDef ParentName="BuildingBase">
     <defName>MF_Building_MaintenanceBay</defName>
@@ -71,12 +72,6 @@
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
   </ThingDef>
-
-  <ThingCategoryDef>
-    <defName>MF_Module</defName>
-    <label>mecha suit module</label>
-    <parent>Manufactured</parent>
-  </ThingCategoryDef>
 
   <!-- 部件櫃 -->
   <ThingDef ParentName="BuildingBase">
@@ -152,9 +147,9 @@
     <defName>MF_Building_Wreckage</defName>
     <label>wreckage</label>
     <graphicData>
-      <texPath>Things/Building/ModulePlatform</texPath>
+      <texPath>Things/Building/MechChunk</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(2,2)</drawSize>
+      <drawSize>(2.5,2.5)</drawSize>
     </graphicData>
     <canOverlapZones>false</canOverlapZones>
     <altitudeLayer>Building</altitudeLayer>

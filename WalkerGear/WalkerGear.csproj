@@ -70,6 +70,7 @@
     <Compile Include="Job\JobDriver_RepairThing.cs" />
     <Compile Include="Job\JobDriver_ReturnToBay.cs" />
     <Compile Include="Job\WorkGiver_ModuleMaintenance.cs" />
+    <Compile Include="MechDrawer.cs" />
     <Compile Include="MechUtility.cs" />
     <Compile Include="DefOf\ThingDefOf.cs" />
     <Compile Include="Pawn_EquipmentTracker_Patch.cs" />
