@@ -5,7 +5,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>MF_Building_MaintenanceBay</defName>
     <label>maintenance bay</label>
-    <description>A place for mecha suit storage and maintenance, it has a gantry that allows you to do mecha suit loadout modification but requires at least a connected module storage shelve.</description>
+    <description>A place for mecha suit storage and maintenance, it has a gantry that allows you to do mecha suit loadout modification but requires at least one connected module storage shelve.</description>
     <thingClass>WalkerGear.Building_MaintenanceBay</thingClass>
     <graphicData>
       <texPath>Things/Building/MaintenanceBay_Bottom</texPath>
@@ -55,7 +55,7 @@
       <li Class="CompProperties_ReportWorkSpeed">
         <workSpeedStat>WorkTableWorkSpeedFactor</workSpeedStat>
       </li>
-      <li Class="DMSLib.CompProperties_BuildingExtraRenderer">
+      <li Class="WalkerGear.CompProperties_BuildingExtraRenderer">
         <extraGraphic>
           <li>
             <texPath>Things/Building/MaintenanceBay_Top</texPath>
@@ -146,6 +146,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>MF_Building_Wreckage</defName>
     <label>wreckage</label>
+    <thingClass>WalkerGear.Building_Wreckage</thingClass>
     <graphicData>
       <texPath>Things/Building/MechChunk</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -158,10 +159,5 @@
     <pathCost>100</pathCost>
     <passability>PassThroughOnly</passability>
     <surfaceType>Item</surfaceType>
-    <comps>
-      <li>
-        <compClass>WalkerGear.CompWreckage</compClass>
-      </li>
-    </comps>
   </ThingDef>
 </Defs>

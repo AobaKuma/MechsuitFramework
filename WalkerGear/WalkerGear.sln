@@ -5,8 +5,6 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkerGear", "WalkerGear.csproj", "{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMSLibs", "..\DMSLibs\DMSLibs.csproj", "{15C81FC1-E2B9-42A3-B374-0B0FB0BE4263}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15C81FC1-E2B9-42A3-B374-0B0FB0BE4263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15C81FC1-E2B9-42A3-B374-0B0FB0BE4263}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15C81FC1-E2B9-42A3-B374-0B0FB0BE4263}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15C81FC1-E2B9-42A3-B374-0B0FB0BE4263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

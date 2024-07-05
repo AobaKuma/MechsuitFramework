@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -13,12 +14,9 @@ namespace WalkerGear
     public partial class Building_MaintenanceBay : Building
     {
         //cached stuffs
-        public static readonly Texture2D rotateButton = new CachedTexture("UI/Rotate").Texture;
-        public static readonly Texture2D rotateOppoButton = new CachedTexture("UI/RotateOppo").Texture;
+        
         [Unsaved(false)]
         private CompPowerTrader cachedPowerComp;
-        //Fileds
-        //public Dictionary<SlotDef, Apparel> occupiedSlots = new();//已使用槽位
         //Properties
         private CompPowerTrader PowerTraderComp
         {
@@ -33,7 +31,7 @@ namespace WalkerGear
         public override IEnumerable<Gizmo> GetGizmos()
         {
 
-            if (HasGearCore)
+            if (HasGearCore&&false)
             {
                 Command_Target command_GetIn = new()
                 {
@@ -56,12 +54,6 @@ namespace WalkerGear
         {
             base.ExposeData();
             Scribe_Deep.Look(ref cachePawn, "cachedPawn");
-        }
-        
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-
         }
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
@@ -91,16 +83,9 @@ namespace WalkerGear
     public partial class Building_MaintenanceBay
     {
         public Rot4 direction = Rot4.South;//缓存Itab里pawn的方向
-        public bool HasGearCore{
-            get {
-                foreach (var a in DummyApparels.WornApparel)
-                {
-                    if (a is WalkerGear_Core) return true;
-                }
-                return false;
-            }
-        }
+        public bool HasGearCore => GetGearCore !=null;
 
+        public Apparel GetGearCore => DummyApparels.WornApparel.Find(a=>a is WalkerGear_Core);
     }
     //穿脱龙骑兵
     public partial class Building_MaintenanceBay
@@ -238,19 +223,37 @@ namespace WalkerGear
     public partial class Building_MaintenanceBay
     {
         private Pawn cachePawn;
+
+        public static bool PawnInBuilding(Pawn pawn)
+        {
+            pawnsInBuilding.RemoveAll(p => p == null || p.Destroyed);
+            return pawnsInBuilding.Contains(pawn);
+        }
+        public static List<Pawn> pawnsInBuilding = new();
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (respawningAfterLoad)
+            {
+                pawnsInBuilding.Add(Dummy);
+            }
+        }
         public Pawn Dummy{
             get
             {
                 if (cachePawn==null)
                 {
                     cachePawn = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist);
+                    pawnsInBuilding.Add(cachePawn);
                     cachePawn.apparel.DestroyAll();
                     cachePawn.rotationInt = Rotation.Opposite;
-                    cachePawn.apparel.Wear((Apparel)ThingMaker.MakeThing(ThingDefOf.Apparel_Dummy));
+                    //cachePawn.apparel.Wear((Apparel)ThingMaker.MakeThing(ThingDefOf.Apparel_Dummy));
                     cachePawn.drafter = new(cachePawn)
                     {
                         Drafted = true
                     };
+                   
                 }
                 return cachePawn;
             }

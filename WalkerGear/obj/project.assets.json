@@ -118,20 +118,6 @@
             "related": ".pdb;.xml"
           }
         }
-      },
-      "DMSLibs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
-        "dependencies": {
-          "Krafs.Rimworld.Ref": "1.5.4085",
-          "Lib.Harmony": "2.3.3"
-        },
-        "compile": {
-          "bin/placeholder/DMSLibs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DMSLibs.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.8/win": {
@@ -250,20 +236,6 @@
           "lib/net48/0Harmony.dll": {
             "related": ".pdb;.xml"
           }
-        }
-      },
-      "DMSLibs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
-        "dependencies": {
-          "Krafs.Rimworld.Ref": "1.5.4085",
-          "Lib.Harmony": "2.3.3"
-        },
-        "compile": {
-          "bin/placeholder/DMSLibs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DMSLibs.dll": {}
         }
       }
     },
@@ -384,20 +356,6 @@
             "related": ".pdb;.xml"
           }
         }
-      },
-      "DMSLibs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
-        "dependencies": {
-          "Krafs.Rimworld.Ref": "1.5.4085",
-          "Lib.Harmony": "2.3.3"
-        },
-        "compile": {
-          "bin/placeholder/DMSLibs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DMSLibs.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.8/win-x64": {
@@ -517,20 +475,6 @@
             "related": ".pdb;.xml"
           }
         }
-      },
-      "DMSLibs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
-        "dependencies": {
-          "Krafs.Rimworld.Ref": "1.5.4085",
-          "Lib.Harmony": "2.3.3"
-        },
-        "compile": {
-          "bin/placeholder/DMSLibs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DMSLibs.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.8/win-x86": {
@@ -649,20 +593,6 @@
           "lib/net48/0Harmony.dll": {
             "related": ".pdb;.xml"
           }
-        }
-      },
-      "DMSLibs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
-        "dependencies": {
-          "Krafs.Rimworld.Ref": "1.5.4085",
-          "Lib.Harmony": "2.3.3"
-        },
-        "compile": {
-          "bin/placeholder/DMSLibs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DMSLibs.dll": {}
         }
       }
     }
@@ -829,16 +759,10 @@
         "lib/netcoreapp3.1/0Harmony.xml",
         "lib/netstandard2.0/_._"
       ]
-    },
-    "DMSLibs/1.0.0": {
-      "type": "project",
-      "path": "../DMSLibs/DMSLibs.csproj",
-      "msbuildProject": "../DMSLibs/DMSLibs.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
-      "DMSLibs >= 1.0.0",
       "Krafs.Publicizer >= 2.2.1",
       "Krafs.Rimworld.Ref >= 1.5.4104",
       "Lib.Harmony >= 2.3.3"
@@ -868,11 +792,7 @@
       },
       "frameworks": {
         "net48": {
-          "projectReferences": {
-            "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj": {
-              "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\DMSLibs\\DMSLibs.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "restoreAuditProperties": {

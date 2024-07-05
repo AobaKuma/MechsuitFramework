@@ -1,4 +1,4 @@
-﻿using DMSLib;
+﻿
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -148,23 +148,28 @@ namespace WalkerGear
 		public void GearDestory()
 		{
             GenExplosion.DoExplosion(Wearer.Position, Wearer.Map, 5, DamageDefOf.Bomb, null, 5);
-
-            Building building = (Building)ThingMaker.MakeThing(BuildingWreckage.building);
+            Building building;
+            if (def.HasModExtension<BuildingWreckage>())
+            {
+                building = ThingMaker.MakeThing(def.GetModExtension<BuildingWreckage>().building) as Building;
+            }
+            else
+                building = (Building)ThingMaker.MakeThing(BuildingWreckage.building);
             building.SetFactionDirect(Wearer.Faction);
             building.Rotation = Rot4.South;
 			
             GenPlace.TryPlaceThing(building, Wearer.Position, Wearer.Map, ThingPlaceMode.Direct);
             
-            if (building.TryGetComp(out CompWreckage compWreckage))
+            if (building is Building_Wreckage wreckage)
             {
                 Wearer.DeSpawnOrDeselect();
-                compWreckage.pawnContainer.Add(Wearer);
+                wreckage.pawnContainer.Add(Wearer);
                 foreach (var m in modules)
                 {
                     if (m==this) continue;
                     Wearer.apparel.Remove((Apparel)m);
                     m.HitPoints = 1;
-                    if (Rand.Bool) compWreckage.moduleContainer.Add(MechUtility.Conversion(m));
+                    if (Rand.Bool) wreckage.moduleContainer.Add(MechUtility.Conversion(m));
                 }
                 Wearer.apparel.Remove(this);
             }
@@ -188,7 +193,7 @@ namespace WalkerGear
 		private float combinedHealth=-1;
 		private float healthInt = -1;
 		public List<Thing> modules = new();
-        public static readonly Texture2D GetOutIcon = ContentFinder<Texture2D>.Get("Things/GetOffWalker", true);
+        
         
     }
 

@@ -8,18 +8,19 @@ using Verse;
 
 namespace WalkerGear
 {
-    [StaticConstructorOnStartup]
+    //[StaticConstructorOnStartup]
     public class SlotDef : Def
     {
-        //public bool isCoreFrame;//用來顯示的CoreFrame只會有一個
+        public bool isCoreFrame;//用來顯示的CoreFrame只會有一個
         public bool isWeapon;
         public List<SlotDef> supportedSlots;//填入組裝塢後提供的新槽位
-        public List<ThingDef> cachedAvailableComponents = new(); //使用该槽位的部件
         public int uiPriority; //slot在UI里占用的格子
-        public SlotDef parentSlot;
-        public bool IsCoreFrame => this ==SlotDefOf.Core;
+
+
+        //public SlotDef parentSlot;
+        //public List<ThingDef> cachedAvailableComponents = new(); //使用该槽位的部件
         
-        public override void ResolveReferences()
+        /*public override void ResolveReferences()
         {
             base.ResolveReferences();
             ResolveAvailableComps();
@@ -29,7 +30,7 @@ namespace WalkerGear
             cachedAvailableComponents = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(t =>
             {
                 return t.HasComp<CompWalkerComponent>() && t.GetCompProperties<CompProperties_WalkerComponent>().slot == this;
-            }).ToList<ThingDef>();
-        }
+            }).ToList();
+        }*/
     }
 }

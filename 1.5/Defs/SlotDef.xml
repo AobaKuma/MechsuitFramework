@@ -19,26 +19,27 @@
       <li>MountRight</li>
     </supportedSlots>
     <uiPriority>0</uiPriority>
+    <isCoreFrame>true</isCoreFrame>
   </WalkerGear.SlotDef>
 
   <WalkerGear.SlotDef ParentName="BaseSlot">
     <defName>Head</defName>
     <label>Head</label>
-    <parentSlot>Core</parentSlot>
+    <!-- <parentSlot>Core</parentSlot> -->
     <uiPriority>2</uiPriority>
   </WalkerGear.SlotDef>
 
   <WalkerGear.SlotDef ParentName="BaseSlot">
     <defName>Attachment</defName>
     <label>Attachment</label>
-    <parentSlot>Core</parentSlot>
+    <!-- <parentSlot>Core</parentSlot> -->
     <uiPriority>5</uiPriority>
   </WalkerGear.SlotDef>
 
   <WalkerGear.SlotDef ParentName="BaseSlot">
     <defName>ArmLeft</defName>
     <label>ArmLeft</label>
-    <parentSlot>Core</parentSlot>
+    <!-- <parentSlot>Core</parentSlot> -->
     <uiPriority>6</uiPriority>
   </WalkerGear.SlotDef>
 
@@ -46,20 +47,20 @@
     <defName>ArmRight</defName>
     <label>ArmRight</label>
     <uiPriority>3</uiPriority>
-    <parentSlot>Core</parentSlot>
+    <!-- <parentSlot>Core</parentSlot> -->
   </WalkerGear.SlotDef>
 
   <WalkerGear.SlotDef ParentName="BaseSlot">
     <defName>MountLeft</defName>
     <label>MountLeft</label>
-    <parentSlot>Core</parentSlot>
+    <!-- <parentSlot>Core</parentSlot> -->
     <uiPriority>4</uiPriority>
   </WalkerGear.SlotDef>
   
   <WalkerGear.SlotDef ParentName="BaseSlot">
     <defName>MountRight</defName>
     <label>MountRight</label>
-    <parentSlot>Core</parentSlot>
+    <!-- <parentSlot>Core</parentSlot> -->
     <uiPriority>1</uiPriority>
   </WalkerGear.SlotDef>
 </Defs>

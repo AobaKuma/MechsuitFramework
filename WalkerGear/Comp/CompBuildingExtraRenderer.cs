@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace DMSLib
+namespace WalkerGear
 {
     public class CompBuildingExtraRenderer:ThingComp
     {

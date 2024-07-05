@@ -54,28 +54,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building_MaintenanceBay.cs" />
+    <Compile Include="Comp\CompBuildingExtraRenderer.cs" />
+    <Compile Include="DefOf\ThingDefOf.cs" />
+    <Compile Include="IHealthParms.cs" />
+    <Compile Include="ThingClass\Building_MaintenanceBay.cs" />
+    <Compile Include="ThingClass\Building_Wreckage.cs" />
     <Compile Include="Comp\CompApparelForcedWeapon.cs" />
-    <Compile Include="Comp\CompWreckage.cs" />
     <Compile Include="Comp\CompComponentStorage.cs" />
     <Compile Include="Comp\CompWalkerComponent.cs" />
     <Compile Include="DefOf\JobDefOf.cs" />
     <Compile Include="DefOf\MiscDefOf.cs" />
-    <Compile Include="DefOf\SlotDefOf.cs" />
     <Compile Include="Defs\SlotDef.cs" />
     <Compile Include="GUI\ITab_MechGear.cs" />
-    <Compile Include="HarmonyInit.cs" />
+    <Compile Include="HarmonyPatches\HarmonyInit.cs" />
+    <Compile Include="HarmonyPatches\PawnRender.cs" />
     <Compile Include="Job\JobDriver_GetInWalkerCore.cs" />
     <Compile Include="Job\JobDriver_GetOffWalkerCore.cs" />
     <Compile Include="Job\JobDriver_RepairThing.cs" />
     <Compile Include="Job\JobDriver_ReturnToBay.cs" />
     <Compile Include="Job\WorkGiver_ModuleMaintenance.cs" />
-    <Compile Include="MechDrawer.cs" />
     <Compile Include="MechUtility.cs" />
-    <Compile Include="DefOf\ThingDefOf.cs" />
-    <Compile Include="Pawn_EquipmentTracker_Patch.cs" />
-    <Compile Include="VerbCompTurret.cs" />
-    <Compile Include="WalkerGear_Core.cs" />
+    <Compile Include="HarmonyPatches\Pawn_EquipmentTracker_Patch.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="MVCF_VerbComp\VerbCompTurret.cs" />
+    <Compile Include="ThingClass\WalkerGear_Core.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -84,13 +86,6 @@
     <PublicizerClearCacheOnClean>true</PublicizerClearCacheOnClean>
     <!-- <PublicizeAll>true</PublicizeAll> -->
   </PropertyGroup>
-  <ItemGroup>
-    <!-- <Publicize Include="Assembly-CSharp:Verse." /> -->
-    <ProjectReference Include="..\DMSLibs\DMSLibs.csproj">
-      <Project>{15c81fc1-e2b9-42a3-b374-0b0fb0be4263}</Project>
-      <Name>DMSLibs</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
       <Version>2.2.1</Version>
@@ -108,4 +103,5 @@
     <Publicize Include="Assembly-CSharp:RimWorld.CompApparelVerbOwner_Charged.remainingCharges" />
     <Publicize Include="Assembly-CSharp:Verse.ArmorUtility.ApplyArmor" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

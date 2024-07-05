@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
-namespace DMSLib
+namespace WalkerGear
 {
     public interface IHealthParms
     {

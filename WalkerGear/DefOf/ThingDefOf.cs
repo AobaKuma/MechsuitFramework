@@ -8,7 +8,6 @@ namespace WalkerGear
 	{
 		public static ThingDef MF_Building_MaintenanceBay;
 		public static ThingDef MF_Building_ComponentStorage;
-		public static ThingDef Apparel_Dummy;
 		public static ThingDef MF_Building_Wreckage;
     }
 

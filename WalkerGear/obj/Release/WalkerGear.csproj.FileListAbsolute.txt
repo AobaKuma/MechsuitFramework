@@ -17,6 +17,11 @@ D:\Steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon\WalkerGear
 D:\Steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon\WalkerGear\obj\Release\WalkerGear.csproj.CoreCompileInputs.cache
 D:\Steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon\WalkerGear\obj\Release\WalkerGear.csproj.Up2Date
 D:\Steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-MobileDragoon\WalkerGear\obj\Release\WalkerGear.dll
+D:\steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\1.5\Assemblies\WalkerGear.dll
+D:\steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.csproj.AssemblyReference.cache
+D:\steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.csproj.CoreCompileInputs.cache
+D:\steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.csproj.Up2Date
+D:\steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.dll
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\1.5\Assemblies\WalkerGear.dll
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.csproj.AssemblyReference.cache
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.csproj.CoreCompileInputs.cache

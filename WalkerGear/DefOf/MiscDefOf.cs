@@ -10,6 +10,12 @@ namespace WalkerGear
     [DefOf]
     internal static class MiscDefOf
     {
+        static MiscDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(MiscDefOf));
+        }
         public static StatDef VEF_MassCarryCapacity;
+        public static RenderSkipFlagDef Head;
+        public static RenderSkipFlagDef Body;
     }
 }

@@ -14,16 +14,13 @@ namespace WalkerGear
     {
         public WalkerGear(ModContentPack content) : base(content)
         {
-            //Log.Warning("Patching");
             var ins = new Harmony("WalkerGear");
-            //Log.Message(ins.GetPatchedMethods().Count());
             ins.PatchAllUncategorized();
             if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true)!=null)
             {
                 ins.Patch(
                 Method(TypeByName("WeaponAssingment"), "equipSpecificWeapon"),prefix:Method(typeof(SimpleSidearms),nameof(SimpleSidearms.EquipSpecificWeapon)));
             }
-            //Log.Message(ins.GetPatchedMethods().Count());
         }
         [HarmonyPatchCategory("ModPatches")]
         internal static class SimpleSidearms
