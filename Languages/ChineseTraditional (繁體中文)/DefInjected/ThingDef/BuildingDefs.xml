@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: module shelve -->
+  <MF_Building_ComponentStorage.label>模塊櫃</MF_Building_ComponentStorage.label>
+  <!-- EN: a module storage rack, pawn can repair damaged module on it. and the maintenance bay can only select modules storaged in connected storage shelve. -->
+  <MF_Building_ComponentStorage.description>能夠儲存模塊的金屬存放架。整備龍門架只能夠從連接的儲存架中存取模塊。</MF_Building_ComponentStorage.description>
+  
+  <!-- EN: maintenance Gantry -->
+  <MF_Building_MaintenanceBay.label>整備龍門架</MF_Building_MaintenanceBay.label>
+  <!-- EN: A place for walker frame storage and maintenance, it has a gantry that allows you to do mechsuit loadout modification but requires at least one connected module storage shelve. -->
+  <MF_Building_MaintenanceBay.description>機甲停放和檢修的設施，它有一個可供機甲整備與替換模塊的龍門架，但需要至少一個連接的模塊櫃才能夠安裝其上的模塊。</MF_Building_MaintenanceBay.description>
+  
+  <!-- EN: dock point -->
+  <MF_Building_ParkingSpot.label>臨時停泊點</MF_Building_ParkingSpot.label>
+  <!-- EN: A point designated for temporary parking the frame. suppose the frame is designed to be able to disembark temporarily. the pilot can leave the frame here and rest or receive treatment. However, due to the lack of relevant equipment, it can not unload the module for maintenance or repair and requires a longer boarding time. -->
+  <MF_Building_ParkingSpot.description>指定用於讓駕駛員臨時下機的停泊點。機甲駕駛員可以將框架停留在此來上床休息或接受治療。但由於缺乏相關設備因此無法卸下模塊進行維修或替換，並需要較長的登機時間。</MF_Building_ParkingSpot.description>
+  
+  <!-- EN: scaffold -->
+  <MF_Building_Scaffold.label>鷹架</MF_Building_Scaffold.label>
+  <!-- EN: Metal scaffolding used to facilitate maintenance and disassembly during mecha maintenance, which can effectively reduce the work time of installation and disassembly. Each rack can be connected to up to 4 scaffolds. -->
+  <MF_Building_Scaffold.description>檢修時使用的金屬鷹架，便於維修和拆卸也可有效減少登機時間。每個龍門架最多可連接4個鷹架。</MF_Building_Scaffold.description>
+  
+  <!-- EN: scaffold stair -->
+  <MF_Building_ScaffoldStair.label>鷹架階梯</MF_Building_ScaffoldStair.label>
+  <!-- EN: Metal scaffolding used to facilitate maintenance and disassembly during mecha maintenance, which can effectively reduce the work time of installation and disassembly. Each rack can be connected to up to 4 scaffolds. -->
+  <MF_Building_ScaffoldStair.description>檢修時使用的金屬鷹架，便於維修和拆卸也可有效減少登機時間。每個龍門架最多可連接4個鷹架。</MF_Building_ScaffoldStair.description>
+  
+  <!-- EN: wreckage -->
+  <MF_Building_Wreckage.label>機甲殘骸</MF_Building_Wreckage.label>
+  
+  <!-- EN: flying -->
+  <WG_PawnFlyer.label>機甲(飛行中)</WG_PawnFlyer.label>
+  
+</LanguageData>

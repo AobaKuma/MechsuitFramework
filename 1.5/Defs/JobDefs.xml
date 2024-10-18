@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+    
+    <!-- 進入彈射 -->
+    <JobDef>
+        <defName>WG_GetInEjector</defName>
+        <driverClass>WalkerGear.JobDriver_GetInEjector</driverClass>
+        <reportString>entering catapult</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
 
     <JobDef>
         <defName>WG_GetInWalkerCore</defName>
@@ -12,10 +20,9 @@
         <defName>WG_GetInWalkerCore_NonDrafted</defName>
         <driverClass>WalkerGear.JobDriver_GetInWalkerCore</driverClass>
         <reportString>entering mecha suit</reportString>
-        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
-    
     <JobDef>
         <defName>WG_GetOffWalkerCore</defName>
         <driverClass>WalkerGear.JobDriver_GetOffWalkerCore</driverClass>
@@ -27,14 +34,14 @@
         <defName>WG_TakeToMaintenanceBay</defName>
         <driverClass>WalkerGear.JobDriver_TakeToMaintenanceBay</driverClass>
         <reportString>heading back to bay</reportString>
-        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
     <JobDef>
         <defName>WG_ReturnToBay</defName>
         <driverClass>WalkerGear.JobDriver_ReturnToBay</driverClass>
         <reportString>heading back to bay</reportString>
-        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
     <JobDef>
@@ -90,4 +97,5 @@
         <suspendable>true</suspendable>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
+    
 </Defs>

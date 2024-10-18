@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: smelt module -->
+  <WG_SmeltModule.label>熔毀模塊</WG_SmeltModule.label>
+  <!-- EN: Use heat and strong electromagnets to break down modules into useful resources. -->
+  <WG_SmeltModule.description>使用熱量和電磁鐵將模塊分解成有用的資源。</WG_SmeltModule.description>
+  <!-- EN: Smelting apparel. -->
+  <WG_SmeltModule.jobString>正在回收模塊</WG_SmeltModule.jobString>
+  
+</LanguageData>

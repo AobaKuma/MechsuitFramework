@@ -358,4 +358,19 @@
     <passability>PassThroughOnly</passability>
     <surfaceType>Item</surfaceType>
   </ThingDef>
+
+  <!-- Flyer -->
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>WG_PawnFlyer</defName>
+    <thingClass>WalkerGear.WG_PawnFlyer</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.01</flightDurationMin>
+      <flightSpeed>55</flightSpeed>
+    </pawnFlyer>
+    <modExtensions>
+      <li Class="WalkerGear.ModExtension_Flyer">
+        <flightRange>20</flightRange>
+      </li>
+    </modExtensions>
+  </ThingDef>
 </Defs>

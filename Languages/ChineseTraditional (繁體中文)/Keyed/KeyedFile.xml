@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <WG_GetIn>駕駛</WG_GetIn>
+  
+  <WG_WeaponDropped>在脫離框架後，{0}無法裝備所使用的當前武器。</WG_WeaponDropped>
+
+  <WG_TooBigForPilot>{0}體型太大，無法駕駛。</WG_TooBigForPilot>
+  <WG_TooYoungToPilot>{0}年齡太小，無法駕駛。</WG_TooYoungToPilot>
+  <WG_RequirePilotSuit>{0}沒有穿著必要的駕駛服。</WG_RequirePilotSuit>
+  <WG_RequireBionic>{0}沒有安裝必要的植入物。</WG_RequireBionic>
+  <WG_ApparelLayerTaken>{0}拒絕脫下不相容於框架的裝備。</WG_ApparelLayerTaken>
+  
+  <WG_Disabled_AlreadyHasCoreFrame>{0}正在駕駛框架.</WG_Disabled_AlreadyHasCoreFrame>
+  <WG_Disabled_NoCoreFrame>整備架上沒有框架.</WG_Disabled_NoCoreFrame>
+  <WG_NoModuleForSlot>無可用模塊.</WG_NoModuleForSlot>
+  
+  <WG_Job_TakeToMaintenanceBay>搬運至整備龍門架</WG_Job_TakeToMaintenanceBay>
+  <WG_Job_DisassembleFrame>拆解癱瘓的框架.</WG_Job_DisassembleFrame>
+  <WG_Disabled_NoMaintenanceBay>無法搬運: 沒有可用的整備龍門架</WG_Disabled_NoMaintenanceBay>
+
+  <WG_Disabled_NeedControlledAndDrafted>無法使用: 需要徵招</WG_Disabled_NeedControlledAndDrafted>
+  <WG_SafetyLock>安全保險</WG_SafetyLock>
+  <WG_SafetyLock_Desc>防止誤操作的安全裝置</WG_SafetyLock_Desc>
+
+  <WG_EmergencyEject>緊急彈射</WG_EmergencyEject>
+  <WG_EmergencyEject_Desc>激活模塊中的一次性逃生裝置，將使用固體推進火箭摧毀框架並將飛行員彈射到射程內的指定位置。</WG_EmergencyEject_Desc>
+
+  <WG_EjectToTile>長距離彈射</WG_EjectToTile>
+  <WG_EjectToTile>本地地圖彈射</WG_EjectToTile>
+  <WG_PilotInBuilding>駕駛員:</WG_PilotInBuilding>
+  <WG_Occupied>已占用</WG_Occupied>
+  <WG_RequireMechsuit>需要駕駛步行框架</WG_RequireMechsuit>
+
+  <WG_PilotingFrame>正在駕駛步行框架</WG_PilotingFrame>
+  <WG_Finalized>最終處理</WG_Finalized>
+  <WG_Stats_TakingSlotsOf>占用模塊槽:</WG_Stats_TakingSlotsOf>
+  <WG_Stats_DisableSlotsOf>禁用模塊槽:</WG_Stats_DisableSlotsOf>
+
+  <WG_StructurePoint>框架結構值</WG_StructurePoint>
+  <WG_StructurePoint.Tooltip>框架的總結構值，在面對命中的傷害時能夠抵銷其效果來保護框架駕駛。但如果這個值低於25%，就有25%幾率穿過外裝甲對內部的駕駛員造成傷害。一但結構值降到零，框架就會徹底癱瘓並困住駕駛員於摧毀的殘骸中。 \n\n要恢復結構點，需要將框架停泊在維護龍門架，具有製作能力的殖民者將可以對受損的機體或模塊進行檢修。</WG_StructurePoint.Tooltip>
+
+  <WG_TabMechGear>框架</WG_TabMechGear>
+  <WG_MechSolution>模塊組裝</WG_MechSolution>
+  <WG_Overload>[過載警告]</WG_Overload>
+
+  <WG_Performance>載荷空間</WG_Performance>
+  <WG_OverallArmor>結構值</WG_OverallArmor>
+
+  <WG_ArmorSpeed>框架移動速度:</WG_ArmorSpeed>
+  <WG_ArmorDeadWeight>框架干質量:</WG_ArmorDeadWeight>
+  <WG_ArmorCapacity>框架最大載荷:</WG_ArmorCapacity>
+
+  <WG_HasMechWeapon>持有武器模塊</WG_HasMechWeapon>
+
+  <WG_Disabled_VictimInWalkerCore>無法救助: 傷者受困於框架。</WG_Disabled_VictimInWalkerCore>
+
+  <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
+  <WG_Blunt_CE>MPA</WG_Blunt_CE>
+
+  <WG_AutoRepair>自動維修</WG_AutoRepair>
+  <WG_AutoRepair_Desc>切換殖民者是否應自動修復龍門架中的受損模塊。</WG_AutoRepair_Desc>
+
+</LanguageData>

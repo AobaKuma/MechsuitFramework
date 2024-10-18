@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: disassembling -->
+  <WG_DisassembleWalkerCore.reportString>拆解癱瘓機體</WG_DisassembleWalkerCore.reportString>
+  
+  <!-- EN: entering ejector -->
+  <WG_GetInEjector.reportString>進入彈射器</WG_GetInEjector.reportString>
+  
+  <!-- EN: entering mecha suit -->
+  <WG_GetInWalkerCore.reportString>登機於整備架</WG_GetInWalkerCore.reportString>
+  
+  <!-- EN: entering mecha suit -->
+  <WG_GetInWalkerCore_NonDrafted.reportString>登機於整備架</WG_GetInWalkerCore_NonDrafted.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_GetOffWalkerCore.reportString>返回整備架</WG_GetOffWalkerCore.reportString>
+  
+  <!-- EN: repairing TargetA. -->
+  <WG_RepairAtGantry.reportString>在整備架上維修</WG_RepairAtGantry.reportString>
+  
+  <!-- EN: repairing TargetA. -->
+  <WG_RepairComponent.reportString>維修受損模塊</WG_RepairComponent.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_ReturnToBay.reportString>返回整備架</WG_ReturnToBay.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_TakeToMaintenanceBay.reportString>攜帶至整備架</WG_TakeToMaintenanceBay.reportString>
+  
+</LanguageData>
