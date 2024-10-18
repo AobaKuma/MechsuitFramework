@@ -10,7 +10,8 @@ using MVCF.Comps;
 
 namespace WalkerGear
 {
-    public class VerbCompTurret : VerbComp
+
+    public class VerbCompTurret : VerbComp_Draw
     {
         private int cooldownTicksLeft;
         private LocalTargetInfo currentTarget = LocalTargetInfo.Invalid;
@@ -23,7 +24,7 @@ namespace WalkerGear
 
         public Pawn ParentPawn => parent.Manager.Pawn;
         public LocalTargetInfo Target => currentTarget;
-        public VerbCompPropertiesTurret Props => (VerbCompPropertiesTurret)props;
+        public new VerbCompPropertiesTurret Props => (VerbCompPropertiesTurret)props;
         public override bool Independent => true;
         public override void CompTick()
         {
@@ -87,7 +88,7 @@ namespace WalkerGear
             var success = parent.Verb.TryStartCastOn(currentTarget);
             if (success && parent.Verb.verbProps.warmupTime > 0) parent.Verb.WarmupComplete();
         }
-        public LocalTargetInfo PointingTarget(Pawn p) => currentTarget;
+        public override LocalTargetInfo PointingTarget(Pawn p) => currentTarget;
         public virtual bool CanFire() =>
             parent is { Manager.Pawn: var pawn } && !pawn.Dead && !pawn.Downed
          && (!parent.Verb.verbProps.onlyManualCast || targetWasForced)
@@ -105,6 +106,7 @@ namespace WalkerGear
                 GenDraw.DrawLineBetween(drawPos, Target.HasThing ? Target.Thing.DrawPos : Target.Cell.ToVector3());
             }
         }
+        public override bool ShouldDraw(Pawn pawn) => !Props.invisible && base.ShouldDraw(pawn);
         public override bool SetTarget(LocalTargetInfo target)
         {
             currentTarget = target;
@@ -124,9 +126,9 @@ namespace WalkerGear
                                    man.Pawn.mindState.enemyTarget != thing &&
                                    man.ManagedVerbs.All(verb =>
                                        verb.Verb.CurrentTarget.Thing != thing &&
-                                   verb.TryGetComp<VerbCompTurret>()?.currentTarget.Thing != thing))
-            : null, parent.Verb.verbProps.minRange, parent.Verb.verbProps.range, canTakeTargetsCloserThanEffectiveMinRange: false)
-            ?.Thing ??
+                                       verb.TryGetComp<VerbCompTurret>()?.currentTarget.Thing != thing))
+                               : null, parent.Verb.verbProps.minRange, parent.Verb.verbProps.range, canTakeTargetsCloserThanEffectiveMinRange: false)
+                     ?.Thing ??
                    LocalTargetInfo.Invalid;
         }
         public override void ExposeData()
@@ -139,11 +141,11 @@ namespace WalkerGear
         }
 
     }
-    public class VerbCompPropertiesTurret : VerbCompProperties
+    public class VerbCompPropertiesTurret : VerbCompProperties_Draw
     {
         public VerbCompPropertiesTurret() { compClass = typeof(VerbCompTurret); }
 
-        
+        public bool invisible;
         public bool uniqueTargets;
         public float angleOffset;
     }

@@ -3,7 +3,7 @@
   <ThingDef>
     <defName>Apparel_Dummy</defName>
     <label>whatisthis</label>
-    <description>Todo.</description>
+    <description>nothing here.</description>
     <graphicData>
       <texPath>none</texPath>
       <graphicClass>Graphic_Single</graphicClass>

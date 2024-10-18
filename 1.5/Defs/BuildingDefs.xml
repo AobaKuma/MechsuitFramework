@@ -1,11 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+  <!-- 停泊點 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>MF_Building_ParkingSpot</defName>
+    <label>dock point</label>
+    <!-- 用於小型機體臨時停泊的地點，如果機體設計上能夠臨時下機，駕駛員就可以在這裡離開機體並休息或接受治療，但由於缺乏相關設備因此在這裡無法進行模塊整備與維修，並且重新登機的時間也比較長。 -->
+    <description>A point designated for temporary parking the frame. suppose the frame is designed to be able to disembark temporarily. the pilot can leave the frame here and rest or receive treatment. However, due to the lack of relevant equipment, it can not unload the module for maintenance or repair and requires a longer boarding time.</description>
+    <thingClass>WalkerGear.Building_MaintenanceBay</thingClass>  
+    <graphicData>
+      <texPath>Things/Building/ParkingSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <drawOffset>(0,-0.01,0)</drawOffset>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
+    </statBases>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <rotatable>true</rotatable>
+    <stealable>false</stealable>
+    <blockLight>false</blockLight>
+    <blockWind>false</blockWind>
+    <surfaceType>Item</surfaceType>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <tickerType>Rare</tickerType>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <altitudeLayer>Building</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <interactionCellOffset>(0,0,0)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <size>(3,3)</size>
+    <designationCategory>Misc</designationCategory>
+    <passability>Standable</passability>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MF_Building_ScaffoldStair</li>
+          <li>MF_Building_Scaffold</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>WalkerGear.CompAssignableToPawn_Parking</compClass>
+        <maxAssignedPawnsCount>1</maxAssignedPawnsCount>
+      </li>
+    </comps>
+    <building>
+      <relatedBuildCommands>
+        <li>MF_Building_ScaffoldStair</li>
+        <li>MF_Building_Scaffold</li>
+      </relatedBuildCommands>
+    </building>
+    <researchPrerequisites>
+      <li>WG_HeavyExoskeleton</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+
   <!-- 维护坞 -->
   <ThingDef ParentName="BuildingBase">
     <defName>MF_Building_MaintenanceBay</defName>
-    <label>maintenance bay</label>
-    <description>A place for mecha suit storage and maintenance, it has a gantry that allows you to do mecha suit loadout modification but requires at least one connected module storage shelve.</description>
+    <label>maintenance Gantry</label>
+    <description>A place for walker frame storage and maintenance, it has a gantry that allows you to do mechsuit loadout modification but requires at least one connected module storage shelve.</description>
     <thingClass>WalkerGear.Building_MaintenanceBay</thingClass>
     <graphicData>
       <texPath>Things/Building/MaintenanceBay_Bottom</texPath>
@@ -26,13 +86,17 @@
     </costList>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <useHitPoints>true</useHitPoints>
+    <fillPercent>0.35</fillPercent>
     <size>(3,3)</size>
     <pathCost>100</pathCost>
     <designationCategory>Misc</designationCategory>
-    <uiOrder>2000</uiOrder>
+    <uiOrder>10</uiOrder>
     <passability>PassThroughOnly</passability>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <researchPrerequisites>
+      <li>WG_HeavyExoskeleton</li>
+    </researchPrerequisites>
     <surfaceType>Item</surfaceType>
     <inspectorTabs>
       <li>WalkerGear.ITab_MechGear</li>
@@ -43,14 +107,23 @@
       </buildingTags>
       <relatedBuildCommands>
         <li>MF_Building_ComponentStorage</li>
+        <li>MF_Building_ScaffoldStair</li>
+        <li>MF_Building_Scaffold</li>
       </relatedBuildCommands>
     </building>
     <comps>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
-          <li>ToolCabinet</li>
           <li>MF_Building_ComponentStorage</li>
+          <li>ToolCabinet</li>
+          <li>MF_Building_ScaffoldStair</li>
+          <li>MF_Building_Scaffold</li>
         </linkableFacilities>
+      </li>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>WalkerGear.CompAssignableToPawn_Parking</compClass>
+        <maxAssignedPawnsCount>1</maxAssignedPawnsCount>
       </li>
       <li Class="CompProperties_ReportWorkSpeed">
         <workSpeedStat>WorkTableWorkSpeedFactor</workSpeedStat>
@@ -61,7 +134,7 @@
             <texPath>Things/Building/MaintenanceBay_Top</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(4,4)</drawSize>
-            <drawOffset>(0,0.7,0)</drawOffset>
+            <drawOffset>(0,0.005,0)</drawOffset>
           </li>
         </extraGraphic>
       </li>
@@ -82,6 +155,7 @@
     <graphicData>
       <texPath>Things/Building/ModulePlatform</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffset>(0,0.002,0)</drawOffset>
       <drawSize>(4,4)</drawSize>
     </graphicData>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
@@ -92,16 +166,20 @@
       <WorkToBuild>3600</WorkToBuild>
     </statBases>
     <costList>
-      <Steel>50</Steel>
+      <Steel>100</Steel>
     </costList>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <useHitPoints>true</useHitPoints>
     <size>(3,1)</size>
     <pathCost>100</pathCost>
+    <fillPercent>0.15</fillPercent>
     <designationCategory>Misc</designationCategory>
-    <uiOrder>2000</uiOrder>
+    <uiOrder>11</uiOrder>
     <passability>PassThroughOnly</passability>
     <hasInteractionCell>false</hasInteractionCell>
+    <researchPrerequisites>
+      <li>WG_HeavyExoskeleton</li>
+    </researchPrerequisites>
     <surfaceType>Item</surfaceType>
     <inspectorTabs>
       <li>ITab_Storage</li>
@@ -132,7 +210,7 @@
     </building>
     <comps>
       <li Class="CompProperties_Facility">
-        <maxSimultaneous>4</maxSimultaneous>
+        <maxSimultaneous>8</maxSimultaneous>
       </li>
       <li>
         <compClass>WalkerGear.CompComponentStorage</compClass>
@@ -143,6 +221,120 @@
     </placeWorkers>
   </ThingDef>
 
+  <DesignatorDropdownGroupDef>
+    <defName>WG_BaseScaffold</defName>
+    <label>scaffold</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef ParentName="BuildingBase" Name="WG_BaseScaffold" Abstract="True">
+    <thingClass>Building</thingClass>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designatorDropdown>WG_BaseScaffold</designatorDropdown>
+    <canOverlapZones>false</canOverlapZones>
+    <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Rare</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <Mass>20</Mass>
+      <WorkToBuild>4000</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+    <fillPercent>0.35</fillPercent>
+    <staticSunShadowHeight>1</staticSunShadowHeight>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>true</useHitPoints>
+    <size>(2,1)</size>
+    <pathCost>200</pathCost>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>12</uiOrder>
+    <passability>PassThroughOnly</passability>
+    <pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+    <hasInteractionCell>false</hasInteractionCell>
+    <researchPrerequisites>
+      <li>WG_HeavyExoskeleton</li>
+    </researchPrerequisites>
+    <building>
+      <paintable>true</paintable>
+      <relatedBuildCommands>
+        <li>MF_Building_ParkingSpot</li>
+        <li>MF_Building_MaintenanceBay</li>
+      </relatedBuildCommands>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="WG_BaseScaffold">
+    <defName>MF_Building_Scaffold</defName>
+    <label>scaffold</label>
+    <!-- 用於在機甲整備期間能方便進行維修與拆解的金屬腳手架，能有效的降低安裝與拆解的工作時間。每個整備架能夠連接最大四個腳手架 -->
+    <description>Metal scaffolding used to facilitate maintenance and disassembly during mecha maintenance, which can effectively reduce the work time of installation and disassembly. Each rack can be connected to up to 4 scaffolds.</description>
+    <uiIconPath>Things/Building/Scaffold_icon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/Scaffold</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffset>(0,0.003,0.345)</drawOffset>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>4</maxSimultaneous>
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
+        </statOffsets>
+      </li>
+      <li Class="WalkerGear.CompProperties_BuildingExtraRenderer">
+        <extraGraphic>
+          <li>
+            <texPath>Things/Building/Scaffold_b</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <drawOffset>(0,-0.0025,0.345)</drawOffset>
+          </li>
+        </extraGraphic>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WG_BaseScaffold">
+    <defName>MF_Building_ScaffoldStair</defName>
+    <label>scaffold stair</label>
+    <!-- 用於在機甲整備期間能方便進行維修與拆解的金屬腳手架，能有效的降低安裝與拆解的工作時間。每個整備架能夠連接最大四個腳手架 -->
+    <description>Metal scaffolding used to facilitate maintenance and disassembly during mecha maintenance, which can effectively reduce the work time of installation and disassembly. Each rack can be connected to up to 4 scaffolds.</description>
+    <uiIconPath>Things/Building/ScaffoldStair_icon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/ScaffoldStair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffset>(0,0.003,0.345)</drawOffset>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>4</maxSimultaneous>
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
+        </statOffsets>
+      </li>
+      <li Class="WalkerGear.CompProperties_BuildingExtraRenderer">
+        <extraGraphic>
+          <li>
+            <texPath>Things/Building/ScaffoldStair_b</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <drawOffset>(0,-0.0025,0.345)</drawOffset>  
+          </li>
+        </extraGraphic>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 殘骸 -->
   <ThingDef ParentName="BuildingBase">
     <defName>MF_Building_Wreckage</defName>
     <label>wreckage</label>
@@ -155,7 +347,13 @@
     <canOverlapZones>false</canOverlapZones>
     <altitudeLayer>Building</altitudeLayer>
     <useHitPoints>true</useHitPoints>
+    <building>
+      <repairable>false</repairable>
+    </building>
     <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+    </statBases>
     <pathCost>100</pathCost>
     <passability>PassThroughOnly</passability>
     <surfaceType>Item</surfaceType>

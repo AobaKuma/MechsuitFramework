@@ -2,7 +2,7 @@
 <Defs>
   <ThingCategoryDef>
     <defName>MF_Module</defName>
-    <label>mecha suit module</label>
+    <label>walker module</label>
     <parent>Manufactured</parent>
   </ThingCategoryDef>
 </Defs>

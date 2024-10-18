@@ -1,32 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj": {}
+    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj": {}
   },
   "projects": {
-    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj": {
+    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj",
+        "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj",
         "projectName": "WalkerGear",
-        "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\WalkerGear.csproj",
+        "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_Dead-Man-Switch-MobileDragoon\\WalkerGear\\WalkerGear.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\obj\\",
+        "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_Dead-Man-Switch-MobileDragoon\\WalkerGear\\obj\\",
         "projectStyle": "PackageReference",
-        "skipContentFileWrite": true,
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net48"
+          "net472"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net48": {
+          "net472": {
+            "targetAlias": "net472",
             "projectReferences": {}
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
         },
         "restoreAuditProperties": {
           "enableAudit": "true",
@@ -35,11 +40,10 @@
         }
       },
       "frameworks": {
-        "net48": {
+        "net472": {
+          "targetAlias": "net472",
           "dependencies": {
             "Krafs.Publicizer": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.1, )"
             },
@@ -51,21 +55,8 @@
               "target": "Package",
               "version": "[2.3.3, )"
             }
-          }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

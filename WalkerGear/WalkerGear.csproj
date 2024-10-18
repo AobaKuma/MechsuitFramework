@@ -1,107 +1,37 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WalkerGear</RootNamespace>
-    <AssemblyName>WalkerGear</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\1.5\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\1.5\Assemblies\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="HeavyWeapons">
-      <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\HeavyWeapons.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MVCF, Version=2.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\MVCF.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="VFECore">
-      <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\VFECore.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Comp\CompBuildingExtraRenderer.cs" />
-    <Compile Include="DefOf\ThingDefOf.cs" />
-    <Compile Include="IHealthParms.cs" />
-    <Compile Include="ThingClass\Building_MaintenanceBay.cs" />
-    <Compile Include="ThingClass\Building_Wreckage.cs" />
-    <Compile Include="Comp\CompApparelForcedWeapon.cs" />
-    <Compile Include="Comp\CompComponentStorage.cs" />
-    <Compile Include="Comp\CompWalkerComponent.cs" />
-    <Compile Include="DefOf\JobDefOf.cs" />
-    <Compile Include="DefOf\MiscDefOf.cs" />
-    <Compile Include="Defs\SlotDef.cs" />
-    <Compile Include="GUI\ITab_MechGear.cs" />
-    <Compile Include="HarmonyPatches\HarmonyInit.cs" />
-    <Compile Include="HarmonyPatches\PawnRender.cs" />
-    <Compile Include="Job\JobDriver_GetInWalkerCore.cs" />
-    <Compile Include="Job\JobDriver_GetOffWalkerCore.cs" />
-    <Compile Include="Job\JobDriver_RepairThing.cs" />
-    <Compile Include="Job\JobDriver_ReturnToBay.cs" />
-    <Compile Include="Job\WorkGiver_ModuleMaintenance.cs" />
-    <Compile Include="MechUtility.cs" />
-    <Compile Include="HarmonyPatches\Pawn_EquipmentTracker_Patch.cs" />
-    <Compile Include="Resources.cs" />
-    <Compile Include="MVCF_VerbComp\VerbCompTurret.cs" />
-    <Compile Include="ThingClass\WalkerGear_Core.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputPath>$(MSBuildThisFileDirectory)/../1.5/Assemblies</OutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>10.0</LangVersion>
-    <PublicizerClearCacheOnClean>true</PublicizerClearCacheOnClean>
-    <!-- <PublicizeAll>true</PublicizeAll> -->
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Publicizer">
-      <Version>2.2.1</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.5.4104</Version>
-    </PackageReference>
-    <PackageReference Include="Lib.Harmony">
-      <Version>2.3.3</Version>
-    </PackageReference>
+    <Reference Include="VFECore">
+      <HintPath>$(MSBuildThisFileDirectory)/Reference/VFECore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HeavyWeapons">
+      <HintPath>$(MSBuildThisFileDirectory)/Reference/HeavyWeapons.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MVCF">
+      <HintPath>$(MSBuildThisFileDirectory)/Reference/MVCF.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4104" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+    <PackageReference Include="Krafs.Publicizer" Version="2.2.1" />
+
     <Publicize Include="Assembly-CSharp:Verse.Thing.rotationInt" />
     <Publicize Include="Assembly-CSharp:Verse.Projectile" />
     <Publicize Include="Assembly-CSharp:RimWorld.CompApparelVerbOwner_Charged.remainingCharges" />
     <Publicize Include="Assembly-CSharp:Verse.ArmorUtility.ApplyArmor" />
   </ItemGroup>
-  <ItemGroup />
+
 </Project>

@@ -9,11 +9,19 @@ namespace WalkerGear
         public CompProperties_BuildingExtraRenderer Props => (CompProperties_BuildingExtraRenderer)props;
         public override void PostPrintOnto(SectionLayer layer)
         {
+            if (layerDebug == null) layerDebug = layer;
             base.PostPrintOnto(layer);
             foreach(var g in ExtraGraphic)
             {
                 g.Print(layer, parent, 0f);
             }
+        }
+        private SectionLayer layerDebug;
+        public override void Notify_DefsHotReloaded()
+        {
+            base.Notify_DefsHotReloaded();
+            extraGraphic = null;
+            PostPrintOnto(layerDebug);
         }
         public List<Graphic> ExtraGraphic
         {

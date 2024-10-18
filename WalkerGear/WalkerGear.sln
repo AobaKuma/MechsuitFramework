@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkerGear", "WalkerGear.csproj", "{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalkerGear", "WalkerGear.csproj", "{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

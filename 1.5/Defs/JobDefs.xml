@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
     <JobDef>
-        <defName>WG_RepairComponent</defName>
-        <driverClass>WalkerGear.JobDriver_RepairThing</driverClass>
-        <reportString>repairing TargetA.</reportString>
-        <suspendable>false</suspendable>
+        <defName>WG_GetInWalkerCore</defName>
+        <driverClass>WalkerGear.JobDriver_GetInWalkerCore_Drafted</driverClass>
+        <reportString>entering mecha suit</reportString>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
 
     <JobDef>
-        <defName>WG_GetInWalkerCore</defName>
+        <defName>WG_GetInWalkerCore_NonDrafted</defName>
         <driverClass>WalkerGear.JobDriver_GetInWalkerCore</driverClass>
         <reportString>entering mecha suit</reportString>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
+
     
     <JobDef>
         <defName>WG_GetOffWalkerCore</defName>
@@ -22,19 +23,71 @@
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
 
+    <JobDef>
+        <defName>WG_TakeToMaintenanceBay</defName>
+        <driverClass>WalkerGear.JobDriver_TakeToMaintenanceBay</driverClass>
+        <reportString>heading back to bay</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>WG_ReturnToBay</defName>
+        <driverClass>WalkerGear.JobDriver_ReturnToBay</driverClass>
+        <reportString>heading back to bay</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>WG_DisassembleWalkerCore</defName>
+        <driverClass>WalkerGear.JobDriver_DisassembleWalkerCore</driverClass>
+        <reportString>disassembling</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+    <WorkGiverDef>
+        <defName>WG_RepairAtGantry</defName>
+        <label>repair module at gantry</label>
+        <giverClass>WalkerGear.WorkGiver_RepairAtGantry</giverClass>
+        <workType>Crafting</workType>
+        <priorityInType>400</priorityInType>
+        <verb>repair</verb>
+        <gerund>repairing</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <directOrderable>true</directOrderable>
+        <nonColonistsCanDo>true</nonColonistsCanDo>
+        <canBeDoneByMechs>true</canBeDoneByMechs>
+    </WorkGiverDef>
+
+    <JobDef>
+        <defName>WG_RepairAtGantry</defName>
+        <driverClass>WalkerGear.JobDriver_RepairAtGantry</driverClass>
+        <reportString>repairing TargetA.</reportString>
+        <suspendable>true</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
     <WorkGiverDef>
         <defName>WG_MaintainComponent</defName>
         <label>repair damaged things</label>
         <giverClass>WalkerGear.WorkGiver_ModuleMaintenance</giverClass>
-        <workType>Construction</workType>
-        <priorityInType>50</priorityInType>
+        <workType>Crafting</workType>
+        <priorityInType>500</priorityInType>
         <verb>repair</verb>
         <gerund>repairing</gerund>
         <requiredCapacities>
-          <li>Manipulation</li>
+            <li>Manipulation</li>
         </requiredCapacities>
         <nonColonistsCanDo>true</nonColonistsCanDo>
         <canBeDoneByMechs>true</canBeDoneByMechs>
-      </WorkGiverDef>
-    
+    </WorkGiverDef>
+
+    <JobDef>
+        <defName>WG_RepairComponent</defName>
+        <driverClass>WalkerGear.JobDriver_RepairThing</driverClass>
+        <reportString>repairing TargetA.</reportString>
+        <suspendable>true</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
 </Defs>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
-
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children</xpath>
         <value>
@@ -19,10 +18,49 @@
                         <tagDef>WGApparelHead</tagDef>
                         <baseLayer>20</baseLayer>
                         <nodeClass>PawnRenderNode_Head</nodeClass>
-                        <workerClass>PawnRenderNodeWorker_Head</workerClass>
+                        <workerClass>WalkerGear.PawnRenderNodeWorker_InhertHead</workerClass>
                     </li>
                 </children>
             </li>
+        </value>
+    </Operation>
+    <!-- add subworkerClasses field if it doesn't exist -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/subworkerClasses</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>
+                Defs/PawnRenderTreeDef[defName="Humanlike"]/root</xpath>
+            <value>
+                <subworkerClasses />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/subworkerClasses</xpath>
+        <value>
+            <li>WalkerGear.PawnRenderSubWorker_OffsetRoot</li>
+        </value>
+    </Operation>
+
+    <!-- add subworkerClasses field if it doesn't exist -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children/li[workerClass="PawnRenderNodeWorker_Head"]/subworkerClasses</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>
+                Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children/li[workerClass="PawnRenderNodeWorker_Head"]</xpath>
+            <value>
+                <subworkerClasses />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children/li[workerClass="PawnRenderNodeWorker_Head"]/subworkerClasses</xpath>
+        <value>
+            <li>WalkerGear.PawnRenderSubWorker_Offset</li>
         </value>
     </Operation>
 </Patch>

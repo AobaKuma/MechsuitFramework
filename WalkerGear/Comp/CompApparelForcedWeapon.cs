@@ -1,6 +1,5 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
+﻿using HarmonyLib;
+using RimWorld;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +7,7 @@ using Verse;
 
 namespace WalkerGear
 {
-    public class CompApparelForcedWeapon:ThingComp
+    public class CompApparelForcedWeapon : ThingComp
     {
         public bool NeedRemove;
         public override void PostExposeData()
@@ -31,42 +30,61 @@ namespace WalkerGear
             }
         }
     }
-    public class CompForceUseWeapon:ThingComp
+    public class CompForceUseWeapon : ThingComp
     {
-        public CompProperties_ForceUseWeapon Props=>(CompProperties_ForceUseWeapon)props;
+        public CompProperties_ForceUseWeapon Props => (CompProperties_ForceUseWeapon)props;
         public override void Notify_Equipped(Pawn pawn)
         {
             base.Notify_Equipped(pawn);
-            NeedRemoveWeapon=false;
-            
-            pawn.equipment.MakeRoomFor(Weapon);
+            NeedRemoveWeapon = false;
+            //pawn.equipment.MakeRoomFor(Weapon);
+            if (pawn.equipment.Primary != null)
+            {
+                ThingWithComps i = pawn.equipment.Primary;
+                pawn.equipment.Remove(i);
+                pawn.inventory.TryAddAndUnforbid(i);
+            }
             pawn.equipment.AddEquipment(Weapon);
-            weaponStorage=null;
+            weaponStorage = null;
         }
         public override void Notify_Unequipped(Pawn pawn)
         {
             base.Notify_Unequipped(pawn);
-            NeedRemoveWeapon=true;
+            NeedRemoveWeapon = true;
             pawn.equipment.Remove(Weapon);
             weaponStorage = Weapon;
+
+            var things = pawn.inventory?.GetDirectlyHeldThings().Where(t => t.def.equipmentType == EquipmentType.Primary);
+            if (!things.EnumerableNullOrEmpty())
+            {
+                foreach (Thing t in things)
+                {
+                    ThingWithComps thing = t as ThingWithComps;
+                    if (!EquipmentUtility.CanEquip(thing, pawn)) continue;
+                    pawn.inventory.innerContainer.Remove(thing);
+                    pawn.equipment.AddEquipment(thing);
+                }
+                
+            }
         }
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_References.Look(ref weapon, "weaponRef");
             Scribe_Deep.Look(ref weaponStorage, "weaponDeep");
-            
+
         }
         private ThingWithComps Weapon
         {
             get
             {
-                if (weapon == null) {
-                    if (weaponStorage!=null)
+                if (weapon == null)
+                {
+                    if (weaponStorage != null)
                     {
                         return this.weapon = weaponStorage;
                     }
-                    var weapon = Props.weapon;
+                    ThingDef weapon = Props.weapon;
                     if (Props.weapon != null && Props.weapon.HasComp<CompApparelForcedWeapon>())
                     {
                         this.weapon = ThingMaker.MakeThing(weapon) as ThingWithComps;
@@ -80,13 +98,12 @@ namespace WalkerGear
                 return weapon;
             }
         }
-        private Apparel Apparel => (Apparel)parent;
         private bool NeedRemoveWeapon
         {
             get { return Weapon.TryGetComp<CompApparelForcedWeapon>().NeedRemove; }
             set { Weapon.TryGetComp<CompApparelForcedWeapon>().NeedRemove = value; }
         }
-        
+
         private ThingWithComps weapon;
         private ThingWithComps weaponStorage;
     }
@@ -94,7 +111,7 @@ namespace WalkerGear
     {
         public CompProperties_ForceUseWeapon()
         {
-            compClass=typeof(CompForceUseWeapon);
+            compClass = typeof(CompForceUseWeapon);
         }
         public ThingDef weapon;
     }

@@ -16,10 +16,9 @@ namespace WalkerGear
         {
             var ins = new Harmony("WalkerGear");
             ins.PatchAllUncategorized();
-            if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true)!=null)
+            if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true) != null)
             {
-                ins.Patch(
-                Method(TypeByName("WeaponAssingment"), "equipSpecificWeapon"),prefix:Method(typeof(SimpleSidearms),nameof(SimpleSidearms.EquipSpecificWeapon)));
+                ins.Patch(Method(TypeByName("WeaponAssingment"), "equipSpecificWeapon"), prefix: Method(typeof(SimpleSidearms), nameof(SimpleSidearms.EquipSpecificWeapon)));
             }
         }
         [HarmonyPatchCategory("ModPatches")]
