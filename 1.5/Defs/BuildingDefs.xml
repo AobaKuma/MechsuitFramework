@@ -52,6 +52,7 @@
         <li>MF_Building_ScaffoldStair</li>
         <li>MF_Building_Scaffold</li>
       </relatedBuildCommands>
+      <spawnedConceptLearnOpportunity>WG_ParkingSpot</spawnedConceptLearnOpportunity>
     </building>
     <researchPrerequisites>
       <li>WG_HeavyExoskeleton</li>
@@ -102,6 +103,7 @@
       <li>WalkerGear.ITab_MechGear</li>
     </inspectorTabs>
     <building>
+      <spawnedConceptLearnOpportunity>WG_Frame_PilotSchedule</spawnedConceptLearnOpportunity>
       <buildingTags>
         <li>Production</li>
       </buildingTags>
@@ -207,6 +209,7 @@
       <relatedBuildCommands>
         <li>MF_Building_MaintenanceBay</li>
       </relatedBuildCommands>
+      <spawnedConceptLearnOpportunity>WG_Module_Repair</spawnedConceptLearnOpportunity>
     </building>
     <comps>
       <li Class="CompProperties_Facility">
@@ -349,6 +352,7 @@
     <useHitPoints>true</useHitPoints>
     <building>
       <repairable>false</repairable>
+      <spawnedConceptLearnOpportunity>WG_Frame_Wreckage</spawnedConceptLearnOpportunity>
     </building>
     <size>(2,2)</size>
     <statBases>

@@ -40,7 +40,8 @@
   <WG_StructurePoint.Tooltip>框架的總結構值，在面對命中的傷害時能夠抵銷其效果來保護框架駕駛。但如果這個值低於25%，就有25%幾率穿過外裝甲對內部的駕駛員造成傷害。一但結構值降到零，框架就會徹底癱瘓並困住駕駛員於摧毀的殘骸中。 \n\n要恢復結構點，需要將框架停泊在維護龍門架，具有製作能力的殖民者將可以對受損的機體或模塊進行檢修。</WG_StructurePoint.Tooltip>
 
   <WG_TabMechGear>框架</WG_TabMechGear>
-  <WG_MechSolution>模塊組裝</WG_MechSolution>
+  <WG_BayTip>右鍵核心欄位從連接的建築中存取模塊</WG_BayTip>
+  <WG_MechSolution>自定義</WG_MechSolution>
   <WG_Overload>[過載警告]</WG_Overload>
 
   <WG_Performance>載荷空間</WG_Performance>

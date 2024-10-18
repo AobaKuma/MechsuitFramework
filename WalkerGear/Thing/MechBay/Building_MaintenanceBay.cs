@@ -28,7 +28,7 @@ namespace WalkerGear
                 return cacheByFacilities;
             }
         }
-        public bool CanRepair => this.Faction.IsPlayer && this.GetInspectTabs().Where(tab=>tab is ITab_MechGear).Any() && autoRepair;//臨時停機點不能修。
+        public bool CanRepair => Faction.IsPlayer && !GetInspectTabs().EnumerableNullOrEmpty()&& GetInspectTabs().Any(tab => tab is ITab_MechGear) && autoRepair;//臨時停機點不能修。
         public bool NeedRepair //只要有一個需要修，那就能修。
         {
             get
@@ -41,6 +41,7 @@ namespace WalkerGear
                     if (comp == null) continue;
                     if (comp.HP < comp.MaxHP)
                     {
+                        LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_Repair"), OpportunityType.Important);
                         return true;
                     }
                 }
@@ -79,7 +80,6 @@ namespace WalkerGear
             }
         }
         public bool PowerOn => PowerTraderComp.PowerOn;
-
         //methods override
         public override IEnumerable<Gizmo> GetGizmos()
         {
@@ -175,7 +175,7 @@ namespace WalkerGear
         {
             base.ExposeData();
             Scribe_Deep.Look(ref cachePawn, "cachedPawn");
-            Scribe_Values.Look(ref autoRepair, "autoRepair");
+            Scribe_Values.Look(ref autoRepair, "autoRepair",true);
             SetItabCacheDirty();
         }
     }
@@ -449,6 +449,7 @@ namespace WalkerGear
             {
                 pawnsInBuilding.Add(Dummy);
             }
+            LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LinkBuilding"), OpportunityType.GoodToKnow);
         }
         public Pawn Dummy
         {

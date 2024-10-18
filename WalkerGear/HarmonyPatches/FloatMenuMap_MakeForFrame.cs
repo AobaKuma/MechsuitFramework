@@ -42,6 +42,8 @@ namespace WalkerGear
                             opts.Add(option);
                         }
                     }
+
+                    LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Frame_Capture"), OpportunityType.Important);
                     //敵方龍騎兵的話得就地拆，對敵我皆可使用
                     opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("WG_Job_DisassembleFrame".Translate(), delegate
                     {

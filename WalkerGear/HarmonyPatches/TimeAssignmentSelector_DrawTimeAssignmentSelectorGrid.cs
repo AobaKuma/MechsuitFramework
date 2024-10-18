@@ -39,7 +39,7 @@ namespace WalkerGear
         [HarmonyPostfix]
         static void DrawTimeAssignmentSelectorGrid(Rect rect)
         {
-            rect.yMax -= 2f;
+            //rect.yMax -= 2f;
             Rect rect2 = rect;
             rect2.xMax = rect2.center.x;
             rect2.yMax = rect2.center.y;

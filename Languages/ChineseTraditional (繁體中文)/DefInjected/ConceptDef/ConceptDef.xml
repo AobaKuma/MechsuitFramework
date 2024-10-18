@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: capture a downed pilot -->
+  <WG_Frame_Capture.label>俘虜一位駕駛員</WG_Frame_Capture.label>
+  <!-- EN: It's impossible to imprison a frame pilot, they can just break out the door with ease. select your pawn, and right-click a downed enemy frame to make a job to disassemble it so you can remove the pilot from their frame. -->
+  <WG_Frame_Capture.helpText>很可惜你並沒有辦法俘虜一位駕駛步行框架的駕駛員，因為他們太重了，並且能輕易的打碎牆壁。但你可以命令你的殖民者使用工具來將這些封閉於裝甲內的駕駛撬出來，並回收裝甲服的部分模塊或資源。</WG_Frame_Capture.helpText>
+  
+  <!-- EN: Pilot schedule -->
+  <WG_Frame_PilotSchedule.label>駕駛排程</WG_Frame_PilotSchedule.label>
+  <!-- EN: You can designate pawn to automatic pilot on frame by setting their time schedule to Pilot and assigning them a gantry or parking spot with frame. -->
+  <WG_Frame_PilotSchedule.helpText>你可以透過將殖民者的時間表設定為「駕駛」並為其分配龍門架或停泊點來讓他們自動上下步行框架。如果駕駛員既沒有被分配為「駕駛」或「任意」那麼他們將嘗試將駕駛的框架停靠到可用的停泊點或龍門架上。</WG_Frame_PilotSchedule.helpText>
+  
+  <!-- EN: Disabled frame -->
+  <WG_Frame_Wreckage.label>殘骸</WG_Frame_Wreckage.label>
+  <!-- EN: When the structure point is empty, the frame will be totally disabled and turn into a wreckage, this doesn't mean the pilot is dead, you can still rescue them by ordering your pawn to open it. -->
+  <WG_Frame_Wreckage.helpText>在結構點歸零後框架將被摧毀並變成殘骸，當然這並不意味著駕駛員已經陣亡，仍然可以透過命令殖民者打開殘骸來營救他們。</WG_Frame_Wreckage.helpText>
+  
+  <!-- EN: Module storage -->
+  <WG_Gantry_LinkBuilding.label>模塊存取</WG_Gantry_LinkBuilding.label>
+  <!-- EN: The gantry will only show modules from connected module storage, so make sure you have module storage connected before opening the customization menu. -->
+  <WG_Gantry_LinkBuilding.helpText>龍門架需要與存儲了模塊的模塊櫃連接，因此請在開啟整備介面前確定與模組櫃具有有效連接。</WG_Gantry_LinkBuilding.helpText>
+  
+  <!-- EN: Loading module -->
+  <WG_Gantry_LoadModule.label>安裝模塊</WG_Gantry_LoadModule.label>
+  <!-- EN: By right click slot, a floating menu will show you what's available to this slot, and some of the slots can make more slots available, and some may disable other slots. -->
+  <WG_Gantry_LoadModule.helpText>透過右鍵單擊插槽，浮動選單將顯示該插槽可用的模塊，有些插槽可以使更多插槽可用，而有些插槽可能會停用其他插槽。\n\n你可以在模塊的物品詳情中查看該模塊的佔用位置與效果。</WG_Gantry_LoadModule.helpText>
+  
+  <!-- EN: Overloaded -->
+  <WG_Gantry_Overloaded.label>超載</WG_Gantry_Overloaded.label>
+  <!-- EN: If the loaded weight is more than the frame can handle, then the frame will be overloaded, you can still pilot it but it means you have no carrying capacity also with only 50% of the moving speed. -->
+  <WG_Gantry_Overloaded.helpText>如果裝載的重量超過了框架的承受能力那麼就會超載，駕駛員仍然可以駕駛它。但這意味著沒有額外攜帶其他東西的能力且移動速度將只有一半。</WG_Gantry_Overloaded.helpText>
+  
+  <!-- EN: Payload Capacity -->
+  <WG_Gantry_PayloadCapacity.label>有效載荷</WG_Gantry_PayloadCapacity.label>
+  <!-- EN: Every core frame had a maximum amount of power output, in short as payload capacity. every assembled module will be taking this capacity. -->
+  <WG_Gantry_PayloadCapacity.helpText>每個核心框架都有一個最大的功率輸出量，簡稱為有效載荷能力。每個安裝的模塊，包含核心模塊本身都將佔用此容量。</WG_Gantry_PayloadCapacity.helpText>
+  
+  <!-- EN: Repairing at gantry -->
+  <WG_Gantry_Repair.label>在龍門架上檢修</WG_Gantry_Repair.label>
+  <!-- EN: Pawn with crafting work will repair assembled modules at the gantry if auto repair is enabled, but this will take a longer working duration. -->
+  <WG_Gantry_Repair.helpText>如果啟用了自動修復選項，具有製造工作的殖民者將在龍門架上直接對裝載的機甲進行維修工作，但這將需要花費更長的工作時間。</WG_Gantry_Repair.helpText>
+  
+  <!-- EN: Repairing module -->
+  <WG_Module_Repair.label>模塊維修</WG_Module_Repair.label>
+  <!-- EN: Pawn with crafting work will take jobs to repair damaged modules, the repair speed is affected by pawn's work speed. -->
+  <WG_Module_Repair.helpText>具有製造工作的殖民者會對損壞的模塊進行維修工作，修復速度受棋子的工作速度影響。</WG_Module_Repair.helpText>
+  
+  <!-- EN: Module -->
+  <WG_ModuleItem.label>框架模塊</WG_ModuleItem.label>
+  <!-- EN: It looks like you acquired a module box, these types of items will only be useful when you have a gantry to assemble them, but you can also recycle them at the smelter if you have no technology to make good use of it. -->
+  <WG_ModuleItem.helpText>看起來你獲得了一個模塊零組件，這些類型的物品只有當你有龍門架來組裝它們時才有用，但如果你沒有技術來充分利用它們，你也可以在冶煉廠回收。</WG_ModuleItem.helpText>
+  
+  <!-- EN: Parking spot -->
+  <WG_ParkingSpot.label>停泊點</WG_ParkingSpot.label>
+  <!-- EN: this is a parking spot for temporary parking your frame. While working in the caravan site, it has no tools to repair the damaged parts but the pilot can get proper rest and medical treatment. -->
+  <WG_ParkingSpot.helpText>這是一個可以臨時停泊的位置。雖然沒有工具來修復損壞的部件，但下機的駕駛員可以得到適當的休息和醫療照護。</WG_ParkingSpot.helpText>
+  
+  <!-- EN: Walker Frame -->
+  <WG_WalkerFrame.label>步行框架</WG_WalkerFrame.label>
+  <!-- EN: It looks like you acquired the tech to produce a type of heavy exosuit, these suits are different from regular suits, and require a specific building to assemble and gear up or gear down. -->
+  <WG_WalkerFrame.helpText>看起來你獲得了生產機甲服的技術。機甲服與普通套裝不同，需要特定的建築來進行穿脫與自定義部位。</WG_WalkerFrame.helpText>
+  
+</LanguageData>

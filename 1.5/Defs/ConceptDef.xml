@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_ParkingSpot</defName>
+    <label>Parking spot</label>
+    <helpText>this is a parking spot for temporary parking your frame. While working in the caravan site, it has no tools to repair the damaged parts but the pilot can get proper rest and medical treatment.</helpText>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_WalkerFrame</defName>
+    <label>Walker Frame</label>
+    <helpText>It looks like you acquired the tech to produce a type of heavy exosuit, these suits are different from regular suits, and require a specific building to assemble and gear up or gear down.</helpText>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_ModuleItem</defName>
+    <label>Module</label>
+    <helpText>It looks like you acquired a module box, these types of items will only be useful when you have a gantry to assemble them, but you can also recycle them at the smelter if you have no technology to make good use of it.</helpText>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Module_Repair</defName>
+    <label>Repairing module</label>
+    <helpText>Pawn with crafting work will take jobs to repair damaged modules, the repair speed is affected by pawn's work speed.</helpText>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Frame_PilotSchedule</defName>
+    <label>Pilot schedule</label>
+    <helpText>You can designate a pawn to automatically pilot by setting their time schedule to "Pilot" and assigning them a gantry or parking spot, if a pilot has time assignment to neither "Pilot" nor "Any", they will try to dock their frame to any available spot or gantry.</helpText>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Frame_Wreckage</defName>
+    <label>Disabled frame</label>
+    <helpText>When the structure point is empty, frame will be totally disabled and turn into a wreckage, this doesn't mean the pilot is dead, you can still rescue them by ordering your pawn to open it.</helpText>
+  </ConceptDef>
+
+  <!-- will triggered by code -->
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Gantry_LinkBuilding</defName>
+    <label>Module storage</label>
+    <helpText>The gantry will only show modules from connected module storage, so make sure you have module storage connected before opening the customization menu.</helpText>
+  </ConceptDef>
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Gantry_LoadModule</defName>
+    <label>Loading module</label>
+    <helpText>By right click slot, a floating menu will show you what's available to this slot, and some of the slots can make more slots available, and some may disable other slots.</helpText>
+  </ConceptDef>
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Gantry_PayloadCapacity</defName>
+    <label>Payload Capacity</label>
+    <helpText>Every core frame had a maximum amount of power output, in short as payload capacity. every assembled module will be taking this capacity.</helpText>
+  </ConceptDef>
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Gantry_Overloaded</defName>
+    <label>Overloaded</label>
+    <helpText>If the loaded weight is more than the frame can handle, then the frame will be overloaded, you can still pilot it but it means you have no carrying capacity also with only 50% of the moving speed.</helpText>
+  </ConceptDef>
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Gantry_Repair</defName>
+    <label>Repairing at gantry</label>
+    <helpText>Pawn with crafting work will repair assembled modules at the gantry if auto repair is enabled, but this will take a longer working duration.</helpText>
+  </ConceptDef>
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>WG_Frame_Capture</defName>
+    <label>capture a downed pilot</label>
+    <helpText>It's impossible to imprison a frame pilot, they can just break out the door with ease. select your pawn, and right-click a downed enemy frame to make a job to disassemble it so you can remove the pilot from their frame.</helpText>
+  </ConceptDef>
+
+
+</Defs>

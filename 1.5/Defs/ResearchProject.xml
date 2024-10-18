@@ -11,6 +11,7 @@
     <techprintCount>1</techprintCount>
     <techprintCommonality>1</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
+    <teachConcept>WG_WalkerFrame</teachConcept>
     <prerequisites>
       <li>Prosthetics</li>
     </prerequisites>

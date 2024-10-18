@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: disassembling -->
+  <WG_DisassembleWalkerCore.reportString>disassembling</WG_DisassembleWalkerCore.reportString>
+  
+  <!-- EN: entering catapult -->
+  <WG_GetInEjector.reportString>entering catapult</WG_GetInEjector.reportString>
+  
+  <!-- EN: entering mecha suit -->
+  <WG_GetInWalkerCore.reportString>entering mecha suit</WG_GetInWalkerCore.reportString>
+  
+  <!-- EN: entering mecha suit -->
+  <WG_GetInWalkerCore_NonDrafted.reportString>entering mecha suit</WG_GetInWalkerCore_NonDrafted.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_GetOffWalkerCore.reportString>heading back to bay</WG_GetOffWalkerCore.reportString>
+  
+  <!-- EN: repairing TargetA. -->
+  <WG_RepairAtGantry.reportString>repairing TargetA.</WG_RepairAtGantry.reportString>
+  
+  <!-- EN: repairing TargetA. -->
+  <WG_RepairComponent.reportString>repairing TargetA.</WG_RepairComponent.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_ReturnToBay.reportString>heading back to bay</WG_ReturnToBay.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_TakeToMaintenanceBay.reportString>heading back to bay</WG_TakeToMaintenanceBay.reportString>
+  
+</LanguageData>

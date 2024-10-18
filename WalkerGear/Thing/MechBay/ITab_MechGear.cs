@@ -1,7 +1,9 @@
-﻿using RimWorld;
+﻿using Mono.Unix.Native;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 using Verse;
 using static Verse.Text;
@@ -36,6 +38,7 @@ namespace WalkerGear
                 var titleSize = CalcSize(title);
                 Widgets.LabelFit(new(new(inner.xMax - titleSize.x - 20f, inner.y), titleSize), title);
                 Anchor = TextAnchor.UpperLeft;
+                LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LoadModule"), this.Parent, OpportunityType.GoodToKnow);
             }
 
             //Draw S/L solution 由於這個還沒做所以就沒裝了
@@ -66,11 +69,12 @@ namespace WalkerGear
 
             if (!Parent.HasGearCore)
             {
-                string text = "right click the slot to load core module from linked storage.";
+                string text = "WG_BayTip".Translate();
                 Vector2 size = CalcSize(text);
                 Vector2 slPosition = new(14f, inner.y);
                 Rect slgizmoRect = new(slPosition, size);
                 Widgets.Label(slgizmoRect, text);
+                LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LoadModule"), this.Parent,OpportunityType.GoodToKnow);
                 return;
             }
             else
@@ -80,6 +84,7 @@ namespace WalkerGear
                 Vector2 slPosition = new(14f, inner.y);
                 Rect slgizmoRect = new(slPosition, size);
                 Widgets.Label(slgizmoRect, text);
+                LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_PayloadCapacity"), this.Parent, OpportunityType.GoodToKnow);
             }
 
             foreach (CompWalkerComponent slots in Parent.GetwalkerComponents()) //這樣寫主要是為了子模塊提供槽位的狀況。
@@ -290,6 +295,7 @@ namespace WalkerGear
             float loadPercent = CurrentLoad / MassCapacity;
             if (loadPercent >= 1)
             {
+                LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_Overloaded"), OpportunityType.Important);
                 row.FillableBar(rect.width, 16f, 1, $"{CurrentLoad} / {MassCapacity}" + " " + "WG_Overload".Translate(), Resources.BarOL, Resources.BarBG);
             }
             else
