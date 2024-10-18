@@ -11,7 +11,7 @@ using Verse.Sound;
 namespace WalkerGear
 {
     [StaticConstructorOnStartup]
-    public class DMS_PawnFlyer : PawnFlyer
+    public class WG_PawnFlyer : PawnFlyer
     {
         public ThingOwner<Thing> innerContainer;
 
@@ -132,7 +132,7 @@ namespace WalkerGear
             return innerContainer;
         }
 
-        public DMS_PawnFlyer()
+        public WG_PawnFlyer()
         {
             innerContainer = new ThingOwner<Thing>(this);
         }
@@ -209,7 +209,7 @@ namespace WalkerGear
                 pawn.DeSpawn();
                 GenSpawn.Spawn(pawn, new IntVec3(actionTarget.Cell.x, actionTarget.Cell.y, actionTarget.Cell.z + 25 < destMap.AllCells.MaxBy(o => o.z).z ? actionTarget.Cell.z + 25 : destMap.AllCells.MaxBy(o => o.z).z), destMap);
                 pawn.Rotation = Rot4.South;
-                DMS_AbilityVerb_QuickJump.DoJump(pawn, destMap, target, actionTarget.Cell, true, false);
+                WG_AbilityVerb_QuickJump.DoJump(pawn, destMap, target, actionTarget.Cell, true, false);
                 return;
             }
             GenExplosion.DoExplosion(actionTarget.Cell, destMap, 8, DefDatabase<DamageDef>.GetNamed("Bomb"), null, 50, -1, null, null, null, null, null, 0, 1, null, false, null, 0, 1, 0, false, null, new List<Thing> { pawn }, null, true, 1, 1);
@@ -563,9 +563,9 @@ namespace WalkerGear
             }
         }
 
-        public static DMS_PawnFlyer MakeFlyer(ThingDef flyingDef, Pawn pawn, IntVec3 destCell, LocalTargetInfo actionTarget, Map destMap, EffecterDef flightEffecterDef, SoundDef landingSound, bool isLanding, bool isToMap, bool flyWithCarriedThing = false, Vector3? overrideStartVec = null, Ability triggeringAbility = null, LocalTargetInfo target = default(LocalTargetInfo))
+        public static WG_PawnFlyer MakeFlyer(ThingDef flyingDef, Pawn pawn, IntVec3 destCell, LocalTargetInfo actionTarget, Map destMap, EffecterDef flightEffecterDef, SoundDef landingSound, bool isLanding, bool isToMap, bool flyWithCarriedThing = false, Vector3? overrideStartVec = null, Ability triggeringAbility = null, LocalTargetInfo target = default(LocalTargetInfo))
         {
-            DMS_PawnFlyer pawnFlyer = (DMS_PawnFlyer)ThingMaker.MakeThing(flyingDef);
+            WG_PawnFlyer pawnFlyer = (WG_PawnFlyer)ThingMaker.MakeThing(flyingDef);
             pawnFlyer.startVec = overrideStartVec ?? pawn.TrueCenter();
             pawnFlyer.Rotation = Rot4.North;
             pawnFlyer.flightDistance = pawn.Position.DistanceTo(destCell);

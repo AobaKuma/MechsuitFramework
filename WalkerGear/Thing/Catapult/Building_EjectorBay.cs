@@ -100,7 +100,7 @@ namespace WalkerGear
                         GenDrop.TryDropSpawn(p, Position, Map, ThingPlaceMode.Direct, out var _);
                         ReadyToEject = true;
                         float z = p.Position.z;
-                        DMS_AbilityVerb_QuickJump.DoJump(p, destMap, target, new LocalTargetInfo(new IntVec3(p.Position.x, p.Position.y, (p.Position.z + 25) < destMap.AllCells.MaxBy(o => o.z).z ? (p.Position.z + 25) : destMap.AllCells.MaxBy(o => o.z).z)), false, false);
+                        WG_AbilityVerb_QuickJump.DoJump(p, destMap, target, new LocalTargetInfo(new IntVec3(p.Position.x, p.Position.y, (p.Position.z + 25) < destMap.AllCells.MaxBy(o => o.z).z ? (p.Position.z + 25) : destMap.AllCells.MaxBy(o => o.z).z)), false, false);
                     }
                 };
                 yield return command_Eject;
@@ -121,7 +121,7 @@ namespace WalkerGear
                         GenDrop.TryDropSpawn(p, Position, Map, ThingPlaceMode.Direct, out var _);
                         ReadyToEject = true;
                         float z = p.Position.z;
-                        DMS_AbilityVerb_QuickJump.DoJump(p, destMap
+                        WG_AbilityVerb_QuickJump.DoJump(p, destMap
                             , new LocalTargetInfo(new IntVec3(p.Position.x, p.Position.y, (p.Position.z + 25) < destMap.AllCells.MaxBy(o => o.z).z ? (p.Position.z + 25) : destMap.AllCells.MaxBy(o => o.z).z))
                             , new LocalTargetInfo(new IntVec3(p.Position.x, p.Position.y, (p.Position.z + 25) < destMap.AllCells.MaxBy(o => o.z).z ? (p.Position.z + 25) : destMap.AllCells.MaxBy(o => o.z).z))
                             , true, true);

@@ -9,7 +9,7 @@ using RimWorld.Utility;
 
 namespace WalkerGear
 {
-    public class DMS_AbilityVerb_QuickJump : Verb_CastAbility
+    public class WG_AbilityVerb_QuickJump : Verb_CastAbility
     {
         private float cachedEffectiveRange = -1f;
 
@@ -63,7 +63,7 @@ namespace WalkerGear
             IntVec3 cell = currentTarget.Cell;
             Map map = pawn.Map;
             bool flag = Find.Selector.IsSelected(pawn);
-            DMS_PawnFlyer pawnFlyer = DMS_PawnFlyer.MakeFlyer(ThingDefOf.DMS_PawnFlyer, pawn, cell, actionTarget, targetMap, DefDatabase<EffecterDef>.GetNamed("JumpMechFlightEffect"), SoundDefOf.TabClose, isLanding, isToMap, true);
+            WG_PawnFlyer pawnFlyer = WG_PawnFlyer.MakeFlyer(ThingDefOf.WG_PawnFlyer, pawn, cell, actionTarget, targetMap, DefDatabase<EffecterDef>.GetNamed("JumpMechFlightEffect"), SoundDefOf.TabClose, isLanding, isToMap, true);
             pawnFlyer.eBay = targetMap.listerBuildings.allBuildingsColonist.FirstOrDefault(o => o.GetType() == typeof(Building_EjectorBay));
 
             if (pawnFlyer != null)
@@ -87,7 +87,7 @@ namespace WalkerGear
             IntVec3 cell = currentTarget.Cell;
             Map map = pawn.Map;
             bool flag = Find.Selector.IsSelected(pawn);
-            DMS_PawnFlyer pawnFlyer = DMS_PawnFlyer.MakeFlyer(ThingDefOf.DMS_PawnFlyer, pawn, cell, actionTarget, targetMap, DefDatabase<EffecterDef>.GetNamed("JumpMechFlightEffect"), SoundDefOf.TabClose, isLanding, true);
+            WG_PawnFlyer pawnFlyer = WG_PawnFlyer.MakeFlyer(ThingDefOf.WG_PawnFlyer, pawn, cell, actionTarget, targetMap, DefDatabase<EffecterDef>.GetNamed("JumpMechFlightEffect"), SoundDefOf.TabClose, isLanding, true);
             if (pawnFlyer != null)
             {
                 FleckMaker.ThrowDustPuff(position.ToVector3Shifted() + Gen.RandomHorizontalVector(0.5f), map, 2f);

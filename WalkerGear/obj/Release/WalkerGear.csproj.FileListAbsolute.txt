@@ -38,3 +38,9 @@ D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-MobileDragoon\WalkerGea
 D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-MobileDragoon\WalkerGear\obj\Release\WalkerGear.sourcelink.json
 D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-MobileDragoon\1.5\Assemblies\WalkerGear.pdb
 D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-MobileDragoon\WalkerGear\obj\Release\WalkerGear.pdb
+D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\1.5\Assemblies\WalkerGear.pdb
+D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.GeneratedMSBuildEditorConfig.editorconfig
+D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.AssemblyInfoInputs.cache
+D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.AssemblyInfo.cs
+D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.sourcelink.json
+D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.pdb
