@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Left Arm -->
+  <ArmLeft.label>左臂</ArmLeft.label>
+  <ArmLeft.description>实用工具的挂载点。步行框架的不对称设计使其并没有一个完整的左机械手臂，而是一个能有限活动并能够安装模块的活动安装点。</ArmLeft.description>
+  
+  <!-- EN: Right Arm -->
+  <ArmRight.label>右臂</ArmRight.label>
+  <!-- EN: The equipment slot. walker frame has a robotic arm for equipment holding and capable to do some complex duty. -->
+  <ArmRight.description>大型装备的挂载点。步行框架有一个较为完整的右臂与五只手指来进行握持与精密操作。</ArmRight.description>
+  
+  <!-- EN: Attachment -->
+  <Attachment.label>背挂</Attachment.label>
+  <Attachment.description>背挂槽（也称为背包槽）位於框架的背部位置，并具有从附加助力骨骼到逃生装置等许多实用的模块。</Attachment.description>
+  
+  <!-- EN: Core -->
+  <Core.label>核心</Core.label>
+  <!-- EN: The core slot of walker frame, which is the most important part of an operation-ready mech. -->
+  <Core.description>机甲核心骨架，集成了一个外骨骼机甲服应有的动力结构与控制系统。</Core.description>
+  
+  <!-- EN: Head -->
+  <Head.label>头部</Head.label>
+  <!-- EN: The sensor module slot. not always a helmet but its located on the top of the body frame. -->
+  <Head.description>顶部模块槽。虽然并不总是头盔，但它位於框架本身的顶部位置。</Head.description>
+  
+  <!-- EN: Left Mount -->
+  <MountLeft.label>左挂载</MountLeft.label>
+  <!-- EN: The ability gear slot, which can hold launchers or special device modules that can play a role beyond expectations in the right situation. -->
+  <MountLeft.description>左肩挂载槽，其不对称的设计使其能容纳大型发射具或特殊装置模块，以在适当的情况下能发挥超出预期的作用。</MountLeft.description>
+  
+  <!-- EN: Right Mount -->
+  <MountRight.label>右挂载</MountRight.label>
+  <!-- EN: The right shoulder mount slot, it ususally capable to hold an automatic turret, or support a large pack with pack module. -->
+  <MountRight.description>左肩挂载槽，通常能够容纳具备自动锁敌能力炮塔，或具有辅助功能的额外模块。</MountRight.description>
+  
+</LanguageData>

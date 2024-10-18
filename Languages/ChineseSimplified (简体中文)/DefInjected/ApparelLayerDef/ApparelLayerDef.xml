@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: attachment modules -->
+  <WG_WalkerGearLayer.label>附加模块</WG_WalkerGearLayer.label>
+  
+  <!-- EN: core modules -->
+  <WG_WalkerGearLayer_Core.label>核心模块 </WG_WalkerGearLayer_Core.label>
+  
+  <!-- EN: utility modules -->
+  <WG_WalkerGearLayer_Utility.label>通用模块</WG_WalkerGearLayer_Utility.label>
+  
+</LanguageData>

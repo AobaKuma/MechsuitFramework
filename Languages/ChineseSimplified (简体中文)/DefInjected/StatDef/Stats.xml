@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: module slot -->
+  <MF_Stat_Module.label>模块槽</MF_Stat_Module.label>
+  <!-- EN: the taken slot of this module, a module might take multiple slots. -->
+  <MF_Stat_Module.description>该模块所占用的模块位置，一个模块也可能同时占用多个位置。</MF_Stat_Module.description>
+  
+</LanguageData>

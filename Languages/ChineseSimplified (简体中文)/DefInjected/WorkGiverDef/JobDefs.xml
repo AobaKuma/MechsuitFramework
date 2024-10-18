@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: repair damaged things -->
+  <WG_MaintainComponent.label>检修受损模块</WG_MaintainComponent.label>
+  <!-- EN: repairing -->
+  <WG_MaintainComponent.gerund>维修中</WG_MaintainComponent.gerund>
+  <!-- EN: repair -->
+  <WG_MaintainComponent.verb>检修</WG_MaintainComponent.verb>
+  
+  <!-- EN: repair module at gantry -->
+  <WG_RepairAtGantry.label>检修受损模块</WG_RepairAtGantry.label>
+  <!-- EN: repairing -->
+  <WG_RepairAtGantry.gerund>维修中</WG_RepairAtGantry.gerund>
+  <!-- EN: repair -->
+  <WG_RepairAtGantry.verb>检修</WG_RepairAtGantry.verb>
+  
+</LanguageData>

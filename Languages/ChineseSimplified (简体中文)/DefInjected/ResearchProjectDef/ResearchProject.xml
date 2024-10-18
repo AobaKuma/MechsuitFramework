@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: walker frame -->
+  <WG_HeavyExoskeleton.label>步行框架</WG_HeavyExoskeleton.label>
+  <!-- EN: A primitive and bulky heavy-duty exoskeleton. Although such large wearable exoskeletons have been repeatedly invented since the 22nd century, their design and technical foundations are interoperable.\n\nThe application environment of powered frames in the military is close to small mechas or some genetically modified large humanoid soldiers. Still, its degree of automation is low and requires pilot to use full body control, and relies on a specialized maintenance platform to put on and take off. -->
+  <WG_HeavyExoskeleton.description>一种原始且笨重的大型外骨骼。虽然这种大型穿戴式外骨骼自22世纪以来便不断的被重复发明，但大体上的设计和技术基础都能够互通。 \n\n步行框架在军队中的应用环境接近小型机甲或一些基因改造大型人形士兵。但其自动化程度较低，需要驾驶员全身控制并依靠专门的维修平台进行登机与整备。</WG_HeavyExoskeleton.description>
+  <WG_HeavyExoskeleton.generalRules.rulesStrings>
+    
+  </WG_HeavyExoskeleton.generalRules.rulesStrings>
+  
+</LanguageData>
