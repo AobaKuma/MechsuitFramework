@@ -17,7 +17,7 @@ namespace WalkerGear
             this.FailOnDespawnedNullOrForbidden(maintenanceBay);
 
             yield return Toils_Goto.GotoThing(maintenanceBay, PathEndMode.InteractionCell);
-            yield return Toils_General.WaitWith(TargetIndex.A, wait, true, true);
+            yield return Toils_General.WaitWith(TargetIndex.A, Wait, true, true);
             Toil gearUp = new()
             {
                 initAction = () =>
@@ -37,20 +37,20 @@ namespace WalkerGear
     public class JobDriver_GetInWalkerCore : JobDriver
     {
         protected const TargetIndex maintenanceBay = TargetIndex.A;
-        protected Building_MaintenanceBay bay => this.job.GetTarget(maintenanceBay).Thing as Building_MaintenanceBay;
-        protected const int wait = 200;
+        protected Building_MaintenanceBay Bay => this.job.GetTarget(maintenanceBay).Thing as Building_MaintenanceBay;
+        protected int Wait => (int)(200 + 200 * (1 - Bay.GetStatValue(StatDefOf.WorkTableWorkSpeedFactor, true)));
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
 
-            if (!bay.CanGear(pawn))
+            if (!Bay.CanGear(pawn))
             {
                 Messages.Message("WG_ApparelLayerTaken".Translate(GetActor().Name.ToString()), MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 
-            if (bay.GetGearCore.def.HasModExtension<ModExtWalkerCore>())
+            if (Bay.GetGearCore.def.HasModExtension<ModExtWalkerCore>())
             {
-                ModExtWalkerCore mod = bay.GetGearCore.def.GetModExtension<ModExtWalkerCore>();
+                ModExtWalkerCore mod = Bay.GetGearCore.def.GetModExtension<ModExtWalkerCore>();
                 if (mod.RequireAdult && !pawn.DevelopmentalStage.Adult())
                 {
                     Messages.Message("WG_TooYoungToPilot".Translate(GetActor().Name.ToString()), MessageTypeDefOf.RejectInput, false);
@@ -95,7 +95,7 @@ namespace WalkerGear
             this.FailOnDespawnedNullOrForbidden(maintenanceBay);
 
             yield return Toils_Goto.GotoThing(maintenanceBay, PathEndMode.InteractionCell);
-            yield return Toils_General.WaitWith(TargetIndex.A, wait, true, true);
+            yield return Toils_General.WaitWith(TargetIndex.A, Wait, true, true);
             Toil gearUp = new()
             {
                 initAction = () =>

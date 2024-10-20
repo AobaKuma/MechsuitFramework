@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 using Verse.AI;
+using static UnityEngine.GraphicsBuffer;
 
 namespace WalkerGear
 {
     //WG_GetOffWalkerCore;
     public class JobDriver_GetOffWalkerCore : JobDriver
     {
-        private const TargetIndex maintenanceBay = TargetIndex.A;
-        private Building_MaintenanceBay Building => (Building_MaintenanceBay)job.GetTarget(TargetIndex.A).Thing;
-        private const int wait = 200;
+        protected const TargetIndex maintenanceBay = TargetIndex.A;
+        protected Building_MaintenanceBay Bay => (Building_MaintenanceBay)job.GetTarget(TargetIndex.A).Thing;
+        protected int Wait => (int)(200 + 200 * (1 - Bay.GetStatValue(StatDefOf.WorkTableWorkSpeedFactor, true)));
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -20,14 +23,20 @@ namespace WalkerGear
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(maintenanceBay);
-            yield return Toils_Goto.GotoThing(maintenanceBay, PathEndMode.InteractionCell);
-            yield return Toils_General.WaitWith(maintenanceBay, wait, true, true, face: TargetIndex.A);
+            yield return Toils_Goto.GotoThing(maintenanceBay, Bay.Position);
+            Toil toilWait = Toils_General.WaitWith(maintenanceBay, Wait, true);
+            toilWait.tickAction = () =>
+            {
+                Log.Message(Bay.Rotation);
+                GetActor().rotationTracker.FaceCell(Bay.Position + Bay.rotationInt.FacingCell);
+            };
+            yield return toilWait;
             Toil gearDown = new()
             {
                 initAction = () =>
                 {
                     Pawn actor = this.pawn;
-                    Building.GearDown(actor);
+                    Bay.GearDown(actor);
                     actor.drafter.Drafted = false;//自動解除徵招
                 }
             };

@@ -289,7 +289,7 @@
       <li Class="CompProperties_Facility">
         <maxSimultaneous>4</maxSimultaneous>
         <statOffsets>
-          <WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
+          <WorkTableWorkSpeedFactor>0.1</WorkTableWorkSpeedFactor>
         </statOffsets>
       </li>
       <li Class="WalkerGear.CompProperties_BuildingExtraRenderer">
@@ -321,7 +321,7 @@
       <li Class="CompProperties_Facility">
         <maxSimultaneous>4</maxSimultaneous>
         <statOffsets>
-          <WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
+          <WorkTableWorkSpeedFactor>0.1</WorkTableWorkSpeedFactor>
         </statOffsets>
       </li>
       <li Class="WalkerGear.CompProperties_BuildingExtraRenderer">
