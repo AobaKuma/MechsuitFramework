@@ -89,6 +89,7 @@ namespace WalkerGear
                 Command_Target command_GetIn = new()
                 {
                     defaultLabel = "WG_GetIn".Translate(),
+                    icon = Resources.WG_GetInWalker,
                     targetingParams = TargetingParameters.ForPawns(),
                     action = (tar) =>
                     {
