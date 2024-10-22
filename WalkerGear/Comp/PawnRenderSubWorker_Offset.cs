@@ -45,6 +45,19 @@ namespace WalkerGear
                 layer = ext.headData.LayerForRot(parms.facing, layer);
             }
         }
+        public override bool CanDrawNowSub(PawnRenderNode node, PawnDrawParms parms)
+        {
+            Apparel p = parms.pawn.apparel.WornApparel.FirstOrDefault(a => a is WalkerGear_Core c);
+            if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
+            {
+                var ext = p.def.GetModExtension<ApparelRenderOffsets>();
+                if (!ext.headHideFor.NullOrEmpty() && ext.headHideFor.Contains(parms.facing))
+                {
+                    return false;
+                }
+            }
+            return base.CanDrawNowSub(node, parms);
+        }
     }
     public class PawnRenderSubWorker_OffsetRoot : PawnRenderSubWorker
     {
@@ -54,7 +67,7 @@ namespace WalkerGear
             if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
             {
                 var ext = p.def.GetModExtension<ApparelRenderOffsets>();
-                offset = ext.rootData.OffsetForRot(parms.facing) == Vector3.zero ? offset : ext.rootData.OffsetForRot(parms.facing); 
+                offset = ext.rootData.OffsetForRot(parms.facing) == Vector3.zero ? offset : ext.rootData.OffsetForRot(parms.facing);
             }
         }
         public override void TransformLayer(PawnRenderNode node, PawnDrawParms parms, ref float layer)
@@ -70,6 +83,7 @@ namespace WalkerGear
     public class ApparelRenderOffsets : DefModExtension
     {
         public DrawData headData;
+        public List<Rot4> headHideFor = null;
         public DrawData rootData;
     }
 }

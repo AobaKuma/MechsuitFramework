@@ -17,12 +17,12 @@
   <MF_Building_ParkingSpot.description>指定用於让驾驶员临时下机的停泊点。机甲驾驶员可以将框架停留在此来上床休息或接受治疗。但由於缺乏相关设备因此无法卸下模块进行维修或替换，并需要较长的登机时间。</MF_Building_ParkingSpot.description>
   
   <!-- EN: scaffold -->
-  <MF_Building_Scaffold.label>鹰架</MF_Building_Scaffold.label>
+  <MF_Building_Scaffold.label>脚手架</MF_Building_Scaffold.label>
   <!-- EN: Metal scaffolding used to facilitate maintenance and disassembly during mecha maintenance, which can effectively reduce the work time of installation and disassembly. Each rack can be connected to up to 4 scaffolds. -->
   <MF_Building_Scaffold.description>检修时使用的金属鹰架，便於维修和拆卸也可有效减少登机时间。每个龙门架最多可连接4个鹰架。</MF_Building_Scaffold.description>
   
   <!-- EN: scaffold stair -->
-  <MF_Building_ScaffoldStair.label>鹰架阶梯</MF_Building_ScaffoldStair.label>
+  <MF_Building_ScaffoldStair.label>脚手架阶梯</MF_Building_ScaffoldStair.label>
   <!-- EN: Metal scaffolding used to facilitate maintenance and disassembly during mecha maintenance, which can effectively reduce the work time of installation and disassembly. Each rack can be connected to up to 4 scaffolds. -->
   <MF_Building_ScaffoldStair.description>检修时使用的金属鹰架，便於维修和拆卸也可有效减少登机时间。每个龙门架最多可连接4个鹰架。</MF_Building_ScaffoldStair.description>
   

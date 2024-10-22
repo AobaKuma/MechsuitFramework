@@ -51,7 +51,7 @@ namespace WalkerGear
                 }
             };
             repair.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-            repair.WithEffect(EffecterDefOf.MechRepairing, TargetIndex.A);
+            repair.WithEffect(EffecterDefOf.ConstructMetal, TargetIndex.A);
             repair.defaultCompleteMode = ToilCompleteMode.Never;
             repair.activeSkill = () => SkillDefOf.Crafting;
             repair.handlingFacing = true;
