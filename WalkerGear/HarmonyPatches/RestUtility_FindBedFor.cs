@@ -47,7 +47,7 @@ namespace WalkerGear
         [HarmonyPostfix]
         static void Postfix(Pawn target, ref FloatMenuOption option)
         {
-            if (target.apparel !=null && !target.NonHumanlikeOrWildMan() && MechUtility.PawnWearingWalkerCore(target))
+            if (MechUtility.PawnWearingWalkerCore(target))
             {
                 option.Disabled = true;
                 option.Label = "WG_Disabled_VictimInWalkerCore".Translate();

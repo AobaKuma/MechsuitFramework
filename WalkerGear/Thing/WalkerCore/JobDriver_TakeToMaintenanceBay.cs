@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
-using static UnityEngine.GraphicsBuffer;
-
 namespace WalkerGear
 {
     /// <summary>

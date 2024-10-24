@@ -47,6 +47,11 @@ namespace WalkerGear
                 Messages.Message("WG_ApparelLayerTaken".Translate(GetActor().Name.ToString()), MessageTypeDefOf.RejectInput, false);
                 return false;
             }
+            if (!Bay.HasGearCore)
+            {
+                Log.Error("Bay have no Gear but chosen as target!");
+                return false;
+            }
 
             if (Bay.GetGearCore.def.HasModExtension<ModExtWalkerCore>())
             {
@@ -88,6 +93,7 @@ namespace WalkerGear
                     return false;
                 }
             }
+
             return this.pawn.Reserve(this.job.GetTarget(maintenanceBay), this.job, errorOnFailed: errorOnFailed);
         }
         protected override IEnumerable<Toil> MakeNewToils()

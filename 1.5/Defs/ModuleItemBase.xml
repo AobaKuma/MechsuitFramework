@@ -34,6 +34,10 @@
       <Flammability>0.0</Flammability>
       <Beauty>-3</Beauty>
     </statBases>
+    <recipeMaker>
+      <workSkill>Crafting</workSkill>
+      <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+    </recipeMaker>
     <tickerType>Never</tickerType>
     <burnableByRecipe>false</burnableByRecipe>
     <smeltable>true</smeltable>

@@ -27,7 +27,7 @@ namespace WalkerGear
             Toil toilWait = Toils_General.WaitWith(maintenanceBay, Wait, true);
             toilWait.tickAction = () =>
             {
-                Log.Message(Bay.Rotation);
+                //Log.Message(Bay.Rotation);
                 GetActor().rotationTracker.FaceCell(Bay.Position + Bay.rotationInt.FacingCell);
             };
             yield return toilWait;

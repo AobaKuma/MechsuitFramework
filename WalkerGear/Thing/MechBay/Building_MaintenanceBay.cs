@@ -59,6 +59,7 @@ namespace WalkerGear
                 if (comp.HP < comp.MaxHP)
                 {
                     comp.HP++;
+                    TryUpdateOccupiedSlotsCache(true);
                     return;
                 }
             }
@@ -405,7 +406,9 @@ namespace WalkerGear
                 foreach (var item in pawn.apparel.WornApparel)
                 {
                     if (!ApparelUtility.CanWearTogether(item.def, a.def, pawn.RaceProps.body) && pawn.apparel.IsLocked(item))
-                        return;
+                    {
+                        Log.Error(item.def.defName + "Can not wear together with: " + a.def.defName);
+                    }
                 }
             }
             for (int i = ModuleStorage.Count - 1; i >= 0; i--)

@@ -35,15 +35,14 @@ namespace WalkerGear
         public CompProperties_ForceUseWeapon Props => (CompProperties_ForceUseWeapon)props;
         public override void Notify_Equipped(Pawn pawn)
         {
-            base.Notify_Equipped(pawn);
-            NeedRemoveWeapon = false;
-            //pawn.equipment.MakeRoomFor(Weapon);
             if (pawn.equipment.Primary != null)
             {
                 ThingWithComps i = pawn.equipment.Primary;
                 pawn.equipment.Remove(i);
                 pawn.inventory.TryAddAndUnforbid(i);
             }
+            base.Notify_Equipped(pawn);
+            NeedRemoveWeapon = false;
             pawn.equipment.AddEquipment(Weapon);
             weaponStorage = null;
         }

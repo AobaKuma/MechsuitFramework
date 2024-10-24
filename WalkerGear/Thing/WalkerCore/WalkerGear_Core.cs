@@ -104,6 +104,15 @@ namespace WalkerGear
             }
             return true;
         }
+        protected float ArmorBreakdownThreshold()
+        {
+            var mod = this.def.GetModExtension<ModExtWalkerCore>();
+            if (mod != null)
+            {
+                return mod.minArmorBreakdownThreshold;
+            }
+            else return 0.25f;
+        }
         public float GetPostArmorDamage(ref DamageInfo dinfo)
         {
             float amount = dinfo.Amount;

@@ -2,23 +2,40 @@
 using RimWorld.BaseGen;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 using Verse;
 using Verse.AI;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 namespace WalkerGear
 {
     [StaticConstructorOnStartup]
     public static class MechUtility
     {
-        public static List<ThingDef> bayDefs;
-        public static List<ThingDef> coreDefs;
-        static MechUtility()
+        public static bool HasCore(this List<Apparel> things)
         {
-            bayDefs = DefDatabase<ThingDef>.AllDefs.Where((ThingDef def) => def.thingClass.IsSubclassOf(typeof(Building_MaintenanceBay)) || def.thingClass == typeof(WalkerGear_Core)).ToList();
-            coreDefs = DefDatabase<ThingDef>.AllDefs.Where((ThingDef def) => def.thingClass.IsSubclassOf(typeof(WalkerGear_Core)) || def.thingClass == typeof(WalkerGear_Core)).ToList();
+            foreach (Thing thing in things)
+            {
+                if (thing.GetType().IsSubclassOf(typeof(WalkerGear_Core)) || thing.GetType() == typeof(WalkerGear_Core))
+                { 
+                return true;
+                }
+            }
+            return false;
+        }
+        public static bool HasCore(this List<Apparel> things, out WalkerGear_Core core)
+        {
+            core = null;
+            if(things.NullOrEmpty()) return false;
+
+            foreach (Thing thing in things)
+            {
+                if (thing.GetType().IsSubclassOf(typeof(WalkerGear_Core)) || thing.GetType() == typeof(WalkerGear_Core))
+                {
+                    core = thing as WalkerGear_Core;
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static List<Building_MaintenanceBay> GetBaysFromMap(Map map) { return map.listerBuildings.AllBuildingsColonistOfClass<Building_MaintenanceBay>().ToList(); }
@@ -46,7 +63,7 @@ namespace WalkerGear
             var AssignedBays = bays.Where(b => b.TryGetComp<CompAssignableToPawn_Parking>(out var comp) && comp.AssignedPawns.Contains(pawn) && b.HasGearCore);
             if (!AssignedBays.Any()) return null;
 
-            return GenClosest.ClosestThing_Global_Reachable(pawn.PositionHeld, pawn.MapHeld, bays, PathEndMode.InteractionCell, TraverseParms.For(pawn), 9999f, validator: c => (c as Building_MaintenanceBay).CanGear(pawn) && pawn.CanReserveAndReach(c, PathEndMode.InteractionCell, Danger.Deadly));
+            return GenClosest.ClosestThing_Global_Reachable(pawn.PositionHeld, pawn.MapHeld, AssignedBays, PathEndMode.InteractionCell, TraverseParms.For(pawn), 9999f, validator: c => (c as Building_MaintenanceBay).CanGear(pawn) && pawn.CanReserveAndReach(c, PathEndMode.InteractionCell, Danger.Deadly));
         }
 
         public static void WeaponDropCheck(Pawn pawn)
@@ -79,19 +96,16 @@ namespace WalkerGear
         {
             if (pawn == null) return false;
             if (pawn.NonHumanlikeOrWildMan()) return false;
-
-            if (pawn.apparel.WornApparel.ContainsAny(c => coreDefs.Contains(c.def))) return true;
-            return false;
+            if(pawn.apparel ==null) return false;
+            if(pawn.apparel.WornApparel.NullOrEmpty())return false;
+            return pawn.apparel.WornApparel.HasCore();
         }
         public static bool GetWalkerCore(this Pawn pawn, out WalkerGear_Core core)
         {
             core = null;
             if (!PawnWearingWalkerCore(pawn)) return false;
-
-            IEnumerable<Apparel> apparel = pawn.apparel?.WornApparel?.Where(c => coreDefs.Contains(c.def));
-            if (!apparel.EnumerableNullOrEmpty())
+            if (pawn.apparel.WornApparel.HasCore(out core))
             {
-                core = apparel.First() as WalkerGear_Core;
                 return true;
             }
             return false;
@@ -218,7 +232,6 @@ namespace WalkerGear
             if (source == null) return null;
             mechData.Init(source.parent);
             Thing outcome;
-
             if (source.parent.def.IsApparel)
             {
                 Thing item = ThingMaker.MakeThing(source.Props.ItemDef);
@@ -256,7 +269,6 @@ namespace WalkerGear
             }
         }
 
-
         public static void TryMakeJob_GearOn(Pawn pawn)
         {
             Thing bay = GetClosestCoreForPawn(pawn);
@@ -270,11 +282,10 @@ namespace WalkerGear
             Thing bay = GetClosestEmptyBay(pawn);
             if (bay != null)
             {
-                pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.WG_GetOffWalkerCore, bay), JobTag.ChangingApparel);
+                pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.WG_GetOffWalkerCore, bay), tag: JobTag.ChangingApparel);
             }
         }
     }
-
     public class MechData
     {
         private int remainingCharges;
@@ -285,7 +296,6 @@ namespace WalkerGear
         {
 
         }
-
         public void Init(Thing thing)
         {
             quality =default;
@@ -330,7 +340,6 @@ namespace WalkerGear
             }
             if (mech.TryGetComp<CompWalkerComponent>(out var c))
             {
-
                 c.HP = Mathf.FloorToInt(hp * MechUtility.qualityToHPFactor[quality]);
             }
         }

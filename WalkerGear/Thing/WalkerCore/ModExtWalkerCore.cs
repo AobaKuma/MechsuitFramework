@@ -8,5 +8,7 @@ namespace WalkerGear
         public string RequiredApparelTag = null;
         public HediffDef RequiredHediff = null;
         public bool RequireAdult = false;
+        public bool CanGearOff = true;//false for things like 40k dreadnought.
+        public float minArmorBreakdownThreshold = 0.25f;
     }
 }
