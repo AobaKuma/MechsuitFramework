@@ -31,7 +31,8 @@ namespace WalkerGear
                 remainingCharges = 0;
             }
         }
-        public bool NeedMaintenance => NeedAmmo || NeedRepair;
+        //public bool NeedMaintenance => NeedAmmo || NeedRepair;
+        public bool NeedMaintenance => NeedRepair;
         public bool NeedAmmo => hasReloadableProps && remainingCharges < MaxCharges;
         public bool NeedRepair => parent.HitPoints < parent.MaxHitPoints;
         public List<SlotDef> Slots => Props.slots;
