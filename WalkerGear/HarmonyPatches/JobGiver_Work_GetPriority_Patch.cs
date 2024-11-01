@@ -8,7 +8,7 @@ namespace WalkerGear
     [HarmonyPatch(typeof(JobGiver_GetRest), "GetPriority")]
     static class JobGiver_GetRest_GetPriority_Patch
     {
-        static bool Prefix(JobGiver_GetRest __instance, Pawn pawn, ref float __result)
+        static bool Prefix(JobGiver_GetRest __instance, Pawn pawn,ref float __result)
         {
             TimeAssignmentDef timeAssignmentDef = (pawn.timetable == null) ? RimWorld.TimeAssignmentDefOf.Anything : pawn.timetable.CurrentAssignment;
             if (timeAssignmentDef == TimeAssignmentDefOf.WG_WorkWithFrame)
