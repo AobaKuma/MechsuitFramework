@@ -45,3 +45,14 @@ D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Releas
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.pdb
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.Properties.Resources.resources
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\WalkerGear\obj\Release\WalkerGear.csproj.GenerateResource.cache
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\1.5\Assemblies\WalkerGear.dll
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\1.5\Assemblies\WalkerGear.pdb
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.csproj.AssemblyReference.cache
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.Properties.Resources.resources
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.csproj.GenerateResource.cache
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.GeneratedMSBuildEditorConfig.editorconfig
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.AssemblyInfoInputs.cache
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.AssemblyInfo.cs
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.csproj.CoreCompileInputs.cache
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.dll
+C:\Steam\steamapps\common\RimWorld\Mods\MechsuitFramework-main\WalkerGear\obj\Release\WalkerGear.pdb

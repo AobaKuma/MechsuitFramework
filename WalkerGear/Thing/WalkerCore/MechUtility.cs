@@ -15,9 +15,10 @@ namespace WalkerGear
         {
             foreach (Thing thing in things)
             {
+                if(thing == null) continue;
                 if (thing.GetType().IsSubclassOf(typeof(WalkerGear_Core)) || thing.GetType() == typeof(WalkerGear_Core))
-                { 
-                return true;
+                {
+                    return true;
                 }
             }
             return false;
@@ -29,6 +30,7 @@ namespace WalkerGear
 
             foreach (Thing thing in things)
             {
+                if (thing == null) continue;
                 if (thing.GetType().IsSubclassOf(typeof(WalkerGear_Core)) || thing.GetType() == typeof(WalkerGear_Core))
                 {
                     core = thing as WalkerGear_Core;

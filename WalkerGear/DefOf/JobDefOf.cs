@@ -36,6 +36,10 @@ namespace WalkerGear
         public static JobDef WG_GetOffWalkerCore;
 
 
+        /// <summary>
+        /// 在walker里睡觉
+        /// </summary>
+        public static JobDef WG_SleepInWalkerCore;
 
         /// <summary>
         /// 右鍵選擇後 移動到彈射器

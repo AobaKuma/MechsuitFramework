@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    
     <!-- 進入彈射 -->
     <JobDef>
         <defName>WG_GetInEjector</defName>
@@ -98,4 +97,10 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
     
+	<JobDef>
+        <defName>WG_SleepInWalkerCore</defName>
+        <driverClass>WalkerGear.JobDriver_StandAndRest</driverClass>
+        <reportString>sleeping in mecha suit</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
 </Defs>

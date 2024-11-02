@@ -15,6 +15,7 @@ namespace WalkerGear
             base.PostExposeData();
             Scribe_Values.Look(ref NeedRemove, "NeedRemove");
         }
+
         public override void Notify_Unequipped(Pawn pawn)
         {
             base.Notify_Unequipped(pawn);
