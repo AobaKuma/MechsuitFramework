@@ -16,7 +16,7 @@ namespace WalkerGear
         public override Vector3 OffsetFor(PawnRenderNode node, PawnDrawParms parms, out Vector3 pivot)
         {
             pivot = PivotFor(node, parms);
-            Apparel p = parms.pawn.apparel.WornApparel.FirstOrDefault(a => a is WalkerGear_Core c);
+            Apparel p = parms.pawn?.apparel?.WornApparel?.FirstOrDefault(a => a is WalkerGear_Core c);
             if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
             {
                 var ext = p.def.GetModExtension<ApparelRenderOffsets>();
@@ -29,7 +29,7 @@ namespace WalkerGear
     {
         public override void TransformOffset(PawnRenderNode node, PawnDrawParms parms, ref Vector3 offset, ref Vector3 pivot)
         {
-            Apparel p = parms.pawn.apparel.WornApparel.FirstOrDefault(a => a is WalkerGear_Core c);
+            Apparel p = parms.pawn?.apparel?.WornApparel?.FirstOrDefault(a => a is WalkerGear_Core c);
             if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
             {
                 var ext = p.def.GetModExtension<ApparelRenderOffsets>();
@@ -38,7 +38,7 @@ namespace WalkerGear
         }
         public override void TransformLayer(PawnRenderNode node, PawnDrawParms parms, ref float layer)
         {
-            Apparel p = parms.pawn.apparel.WornApparel.FirstOrDefault(a => a is WalkerGear_Core c);
+            Apparel p = parms.pawn?.apparel?.WornApparel?.FirstOrDefault(a => a is WalkerGear_Core c);
             if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
             {
                 var ext = p.def.GetModExtension<ApparelRenderOffsets>();
@@ -47,7 +47,7 @@ namespace WalkerGear
         }
         public override bool CanDrawNowSub(PawnRenderNode node, PawnDrawParms parms)
         {
-            Apparel p = parms.pawn.apparel.WornApparel.FirstOrDefault(a => a is WalkerGear_Core c);
+            Apparel p = parms.pawn?.apparel?.WornApparel?.FirstOrDefault(a => a is WalkerGear_Core c);
             if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
             {
                 var ext = p.def.GetModExtension<ApparelRenderOffsets>();
@@ -63,7 +63,7 @@ namespace WalkerGear
     {
         public override void TransformOffset(PawnRenderNode node, PawnDrawParms parms, ref Vector3 offset, ref Vector3 pivot)
         {
-            Apparel p = parms.pawn.apparel.WornApparel.FirstOrDefault(a => a is WalkerGear_Core c);
+            Apparel p = parms.pawn?.apparel?.WornApparel?.FirstOrDefault(a => a is WalkerGear_Core c);
             if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
             {
                 var ext = p.def.GetModExtension<ApparelRenderOffsets>();
@@ -72,7 +72,7 @@ namespace WalkerGear
         }
         public override void TransformLayer(PawnRenderNode node, PawnDrawParms parms, ref float layer)
         {
-            Apparel p = parms.pawn.apparel.WornApparel.FirstOrDefault(a => a is WalkerGear_Core c);
+            Apparel p = parms.pawn?.apparel?.WornApparel?.FirstOrDefault(a => a is WalkerGear_Core c);
             if (p != null && p.def.HasModExtension<ApparelRenderOffsets>())
             {
                 var ext = p.def.GetModExtension<ApparelRenderOffsets>();

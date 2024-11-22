@@ -123,9 +123,9 @@
         </linkableFacilities>
       </li>
       <li Class="CompProperties_AssignableToPawn">
-        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <drawAssignmentOverlay>true</drawAssignmentOverlay>
         <compClass>WalkerGear.CompAssignableToPawn_Parking</compClass>
-        <maxAssignedPawnsCount>1</maxAssignedPawnsCount>
+        <maxAssignedPawnsCount>3</maxAssignedPawnsCount>
       </li>
       <li Class="CompProperties_ReportWorkSpeed">
         <workSpeedStat>WorkTableWorkSpeedFactor</workSpeedStat>

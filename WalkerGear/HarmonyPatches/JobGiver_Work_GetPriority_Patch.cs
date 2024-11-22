@@ -38,10 +38,8 @@ namespace WalkerGear
             TimeAssignmentDef timeAssignmentDef = (pawn.timetable == null) ? RimWorld.TimeAssignmentDefOf.Anything : pawn.timetable.CurrentAssignment;
             if (timeAssignmentDef == TimeAssignmentDefOf.WG_WorkWithFrame)
             {
-                //Log.Message("Is WG_WorkWithFrame");
                 if (!MechUtility.PawnWearingWalkerCore(pawn) && MechUtility.GetClosestCoreForPawn(pawn) != null)
                 {
-                    //Log.Message("Is TryMakeJob_GearOn");
                     MechUtility.TryMakeJob_GearOn(pawn);
                 }
                 __result = 9f;
