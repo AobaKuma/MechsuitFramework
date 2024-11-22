@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <WG_GetIn>Pilot</WG_GetIn>
+  
+  <WG_WeaponDropped>After leaving the frame, {0} cannot equip and dropped the weapon.</WG_WeaponDropped>
+
+  <WG_TooBigForPilot>{0} is too bulky to pilot this Exosuit</WG_TooBigForPilot>
+  <WG_TooYoungToPilot>{0} is too young to pilot this Exosuit</WG_TooYoungToPilot>
+  <WG_RequirePilotSuit>{0} doesn't wearing a proper pilot this Exosuit</WG_RequirePilotSuit>
+  <WG_RequireBionic>{0} doesn't have proper implant to pilot this Exosuit</WG_RequireBionic>
+  <WG_ApparelLayerTaken>{0} refuse to take off gears that is not fitted in this Exosuit</WG_ApparelLayerTaken>
+  
+  <WG_Disabled_AlreadyHasCoreFrame>{0} already piloting</WG_Disabled_AlreadyHasCoreFrame>
+  <WG_Disabled_NoCoreFrame>No frame at this gantry</WG_Disabled_NoCoreFrame>
+  <WG_NoModuleForSlot>No available module</WG_NoModuleForSlot>
+  
+  <WG_Job_TakeToMaintenanceBay>Haul to gantry</WG_Job_TakeToMaintenanceBay>
+  <WG_Job_DisassembleFrame>Disassemble downed Exosuit</WG_Job_DisassembleFrame>
+  <WG_Disabled_NoMaintenanceBay>Cannot carry: No available gantry</WG_Disabled_NoMaintenanceBay>
+
+  <WG_Disabled_NeedControlledAndDrafted>Cannot use: Need Drafted</WG_Disabled_NeedControlledAndDrafted>
+  <WG_SafetyLock>Safty lock</WG_SafetyLock>
+  <WG_SafetyLock_Desc>Safety device to prevent misuse</WG_SafetyLock_Desc>
+
+  <WG_EmergencyEject>Emergency Eject</WG_EmergencyEject>
+  <WG_EmergencyEject_Desc>Activating the escape protocol, solid propellant rockets will eject  pilot to a designated location within range and destroyed the frame.</WG_EmergencyEject_Desc>
+
+  <WG_EjectToTile>Aerial long range launch</WG_EjectToTile>
+  <WG_EjectToTile>local range launch</WG_EjectToTile>
+  <WG_PilotInBuilding>Pilot:</WG_PilotInBuilding>
+  <WG_Occupied>Occupied</WG_Occupied>
+  <WG_RequireMechsuit>Require Exosuit</WG_RequireMechsuit>
+
+  <WG_PilotingFrame>Piloting Exosuit</WG_PilotingFrame>
+  <WG_Finalized>Finalized</WG_Finalized>
+  <WG_Stats_TakingSlotsOf>Occupied module slot(s):</WG_Stats_TakingSlotsOf>
+  <WG_Stats_DisableSlotsOf>Disabled module slot(s):</WG_Stats_DisableSlotsOf>
+
+  <WG_StructurePoint>Structural integrity</WG_StructurePoint>
+  <WG_StructurePoint.Tooltip>The overall structure point of an Exosuit, which negates damage effects on hits to protect Exosuit pilot. But if it is lower than 25%, there is a 25% chance of penetrating the outer armor and causing damage to pilot. Once the structure value drops to zero, the Exosuit will completely disabled and trap its pilot in the destroyed wreckage. \n\nTo restore structural points, the Exosuit needs to be docked at a maintenance gantry. Colonists with crafting capabilities will be able to repair damaged core frame and sub-modules.</WG_StructurePoint.Tooltip>
+
+  <WG_TabMechGear>Exosuit</WG_TabMechGear>
+  <WG_BayTip>Click core slot to access modules in linked shelves</WG_BayTip>
+  <WG_MechSolution>Customize</WG_MechSolution>
+  <WG_Overload>[Overloaded]</WG_Overload>
+
+  <WG_Performance>Payload capacity:</WG_Performance>
+  <WG_OverallArmor>Structure point</WG_OverallArmor>
+
+  <WG_ArmorSpeed>Exosuit moving speed:</WG_ArmorSpeed>
+  <WG_ArmorDeadWeight>Dead weight:</WG_ArmorDeadWeight>
+  <WG_ArmorCapacity>Payload capacity:</WG_ArmorCapacity>
+
+  <WG_HasMechWeapon>Module on armed</WG_HasMechWeapon>
+
+  <WG_Disabled_VictimInWalkerCore>Cannot rescue: injury in Exosuit.</WG_Disabled_VictimInWalkerCore>
+
+  <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
+  <WG_Blunt_CE>MPA</WG_Blunt_CE>
+
+  <WG_AutoRepair>Auto repair</WG_AutoRepair>
+  <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in the gantry.</WG_AutoRepair_Desc>
+
+</LanguageData>
