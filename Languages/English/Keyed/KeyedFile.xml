@@ -6,9 +6,9 @@
 
   <WG_TooBigForPilot>{0} is too bulky to pilot this Exosuit</WG_TooBigForPilot>
   <WG_TooYoungToPilot>{0} is too young to pilot this Exosuit</WG_TooYoungToPilot>
-  <WG_RequirePilotSuit>{0} doesn't wearing a proper pilot this Exosuit</WG_RequirePilotSuit>
-  <WG_RequireBionic>{0} doesn't have proper implant to pilot this Exosuit</WG_RequireBionic>
-  <WG_ApparelLayerTaken>{0} refuse to take off gears that is not fitted in this Exosuit</WG_ApparelLayerTaken>
+  <WG_RequirePilotSuit>{0} doesn't wearing a proper pilot suit this Exosuit</WG_RequirePilotSuit>
+  <WG_RequireBionic>{0} doesn't have the proper implant to pilot this Exosuit</WG_RequireBionic>
+  <WG_ApparelLayerTaken>{0} refused to take off gear that does not fit in this Exosuit</WG_ApparelLayerTaken>
   
   <WG_Disabled_AlreadyHasCoreFrame>{0} already piloting</WG_Disabled_AlreadyHasCoreFrame>
   <WG_Disabled_NoCoreFrame>No frame at this gantry</WG_Disabled_NoCoreFrame>
@@ -59,6 +59,6 @@
   <WG_Blunt_CE>MPA</WG_Blunt_CE>
 
   <WG_AutoRepair>Auto repair</WG_AutoRepair>
-  <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in the gantry.</WG_AutoRepair_Desc>
+  <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in this gantry.</WG_AutoRepair_Desc>
 
 </LanguageData>
