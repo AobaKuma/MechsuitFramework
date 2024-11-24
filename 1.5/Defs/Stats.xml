@@ -6,7 +6,13 @@
 		<workerClass>WalkerGear.StatWorker_Module</workerClass>
 		<description>the taken slot of this module, a module might take multiple slots.</description>
 		<category>BasicsImportant</category>
-		<defaultBaseValue>0</defaultBaseValue>
-		<minValue>-1</minValue>
+	</StatDef>
+
+	<StatDef>
+		<defName>MF_Stat_Slot</defName>
+		<label>slot user</label>
+		<workerClass>WalkerGear.StatWorker_SlotUsers</workerClass>
+		<description>the modules using this slot, will include module that taken multiple slots.</description>
+		<category>BasicsImportant</category>
 	</StatDef>
 </Defs>

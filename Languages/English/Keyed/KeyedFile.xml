@@ -60,5 +60,7 @@
 
   <WG_AutoRepair>Auto repair</WG_AutoRepair>
   <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in this gantry.</WG_AutoRepair_Desc>
+  
+  <WG_AvailableModuleForThisSlot>Available modules for this slot</WG_AvailableModuleForThisSlot>
 
 </LanguageData>

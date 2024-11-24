@@ -5,6 +5,7 @@ using Verse;
 
 namespace WalkerGear
 {
+
     public class StatWorker_Module : StatWorker
     {
         public override bool ShouldShowFor(StatRequest req)
@@ -42,7 +43,15 @@ namespace WalkerGear
         }
         public override string GetStatDrawEntryLabel(StatDef stat, float value, ToStringNumberSense numberSense, StatRequest optionalReq, bool finalized = true)
         {
-            return optionalReq.Thing.TryGetComp<CompWalkerComponent>().Props.slots.First().LabelCap;
+            var slots = optionalReq.Thing.TryGetComp<CompWalkerComponent>().Props.slots;
+            string str = "";
+            for (int i = 0; i < slots.Count; i++)
+            {
+                SlotDef item = slots[i];
+                str += item.LabelCap;
+                if(i != slots.Count-1) str += ", ";
+            }
+            return str;
         }
     }
 }

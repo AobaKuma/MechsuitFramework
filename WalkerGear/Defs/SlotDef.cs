@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,22 +16,25 @@ namespace WalkerGear
         public bool isWeapon;
         public List<SlotDef> supportedSlots;//填入組裝塢後提供的新槽位
         public int uiPriority; //slot在UI里占用的格子
-
-
-        //public SlotDef parentSlot;
-        //public List<ThingDef> cachedAvailableComponents = new(); //使用该槽位的部件
-        
-        /*public override void ResolveReferences()
+        public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
         {
-            base.ResolveReferences();
-            ResolveAvailableComps();
-        }
-        private void ResolveAvailableComps()
-        {
-            cachedAvailableComponents = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(t =>
+            foreach (StatDrawEntry item in base.SpecialDisplayStats(req))
             {
-                return t.HasComp<CompWalkerComponent>() && t.GetCompProperties<CompProperties_WalkerComponent>().slot == this;
-            }).ToList();
-        }*/
+                yield return item;
+            }
+
+            var user = ModuleUtil.SlotUsers(this);
+            if (!user.NullOrEmpty())
+            {
+                yield return new StatDrawEntry(StatCategoryDefOf.BasicsImportant, StatDefof.MF_Stat_Slot.label,this.label, "WG_AvailableModuleForThisSlot".Translate(),1000, hyperlinks: Links());
+            }
+        }
+        private IEnumerable<Dialog_InfoCard.Hyperlink> Links()
+        {
+            foreach (ThingDef module in ModuleUtil.SlotUsers(this))
+            {
+                yield return new Dialog_InfoCard.Hyperlink(module);
+            }
+        }
     }
 }
