@@ -71,7 +71,6 @@ namespace WalkerGear
             {
                 if (a != this && a.TryGetComp(out CompShield c))
                 {
-                    //Log.Message("Shield: "+a.def);
                     c.PostPreApplyDamage(ref dinfo, out var absorbed);
                     if (absorbed) return true;
                 }
@@ -80,7 +79,7 @@ namespace WalkerGear
             {
                 Health -= dinfo.Amount / 2f; return true;
             }
-            if (HPPercent < 0.5f && Rand.Chance(0.25f)) return false;
+            if (HPPercent < ArmorBreakdownThreshold() && Rand.Chance(0.25f)) return false;
 
             float dmg = GetPostArmorDamage(ref dinfo);
             if (dmg <= 0)
