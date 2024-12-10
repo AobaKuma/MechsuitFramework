@@ -22,7 +22,18 @@ namespace WalkerGear
             {
                 __0.skipFlags |= MiscDefOf.Head | MiscDefOf.Body;
             }
-
+        }
+    }
+    [HarmonyPatch(typeof(PawnRenderer), "ParallelGetPreRenderResults")]
+    [HarmonyPriority(Priority.LowerThanNormal)]
+    public static class ParallelGetPreRenderResults_Patch
+    {
+        public static void Prefix(ref bool disableCache, Pawn ___pawn)
+        {
+            if (!disableCache && ___pawn.apparel!=null && ___pawn.apparel.LockedApparel.Any(a => a is WalkerGear_Core))
+            {
+                disableCache = true;
+            }
         }
     }
 }

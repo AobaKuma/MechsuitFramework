@@ -75,10 +75,6 @@ namespace WalkerGear
                     if (absorbed) return true;
                 }
             }
-            if (Rand.Chance(0.1f))
-            {
-                Health -= dinfo.Amount / 2f; return true;
-            }
             if (HPPercent < ArmorBreakdownThreshold() && Rand.Chance(0.25f)) return false;
 
             float dmg = GetPostArmorDamage(ref dinfo);

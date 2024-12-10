@@ -36,11 +36,11 @@ namespace WalkerGear
         public CompProperties_ForceUseWeapon Props => (CompProperties_ForceUseWeapon)props;
         public override void Notify_Equipped(Pawn pawn)
         {
+            //simpleSidearm compact;
             if (pawn.equipment.Primary != null)
             {
                 ThingWithComps i = pawn.equipment.Primary;
-                pawn.equipment.Remove(i);
-                pawn.inventory.TryAddAndUnforbid(i);
+                pawn.equipment.TryTransferEquipmentToContainer(i, pawn.inventory.innerContainer);
             }
             base.Notify_Equipped(pawn);
             NeedRemoveWeapon = false;
@@ -54,17 +54,23 @@ namespace WalkerGear
             pawn.equipment.Remove(Weapon);
             weaponStorage = Weapon;
 
-            var things = pawn.inventory?.GetDirectlyHeldThings().Where(t => t.def.equipmentType == EquipmentType.Primary);
-            if (!things.EnumerableNullOrEmpty())
+            //simpleSidearm compact;
+            if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true) == null)
             {
-                foreach (Thing t in things)
+                var things = pawn.inventory?.GetDirectlyHeldThings().Where(t => t.def.equipmentType == EquipmentType.Primary);
+                if (!things.EnumerableNullOrEmpty() && pawn.equipment.Primary == null)
                 {
-                    ThingWithComps thing = t as ThingWithComps;
-                    if (!EquipmentUtility.CanEquip(thing, pawn)) continue;
-                    pawn.inventory.innerContainer.Remove(thing);
-                    pawn.equipment.AddEquipment(thing);
+                    foreach (Thing t in things)
+                    {
+                        ThingWithComps thing = t as ThingWithComps;
+                        if (EquipmentUtility.CanEquip(thing, pawn))
+                        {
+                            pawn.inventory.innerContainer.Remove(thing);
+                            pawn.equipment.AddEquipment(thing);
+                            break;
+                        }
+                    }
                 }
-                
             }
         }
         public override void PostExposeData()
