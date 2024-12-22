@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\harmonypatches\\pawnrender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:harmonypatches\\pawnrender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\harmonypatches\\harmonyinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:harmonypatches\\harmonyinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\modulecomp\\modulecomp_emergencyeject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:modulecomp\\modulecomp_emergencyeject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\thing\\walkercore\\mechutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:thing\\walkercore\\mechutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\rendernode\\pawnrendernodeworker_weaponongantry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:rendernode\\pawnrendernodeworker_weaponongantry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\thing\\mechbay\\building_maintenancebay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\thing\\walkercore\\modextwalkercore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:thing\\walkercore\\modextwalkercore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\extensions\\modextforceapparelgen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,20 +58,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PawnRender.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\PawnRender.cs",
-              "RelativeDocumentMoniker": "HarmonyPatches\\PawnRender.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\PawnRender.cs",
-              "RelativeToolTip": "HarmonyPatches\\PawnRender.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ModExtWalkerCore.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\ModExtWalkerCore.cs",
+              "RelativeDocumentMoniker": "Thing\\WalkerCore\\ModExtWalkerCore.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\ModExtWalkerCore.cs",
+              "RelativeToolTip": "Thing\\WalkerCore\\ModExtWalkerCore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T23:28:36.31Z",
+              "WhenOpened": "2024-12-22T20:25:23.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PawnRenderNodeWorker_WeaponOnGantry.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\RenderNode\\PawnRenderNodeWorker_WeaponOnGantry.cs",
+              "RelativeDocumentMoniker": "RenderNode\\PawnRenderNodeWorker_WeaponOnGantry.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\RenderNode\\PawnRenderNodeWorker_WeaponOnGantry.cs",
+              "RelativeToolTip": "RenderNode\\PawnRenderNodeWorker_WeaponOnGantry.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T20:03:38.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Building_MaintenanceBay.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\MechBay\\Building_MaintenanceBay.cs",
+              "RelativeDocumentMoniker": "Thing\\MechBay\\Building_MaintenanceBay.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\MechBay\\Building_MaintenanceBay.cs",
+              "RelativeToolTip": "Thing\\MechBay\\Building_MaintenanceBay.cs",
+              "ViewState": "AgIAANMBAAAAAAAAAAAgwOEBAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T08:37:31.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CompApparelForcedWeapon.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Comp\\CompApparelForcedWeapon.cs",
               "RelativeDocumentMoniker": "Comp\\CompApparelForcedWeapon.cs",
@@ -95,71 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ModuleComp_EmergencyEject.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\ModuleComp\\ModuleComp_EmergencyEject.cs",
-              "RelativeDocumentMoniker": "ModuleComp\\ModuleComp_EmergencyEject.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\ModuleComp\\ModuleComp_EmergencyEject.cs",
-              "RelativeToolTip": "ModuleComp\\ModuleComp_EmergencyEject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T08:38:36.966Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Building_MaintenanceBay.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\MechBay\\Building_MaintenanceBay.cs",
-              "RelativeDocumentMoniker": "Thing\\MechBay\\Building_MaintenanceBay.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\MechBay\\Building_MaintenanceBay.cs",
-              "RelativeToolTip": "Thing\\MechBay\\Building_MaintenanceBay.cs",
-              "ViewState": "AgIAAJgBAAAAAAAAAAAuwKsBAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T08:37:31.403Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HarmonyInit.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\HarmonyInit.cs",
-              "RelativeDocumentMoniker": "HarmonyPatches\\HarmonyInit.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\HarmonyInit.cs",
-              "RelativeToolTip": "HarmonyPatches\\HarmonyInit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T08:42:33.122Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MechUtility.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\MechUtility.cs",
-              "RelativeDocumentMoniker": "Thing\\WalkerCore\\MechUtility.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\MechUtility.cs",
-              "RelativeToolTip": "Thing\\WalkerCore\\MechUtility.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAIA+wH8AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T08:35:06.99Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ModExtWalkerCore.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\ModExtWalkerCore.cs",
-              "RelativeDocumentMoniker": "Thing\\WalkerCore\\ModExtWalkerCore.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\ModExtWalkerCore.cs",
-              "RelativeToolTip": "Thing\\WalkerCore\\ModExtWalkerCore.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:08:08.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "ModExtForceApparelGen.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Extensions\\ModExtForceApparelGen.cs",
               "RelativeDocumentMoniker": "Extensions\\ModExtForceApparelGen.cs",
@@ -171,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Verb_MeleeSweep.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Melee\\Verb_MeleeSweep.cs",
               "RelativeDocumentMoniker": "Melee\\Verb_MeleeSweep.cs",
@@ -183,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "StatWorker_Module.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Stat\\StatWorker_Module.cs",
               "RelativeDocumentMoniker": "Stat\\StatWorker_Module.cs",
@@ -195,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "SlotDef.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Defs\\SlotDef.cs",
               "RelativeDocumentMoniker": "Defs\\SlotDef.cs",
@@ -207,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "ITab_MechGear.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\MechBay\\ITab_MechGear.cs",
               "RelativeDocumentMoniker": "Thing\\MechBay\\ITab_MechGear.cs",
@@ -219,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "StatWorker_SlotUsers.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Stat\\StatWorker_SlotUsers.cs",
               "RelativeDocumentMoniker": "Stat\\StatWorker_SlotUsers.cs",

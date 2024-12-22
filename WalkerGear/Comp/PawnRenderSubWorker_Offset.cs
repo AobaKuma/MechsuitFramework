@@ -85,6 +85,7 @@ namespace WalkerGear
         public DrawData headData;
         public List<Rot4> headHideFor = null;
         public DrawData rootData;
+        public DrawData equipmentOffsetData;
     }
 }
 

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WalkerGear")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6d97ced2f231eee443f8c6e10d34ec3756491d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c617d6b68810d073f9286918f4c64aa6cd317ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("WalkerGear")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WalkerGear")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
