@@ -185,12 +185,15 @@ namespace WalkerGear
                 foreach (var m in modules)
                 {
                     if (m == this) continue;
-                    Wearer.apparel.Remove((Apparel)m);
+                    Apparel a = m as Apparel;
+                    Wearer.apparel.Remove(a);
+                    a.Notify_Unequipped(Wearer);
                     m.HitPoints = 1;
                     if (Rand.Bool) wreckage.moduleContainer.Add(MechUtility.Conversion(m));
                 }
                 Pawn _p = Wearer;
                 Wearer.apparel.Remove(this);
+                this.Notify_Unequipped(Wearer);
                 MechUtility.WeaponDropCheck(_p);
             }
         }

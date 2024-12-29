@@ -125,6 +125,8 @@ namespace WalkerGear
                 {
                     pawn.apparel.Unlock(a);
                     pawn.apparel.Remove(a);
+
+                    a.Notify_Unequipped(pawn);
                     pawn.apparel.Notify_ApparelRemoved(a);
                 }
             }
