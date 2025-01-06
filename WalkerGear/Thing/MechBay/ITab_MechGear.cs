@@ -293,7 +293,7 @@ namespace WalkerGear
             row.Label("WG_Performance".Translate().CapitalizeFirst());
             row.Gap(int.MaxValue);
             float loadPercent = CurrentLoad / MassCapacity;
-            if (loadPercent >= 1)
+            if (loadPercent > 1f)
             {
                 LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_Overloaded"), OpportunityType.Important);
                 row.FillableBar(rect.width, 16f, 1, $"{CurrentLoad} / {MassCapacity}" + " " + "WG_Overload".Translate(), Resources.BarOL, Resources.BarBG);

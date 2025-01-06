@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <LanguageData>
-  <WG_GetIn>Pilot</WG_GetIn>
-  
+    <WG_GetIn>Pilot</WG_GetIn>
+
   <WG_WeaponDropped>After leaving the frame, {0} cannot equip and dropped the weapon.</WG_WeaponDropped>
 
   <WG_TooBigForPilot>{0} is too bulky to pilot this Exosuit</WG_TooBigForPilot>
   <WG_TooYoungToPilot>{0} is too young to pilot this Exosuit</WG_TooYoungToPilot>
-  <WG_RequirePilotSuit>{0} doesn't wearing a proper pilot suit this Exosuit</WG_RequirePilotSuit>
+  <WG_RequirePilotSuit>{0} doesn't wearing a proper pilot suit for this Exosuit</WG_RequirePilotSuit>
   <WG_RequireBionic>{0} doesn't have the proper implant to pilot this Exosuit</WG_RequireBionic>
   <WG_ApparelLayerTaken>{0} refused to take off gear that does not fit in this Exosuit</WG_ApparelLayerTaken>
-  
+
   <WG_Disabled_AlreadyHasCoreFrame>{0} already piloting</WG_Disabled_AlreadyHasCoreFrame>
   <WG_Disabled_NoCoreFrame>No frame at this gantry</WG_Disabled_NoCoreFrame>
   <WG_NoModuleForSlot>No available module</WG_NoModuleForSlot>
-  
+
   <WG_Job_TakeToMaintenanceBay>Haul to gantry</WG_Job_TakeToMaintenanceBay>
   <WG_Job_DisassembleFrame>Disassemble downed Exosuit</WG_Job_DisassembleFrame>
   <WG_Disabled_NoMaintenanceBay>Cannot carry: No available gantry</WG_Disabled_NoMaintenanceBay>
@@ -23,7 +24,7 @@
   <WG_SafetyLock_Desc>Safety device to prevent misuse</WG_SafetyLock_Desc>
 
   <WG_EmergencyEject>Emergency Eject</WG_EmergencyEject>
-  <WG_EmergencyEject_Desc>Activating the escape protocol, solid propellant rockets will eject  pilot to a designated location within range and destroyed the frame.</WG_EmergencyEject_Desc>
+  <WG_EmergencyEject_Desc>Activating the escape protocol, solid propellant rockets will eject pilot to a designated location within range and destroyed the frame.</WG_EmergencyEject_Desc>
 
   <WG_EjectToTile>Aerial long range launch</WG_EjectToTile>
   <WG_EjectToTile>local range launch</WG_EjectToTile>
@@ -60,7 +61,7 @@
 
   <WG_AutoRepair>Auto repair</WG_AutoRepair>
   <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in this gantry.</WG_AutoRepair_Desc>
-  
+
   <WG_AvailableModuleForThisSlot>Available modules for this slot</WG_AvailableModuleForThisSlot>
 
 </LanguageData>
