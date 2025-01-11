@@ -24,8 +24,8 @@ namespace WalkerGear
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look<int>(ref remainingCharges, "remainingCharges", -999);
-            Scribe_Values.Look(ref hp, "hp", -1);
+            Scribe_Values.Look<int>(ref remainingCharges, "wc_remainingCharges", -999);
+            Scribe_Values.Look(ref hp, "wc_hp", -1);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && remainingCharges == -999)
             {
                 remainingCharges = 0;
@@ -206,7 +206,7 @@ namespace WalkerGear
             string s = base.CompInspectStringExtra();
             if (hasReloadableProps)
             {
-                s += "\n" + LabelRemaining;
+                s += LabelRemaining;
             }
             return s;
         }
