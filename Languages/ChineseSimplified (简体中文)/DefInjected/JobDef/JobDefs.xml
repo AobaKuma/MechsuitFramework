@@ -22,6 +22,9 @@
   <!-- EN: repairing TargetA. -->
   <WG_RepairComponent.reportString>维修受损模块</WG_RepairComponent.reportString>
   
+  <!-- EN: sleeping in mecha suit -->
+  <WG_SleepInWalkerCore.reportString>机甲内睡眠</WG_SleepInWalkerCore.reportString>
+
   <!-- EN: heading back to bay -->
   <WG_ReturnToBay.reportString>返回整备架</WG_ReturnToBay.reportString>
   

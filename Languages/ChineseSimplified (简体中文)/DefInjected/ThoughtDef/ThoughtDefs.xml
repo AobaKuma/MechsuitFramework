@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: slept in the MechGear -->
+  <SleptInMechGear.stages.slept_in_the_MechGear.label>睡在机甲里</SleptInMechGear.stages.slept_in_the_MechGear.label>
+  <!-- EN: Sleeping in a mecha is cool, but the space is too cramped -->
+  <SleptInMechGear.stages.slept_in_the_MechGear.description>睡在机甲里是挺酷的，但就是有点挤。</SleptInMechGear.stages.slept_in_the_MechGear.description>
+  
+</LanguageData>

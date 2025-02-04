@@ -4,9 +4,6 @@
   <!-- EN: disassembling -->
   <WG_DisassembleWalkerCore.reportString>disassembling</WG_DisassembleWalkerCore.reportString>
   
-  <!-- EN: entering catapult -->
-  <WG_GetInEjector.reportString>entering catapult</WG_GetInEjector.reportString>
-  
   <!-- EN: entering mecha suit -->
   <WG_GetInWalkerCore.reportString>entering mecha suit</WG_GetInWalkerCore.reportString>
   
@@ -24,6 +21,9 @@
   
   <!-- EN: heading back to bay -->
   <WG_ReturnToBay.reportString>heading back to bay</WG_ReturnToBay.reportString>
+  
+  <!-- EN: sleeping in mecha suit -->
+  <WG_SleepInWalkerCore.reportString>sleeping in mecha suit</WG_SleepInWalkerCore.reportString>
   
   <!-- EN: heading back to bay -->
   <WG_TakeToMaintenanceBay.reportString>heading back to bay</WG_TakeToMaintenanceBay.reportString>

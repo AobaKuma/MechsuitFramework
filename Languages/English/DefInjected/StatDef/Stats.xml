@@ -1,9 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: Flight range -->
+  <MF_FlightRange.label>Flight range</MF_FlightRange.label>
+  <!-- EN: The maximum flight distance. -->
+  <MF_FlightRange.description>The maximum flight distance.</MF_FlightRange.description>
+  <!-- EN: {0} -->
+  <MF_FlightRange.formatString>{0}</MF_FlightRange.formatString>
+  
   <!-- EN: module slot -->
   <MF_Stat_Module.label>module slot</MF_Stat_Module.label>
   <!-- EN: the taken slot of this module, a module might take multiple slots. -->
   <MF_Stat_Module.description>the taken slot of this module, a module might take multiple slots.</MF_Stat_Module.description>
+  
+  <!-- EN: slot user -->
+  <MF_Stat_Slot.label>slot user</MF_Stat_Slot.label>
+  <!-- EN: the modules using this slot, will include module that taken multiple slots. -->
+  <MF_Stat_Slot.description>the modules using this slot, will include module that taken multiple slots.</MF_Stat_Slot.description>
   
 </LanguageData>

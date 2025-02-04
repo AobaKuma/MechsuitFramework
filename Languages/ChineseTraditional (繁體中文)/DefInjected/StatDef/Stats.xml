@@ -1,9 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: Flight range -->
+  <MF_FlightRange.label>飛行距離</MF_FlightRange.label>
+  <!-- EN: The maximum flight distance. -->
+  <MF_FlightRange.description>最大飛行距離。</MF_FlightRange.description>
+  <!-- EN: {0} -->
+  <MF_FlightRange.formatString>{0}</MF_FlightRange.formatString>
+
   <!-- EN: module slot -->
   <MF_Stat_Module.label>模塊槽</MF_Stat_Module.label>
   <!-- EN: the taken slot of this module, a module might take multiple slots. -->
   <MF_Stat_Module.description>該模塊所占用的模塊位置，一個模塊也可能同時占用多個位置。</MF_Stat_Module.description>
+  
+  <!-- EN: slot user -->
+  <MF_Stat_Slot.label>可用模塊</MF_Stat_Slot.label>
+  <!-- EN: the modules using this slot, will include module that taken multiple slots. -->
+  <MF_Stat_Slot.description>可用於本槽位的模塊，部分模塊可能會占用多個槽位。</MF_Stat_Slot.description>
   
 </LanguageData>
