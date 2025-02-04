@@ -11,9 +11,4 @@ namespace WalkerGear
 		public static ThingDef MF_Building_Wreckage;
         public static ThingDef WG_PawnFlyer;
     }
-    [DefOf]
-    public static class TimeAssignmentDefOf
-    {
-        public static TimeAssignmentDef WG_WorkWithFrame;
-    }
 }

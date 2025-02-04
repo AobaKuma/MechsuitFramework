@@ -370,7 +370,7 @@ namespace WalkerGear
         }
         private AcceptanceReport CanAcceptPawn(Pawn pawn)
         {
-            if (!pawn.IsColonist && !pawn.IsSlaveOfColony && !pawn.IsPrisonerOfColony && (!pawn.IsColonyMutant || !pawn.IsGhoul))
+            if (!pawn.IsColonist && !pawn.IsSlaveOfColony && !pawn.IsPrisonerOfColony && (pawn.IsColonyMutant || pawn.IsGhoul))
             {
                 return false;
             }

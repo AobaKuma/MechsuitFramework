@@ -4,11 +4,6 @@ using Verse;
 namespace WalkerGear
 {
     [DefOf]
-    public static class StatDefof
-    {
-        public static StatDef MF_Stat_Slot;
-    }
-    [DefOf]
     public static class JobDefOf
     {
         /// <summary>

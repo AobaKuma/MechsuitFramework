@@ -21,7 +21,7 @@ namespace WalkerGear
             }
         }
     }
-    
+
     /* 
      [StaticConstructorOnStartup]
      [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.FindBedFor),

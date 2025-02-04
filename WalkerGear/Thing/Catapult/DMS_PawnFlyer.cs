@@ -191,6 +191,7 @@ namespace WalkerGear
             {
                 //投射到大地图		修改人：Anxie,日期：2024-09-09
                 pawn.DeSpawn();
+                int extraRange = (int)pawn.GetStatValue(StatDefof.MF_FlightRange);
                 GenSpawn.Spawn(pawn, new IntVec3(1, 0, 1), destMap);
                 Caravan caravan = CaravanMaker.MakeCaravan(new List<Pawn> { pawn }, pawn.Faction, pawn.Map.Tile, addToWorldPawnsIfNotAlready: false);
                 pawn.ExitMap(allowedToJoinOrCreateCaravan: false, Rot4.North);
@@ -200,8 +201,8 @@ namespace WalkerGear
                 pawnStored = pawn;
                 Find.WorldTargeter.BeginTargeting(ChoseWorldTarget, canTargetTiles: true, TargeterMouseAttachment, closeWorldTabWhenFinished: false, delegate
                 {
-                    GenDraw.DrawWorldRadiusRing(tile, extension.flightRange);
-                }, (GlobalTargetInfo target) => TargetingLabelGetter(target, tile, extension.flightRange, new List<IThingHolder> { (Building_EjectorBay)eBay }, TryLaunch, null));
+                    GenDraw.DrawWorldRadiusRing(tile, extension.flightRange + extraRange);
+                }, (GlobalTargetInfo target) => TargetingLabelGetter(target, tile, extension.flightRange + extraRange, new List<IThingHolder> { (Building_EjectorBay)eBay }, TryLaunch, null));
                 return;
             }
             if (!isLanding)
@@ -446,7 +447,7 @@ namespace WalkerGear
         }
         public bool ChoseWorldTarget(GlobalTargetInfo target)
         {
-            return ChoseWorldTarget(target, eBay.Map.Tile, new List<IThingHolder> { (Building_EjectorBay)eBay }, extension.flightRange, TryLaunch, null);
+            return ChoseWorldTarget(target, eBay.Map.Tile, new List<IThingHolder> { (Building_EjectorBay)eBay }, extension.flightRange + (int)pawnStored.GetStatValue(StatDefof.MF_FlightRange), TryLaunch, null);
         }
         /// <summary>
         /// 按目标分配情况
