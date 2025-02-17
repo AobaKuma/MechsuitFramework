@@ -25,7 +25,7 @@ namespace WalkerGear
                 pawn.equipment.MakeRoomFor(parent);
                 if (parent.ParentHolder is not Pawn_EquipmentTracker)
                 {
-                    parent.ParentHolder.GetDirectlyHeldThings().Remove(parent);
+                    parent.ParentHolder?.GetDirectlyHeldThings().Remove(parent);
                 }
                 pawn.equipment.AddEquipment(parent);
             }
@@ -36,15 +36,20 @@ namespace WalkerGear
         public CompProperties_ForceUseWeapon Props => (CompProperties_ForceUseWeapon)props;
         public override void Notify_Equipped(Pawn pawn)
         {
-            //simpleSidearm compact;
+            //simpleSidearm compat;
             if (pawn.equipment.Primary != null)
             {
-                ThingWithComps i = pawn.equipment.Primary;
-                pawn.equipment.TryTransferEquipmentToContainer(i, pawn.inventory.innerContainer);
+                var i = pawn.equipment.Primary;
+                pawn.equipment.Remove(i);
+                i.Notify_Unequipped(pawn);
+                pawn.equipment.Notify_EquipmentRemoved(i);
+                pawn.inventory.innerContainer.TryAddOrTransfer(i);
             }
-            base.Notify_Equipped(pawn);
-            NeedRemoveWeapon = false;
             pawn.equipment.AddEquipment(Weapon);
+            pawn.equipment.Notify_EquipmentAdded(Weapon);
+
+            NeedRemoveWeapon = false;
+            base.Notify_Equipped(pawn);
             weaponStorage = null;
         }
         public override void Notify_Unequipped(Pawn pawn)
@@ -54,9 +59,10 @@ namespace WalkerGear
             pawn.equipment.Remove(Weapon);
             weaponStorage = Weapon;
 
-            //simpleSidearm compact;
-            if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true) == null)
+            //simpleSidearm compat;
+            if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true) == null)//沒有副武器的狀況下才啟用該功能。
             {
+                //這裡是下機後自動換上物品欄的其他武器
                 var things = pawn.inventory?.GetDirectlyHeldThings().Where(t => t.def.equipmentType == EquipmentType.Primary);
                 if (!things.EnumerableNullOrEmpty() && pawn.equipment.Primary == null)
                 {
@@ -98,7 +104,6 @@ namespace WalkerGear
                         {
                             compQuality.SetQuality(qc, null);
                         }
-
                     }
                 }
                 return weapon;

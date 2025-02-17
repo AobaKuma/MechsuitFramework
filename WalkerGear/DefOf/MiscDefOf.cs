@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Verse;
 
 namespace WalkerGear
 {
-    [DefOf]
-    internal static class MiscDefOf
+    [DefOf, StaticConstructorOnStartup]
+    public static class MiscDefOf
     {
         static MiscDefOf()
         {

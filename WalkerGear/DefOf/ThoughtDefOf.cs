@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Verse;
 
 namespace WalkerGear
 {
-    [DefOf]
-    internal static class ThoughtDefOf
+    [DefOf, StaticConstructorOnStartup]
+    public static class ThoughtDefOf
     {
         public static ThoughtDef SleptInMechGear;
     }

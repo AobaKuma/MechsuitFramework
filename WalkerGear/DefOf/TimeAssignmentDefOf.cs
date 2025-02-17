@@ -1,13 +1,14 @@
 ﻿using RimWorld;
+using Verse;
 
 namespace WalkerGear
 {
-    [DefOf]
-    public static class TimeAssignmentDefOf
+    [DefOf, StaticConstructorOnStartup]
+    public static class WG_TimeAssignmentDefOf
     {
-        static TimeAssignmentDefOf()
+        static WG_TimeAssignmentDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(TimeAssignmentDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(WG_TimeAssignmentDefOf));
         }
         public static TimeAssignmentDef WG_WorkWithFrame;
     }

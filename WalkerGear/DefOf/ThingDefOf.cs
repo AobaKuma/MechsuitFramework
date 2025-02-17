@@ -3,8 +3,8 @@ using Verse;
 
 namespace WalkerGear
 {
-    [DefOf]
-	public static class ThingDefOf
+    [DefOf, StaticConstructorOnStartup]
+    public static class ThingDefOf
 	{
 		public static ThingDef MF_Building_MaintenanceBay;
 		public static ThingDef MF_Building_ComponentStorage;

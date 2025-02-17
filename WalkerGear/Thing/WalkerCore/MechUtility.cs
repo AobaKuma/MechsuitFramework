@@ -282,7 +282,7 @@ namespace WalkerGear
             Thing bay = GetClosestCoreForPawn(pawn);
             if (bay != null)
             {
-                pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.WG_GetInWalkerCore_NonDrafted, bay), JobTag.ChangingApparel);
+                pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.WG_GetInWalkerCore_NonDrafted, bay), JobTag.Misc);
             }
         }
         public static void TryMakeJob_GearOff(Pawn pawn)
@@ -290,7 +290,7 @@ namespace WalkerGear
             Thing bay = GetClosestEmptyBay(pawn);
             if (bay != null)
             {
-                pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.WG_GetOffWalkerCore, bay), tag: JobTag.ChangingApparel);
+                pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.WG_GetOffWalkerCore, bay), tag: JobTag.Misc);
             }
         }
     }

@@ -28,7 +28,7 @@ namespace WalkerGear
             {
                 rect2.x += rect2.width * 4;
             }
-            DrawTimeAssignmentSelectorFor(rect2, TimeAssignmentDefOf.WG_WorkWithFrame);
+            DrawTimeAssignmentSelectorFor(rect2, WG_TimeAssignmentDefOf.WG_WorkWithFrame);
         }
         private static void DrawTimeAssignmentSelectorFor(Rect rect, TimeAssignmentDef ta)
         {

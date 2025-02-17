@@ -3,7 +3,7 @@ using Verse;
 
 namespace WalkerGear
 {
-    [DefOf]
+    [DefOf, StaticConstructorOnStartup]
     public static class JobDefOf
     {
         /// <summary>

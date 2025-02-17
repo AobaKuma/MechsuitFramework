@@ -18,7 +18,7 @@ namespace WalkerGear
             ins.PatchAllUncategorized();
             if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true) != null)
             {
-                ins.Patch(Method(TypeByName("WeaponAssingment"), "SetPrimary"), prefix: Method(typeof(SimpleSidearms), nameof(SimpleSidearms.SetPrimary)));
+                //ins.Patch(Method(TypeByName("WeaponAssingment"), "SetPrimary"), prefix: Method(typeof(SimpleSidearms), nameof(SimpleSidearms.SetPrimary)));
             }
             if (ModLister.GetActiveModWithIdentifier("usagirei.pocketsand", true)!=null)
             {
@@ -29,15 +29,15 @@ namespace WalkerGear
                 ins.Patch(Method("EesySwitchWeapon.CompEasySwitchWeapon:EquipWeapon"),prefix:typeof(EasySwitchWeapon).Method(nameof(EasySwitchWeapon.EquipWeapon)));
             }
         }
-        [HarmonyPatchCategory("ModPatches")]
-        internal static class SimpleSidearms
-        {
-            [HarmonyPrefix]
-            internal static bool SetPrimary(Pawn pawn,ref bool __result)
-            {
-                return pawn.equipment.Primary == null || !pawn.equipment.Primary.HasComp<CompApparelForcedWeapon>() || (__result = false);
-            }
-        }
+        //[HarmonyPatchCategory("ModPatches")]
+        //internal static class SimpleSidearms
+        //{
+        //    [HarmonyPrefix]
+        //    internal static bool SetPrimary(Pawn pawn,ref bool __result)
+        //    {
+        //        return pawn.equipment.Primary == null || !pawn.equipment.Primary.HasComp<CompApparelForcedWeapon>() || (__result = false);
+        //    }
+        //}
 
         [HarmonyPatchCategory("ModPatches")]
         internal static class PocketSand
@@ -48,7 +48,6 @@ namespace WalkerGear
                 {
                     __result = !pawn.GetWalkerCore(out _);
                 }
-                
             }
         }
 

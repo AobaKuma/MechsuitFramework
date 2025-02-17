@@ -1,8 +1,9 @@
 ﻿using RimWorld;
+using Verse;
 
 namespace WalkerGear
 {
-    [DefOf]
+    [DefOf, StaticConstructorOnStartup]
     public static class StatDefof
     {
         static StatDefof()
