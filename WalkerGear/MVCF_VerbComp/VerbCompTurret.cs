@@ -10,7 +10,7 @@ using MVCF.Comps;
 
 namespace WalkerGear
 {
-
+    //Obsoleted
     public class VerbCompTurret : VerbComp_Draw
     {
         private int cooldownTicksLeft;

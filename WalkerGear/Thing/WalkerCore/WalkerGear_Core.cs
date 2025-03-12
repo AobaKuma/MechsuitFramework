@@ -115,10 +115,16 @@ namespace WalkerGear
             // if (DebugSettings.godMode) Log.Message("Incoming DMG:" + amount);
             if (damageDef.armorCategory != null)
             {
-
                 StatDef armorRatingStat = damageDef.armorCategory.armorRatingStat;
                 //if (DebugSettings.godMode) Log.Message($"DMG Reduced:{armorRatingStat} Pen {dinfo.ArmorPenetrationInt}, Def {this.GetStatValue(armorRatingStat)}");
-                ArmorUtility.ApplyArmor(ref amount, dinfo.ArmorPenetrationInt, this.GetStatValue(armorRatingStat), null, ref damageDef, Wearer, out _);
+                if (Rand.Chance(0.25f) && dinfo.ArmorPenetrationInt * 2 > this.GetStatValue(armorRatingStat))//如果穿甲*2高於護甲值。有50%機率擊穿
+                {
+                    ArmorUtility.ApplyArmor(ref amount, dinfo.ArmorPenetrationInt, this.GetStatValue(armorRatingStat)/2, null, ref damageDef, Wearer, out _);
+                }
+                else
+                {
+                    ArmorUtility.ApplyArmor(ref amount, dinfo.ArmorPenetrationInt, this.GetStatValue(armorRatingStat), null, ref damageDef, Wearer, out _);
+                }
             }
             // if (DebugSettings.godMode) Log.Message("DMG Taken:" + amount);
             dinfo.SetAmount(amount);

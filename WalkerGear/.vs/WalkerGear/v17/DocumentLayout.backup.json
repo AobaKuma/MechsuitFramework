@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\thing\\walkercore\\mechutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:thing\\walkercore\\mechutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\thing\\walkercore\\walkergear_core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:thing\\walkercore\\walkergear_core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\harmonypatches\\jobgiver_work_getpriority_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:harmonypatches\\jobgiver_work_getpriority_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\newturretpack\\pawnrendernodeworker_turretgun_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:newturretpack\\pawnrendernodeworker_turretgun_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\defof\\timeassignmentdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:defof\\timeassignmentdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\newturretpack\\pawnrendernode_turretgun_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:newturretpack\\pawnrendernode_turretgun_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\harmonypatches\\timeassignmentselector_drawtimeassignmentselectorgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:harmonypatches\\timeassignmentselector_drawtimeassignmentselectorgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\defof\\statdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:defof\\statdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\defof\\thingdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:defof\\thingdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\defof\\thoughtdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:defof\\thoughtdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\harmonypatches\\harmonyinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:harmonypatches\\harmonyinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\walkergear\\newturretpack\\compturretgun_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|WalkerGear.csproj|solutionrelative:newturretpack\\compturretgun_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,115 +26,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MechUtility.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\MechUtility.cs",
-              "RelativeDocumentMoniker": "Thing\\WalkerCore\\MechUtility.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\MechUtility.cs",
-              "RelativeToolTip": "Thing\\WalkerCore\\MechUtility.cs",
-              "ViewState": "AgIAAOcAAAAAAAAAAAAIwBwBAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:55:07.701Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TimeAssignmentDefOf.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\TimeAssignmentDefOf.cs",
-              "RelativeDocumentMoniker": "DefOf\\TimeAssignmentDefOf.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\TimeAssignmentDefOf.cs",
-              "RelativeToolTip": "DefOf\\TimeAssignmentDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "WalkerGear_Core.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\WalkerGear_Core.cs",
+              "RelativeDocumentMoniker": "Thing\\WalkerCore\\WalkerGear_Core.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\Thing\\WalkerCore\\WalkerGear_Core.cs",
+              "RelativeToolTip": "Thing\\WalkerCore\\WalkerGear_Core.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAMwHsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:47:54.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TimeAssignmentSelector_DrawTimeAssignmentSelectorGrid.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\TimeAssignmentSelector_DrawTimeAssignmentSelectorGrid.cs",
-              "RelativeDocumentMoniker": "HarmonyPatches\\TimeAssignmentSelector_DrawTimeAssignmentSelectorGrid.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\TimeAssignmentSelector_DrawTimeAssignmentSelectorGrid.cs",
-              "RelativeToolTip": "HarmonyPatches\\TimeAssignmentSelector_DrawTimeAssignmentSelectorGrid.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:47:33.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StatDefof.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\StatDefof.cs",
-              "RelativeDocumentMoniker": "DefOf\\StatDefof.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\StatDefof.cs",
-              "RelativeToolTip": "DefOf\\StatDefof.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:47:19.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ThingDefOf.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\ThingDefOf.cs",
-              "RelativeDocumentMoniker": "DefOf\\ThingDefOf.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\ThingDefOf.cs",
-              "RelativeToolTip": "DefOf\\ThingDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:47:18.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ThoughtDefOf.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\ThoughtDefOf.cs",
-              "RelativeDocumentMoniker": "DefOf\\ThoughtDefOf.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\DefOf\\ThoughtDefOf.cs",
-              "RelativeToolTip": "DefOf\\ThoughtDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:47:15.833Z",
+              "WhenOpened": "2025-03-12T00:40:49.027Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "JobGiver_Work_GetPriority_Patch.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\JobGiver_Work_GetPriority_Patch.cs",
-              "RelativeDocumentMoniker": "HarmonyPatches\\JobGiver_Work_GetPriority_Patch.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\JobGiver_Work_GetPriority_Patch.cs",
-              "RelativeToolTip": "HarmonyPatches\\JobGiver_Work_GetPriority_Patch.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBgAAAAmAAAAAAAAAA==",
+              "Title": "PawnRenderNodeWorker_TurretGun_Custom.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\NewTurretPack\\PawnRenderNodeWorker_TurretGun_Custom.cs",
+              "RelativeDocumentMoniker": "NewTurretPack\\PawnRenderNodeWorker_TurretGun_Custom.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\NewTurretPack\\PawnRenderNodeWorker_TurretGun_Custom.cs",
+              "RelativeToolTip": "NewTurretPack\\PawnRenderNodeWorker_TurretGun_Custom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:46:31.41Z",
+              "WhenOpened": "2025-03-10T21:45:22.102Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HarmonyInit.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\HarmonyInit.cs",
-              "RelativeDocumentMoniker": "HarmonyPatches\\HarmonyInit.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\HarmonyPatches\\HarmonyInit.cs",
-              "RelativeToolTip": "HarmonyPatches\\HarmonyInit.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAQwDUAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PawnRenderNode_TurretGun_Custom.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\NewTurretPack\\PawnRenderNode_TurretGun_Custom.cs",
+              "RelativeDocumentMoniker": "NewTurretPack\\PawnRenderNode_TurretGun_Custom.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\NewTurretPack\\PawnRenderNode_TurretGun_Custom.cs",
+              "RelativeToolTip": "NewTurretPack\\PawnRenderNode_TurretGun_Custom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:43:13.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T21:45:20.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompTurretGun_Custom.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\NewTurretPack\\CompTurretGun_Custom.cs",
+              "RelativeDocumentMoniker": "NewTurretPack\\CompTurretGun_Custom.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\WalkerGear\\NewTurretPack\\CompTurretGun_Custom.cs",
+              "RelativeToolTip": "NewTurretPack\\CompTurretGun_Custom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:45:19.509Z"
             }
           ]
         }
