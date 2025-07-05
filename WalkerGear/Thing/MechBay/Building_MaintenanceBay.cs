@@ -368,7 +368,7 @@ namespace WalkerGear
             if (!thing.MapHeld.reachability.CanReach(thing.Position, this.InteractionCell, PathEndMode.OnCell, TraverseMode.ByPawn, Danger.Deadly)) return false;
             return true;
         }
-        private AcceptanceReport CanAcceptPawn(Pawn pawn)
+        public virtual AcceptanceReport CanAcceptPawn(Pawn pawn)
         {
             if (!pawn.IsColonist && !pawn.IsSlaveOfColony && !pawn.IsPrisonerOfColony && (pawn.IsColonyMutant || pawn.IsGhoul))
             {
@@ -455,13 +455,15 @@ namespace WalkerGear
             }
             LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LinkBuilding"), OpportunityType.GoodToKnow);
         }
-        public Pawn Dummy
+        public virtual Pawn Dummy
         {
             get
             {
                 if (cachePawn == null)
                 {
-                    cachePawn = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist);//生成
+                    cachePawn = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist);
+                    cachePawn.genes.SetXenotypeDirect(XenotypeDefOf.Baseliner);
+
                     pawnsInBuilding.Add(cachePawn);
                     cachePawn.apparel.DestroyAll();
                     cachePawn.rotationInt = Rotation.Opposite;
