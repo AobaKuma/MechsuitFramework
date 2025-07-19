@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <OutputPath>$(MSBuildThisFileDirectory)/../1.6/Assemblies</OutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>Preview</LangVersion>
+    <Configurations>Debug;Release;1.6</Configurations>
+    <!-- <PublicizeAll>true</PublicizeAll> -->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.6|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Effects\**" />
+    <EmbeddedResource Remove="Effects\**" />
+    <None Remove="Effects\**" />
+  </ItemGroup>
+  <ItemGroup>
+
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4495-beta" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" />
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <Publicize Include="Assembly-CSharp:Verse.Thing.rotationInt" />
+    <Publicize Include="Assembly-CSharp:Verse.Projectile" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompApparelVerbOwner_Charged.remainingCharges" />
+    <Publicize Include="Assembly-CSharp:Verse.ArmorUtility.ApplyArmor" />
+    <Publicize Include="Assembly-CSharp:RimWorld.GenStep_Fog.UnfogMapFromEdge" />
+    <Publicize Include="Assembly-CSharp:Verse.BackCompatibility.conversionChain" />
+    <Publicize Include="Assembly-CSharp:RimWorld.Dialog_StylingStation.stylingStation" />
+
+    <Publicize Include="Assembly-CSharp" MemberPattern="^RimWorld\.Dialog_DebugRenderTree\..*" />
+    <Publicize Include="Assembly-CSharp" MemberPattern="^Verse\.DirectXmlToObjectNew\..*" />
+    <Publicize Include="Assembly-CSharp" MemberPattern="^RimWorld\.PawnFlyer\..*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

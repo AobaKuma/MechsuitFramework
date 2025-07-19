@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+    <!-- add subworkerClasses field if it doesn't exist -->
+    <!-- <Operation Class="PatchOperationConditional">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/subworkerClasses</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>
+                Defs/PawnRenderTreeDef[defName="Humanlike"]/root</xpath>
+            <value>
+                <subworkerClasses />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/subworkerClasses</xpath>
+        <value>
+            <li>Exosuit.PawnRenderSubWorker_OffsetRoot</li>
+        </value>
+    </Operation> -->
+
+    <!-- add subworkerClasses field if it doesn't exist -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children/li[workerClass="PawnRenderNodeWorker_Head"]/subworkerClasses</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>
+                Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children/li[workerClass="PawnRenderNodeWorker_Head"]</xpath>
+            <value>
+                <subworkerClasses />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>
+            Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children/li[workerClass="PawnRenderNodeWorker_Head"]/subworkerClasses</xpath>
+        <value>
+            <li>Exosuit.PawnRenderSubWorker_Offset</li>
+        </value>
+    </Operation>
+</Patch>

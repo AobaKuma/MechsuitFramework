@@ -6,4 +6,8 @@
 		<li>1.5</li>
 		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.5/CE</li>
 	</v1.5>
+	<v1.6>
+		<li>/</li>
+		<li>1.6</li>
+	</v1.6>
 </loadFolders>

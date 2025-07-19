@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+  <Exosuit.SlotDef Name="BaseSlot" Abstract="true">
+    <supportedSlots>
+    </supportedSlots>
+  </Exosuit.SlotDef>
+
+  <Exosuit.SlotDef>
+    <defName>Core</defName>
+    <label>Core</label>
+    <description>The core frame of an Exosuit, which is the most important part to be operation-ready.</description>
+    <supportedSlots>
+      <li>Head</li>
+      <li>Attachment</li>
+      <li>ArmLeft</li>
+      <li>ArmRight</li>
+      <li>MountLeft</li>
+      <li>MountRight</li>
+    </supportedSlots>
+    <uiPriority>0</uiPriority>
+    <isCoreFrame>true</isCoreFrame>
+  </Exosuit.SlotDef>
+
+  <Exosuit.SlotDef ParentName="BaseSlot">
+    <defName>MountRight</defName>
+    <label>Right Mount</label>
+    <description>The right shoulder mount slot, it ususally capable to hold an automatic turret, or support a large pack with pack module.</description>
+    <uiPriority>1</uiPriority>
+  </Exosuit.SlotDef>
+
+  <Exosuit.SlotDef ParentName="BaseSlot">
+    <defName>Head</defName>
+    <label>Head</label>
+    <description>The sensor module slot. not always a helmet but its located on the top of an Exosuit.</description>
+    <uiPriority>2</uiPriority>
+  </Exosuit.SlotDef>
+
+  <Exosuit.SlotDef ParentName="BaseSlot">
+    <defName>ArmRight</defName>
+    <label>Right Arm</label>
+    <description>The equipment slot. Exosuit has a robotic arm for equipment holding and capable to do some complex duty.</description>
+    <uiPriority>3</uiPriority>
+  </Exosuit.SlotDef>
+
+  <Exosuit.SlotDef ParentName="BaseSlot">
+    <defName>MountLeft</defName>
+    <label>Left Mount</label>
+    <description>The ability gear slot, which can hold launchers or special device modules that can play a role beyond expectations in the right situation.</description>
+    <uiPriority>4</uiPriority>
+  </Exosuit.SlotDef>
+
+  <Exosuit.SlotDef ParentName="BaseSlot">
+    <defName>Attachment</defName>
+    <label>Attachment</label>
+    <description>The attachment slot, also called the pack slot is located on the rear side of Exosuit, and has many useful modules from an additional power supply to the escape Pod launcher.</description>
+    <uiPriority>5</uiPriority>
+  </Exosuit.SlotDef>
+
+  <Exosuit.SlotDef ParentName="BaseSlot">
+    <defName>ArmLeft</defName>
+    <label>Left Arm</label>
+    <description>The utility slot. have a rack that can attach tools or equipment.</description>
+    <uiPriority>6</uiPriority>
+  </Exosuit.SlotDef>
+  
+</Defs>

@@ -1,0 +1,205 @@
+<Defs>
+  <ThingDef Name="ModuleApparelBase" Abstract="True">
+    <modExtensions>
+      <li Class="Exosuit.NoGenederApparelExt" />
+    </modExtensions>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <generateCommonality>0</generateCommonality>
+    <generateAllowChance>0</generateAllowChance>
+    <drawerType>MapMeshOnly</drawerType>
+    <selectable>True</selectable>
+    <pathCost>14</pathCost>
+    <useHitPoints>false</useHitPoints>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.00</drawSize>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <apparel>
+      <parentTagDef>WGApparelBody</parentTagDef>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <anyTechLevelCanUseForWarmth>false</anyTechLevelCanUseForWarmth>
+      <blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+    </apparel>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Mass>0</Mass>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>false</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>false</smeltable>
+    <thingCategories Inherit="false" />
+    <thingSetMakerTags Inherit="false" />
+    <tradeTags />
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <only>(0.7, 0.7, 0.7)</only>
+        </li>
+        <li>
+          <only>(0.5, 0.5, 0.5)</only>
+        </li>
+        <li>
+          <only>(0.6, 0.6, 0.6)</only>
+        </li>
+        <li>
+          <only>(104, 120, 119)</only> <!-- drab dark blue -->
+        </li>
+        <li>
+          <only>(106, 120, 104)</only> <!-- drab dark green -->
+        </li>
+        <li>
+          <only>(128, 116, 84)</only> <!-- light brown -->
+        </li>
+        <li>
+          <only>(107, 94, 64)</only> <!-- mid brown -->
+        </li>
+      </options>
+    </colorGenerator>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <!-- <li Class="CompProperties_Styleable" /> -->
+      <!-- <li Class="Exosuit.CompProperties_ExosuitModule">
+        <EquipedThingDef>ThingDef 提供的裝備</EquipedThingDef>
+        <ItemDef>ThingDef 物品def</ItemDef>
+        <occupiedSlots>list of Exosuit.SlotDef 此模块占用的格子</occupiedSlots>
+        <disabledSlots>list of Exosuit.SlotDef 仅限核心: 禁用的格子</disabledSlots>
+        <repairEfficiency>float 作為物品被修理的效率</repairEfficiency>
+      </li> -->
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="ModuleApparelCore" ParentName="ModuleApparelBase" Abstract="True">
+    <thingClass>Exosuit.Exosuit_Core</thingClass>
+    <apparel>
+      <!-- <drawData> -->
+      <layers>
+        <li>Shell</li>
+        <li>ExosuitLayer_Core</li>
+      </layers>
+      <parentTagDef>WGApparelBody</parentTagDef>
+      <renderSkipFlags>
+        <li>Body</li>
+      </renderSkipFlags>
+      <renderNodeProperties>
+        <li>
+          <parentTagDef>Root</parentTagDef>
+          <nodeClass>PawnRenderNode_Apparel</nodeClass>
+          <useGraphic>false</useGraphic>
+          <debugLabel>Mecha Root</debugLabel>
+          <tagDef>WGApparel</tagDef>
+          <skipFlag>WGRoot</skipFlag>
+          <baseLayer>0</baseLayer>
+          <subworkerClasses>
+            <li>Exosuit.PawnRenderSubWorker_OffsetRoot</li>
+          </subworkerClasses>
+          <children>
+            <li>
+              <useGraphic>false</useGraphic>
+              <debugLabel>Mecha Apparel Body</debugLabel>
+              <tagDef>WGApparelBody</tagDef>
+              <baseLayer>20</baseLayer>
+            </li>
+            <li>
+              <useGraphic>false</useGraphic>
+              <debugLabel>Mecha Apparel Head</debugLabel>
+              <tagDef>WGApparelHead</tagDef>
+              <baseLayer>40</baseLayer>
+              <workerClass>Exosuit.PawnRenderNodeWorker_InhertHead</workerClass>
+            </li>
+          </children>
+        </li>
+      </renderNodeProperties>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+  <ThingDef Name="ModuleApparelHead" ParentName="ModuleApparelBase" Abstract="True">
+    <apparel>
+      <renderSkipFlags>
+        <li>Head</li>
+      </renderSkipFlags>
+      <parentTagDef>WGApparelHead</parentTagDef>
+      <bodyPartGroups>
+        <li>Neck</li>
+      </bodyPartGroups>
+      <layers>
+        <li>ExosuitLayer_Core</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="ModuleApparelAttachment" ParentName="ModuleApparelBase" Abstract="True">
+    <apparel>
+      <bodyPartGroups>
+        <li>Waist</li>
+        <li>Neck</li>
+      </bodyPartGroups>
+      <layers>
+        <li>ExosuitLayer_Utility</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="ModuleApparelMountRight" ParentName="ModuleApparelBase" Abstract="True">
+    <apparel>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <layers>
+        <li>ExosuitLayer_Utility</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="ModuleApparelMountLeft" ParentName="ModuleApparelBase" Abstract="True">
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <layers>
+        <li>ExosuitLayer_Utility</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="ModuleApparelArmLeft" ParentName="ModuleApparelBase" Abstract="True">
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <layers>
+        <li>ExosuitLayer_Attach</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="ModuleApparelArmRight" ParentName="ModuleApparelBase" Abstract="True">
+    <apparel>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <layers>
+        <li>ExosuitLayer_Attach</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+</Defs>

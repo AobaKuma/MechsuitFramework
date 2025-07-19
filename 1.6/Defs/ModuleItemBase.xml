@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="ModuleItemBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <storedConceptLearnOpportunity>WG_ModuleItem</storedConceptLearnOpportunity>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <intricate>true</intricate>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <techLevel>Industrial</techLevel>
+    <possessionCount>2</possessionCount>
+    <generateCommonality>0</generateCommonality>
+    <thingCategories>
+      <li>MF_Module</li>
+    </thingCategories>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.50</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <recipeMaker>
+      <workSkill>Crafting</workSkill>
+      <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+    </recipeMaker>
+    <tickerType>Never</tickerType>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>true</smeltable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Styleable" />
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <!-- <li Class="Exosuit.CompProperties_ExosuitModule">
+        <EquipedThingDef>ThingDef 提供的裝備</EquipedThingDef>
+        <ItemDef>ThingDef 物品def</ItemDef>
+        <occupiedSlots>list of Exosuit.SlotDef 此模块占用的格子</occupiedSlots>
+        <disabledSlots>list of Exosuit.SlotDef 仅限核心: 禁用的格子</disabledSlots>
+        <repairEfficiency>float 作為物品被修理的效率</repairEfficiency>
+      </li> -->
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="ModuleItemHead" ParentName="ModuleItemBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Module_H</texPath>
+    </graphicData>
+  </ThingDef>
+  <ThingDef Name="ModuleItemCore" ParentName="ModuleItemBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Module_C</texPath>
+    </graphicData>
+  </ThingDef>
+  <ThingDef Name="ModuleItemAttachment" ParentName="ModuleItemBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Module_A</texPath>
+    </graphicData>
+  </ThingDef>
+  <ThingDef Name="ModuleItemMountRight" ParentName="ModuleItemBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Module_SR</texPath>
+    </graphicData>
+  </ThingDef>
+  <ThingDef Name="ModuleItemMountLeft" ParentName="ModuleItemBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Module_SL</texPath>
+    </graphicData>
+  </ThingDef>
+  <ThingDef Name="ModuleItemArmLeft" ParentName="ModuleItemBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Module_AL</texPath>
+    </graphicData>
+  </ThingDef>
+  <ThingDef Name="ModuleItemArmRight" ParentName="ModuleItemBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Module_AR</texPath>
+    </graphicData>
+  </ThingDef>
+
+
+
+</Defs>

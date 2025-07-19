@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WG_HeavyExoskeleton</defName>
+    <label>walker frame</label>
+    <description>A primitive and bulky heavy-duty exoskeleton, known as Exosuit. Although such heavy exoskeletons have been repeatedly invented since the 22nd century, their design and technical foundations are interoperable.\n\nThe application environment of powered frames in the military is close to small mechas or some genetically modified large humanoid soldiers. Still, its degree of automation is low and requires pilot to use full body control, and relies on a specialized maintenance platform to put on and take off.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>9.00</researchViewX>
+    <researchViewY>4.80</researchViewY>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <teachConcept>WG_WalkerFrame</teachConcept>
+    <prerequisites>
+      <li>Prosthetics</li>
+    </prerequisites>
+    <heldByFactionCategoryTags>
+      <li>Pirate</li>
+      <li>Outlander</li>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef ParentName="Human">
+    <defName>Dummy</defName>
+    <race>
+      <renderTree>Dummy</renderTree>
+    </race>
+  </ThingDef>
+  <PawnRenderTreeDef>
+    <defName>Dummy</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <subworkerClasses>
+        <li>Exosuit.PawnRenderSubWorker_OffsetRoot</li>
+      </subworkerClasses>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <nodeClass>PawnRenderNode_Body</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Body</workerClass>
+          <tagDef>Body</tagDef>
+          <skipFlag>Body</skipFlag>
+          <colorType>Skin</colorType>
+          <useRottenColor>true</useRottenColor>
+          <useSkinShader>true</useSkinShader>
+          <children>
+            <li Class="PawnRenderNodeProperties_Parent">
+              <debugLabel>Apparel root</debugLabel>
+              <tagDef>ApparelBody</tagDef>
+              <baseLayer>20</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li>
+          <debugLabel>Head stump</debugLabel>
+          <nodeClass>PawnRenderNode_Stump</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Stump</workerClass>
+          <texPath>Things/Pawn/Humanlike/Heads/None_Average_Stump</texPath>
+          <baseLayer>50</baseLayer>
+          <colorType>Skin</colorType>
+          <skipFlag>Head</skipFlag>
+          <useSkinShader>true</useSkinShader>
+          <useRottenColor>true</useRottenColor>
+          <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        </li>
+        <li>
+          <debugLabel>Head</debugLabel>
+          <nodeClass>PawnRenderNode_Head</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Head</workerClass>
+          <tagDef>Head</tagDef>
+          <skipFlag>Head</skipFlag>
+          <baseLayer>50</baseLayer>
+          <colorType>Skin</colorType>
+          <useRottenColor>true</useRottenColor>
+          <useSkinShader>true</useSkinShader>
+          <subworkerClasses>
+            <li>Exosuit.PawnRenderSubWorker_OffsetRoot</li>
+          </subworkerClasses>
+          <children>
+            <li Class="PawnRenderNodeProperties_Parent">
+              <debugLabel>Apparel root</debugLabel>
+              <tagDef>ApparelHead</tagDef>
+              <baseLayer>70</baseLayer>
+            </li>
+          </children>
+        </li>
+      </children>
+
+    </root>
+  </PawnRenderTreeDef>
+</Defs>

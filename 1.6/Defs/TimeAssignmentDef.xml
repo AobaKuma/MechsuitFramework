@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <TimeAssignmentDef>
+    <defName>WG_WorkWithFrame</defName>
+    <label>Pilot</label>
+    <color>(133, 60, 60)</color>
+    <allowRest>false</allowRest>
+    <allowJoy>false</allowJoy>
+  </TimeAssignmentDef>
+</Defs>

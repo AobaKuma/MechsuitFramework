@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- for uiPriority 0 -->
+    <ApparelLayerDef>
+        <defName>ExosuitLayer_Core</defName>
+        <label>core modules</label>
+        <drawOrder>902</drawOrder>
+    </ApparelLayerDef>
+
+    <ApparelLayerDef>
+        <defName>ExosuitLayer_Attach</defName>
+        <label>attachment modules</label>
+        <drawOrder>901</drawOrder>
+    </ApparelLayerDef>
+
+    <ApparelLayerDef>
+        <defName>ExosuitLayer_Utility</defName>
+        <label>utility modules</label>
+        <drawOrder>900</drawOrder>
+    </ApparelLayerDef>
+</Defs>

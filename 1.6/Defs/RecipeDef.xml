@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WG_SmeltModule</defName>
+    <label>smelt module</label>
+    <description>Use heat and strong electromagnets to break down modules into useful resources.</description>
+    <jobString>Smelting apparel.</jobString>
+    <workAmount>1600</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <specialProducts>
+      <li>Smelted</li>
+    </specialProducts>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MF_Module</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MF_Module</li>
+      </categories>
+    </fixedIngredientFilter>
+    <recipeUsers>
+      <li>ElectricSmelter</li>
+    </recipeUsers>
+  </RecipeDef>
+</Defs>

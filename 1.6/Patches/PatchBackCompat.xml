@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+    <Operation Class="Exosuit.XmlBackCompat">
+        <targetClassList>
+            <li>WalkerGear.Building_EjectorBay</li>
+            <li>WalkerGear.JobDriver_GetInEjector</li>
+            <li>WalkerGear.WalkerGear_Core</li>
+            <li>WalkerGear.PawnRenderNode_ApparelColor</li>
+            <li>WalkerGear.PawnRenderNodeWorker_WeaponOnGantry</li>
+            <li>WalkerGear.CompProperties_BuildingExtraRenderer</li>
+            <li>WalkerGear.CompApparelForcedWeapon</li>
+            <li>WalkerGear.CompProperties_WalkerComponent</li>
+            <li>WalkerGear.CompProperties_ForceUseWeapon</li>
+            <li>WalkerGear.CompProperties_LaunchExhaust</li>
+            <li>WalkerGear.CompProperties_ProjectileFleckEmitter</li>
+            <li>WalkerGear.CompProperties_MeleeSweep</li>
+            <li>WalkerGear.Projectile_Parabola</li>
+            <li>WalkerGear.ModExtForceApparelGen</li>
+            <li>WalkerGear.ModExtension_NoIdeoApparel</li>
+            <li>WalkerGear.ModExtWalkerCore</li>
+            <li>WalkerGear.ApparelRenderOffsets</li>
+            <li>WG_WalkerGearLayer_Core</li>
+            <li>WG_WalkerGearLayer_Utility</li>
+            <li>WG_WalkerGearLayer</li>
+        </targetClassList>
+        <classReplacedList>
+            <li>Exosuit.Building_EjectorBay</li>
+            <li>Exosuit.JobDriver_GetInEjector</li>
+            <li>Exosuit.Exosuit_Core</li>
+            <li>Exosuit.PawnRenderNode_ApparelColor</li>
+            <li>Exosuit.PawnRenderNodeWorker_WeaponOnGantry</li>
+            <li>Exosuit.CompProperties_BuildingExtraRenderer</li>
+            <li>Exosuit.CompApparelForcedWeapon</li>
+            <li>Exosuit.CompProperties_ExosuitModule</li>
+            <li>Exosuit.CompProperties_ForceUseWeapon</li>
+            <li>Exosuit.CompProperties_LaunchExhaust</li>
+            <li>Exosuit.CompProperties_ProjectileFleckEmitter</li>
+            <li>Exosuit.CompProperties_MeleeSweep</li>
+            <li>Exosuit.Projectile_Parabola</li>
+            <li>Exosuit.ModExtForceApparelGen</li>
+            <li>Exosuit.ModExtension_NoIdeoApparel</li>
+            <li>Exosuit.ExosuitExt</li>
+            <li>Exosuit.ApparelRenderOffsets</li>
+            <!-- Non Class -->
+            <li>ExosuitLayer_Core</li>
+            <li>ExosuitLayer_Utility</li>
+            <li>ExosuitLayer_Attach</li>
+        </classReplacedList>
+    </Operation>
+</Patch>
