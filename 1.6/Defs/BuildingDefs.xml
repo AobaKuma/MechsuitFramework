@@ -369,5 +369,18 @@
     <passability>PassThroughOnly</passability>
     <surfaceType>Item</surfaceType>
   </ThingDef>
-  
+
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>WG_PawnFlyer</defName>
+    <thingClass>Exosuit.WG_PawnFlyer</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.01</flightDurationMin>
+      <flightSpeed>55</flightSpeed>
+    </pawnFlyer>
+    <modExtensions>
+      <li Class="Exosuit.ModExtension_Flyer">
+        <flightRange>20</flightRange>
+      </li>
+    </modExtensions>
+  </ThingDef>
 </Defs>

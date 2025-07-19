@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Exosuit.csproj": {}
+  },
+  "projects": {
+    "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Exosuit.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Exosuit.csproj",
+        "projectName": "Exosuit",
+        "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Exosuit.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Krafs.Publicizer": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Krafs.Rimworld.Ref": {
+              "target": "Package",
+              "version": "[1.6.4495-beta, )"
+            },
+            "Lib.Harmony": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[2.3.6, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
