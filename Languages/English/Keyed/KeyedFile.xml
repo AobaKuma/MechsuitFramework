@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <LanguageData>
-    <WG_GetIn>Pilot</WG_GetIn>
+  <WG_GetIn>Pilot</WG_GetIn>
 
   <WG_WeaponDropped>After leaving the frame, {0} cannot equip and dropped the weapon.</WG_WeaponDropped>
 
@@ -63,5 +63,7 @@
   <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in this gantry.</WG_AutoRepair_Desc>
 
   <WG_AvailableModuleForThisSlot>Available modules for this slot</WG_AvailableModuleForThisSlot>
+  
+  <WG_ChangeModuleColor>Change module color</WG_ChangeModuleColor>
 
 </LanguageData>

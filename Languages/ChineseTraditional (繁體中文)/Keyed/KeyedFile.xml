@@ -60,5 +60,7 @@
 
   <WG_AutoRepair>自動維修</WG_AutoRepair>
   <WG_AutoRepair_Desc>切換殖民者是否應自動修復龍門架中的受損模塊。</WG_AutoRepair_Desc>
+  
+  <WG_ChangeModuleColor>更改模塊顏色</WG_ChangeModuleColor>
 
 </LanguageData>

@@ -275,9 +275,9 @@ namespace Exosuit
             List<FloatMenuOption> options = [];
             if (slot != null && OccupiedSlots.TryGetValue(slot, out Thing t)) //如果slot有填模塊，額外顯示移除選項
             {
-                options.Add(new("ChangeModuleColor".TranslateSimple(), delegate {
+                options.Add(new("WG_ChangeModuleColor".TranslateSimple(), delegate {
                     Find.WindowStack.Add(new Dialog_ChooseColor(
-                        "ChangeModuleColor".TranslateSimple(), Find.FactionManager.OfPlayer.AllegianceColor, CachedColors, (color)=>
+                        "WG_ChangeModuleColor".TranslateSimple(), Find.FactionManager.OfPlayer.AllegianceColor, CachedColors, (color)=>
                         {
                             t.SetColor(color);
                             Parent.SetCacheDirty();

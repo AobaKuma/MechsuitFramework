@@ -1,8 +1,5 @@
 <Defs>
   <ThingDef Name="ModuleApparelBase" Abstract="True">
-    <modExtensions>
-      <li Class="Exosuit.NoGenederApparelExt" />
-    </modExtensions>
     <thingClass>Apparel</thingClass>
     <category>Item</category>
     <destroyOnDrop>true</destroyOnDrop>
@@ -82,6 +79,9 @@
         <repairEfficiency>float 作為物品被修理的效率</repairEfficiency>
       </li> -->
     </comps>
+    <modExtensions>
+      <li Class="Exosuit.NoGenederApparelExt" />
+    </modExtensions>
   </ThingDef>
 
   <ThingDef Name="ModuleApparelCore" ParentName="ModuleApparelBase" Abstract="True">

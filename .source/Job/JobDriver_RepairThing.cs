@@ -9,13 +9,7 @@ namespace Exosuit
     public class JobDriver_RepairThing : JobDriver
     {
         protected float ticksToNextRepair;
-        protected Thing Target
-        {
-            get
-            {
-                return job.targetA.Thing;
-            }
-        }
+        protected Thing Target => job.targetA.Thing;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return ReservationUtility.Reserve(this.pawn, this.Target, this.job, 1, -1, null, errorOnFailed);
@@ -33,7 +27,7 @@ namespace Exosuit
             repair.tickAction = delegate
             {
                 Pawn actor = repair.actor;
-                actor.skills?.Learn(SkillDefOf.Construction, 0.05f);
+                actor.skills?.Learn(SkillDefOf.Crafting, 0.05f);
                 actor.rotationTracker.FaceTarget(actor.CurJob.GetTarget(TargetIndex.A));
 
                 float num = actor.GetStatValue(StatDefOf.WorkSpeedGlobal) * 1.7f;
@@ -43,12 +37,11 @@ namespace Exosuit
                     ticksToNextRepair += 20f;
                     base.TargetThingA.HitPoints++;
                     base.TargetThingA.HitPoints = Mathf.Min(base.TargetThingA.HitPoints, base.TargetThingA.MaxHitPoints);
-                    if (base.TargetThingA.HitPoints == base.TargetThingA.MaxHitPoints)
-                    {
-                        actor.records.Increment(RecordDefOf.ThingsRepaired);
-                        actor.jobs.EndCurrentJob(JobCondition.Succeeded);
-                    }
+
                 }
+                if (base.TargetThingA.HitPoints < base.TargetThingA.MaxHitPoints) return;
+                actor.records.Increment(RecordDefOf.ThingsRepaired);
+                actor.jobs.EndCurrentJob(JobCondition.Succeeded);
             };
             repair.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             repair.WithEffect(EffecterDefOf.ConstructMetal, TargetIndex.A);

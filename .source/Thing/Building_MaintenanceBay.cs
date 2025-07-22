@@ -73,7 +73,6 @@ namespace Exosuit
         //methods override
         public override IEnumerable<Gizmo> GetGizmos()
         {
-
             if (HasGearCore && Faction.IsPlayer)
             {
                 Command_Target command_GetIn = new()
@@ -101,16 +100,7 @@ namespace Exosuit
                     }
                 };
                 yield return toggle_autoRepair;
-
-                Command_Action command_styling = new() {
-                    defaultLabel = "StylingExosuit".TranslateSimple(),
-                    action = () => {
-                        Find.WindowStack.Add(new Dialog_StylingStation(Dummy,this));
-                    }
-                };
-                yield return command_styling;
             }
-
 
             if (Prefs.DevMode == true && DebugSettings.godMode==true)
             {
