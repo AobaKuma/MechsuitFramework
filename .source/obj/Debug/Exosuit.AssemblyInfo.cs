@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Exosuit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95379d264f69eec34c817e8196006997ea0bd57f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d6cb8df49a2e89ac1c78a1bbe32a8b4669e2fbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Exosuit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Exosuit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
