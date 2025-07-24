@@ -9,6 +9,9 @@ using static Verse.Text;
 namespace Exosuit
 {
     [StaticConstructorOnStartup]
+    //最好让tab跟core。。。
+    //那样就能给pawn用了
+
     public partial class ITab_Exosuit : ITab
     {
         public ITab_Exosuit()
@@ -22,15 +25,17 @@ namespace Exosuit
         private readonly Color grey = new ColorInt(72, 82, 92).ToColor;
 
         private static readonly Texture2D EmptySlotIcon = Command.BGTex;
-
+        
+        
         public static List<Color> CachedColors {
             get {
                 return cachedColors ??= DefDatabase<ColorDef>.AllDefsListForReading.Select((ColorDef c) => c.color).Concat(Find.FactionManager.AllFactionsVisible.Select((Faction f) => f.Color)).Distinct().ToList();
             } 
         }
         private static List<Color> cachedColors;
+
         private Rot4 direction = Rot4.South;
-        protected override void FillTab()
+        public override void FillTab()
         {
             Parent.TryUpdateCache();
 
@@ -39,12 +44,14 @@ namespace Exosuit
             Rect inner = rect.ContractedBy(3f);
             //Draw Title
             {
-                Anchor = TextAnchor.UpperRight;
-                string title = "WG_MechSolution".Translate();
-                var titleSize = CalcSize(title);
-                Widgets.LabelFit(new(new(inner.xMax - titleSize.x - 20f, inner.y), titleSize), title);
-                Anchor = TextAnchor.UpperLeft;
-                LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LoadModule"), this.Parent, OpportunityType.GoodToKnow);
+                using (TextBlock textBlock = new(TextAnchor.UpperRight))
+                {
+                    string title = "WG_MechSolution".Translate();
+                    var titleSize = CalcSize(title);
+                    Widgets.LabelFit(new(new(inner.xMax - titleSize.x - 20f, inner.y), titleSize), title);
+                    LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LoadModule"), this.Parent, OpportunityType.GoodToKnow);
+                }
+                
             }
 
             //Draw S/L solution 由於這個還沒做所以就沒裝了
@@ -70,9 +77,9 @@ namespace Exosuit
                 slgizmoRect.size = size;
                 Widgets.ButtonText(slgizmoRect, text);
             }
-
-            Draw_GizmoSlot(0);
-            for (int i = 1; i <= 6; i++)
+            
+            //7个格子
+            for (int i = 0; i <= 6; i++)
             {
                 Draw_GizmoSlot(i);
             }
@@ -92,20 +99,27 @@ namespace Exosuit
                 Widgets.Label(labelRect, text);
                 LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_PayloadCapacity"), this.Parent, OpportunityType.GoodToKnow);
             }
-            Vector2 position = positions[0];
+            
             //stats
             {
-                position.x = 170f - (gizmoSide / 5f);
-                position.y = 56f + (gizmoSide * 2 + 5f);
-                Vector2 box = GizmoSize * 2f;
-                box.x *= 1.2f;
-                box.y = size.y - position.y - 10f;
+                Vector2 position = new()
+                {
+                    x = 170f - (gizmoSide / 5f),
+                    y = 56f + (gizmoSide * 2 + 5f)
+                };
+                Vector2 box = new()
+                {
+                    x = GizmoSize.x * 1.2f,
+                    y = size.y - position.y - 10f
+                };
+ 
                 Rect statBlock = new(position, box);
                 DrawStatEntries(statBlock, OccupiedSlots[PositionWSlot[0]]);
             }
 
-            //rotate&color
+            //rotate
             Vector2 rotateGizmosBotLeft = new(340f, 216f);
+
             {
                 Vector2 smallGizmoSize = new(30f, 30f);
 
@@ -115,9 +129,6 @@ namespace Exosuit
                     Rect gizmoRect = new(rotateGizmosBotLeft, smallGizmoSize);
                     switch (i)
                     {
-                        case 0://染色
-
-                            break;
                         case 1:
                             if (Widgets.ButtonImage(gizmoRect, Resources.rotateButton))
                             {
@@ -280,7 +291,7 @@ namespace Exosuit
                         "ChangeModuleColor".TranslateSimple(), Find.FactionManager.OfPlayer.AllegianceColor, CachedColors, (color)=>
                         {
                             t.SetColor(color);
-                            Parent.SetCacheDirty();
+                            //Parent.SetCacheDirty(); 应该自动就更新了渲染cache
                         })
                         );
                 },MenuOptionPriority.High));

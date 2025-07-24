@@ -48,7 +48,7 @@ namespace Exosuit
         protected bool autoRepair = true;
         protected bool autoReload = true;
         
-        protected IReloadableComp GetFirstNeedReload()
+        public IReloadableComp GetFirstNeedReload()
         {
             return ReloadableUtility.FindSomeReloadableComponent(Dummy, false);
         }
@@ -101,14 +101,6 @@ namespace Exosuit
                     }
                 };
                 yield return toggle_autoRepair;
-
-                Command_Action command_styling = new() {
-                    defaultLabel = "StylingExosuit".TranslateSimple(),
-                    action = () => {
-                        Find.WindowStack.Add(new Dialog_StylingStation(Dummy,this));
-                    }
-                };
-                yield return command_styling;
             }
 
 
@@ -207,7 +199,7 @@ namespace Exosuit
             }
 
             Core?.ModuleRecache();
-            GraphicRecache();
+            //GraphicRecache(); 衣服改变会自动更新贴图cache
             isCacheDirty = false;
         }
         private void GraphicRecache()

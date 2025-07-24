@@ -73,6 +73,13 @@
         <suspendable>true</suspendable>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
+    <JobDef>
+        <defName>WG_ReloadAtGantry</defName>
+        <driverClass>Exosuit.JobDriver_LoadAmmoAtGantry</driverClass>
+        <reportString>reloading for TargetA.</reportString>
+        <suspendable>true</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
 
     <WorkGiverDef>
         <defName>WG_MaintainComponent</defName>

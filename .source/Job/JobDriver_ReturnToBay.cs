@@ -19,7 +19,7 @@ namespace Exosuit
         {
             return ReservationUtility.Reserve(this.pawn, this.Target, this.job, 1, -1, null, errorOnFailed);
         }
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Goto.GotoCell(this.Target.Position, PathEndMode.OnCell);
             yield return Toils_General.Wait(30, TargetIndex.None);

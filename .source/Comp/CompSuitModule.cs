@@ -21,7 +21,7 @@ namespace Exosuit
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look<int>(ref remainingCharges, "wc_remainingCharges", -999);
+            Scribe_Values.Look(ref remainingCharges, "wc_remainingCharges", -999);
             Scribe_Values.Look(ref hp, "wc_hp", -1);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && remainingCharges == -999)
             {

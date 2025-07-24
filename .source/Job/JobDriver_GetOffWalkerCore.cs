@@ -20,7 +20,7 @@ namespace Exosuit
         }
 
         //还在写
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(maintenanceBay);
             yield return Toils_Goto.GotoThing(maintenanceBay, Bay.Position);

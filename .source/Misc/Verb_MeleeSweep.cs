@@ -18,7 +18,7 @@ namespace Exosuit
         {
             return base.TryStartCastOn(castTarg, destTarg, true, canHitNonTargetPawns, preventFriendlyFire, nonInterruptingSelfCast);
         }
-        protected override DamageWorker.DamageResult ApplyMeleeDamageToTarget(LocalTargetInfo target)
+        public override DamageWorker.DamageResult ApplyMeleeDamageToTarget(LocalTargetInfo target)
         {
             DamageWorker.DamageResult result = new DamageWorker.DamageResult();
             Pawn casterPawn = CasterPawn;

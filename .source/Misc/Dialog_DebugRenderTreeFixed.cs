@@ -6,6 +6,10 @@ using Verse;
 
 namespace Exosuit.Misc
 {
+    /// <summary>
+    /// A DebugRenderTree that don't need the pawn spawned
+    /// </summary>
+    /// <param name="pawn"></param>
     internal class Dialog_DebugRenderTreeFixed(Pawn pawn) : Dialog_DebugRenderTree(pawn)
     {
         public override void WindowUpdate()

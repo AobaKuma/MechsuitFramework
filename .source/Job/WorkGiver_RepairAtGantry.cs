@@ -1,4 +1,6 @@
 ﻿using RimWorld;
+using RimWorld.Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,17 +15,6 @@ namespace Exosuit
 
         public override PathEndMode PathEndMode => PathEndMode.Touch;
 
-        public virtual JobDef Job => JobDefOf.WG_RepairAtGantry;
-
-        
-        public virtual bool CanRepair(Thing t)
-        {
-            return t is Building_MaintenanceBay bay && bay.CanRepair;
-        }
-        public virtual bool NeedRepair(Thing t)
-        {
-            return t is Building_MaintenanceBay bay && bay.NeedRepair;
-        }
         public override Danger MaxPathDanger(Pawn pawn)
         {
             return Danger.Deadly;
@@ -41,18 +32,48 @@ namespace Exosuit
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             if (t is not Building_MaintenanceBay bay)return false;
-
-            if (!bay.NeedRepair)// && !bay.NeedReload
+            if (!pawn.CanReserveAndReach(t, PathEndMode, MaxPathDanger(pawn), 2, ignoreOtherReservations: forced))
+                return false;
+            
+            if (bay.NeedRepair)
             {
-                return false;
+                return true;
             }
-            if (!pawn.CanReserveAndReach(t,PathEndMode,MaxPathDanger(pawn),2,ignoreOtherReservations:forced))
-                return false;
-            return true;
+            if (bay.NeedReload)
+            {
+                var reloadableComp = bay.GetFirstNeedReload();
+                if (pawn.carryTracker.AvailableStackSpace(reloadableComp.AmmoDef) < reloadableComp.MinAmmoNeeded(true))
+                {
+                    return false;
+                }
+                if (ReloadableUtility.FindEnoughAmmo(pawn, pawn.Position, reloadableComp, false).NullOrEmpty())
+                {
+                    return false;
+                }
+                return true;
+            }
+            return false;
         }
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            return JobMaker.MakeJob(JobDefOf.WG_RepairAtGantry, t);
+            if (t is not Building_MaintenanceBay bay) return null;
+            if (bay.NeedRepair)
+            {
+                return JobMaker.MakeJob(JobDefOf.WG_RepairAtGantry, t);
+            }
+            if (bay.NeedReload)
+            {
+                var ammos = ReloadableUtility.FindEnoughAmmo(pawn,pawn.Position,bay.GetFirstNeedReload(),false);
+                if (!ammos.NullOrEmpty())
+                {
+                    var reloadJob = JobMaker.MakeJob(JobDefOf.WG_ReloadAtGantry, bay);
+                    reloadJob.targetQueueB = ammos.Select(t=>new LocalTargetInfo(t)).ToList();
+                    reloadJob.count = Math.Min(ammos.Sum(t => t.stackCount), bay.GetFirstNeedReload().MaxAmmoNeeded(true));
+                    return reloadJob;
+                }
+                    
+            }
+            return null;
         }
     }
 }

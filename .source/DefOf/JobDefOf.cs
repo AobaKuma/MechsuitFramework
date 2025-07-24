@@ -26,6 +26,11 @@ namespace Exosuit
         public static JobDef WG_RepairAtGantry;
 
         /// <summary>
+        /// 给维护坞上的装甲装载弹药
+        /// </summary>
+        public static JobDef WG_ReloadAtGantry;
+
+        /// <summary>
         /// 右鍵選擇後 移動到維護塢並登上Walker
         /// </summary>
         public static JobDef WG_GetInWalkerCore;

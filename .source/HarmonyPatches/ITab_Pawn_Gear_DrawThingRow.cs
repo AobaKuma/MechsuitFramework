@@ -8,7 +8,7 @@ namespace Exosuit
     static class ITab_Pawn_Gear_DrawThingRow
     {
         [HarmonyPrefix]
-        static bool DrawThingRow(ITab_Pawn_Gear __instance, ref float y, float width, Thing thing, bool inventory = false)
+        static bool DrawThingRow(Thing thing)
         {
             return thing is not Apparel || !thing.TryGetComp<CompSuitModule>(out _);
         }

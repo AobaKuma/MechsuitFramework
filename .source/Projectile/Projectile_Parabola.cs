@@ -27,12 +27,12 @@ namespace Exosuit
         {
             base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
         }
-        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             base.DrawAt(drawLoc, flip);
         }
 
-        protected override void Tick()
+        public override void Tick()
         {
             base.Tick();
             if (Map != null)

@@ -11,6 +11,6 @@ namespace Exosuit
         public bool RequireAdult = true;
         public bool CanGearOff = true;//false for things like 40k dreadnought.
         public float minArmorBreakdownThreshold = 0.25f;
-        public ThingDef wreckageOverride = null;
+        public ThingDef wreckageOverride = ThingDefOf.MF_Building_Wreckage;
     }
 }
