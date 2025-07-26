@@ -14,18 +14,18 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>embedded</DebugType>
+    <DebugType>none</DebugType>
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>embedded</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>True</Optimize>
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.6|AnyCPU'">
-    <DebugType>embedded</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>True</Optimize>
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>

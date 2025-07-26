@@ -26,7 +26,9 @@ namespace Exosuit
 
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
-            return pawn.Map.listerBuildings.AllBuildingsColonistOfClass<Building_MaintenanceBay>().EnumerableNullOrEmpty();
+            var bays = pawn.Map.listerBuildings.AllBuildingsColonistOfClass<Building_MaintenanceBay>();
+            if (bays.EnumerableNullOrEmpty()) return true;            
+            return !bays.Any(bay=>(bay.CanReload||bay.CanRepair)&&bay.HasGearCore);
         }
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)

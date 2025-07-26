@@ -109,7 +109,7 @@ namespace Exosuit
                 };
                 Vector2 box = new()
                 {
-                    x = GizmoSize.x * 1.2f,
+                    x = GizmoSize.x * 2f,
                     y = size.y - position.y - 10f
                 };
  
@@ -340,7 +340,7 @@ namespace Exosuit
             }
 
             row.Label("WG_OverallArmor".Translate());
-            string structrueInt = (Parent.Core as Exosuit_Core)?.LabelHPPart.ToString();
+            string structrueInt = Parent.Core?.LabelHPPart.ToString();
             row.Gap(rect.width - CalcSize("WG_OverallArmor".Translate() + structrueInt).x - 8f);
             row.Label(structrueInt);
 
@@ -374,7 +374,11 @@ namespace Exosuit
                 }
                 row.Label(t);
                 row.Gap(rect.width - CalcSize(t + v).x - 8f);
-                row.Label(v);
+                using (TextBlock textBlock = new(TextAnchor.MiddleRight))
+                {
+                    row.Label(v);
+                } ;
+                
             }
         }
 

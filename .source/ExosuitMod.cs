@@ -16,7 +16,6 @@ namespace Exosuit
         internal static Harmony instance;
         public ExosuitMod(ModContentPack content) : base(content)
         {
-            //
             BackCompatibility.conversionChain.Add(new BackCompat_Exosuit_1_6());
             instance = new Harmony("ExosuitMod");
             LongEventHandler.QueueLongEvent(delegate
@@ -30,7 +29,7 @@ namespace Exosuit
                     }
                     catch (Exception e)
                     {
-                        Log.Error(e.StackTrace);
+                        Log.Error(e.Message + e.StackTrace);
                     }
 
                 });

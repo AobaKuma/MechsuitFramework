@@ -17,6 +17,7 @@ namespace Exosuit
         public static RenderSkipFlagDef Head;
         public static RenderSkipFlagDef Body;
         public static RenderSkipFlagDef WGRoot;
+        public static PawnRenderNodeTagDef WGApparelBody;
         public static SlotDef Core;
     }
 }
