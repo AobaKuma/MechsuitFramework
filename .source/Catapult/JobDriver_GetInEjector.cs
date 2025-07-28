@@ -11,7 +11,7 @@ namespace Exosuit
     public class JobDriver_GetInEjector : JobDriver_GetInWalkerCore
     {
         public Building_EjectorBay Ejector => (Building_EjectorBay)job.GetTarget(maintenanceBay).Thing;
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedOrNull(maintenanceBay);
             yield return Toils_Goto.GotoThing(maintenanceBay, PathEndMode.Touch);

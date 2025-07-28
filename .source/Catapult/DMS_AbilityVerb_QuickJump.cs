@@ -33,7 +33,7 @@ namespace Exosuit
             }
         }
 
-        protected override bool TryCastShot()
+        public override bool TryCastShot()
         {
             if (base.TryCastShot())
             {

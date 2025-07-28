@@ -24,7 +24,7 @@ namespace Exosuit
             return false;
         }
 
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Goto.GotoThing(TakeeInd, PathEndMode.Touch).FailOnDespawnedOrNull(TakeeInd).FailOnDespawnedOrNull(BuildingInd);
             Toil haul = Toils_Haul.StartCarryThing(TakeeInd);

@@ -7,15 +7,18 @@ using Verse.AI;
 
 namespace Exosuit
 {
+    /// <summary>
+    /// Right click on corpse or downed pawn with mech to do sth. 
+    /// </summary>
     public class FloatMenuOptionProvider_ExosuitDown : FloatMenuOptionProvider
     {
-        
-        protected override bool Drafted => false;
 
-        protected override bool Undrafted => true;
+        public override bool Drafted => false;
 
-        protected override bool Multiselect => false;
-        protected override bool RequiresManipulation => true;
+        public override bool Undrafted => true;
+
+        public override bool Multiselect => false;
+        public override bool RequiresManipulation => true;
         public override IEnumerable<FloatMenuOption> GetOptionsFor(Pawn clickedPawn, FloatMenuContext context)
         {
 

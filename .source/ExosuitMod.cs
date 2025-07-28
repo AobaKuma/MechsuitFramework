@@ -16,23 +16,25 @@ namespace Exosuit
         internal static Harmony instance;
         public ExosuitMod(ModContentPack content) : base(content)
         {
-            //
             BackCompatibility.conversionChain.Add(new BackCompat_Exosuit_1_6());
             instance = new Harmony("ExosuitMod");
-            //ins.PatchAllUncategorized();
-            PatchClassProcessor[] patchClasses = GetTypesFromAssembly(Assembly.GetAssembly(typeof(ExosuitMod))).Select(new Func<Type, PatchClassProcessor>(instance.CreateClassProcessor)).ToArray();
-            patchClasses.DoIf((PatchClassProcessor patchClass) => string.IsNullOrEmpty(patchClass.Category), delegate (PatchClassProcessor patchClass)
+            LongEventHandler.QueueLongEvent(delegate
             {
-                try
+                PatchClassProcessor[] patchClasses = GetTypesFromAssembly(Assembly.GetAssembly(typeof(ExosuitMod))).Select(new Func<Type, PatchClassProcessor>(instance.CreateClassProcessor)).ToArray();
+                patchClasses.DoIf((PatchClassProcessor patchClass) => string.IsNullOrEmpty(patchClass.Category), delegate (PatchClassProcessor patchClass)
                 {
-                    patchClass.Patch();
-                }
-                catch (Exception e)
-                {
-                    Log.Error(e.StackTrace);
-                }
-                
-            });
+                    try
+                    {
+                        patchClass.Patch();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error(e.Message + e.StackTrace);
+                    }
+
+                });
+            },"Exosuit Patching",true,null);
+            
             if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true) != null)
             {
                 //ins.Patch(Method(TypeByName("WeaponAssingment"), "SetPrimary"), prefix: Method(typeof(SimpleSidearms), nameof(SimpleSidearms.SetPrimary)));

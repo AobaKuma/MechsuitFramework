@@ -139,6 +139,13 @@
       <bodyPartGroups>
         <li>Neck</li>
       </bodyPartGroups>
+      <!-- Default layer should be 40 -->
+      <drawData>
+        <defaultData>
+          <layer>40</layer>
+          <offset>(0,0,0)</offset>
+        </defaultData>
+      </drawData>
       <layers>
         <li>ExosuitLayer_Core</li>
       </layers>

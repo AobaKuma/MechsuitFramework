@@ -5,8 +5,8 @@ using Verse;
 
 namespace Exosuit
 {
-    public class PawnRenderNode_ApparelColor : Verse.PawnRenderNode_Apparel
-    {
+    public class PawnRenderNode_ApparelColor : PawnRenderNode_Apparel
+  {
         public PawnRenderNode_ApparelColor(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree, Apparel apparel) : base(pawn, props, tree, apparel)
         {
         }

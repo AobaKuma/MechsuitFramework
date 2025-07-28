@@ -19,7 +19,7 @@ namespace Exosuit
             {
                 c.CheckMaintenance();
                 var th = c.maintanenceTar;
-                if (th is ThingWithComps && th.TryGetComp<CompSuitModule>(out CompSuitModule comp))
+                if (th is ThingWithComps && th.TryGetComp(out CompSuitModule comp))
                 {
                     if (comp.NeedRepair)
                     {

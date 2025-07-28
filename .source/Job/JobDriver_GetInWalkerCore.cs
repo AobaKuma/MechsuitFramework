@@ -12,7 +12,7 @@ namespace Exosuit
 {
     public class JobDriver_GetInWalkerCore_Drafted : JobDriver_GetInWalkerCore
     {
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(maintenanceBay);
 
@@ -94,7 +94,7 @@ namespace Exosuit
 
             return this.pawn.Reserve(this.job.GetTarget(maintenanceBay), this.job, errorOnFailed: errorOnFailed);
         }
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(maintenanceBay);
 

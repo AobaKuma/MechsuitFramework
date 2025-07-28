@@ -9,25 +9,36 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>Preview</LangVersion>
     <Configurations>Debug;Release;1.6</Configurations>
+    <IncludeSymbols>False</IncludeSymbols>
     <!-- <PublicizeAll>true</PublicizeAll> -->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>none</DebugType>
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.6|AnyCPU'">
     <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Effects\**" />
     <EmbeddedResource Remove="Effects\**" />
     <None Remove="Effects\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="HarmonyPatches\DynRenderNode_Apparel_Patch.cs" />
+    <Compile Remove="RenderNode\PawnRenderNode_ApparelColor.cs" />
   </ItemGroup>
   <ItemGroup>
 
@@ -43,19 +54,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
 
-    <Publicize Include="Assembly-CSharp:Verse.Thing.rotationInt" />
+    <!-- <Publicize Include="Assembly-CSharp:Verse.Thing.rotationInt" />
     <Publicize Include="Assembly-CSharp:Verse.Projectile" />
     <Publicize Include="Assembly-CSharp:RimWorld.CompApparelVerbOwner_Charged.remainingCharges" />
     <Publicize Include="Assembly-CSharp:Verse.ArmorUtility.ApplyArmor" />
     <Publicize Include="Assembly-CSharp:RimWorld.GenStep_Fog.UnfogMapFromEdge" />
-    <Publicize Include="Assembly-CSharp:Verse.BackCompatibility.conversionChain" />
-    <Publicize Include="Assembly-CSharp:RimWorld.Dialog_StylingStation.stylingStation" />
-
-    <Publicize Include="Assembly-CSharp" MemberPattern="^RimWorld\.Dialog_DebugRenderTree\..*" />
-    <Publicize Include="Assembly-CSharp" MemberPattern="^Verse\.DirectXmlToObjectNew\..*" />
-    <Publicize Include="Assembly-CSharp" MemberPattern="^RimWorld\.PawnFlyer\..*" />
+    <Publicize Include="Assembly-CSharp:Verse.BackCompatibility.conversionChain" /> -->
+    <Publicize Include="Assembly-CSharp" />
+    
   </ItemGroup>
   <ItemGroup>
+    <!-- <Publicize Include="Assembly-CSharp" MemberPattern="^Verse\.(DirectXmlToObjectNew|PawnRenderTree)\..*" />
+    <Publicize Include="Assembly-CSharp" MemberPattern="^RimWorld\.(Dialog_DebugRenderTree|PawnFlyer)\..*" /> -->
     <Folder Include="Properties\" />
   </ItemGroup>
 

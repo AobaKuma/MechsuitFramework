@@ -48,7 +48,7 @@ namespace Exosuit
         protected bool autoRepair = true;
         protected bool autoReload = true;
         
-        protected IReloadableComp GetFirstNeedReload()
+        public IReloadableComp GetFirstNeedReload()
         {
             return ReloadableUtility.FindSomeReloadableComponent(Dummy, false);
         }
@@ -197,7 +197,7 @@ namespace Exosuit
             }
 
             Core?.ModuleRecache();
-            GraphicRecache();
+            //GraphicRecache(); 衣服改变会自动更新贴图cache
             isCacheDirty = false;
         }
         private void GraphicRecache()

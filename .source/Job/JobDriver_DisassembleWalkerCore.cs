@@ -19,7 +19,7 @@ namespace Exosuit
             return this.pawn.Reserve(Target, this.job, errorOnFailed: errorOnFailed);
         }
 
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(target);
 

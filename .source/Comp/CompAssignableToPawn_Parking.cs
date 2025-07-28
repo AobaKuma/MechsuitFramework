@@ -20,11 +20,11 @@ namespace Exosuit
                 return parent.Map.mapPawns.FreeColonists.OrderByDescending((Pawn p) => CanAssignTo(p).Accepted);
             }
         }
-        protected override bool ShouldShowAssignmentGizmo()
+        public override bool ShouldShowAssignmentGizmo()
         {
             return base.ShouldShowAssignmentGizmo();
         }
-        protected override string GetAssignmentGizmoDesc()
+        public override string GetAssignmentGizmoDesc()
         {
             return "WG_AssignPilot".Translate();
         }

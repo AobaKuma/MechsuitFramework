@@ -26,7 +26,7 @@ namespace Exosuit
                 n.Value = v;
             }
         }
-        protected override bool ApplyWorker(XmlDocument xml)
+        public override bool ApplyWorker(XmlDocument xml)
         {
             try
             {
