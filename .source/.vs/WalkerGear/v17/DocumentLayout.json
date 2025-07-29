@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\misc\\mechutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:misc\\mechutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\rendernode\\pawnrendernode_apparelweaponholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:rendernode\\pawnrendernode_apparelweaponholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\thing\\exosuit_core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,24 +23,12 @@
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:job\\jobdriver_getoffwalkercore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\misc\\itab_exosuit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:misc\\itab_exosuit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\thing\\building_maintenancebay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:thing\\building_maintenancebay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\extensions\\bayext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:extensions\\bayext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\floatmenuoptionprovider_exosuitdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:floatmenuoptionprovider_exosuitdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\rendernode\\pawnrendernode_apparelcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:rendernode\\pawnrendernode_apparelcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\rendernode\\pawnrendernodeworker_weaponongantry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,6 +41,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\rendernode\\pawnrendersubworker_offset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:rendernode\\pawnrendersubworker_offset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\FloatMenuOptionProvider_ExosuitDown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FloatMenuOptionProvider_ExosuitDown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderNode_ApparelColor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RenderNode\\PawnRenderNode_ApparelColor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,36 +58,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MechUtility.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Misc\\MechUtility.cs",
-              "RelativeDocumentMoniker": "Misc\\MechUtility.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Misc\\MechUtility.cs",
-              "RelativeToolTip": "Misc\\MechUtility.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAtwEMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T21:18:00.052Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ITab_Exosuit.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Misc\\ITab_Exosuit.cs",
-              "RelativeDocumentMoniker": "Misc\\ITab_Exosuit.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Misc\\ITab_Exosuit.cs",
-              "RelativeToolTip": "Misc\\ITab_Exosuit.cs",
-              "ViewState": "AgIAAAkBAAAAAAAAAAAuwBwBAAAaAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PawnRenderNode_ApparelWeaponHolder.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderNode_ApparelWeaponHolder.cs",
+              "RelativeDocumentMoniker": "RenderNode\\PawnRenderNode_ApparelWeaponHolder.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderNode_ApparelWeaponHolder.cs",
+              "RelativeToolTip": "RenderNode\\PawnRenderNode_ApparelWeaponHolder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T18:37:21.112Z"
+              "WhenOpened": "2025-07-29T17:04:22.241Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,7 +85,7 @@
               "RelativeDocumentMoniker": "Thing\\Exosuit_Core.cs",
               "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Exosuit_Core.cs",
               "RelativeToolTip": "Thing\\Exosuit_Core.cs",
-              "ViewState": "AgIAANcAAAAAAAAAAAAAAOkAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-22T18:26:05.522Z",
               "EditorCaption": ""
@@ -140,16 +124,11 @@
               "RelativeToolTip": "Job\\JobDriver_RepairAtGantry.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T17:45:41.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "WhenOpened": "2025-07-22T17:45:41.485Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "BayExt.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Extensions\\BayExt.cs",
               "RelativeDocumentMoniker": "Extensions\\BayExt.cs",
@@ -161,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Building_MaintenanceBay.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Building_MaintenanceBay.cs",
               "RelativeDocumentMoniker": "Thing\\Building_MaintenanceBay.cs",
@@ -173,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "FloatMenuOptionProvider_ExosuitDown.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\FloatMenuOptionProvider_ExosuitDown.cs",
               "RelativeDocumentMoniker": "FloatMenuOptionProvider_ExosuitDown.cs",
@@ -185,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "PawnRenderSubWorker_Offset.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderSubWorker_Offset.cs",
               "RelativeDocumentMoniker": "RenderNode\\PawnRenderSubWorker_Offset.cs",
@@ -197,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "ApparelRenderOffsetsExt.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Extensions\\ApparelRenderOffsetsExt.cs",
               "RelativeDocumentMoniker": "Extensions\\ApparelRenderOffsetsExt.cs",
@@ -209,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "PawnRenderNodeWorker_WeaponOnGantry.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderNodeWorker_WeaponOnGantry.cs",
               "RelativeDocumentMoniker": "RenderNode\\PawnRenderNodeWorker_WeaponOnGantry.cs",
@@ -221,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "PawnRenderNode_ApparelColor.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderNode_ApparelColor.cs",
               "RelativeDocumentMoniker": "RenderNode\\PawnRenderNode_ApparelColor.cs",

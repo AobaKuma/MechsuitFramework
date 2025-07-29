@@ -52,8 +52,6 @@ namespace Exosuit
             //主武器不是时挂武器
             if (nodeHolder.weapon != parms.pawn.equipment.Primary) return true;
             
-
-            
             return false;
         }
     }
