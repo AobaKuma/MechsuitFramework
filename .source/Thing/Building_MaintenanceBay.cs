@@ -75,6 +75,45 @@ namespace Exosuit
         {
             if (HasGearCore && Faction.IsPlayer)
             {
+                var assignable = GetComp<CompAssignableToPawn_Parking>();
+                if (assignable!=null && assignable.AssignedPawnsForReading.Any())
+                {
+                    Command_Action command_assignedGetIn = new()
+                    {
+                        defaultLabel = "WG_GetInAssigned".Translate(),
+                        icon = Resources.WG_GetInWalker,
+                        action = delegate {
+                            var cand =
+                            assignable.AssignedPawnsForReading.Where(
+                                p => p.MapHeld == MapHeld && p.Spawned 
+                                && !p.DeadOrDowned && CanAcceptPawn(p));
+                            if (cand.Count()>1)
+                            {
+                                Find.WindowStack.Add(new FloatMenu(
+                                    cand.Select(p=>new FloatMenuOption(p.NameShortColored,                      delegate
+                                        {
+                                            p.jobs.StartJob(
+                                                JobMaker.MakeJob(
+                                                    JobDefOf.WG_GetInWalkerCore, this),JobCondition.InterruptForced);
+                                        })).ToList()
+                                    ));
+                            }
+                            else if (cand.Any())
+                            {
+                                cand.First().jobs.StartJob(JobMaker.MakeJob(JobDefOf.WG_GetInWalkerCore, this), JobCondition.InterruptForced);
+                            }
+                        },
+                        
+                        
+                    };
+                    if (!assignable.AssignedPawnsForReading.Any(p=>p.MapHeld==MapHeld&&p.Spawned&&!p.DeadOrDowned && CanAcceptPawn(p)))
+                    {
+                        command_assignedGetIn.Disable("NoAvailablePilot".TranslateSimple());
+                    }
+                    
+                    yield return command_assignedGetIn;
+                }
+
                 Command_Target command_GetIn = new()
                 {
                     defaultLabel = "WG_GetIn".Translate(),
@@ -83,10 +122,12 @@ namespace Exosuit
                     action = (tar) =>
                     {
                         if (tar.Pawn == null || !CanAcceptPawn(tar.Pawn) || tar.Pawn.Downed) return;
-                        tar.Pawn.jobs.StartJob(JobMaker.MakeJob(JobDefOf.WG_GetInWalkerCore, this));
+                        tar.Pawn.jobs.StartJob(JobMaker.MakeJob(JobDefOf.WG_GetInWalkerCore, this), JobCondition.InterruptForced);
                     }
                 };
                 yield return command_GetIn;
+                
+                
 
                 Command_Toggle toggle_autoRepair = new()
                 {
@@ -324,7 +365,7 @@ namespace Exosuit
             //F F  F NoCore
             bool pawnHasCore = selPawn.PawnWearingExosuitCore();
             bool bayHasCore = HasGearCore;
-            if (pawnHasCore ^ bayHasCore)
+            if (pawnHasCore != bayHasCore)
             {
                 yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("EnterBuilding".Translate(this), delegate
                 {
@@ -416,8 +457,13 @@ namespace Exosuit
         public virtual void GearDown(Pawn pawn)
         {
             if (HasGearCore) return;
+            bool equippedModuleWeapon = pawn.equipment?.Primary?.TryGetComp<CompApparelForcedWeapon>(out _) ?? false;
             foreach (Apparel a in pawn.RemoveExosuit())
             {
+                if (equippedModuleWeapon && a.TryGetComp<CompModuleWeapon>(out var moduleWeapon)&&pawn.equipment.Primary== moduleWeapon.Weapon)
+                {
+                    pawn.equipment.Remove(moduleWeapon.Weapon);
+                }
                 DummyApparels.Wear(a, false, true);
                 if (a is Exosuit_Core core)Core = core;
             }

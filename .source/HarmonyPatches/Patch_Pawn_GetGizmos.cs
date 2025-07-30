@@ -88,7 +88,7 @@ namespace Exosuit
                 CompAssignableToPawn assignable = bay.GetComp<CompAssignableToPawn>();
                 if (assignable != null && assignable.AssignedPawns.Contains(pawn))
                 {
-                    if (needCore ^ bay.HasGearCore) return bay;
+                    if (needCore == bay.HasGearCore) return bay;
                 } 
             }
 
