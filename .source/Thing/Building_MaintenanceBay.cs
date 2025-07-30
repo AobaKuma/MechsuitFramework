@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using Verse;
 using Verse.AI;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 
 
@@ -304,15 +305,18 @@ namespace Exosuit
         public void PlaceShelfItemToPilot(Pawn pilotPawn)
         {
             if (pilotPawn.inventory == null) return;
-            if (pilotPawn.carryTracker.Full) return; //如果满了就不放了
+            if (MassUtility.FreeSpace(pilotPawn) <= 0) return; //如果满了就不放了
             if (LinkedStorages.NullOrEmpty()) return; //如果没有连接架子就不放了
 
-            foreach (var storage in LinkedStorages)
+            List<Building_Storage> _cache = LinkedStorages.Where(s => s.GetComp<CompModuleStorage>() == null).ToList();
+            foreach (var storage in _cache)
             {
                 foreach (Thing item in storage.slotGroup.HeldThings)
                 {
+                    if (MassUtility.FreeSpace(pilotPawn) < item.GetStatValue(StatDefOf.Mass)) continue;
+
+                    item.DeSpawnOrDeselect(); //先取消选择和去除地图上的物品
                     pilotPawn.inventory.innerContainer.TryAddOrTransfer(item);
-                    if (pilotPawn.carryTracker.Full) return;
                 }
             }
         }
@@ -337,23 +341,23 @@ namespace Exosuit
             }
             if (_cacheThings.Any())
             {
+                List<Building_Storage> _cache = LinkedStorages.Where(s => s.GetComp<CompModuleStorage>() == null).ToList();
                 foreach (var item in _cacheThings)
                 {
                     //遍历所有架子，找到能放下这个物品的架子
-                    Building_Storage shelf = LinkedStorages.Where(s => s.Accepts(item) && s.SpaceRemainingFor(item.def) != 0).First();
+                    Building_Storage shelf = _cache.Where(s => s.Accepts(item) && s.SpaceRemainingFor(item.def) != 0).First();
                     if (shelf != null)
                     {
                         foreach (IntVec3 cell in shelf.slotGroup)
                         {
                             if (StoreUtility.IsGoodStoreCell(cell, Map, item, null, Faction))
                             {
-                                pilotPawn.inventory.RemoveCount(item.def, item.stackCount);
+                                pilotPawn.inventory.innerContainer.Remove(item); //尝试将物品从驾驶员的背包中移除
                                 pilotPawn.inventory.Notify_ItemRemoved(item);
                                 GenPlace.TryPlaceThing(item, cell, Map, ThingPlaceMode.Direct);
                                 break;
                             }
                         }
-                        if (shelf.slotGroup.HeldThings.Contains(item)) break; //如果这个架子放下了，就不再检查其他架子了
                     }
                 }
             }
@@ -471,6 +475,7 @@ namespace Exosuit
             Core.ModuleRecache();
             Core = null;
             SetCacheDirty();
+            PlaceShelfItemToPilot(pawn);
         }
         public virtual void GearDown(Pawn pawn)
         {
@@ -483,6 +488,7 @@ namespace Exosuit
             
             SetCacheDirty();
             MechUtility.WeaponDropCheck(pawn);
+            PlaceInventoryItemToShelf(pawn);
         }
     }
     //渲染小人的
