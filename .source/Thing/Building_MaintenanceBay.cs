@@ -5,6 +5,7 @@ using Exosuit.Misc;
 using RimWorld;
 using RimWorld.Utility;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using Verse;
 using Verse.AI;
 
@@ -150,7 +151,8 @@ namespace Exosuit
     public partial class Building_MaintenanceBay
     {
         protected bool isCacheDirty = true;
-        public void SetCacheDirty(){
+        public void SetCacheDirty()
+        {
             isCacheDirty = true;
             LongEventHandler.ExecuteWhenFinished(() => TryUpdateCache(true));
         }
@@ -161,16 +163,16 @@ namespace Exosuit
         public readonly Dictionary<SlotDef, Thing> occupiedSlots = [];
         public readonly Dictionary<int, SlotDef> positionWSlot = new(7);
         public List<CompSuitModule> ComponentsCache { get; protected set; } = [];
-        public bool HasGearCore => Core!=null;
+        public bool HasGearCore => Core != null;
 
-        public Exosuit_Core Core {  get; protected set; }
+        public Exosuit_Core Core { get; protected set; }
         public void TryUpdateCache(bool force = false)
         {
             if (!force && !isCacheDirty)
             {
                 return;
             }
-            Core=null;
+            Core = null;
 
             occupiedSlots.Clear();
             positionWSlot.Clear();
@@ -183,7 +185,7 @@ namespace Exosuit
                 {
                     return;
                 }
-                    
+
                 foreach (SlotDef s in comp.Props.occupiedSlots)
                 {
                     occupiedSlots[s] = a;
@@ -208,7 +210,7 @@ namespace Exosuit
         protected void RemoveModule(Thing t)
         {
             if (t == null || cachePawn == null) return;
-            if (!DummyApparels.Contains(t))return;
+            if (!DummyApparels.Contains(t)) return;
             Thing moduleItem = MechUtility.Conversion(t);
             foreach (Building_Storage b in LinkedStorages)
             {
@@ -238,7 +240,7 @@ namespace Exosuit
                 }
 
             }
-            
+
             if (updateNow)
             {
                 TryUpdateCache(true);
@@ -255,10 +257,10 @@ namespace Exosuit
                 ClearAllModules();
             }
             else foreach (SlotDef s in a.GetComp<CompSuitModule>().Slots)
-            {
-                RemoveModules(s, false);
-            }
-            DummyApparels.GetDirectlyHeldThings().TryAdd(a,false);
+                {
+                    RemoveModules(s, false);
+                }
+            DummyApparels.GetDirectlyHeldThings().TryAdd(a, false);
             TryUpdateCache(true);
         }
         private void GetSupportedSlotRecur(SlotDef slotDef)
@@ -287,7 +289,7 @@ namespace Exosuit
                     if (!module.TryGetComp(out CompSuitModule c)) continue;
                     if (IsCore)
                     {
-                        if (!c.Props.occupiedSlots.Any(s=>s.isCoreFrame)) continue;
+                        if (!c.Props.occupiedSlots.Any(s => s.isCoreFrame)) continue;
                     }
                     else
                     {
@@ -298,7 +300,64 @@ namespace Exosuit
             }
         }
 
+        //在上機時把連接架子的物品放到駕駛員身上
+        public void PlaceShelfItemToPilot(Pawn pilotPawn)
+        {
+            if (pilotPawn.inventory == null) return;
+            if (pilotPawn.carryTracker.Full) return; //如果满了就不放了
+            if (LinkedStorages.NullOrEmpty()) return; //如果没有连接架子就不放了
 
+            foreach (var storage in LinkedStorages)
+            {
+                foreach (Thing item in storage.slotGroup.HeldThings)
+                {
+                    pilotPawn.inventory.innerContainer.TryAddOrTransfer(item);
+                    if (pilotPawn.carryTracker.Full) return;
+                }
+            }
+        }
+        //在下机时把驾驶员身上(能被架子收起的)的物品放到连接架子上
+        public void PlaceInventoryItemToShelf(Pawn pilotPawn)
+        {
+            if (pilotPawn.inventory == null) return;
+            if (!pilotPawn.inventory.innerContainer.Any) return;
+            if (LinkedStorages.NullOrEmpty()) return; //如果没有连接架子就不放了
+
+            List<Thing> _cacheThings = new List<Thing>();
+            foreach (var item in pilotPawn.inventory.innerContainer)
+            {
+                foreach (var shelf in LinkedStorages)
+                {
+                    if (shelf.Accepts(item) && shelf.SpaceRemainingFor(item.def) != 0)
+                    {
+                        _cacheThings.Add(item);
+                        break; //如果这个架子能放这个物品，就不再检查其他架子了
+                    }
+                }
+            }
+            if (_cacheThings.Any())
+            {
+                foreach (var item in _cacheThings)
+                {
+                    //遍历所有架子，找到能放下这个物品的架子
+                    Building_Storage shelf = LinkedStorages.Where(s => s.Accepts(item) && s.SpaceRemainingFor(item.def) != 0).First();
+                    if (shelf != null)
+                    {
+                        foreach (IntVec3 cell in shelf.slotGroup)
+                        {
+                            if (StoreUtility.IsGoodStoreCell(cell, Map, item, null, Faction))
+                            {
+                                pilotPawn.inventory.RemoveCount(item.def, item.stackCount);
+                                pilotPawn.inventory.Notify_ItemRemoved(item);
+                                GenPlace.TryPlaceThing(item, cell, Map, ThingPlaceMode.Direct);
+                                break;
+                            }
+                        }
+                        if (shelf.slotGroup.HeldThings.Contains(item)) break; //如果这个架子放下了，就不再检查其他架子了
+                    }
+                }
+            }
+        }
     }
     //穿脱龙骑兵
     public partial class Building_MaintenanceBay
