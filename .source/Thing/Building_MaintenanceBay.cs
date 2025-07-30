@@ -73,7 +73,6 @@ namespace Exosuit
         //methods override
         public override IEnumerable<Gizmo> GetGizmos()
         {
-
             if (HasGearCore && Faction.IsPlayer)
             {
                 Command_Target command_GetIn = new()
@@ -102,7 +101,6 @@ namespace Exosuit
                 };
                 yield return toggle_autoRepair;
             }
-
 
             if (Prefs.DevMode == true && DebugSettings.godMode==true)
             {

@@ -17,9 +17,6 @@
   </ThingDef>
   <!-- 停泊點 -->
   <ThingDef ParentName="MaintanenceBayBase">
-    <modExtensions>
-      <li Class="Exosuit.BayExtension"/>
-    </modExtensions>
     <defName>MF_Building_ParkingSpot</defName>
     <label>dock point</label>
     <!-- 用於小型機體臨時停泊的地點，如果機體設計上能夠臨時下機，駕駛員就可以在這裡離開機體並休息或接受治療，但由於缺乏相關設備因此在這裡無法進行模塊整備與維修，並且重新登機的時間也比較長。 -->
@@ -66,17 +63,13 @@
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
+    <modExtensions>
+      <li Class="Exosuit.BayExtension"/>
+    </modExtensions>
   </ThingDef>
 
   <!-- 维护坞 -->
   <ThingDef ParentName="MaintanenceBayBase">
-    <modExtensions>
-      <li Class="Exosuit.BayExtension">
-        <canRepair>true</canRepair>
-        <canLoad>true</canLoad>
-        <canStyle>true</canStyle>
-      </li>
-    </modExtensions>
     <defName>MF_Building_MaintenanceBay</defName>
     <label>maintenance Gantry</label>
     <description>A place for walker frame storage and maintenance, it has a gantry that allows you to do mechsuit loadout modification but requires at least one connected module storage shelve.</description>
@@ -153,6 +146,13 @@
       <li>PlaceWorker_ReportWorkSpeedPenalties</li>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
+    <modExtensions>
+      <li Class="Exosuit.BayExtension">
+        <canRepair>true</canRepair>
+        <canLoad>true</canLoad>
+        <canStyle>true</canStyle>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <!-- 部件櫃 -->

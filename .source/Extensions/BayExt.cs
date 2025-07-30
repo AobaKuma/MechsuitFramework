@@ -8,10 +8,10 @@ using Verse;
 namespace Exosuit
 {
     //TODO: xml部分还没写
-    public class BayExtension:DefModExtension
+    public class BayExtension : DefModExtension
     {
         public bool canRepair = false;
         public bool canLoad = false;
-        public bool canStyle =false;
+        public bool canStyle = false;
     }
 }
