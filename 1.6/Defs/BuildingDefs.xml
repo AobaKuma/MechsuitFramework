@@ -108,7 +108,8 @@
         <li>Production</li>
       </buildingTags>
       <relatedBuildCommands>
-        <li>MF_Building_ComponentStorage</li>
+          <li>MF_Building_ComponentStorage</li>
+          <li>MF_Building_PayloadStorage</li>
         <li>MF_Building_ScaffoldStair</li>
         <li>MF_Building_Scaffold</li>
       </relatedBuildCommands>
@@ -117,6 +118,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>MF_Building_ComponentStorage</li>
+          <li>MF_Building_PayloadStorage</li>
           <li>ToolCabinet</li>
           <li>MF_Building_ScaffoldStair</li>
           <li>MF_Building_Scaffold</li>
@@ -156,30 +158,13 @@
   </ThingDef>
 
   <!-- 部件櫃 -->
-  <ThingDef ParentName="BuildingBase">
-    <defName>MF_Building_ComponentStorage</defName>
-    <label>module shelve</label>
-    <description>a module storage rack, pawn can repair damaged module on it. and the maintenance bay can only select modules storaged in connected storage shelve.</description>
+  <ThingDef ParentName="BuildingBase" Name="WG_BaseGantryLinkable" Abstract="True">
     <thingClass>Building_Storage</thingClass>
-    <graphicData>
-      <texPath>Things/Building/ModulePlatform</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawOffset>(0,0.002,0)</drawOffset>
-      <drawSize>(4,4)</drawSize>
-    </graphicData>
-    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <canOverlapZones>false</canOverlapZones>
     <altitudeLayer>Building</altitudeLayer>
     <tickerType>Never</tickerType>
-    <statBases>
-      <WorkToBuild>3600</WorkToBuild>
-    </statBases>
-    <costList>
-      <Steel>100</Steel>
-    </costList>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <useHitPoints>true</useHitPoints>
-    <size>(3,1)</size>
     <pathCost>100</pathCost>
     <fillPercent>0.15</fillPercent>
     <designationCategory>Misc</designationCategory>
@@ -193,6 +178,29 @@
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="WG_BaseGantryLinkable">
+    <defName>MF_Building_ComponentStorage</defName>
+    <label>module shelve</label>
+    <description>a module storage rack, pawn can repair damaged module on it. and the maintenance bay can only select modules storaged in connected storage shelve.</description>
+    <graphicData>
+      <texPath>Things/Building/ModulePlatform</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffset>(0,0.002,0)</drawOffset>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <statBases>
+      <WorkToBuild>3600</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+    <size>(3,1)</size>
     <building>
       <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
       <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
@@ -215,6 +223,7 @@
       </defaultStorageSettings>
       <relatedBuildCommands>
         <li>MF_Building_MaintenanceBay</li>
+        <li>MF_Building_PayloadStorage</li>
       </relatedBuildCommands>
       <spawnedConceptLearnOpportunity>WG_Module_Repair</spawnedConceptLearnOpportunity>
     </building>
@@ -226,9 +235,68 @@
         <compClass>Exosuit.CompModuleStorage</compClass>
       </li>
     </comps>
-    <placeWorkers>
-      <li>PlaceWorker_ShowFacilitiesConnections</li>
-    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="WG_BaseGantryLinkable">
+    <defName>MF_Building_PayloadStorage</defName>
+    <label>payload shelve</label>
+    <!-- 一個用於庫存管理的儲物架，Pawn 會在登上機甲時自動提取物品。機甲停靠後，此置物架可接收的物品將自動卸載。 -->
+    <description>A storage shelf for inventory management, Pawn will take items automatically when boarding the exosuit. And when docking the exosuit, acceptable items for this shelf will automatically unload.</description>
+    <graphicData>
+      <texPath>Things/Building/CargoShelf</texPath>
+      <drawOffset>(0,0.002,0)</drawOffset>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints> 
+      <Mass>4</Mass>
+      <WorkToBuild>250</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+    <size>(1,1)</size>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>4</maxItemsInCell>
+      <storageGroupTag>Shelf</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <categories>
+            <li>Root</li>
+          </categories>
+          <disallowedCategories>
+            <li>Chunks</li>
+            <li>Plants</li>
+            <li>Buildings</li>
+            <li>MF_Module</li>
+            <li>Corpses</li>
+            <li>Apparels</li>
+          </disallowedCategories>
+          <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
+            <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
+          </disallowedThingDefs>
+          <specialFiltersToDisallow>
+            <li>AllowLargeCorpses</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+      <relatedBuildCommands>
+        <li>MF_Building_MaintenanceBay</li>
+        <li>MF_Building_ComponentStorage</li>
+      </relatedBuildCommands>
+      <!-- TODO -->
+      <spawnedConceptLearnOpportunity>WG_Module_Repair</spawnedConceptLearnOpportunity> 
+    </building>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>8</maxSimultaneous>
+      </li>
+    </comps>
   </ThingDef>
 
   <DesignatorDropdownGroupDef>
