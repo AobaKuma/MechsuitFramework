@@ -12,48 +12,47 @@ namespace Exosuit
     {
         public PawnRenderNodeProperties_ApparelWeaponHolder()
         {
-            nodeClass = typeof(PawnRenderNode_ApparelWeaponHolder);
-            workerClass = typeof(PawnRenderNodeWorker_ApparelWeaponHolder);
+            nodeClass = typeof(PawnRenderNode_WeaponHolder);
+            workerClass = typeof(PawnRenderNodeWorker_WeaponHolder);
         }
     }
-    public class PawnRenderNode_ApparelWeaponHolder : PawnRenderNode_Apparel
+    public class PawnRenderNode_WeaponHolder(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree) : PawnRenderNode(pawn, props, tree)
     {
-        public ThingWithComps weapon;
-        public PawnRenderNode_ApparelWeaponHolder(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree,Apparel ap) : base(pawn, props, tree,ap)
-        {
-            weapon = ap.GetComp<CompModuleWeapon>()?.Weapon;
+        private ThingWithComps weapon;
+
+        public ThingWithComps Weapon {
+            get {
+                return weapon??= apparel?.GetComp<CompModuleWeapon>()?.Weapon;
+            } 
         }
-        
+
         public override IEnumerable<Graphic> GraphicsFor(Pawn pawn)
         {
-            if (weapon != null) 
-                yield return weapon.Graphic;
+            if (Weapon != null) 
+                yield return Weapon.Graphic;
         }
         public override Graphic GraphicFor(Pawn pawn)
         {
-            if (weapon != null)
-                return weapon.Graphic;
+            if (Weapon != null)
+                return Weapon.Graphic;
             return null;
         }
     }
 
-    public class PawnRenderNodeWorker_ApparelWeaponHolder: PawnRenderNodeWorker
+    public class PawnRenderNodeWorker_WeaponHolder: PawnRenderNodeWorker
     {
         public override bool CanDrawNow(PawnRenderNode node, PawnDrawParms parms)
         {
             if(!base.CanDrawNow(node, parms)) return false;
 
-            if (node is not PawnRenderNode_ApparelWeaponHolder nodeHolder) return false;
-            if (nodeHolder.weapon == null) return false;
+            if (node is not PawnRenderNode_WeaponHolder nodeHolder) return false;
+            if (nodeHolder.Weapon == null) return false;
             //在架子上时挂武器
             if (!parms.pawn.Spawned) return true;
             //在非征召状态挂武器
             if (!parms.pawn.Drafted) return true;
             //主武器不是时挂武器
-            if (nodeHolder.weapon != parms.pawn.equipment.Primary) return true;
-            
-
-            
+            if (nodeHolder.Weapon != parms.pawn.equipment.Primary) return true;
             return false;
         }
     }

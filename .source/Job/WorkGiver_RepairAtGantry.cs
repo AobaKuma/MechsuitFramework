@@ -44,6 +44,7 @@ namespace Exosuit
             if (bay.NeedReload)
             {
                 var reloadableComp = bay.GetFirstNeedReload();
+                if(reloadableComp==null)return false;
                 if (pawn.carryTracker.AvailableStackSpace(reloadableComp.AmmoDef) < reloadableComp.MinAmmoNeeded(true))
                 {
                     return false;
