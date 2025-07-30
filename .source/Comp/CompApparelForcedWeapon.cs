@@ -78,14 +78,14 @@ namespace Exosuit
                             prop = new PawnRenderNodeProperties()
                             {
                                 debugLabel = Weapon.def.defName,
-                                nodeClass = typeof(PawnRenderNode_ApparelWeaponHolder),
+                                nodeClass = typeof(PawnRenderNode_WeaponHolder),
                                 parentTagDef = MiscDefOf.WGApparelBody,
                                 workerClass = typeof(PawnRenderNodeWorker),
                                 baseLayer = 20,//baselayer for body apparel
                                 drawData = Props.storedWeaponDrawData,
                             };
                         }
-                        var node = (PawnRenderNode_ApparelWeaponHolder)Activator.CreateInstance(prop.nodeClass ?? typeof(PawnRenderNode_ApparelWeaponHolder), [Parent.Wearer, prop, Parent.Wearer.drawer.renderer.renderTree,weapon]);
+                        var node = (PawnRenderNode_WeaponHolder)Activator.CreateInstance(prop.nodeClass ?? typeof(PawnRenderNode_WeaponHolder), [Parent.Wearer, prop, Parent.Wearer.drawer.renderer.renderTree,weapon]);
                         nodes.Add(node);
                     }
                     return nodes;
