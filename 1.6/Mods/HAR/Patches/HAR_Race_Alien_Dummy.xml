@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAttributeSet">
+        <xpath>Defs/ThingDef[defName="Dummy"]</xpath>
+        <attribute>Class</attribute>
+        <value>AlienRace.ThingDef_AlienRace</value>
+    </Operation>
+</Patch>
