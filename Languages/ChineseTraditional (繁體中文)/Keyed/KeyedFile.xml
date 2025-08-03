@@ -63,4 +63,17 @@
   
   <WG_ChangeModuleColor>更改模塊顏色</WG_ChangeModuleColor>
 
+  <WG_NoAvailablePilot>駕駛員不可用</WG_NoAvailablePilot>
+  <WG_GetInAssigned>登上機甲</WG_GetInAssigned>
+  <WG_BayOccupied>整備架被占用</WG_BayOccupied>
+  <WG_BayHasNoCore>沒有核心框架</WG_BayHasNoCore>
+  <WG_ToggleModuleWeapon>切換模塊武器</WG_ToggleModuleWeapon>
+  <WG_BareHands>空手</WG_BareHands>
+  <WG_TakeOutModuleWeapon>使用模塊武器</WG_TakeOutModuleWeapon>
+  <WG_AssignPilot>設置專用駕駛員</WG_AssignPilot>
+  <WG_CommandToggleTurret>自由開火</WG_CommandToggleTurret>
+  <WG_CommandToggleTurretDesc>切換子砲塔的自動開火</WG_CommandToggleTurretDesc>
+  <WG_SubTurret>子砲塔</WG_SubTurret>
+  <WG_SubTurretDesc>一個安裝在框架上的自動砲塔。</WG_SubTurretDesc>
+  
 </LanguageData>

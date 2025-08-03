@@ -110,7 +110,7 @@ namespace Exosuit
                     };
                     if (!assignable.AssignedPawnsForReading.Any(p=>p.MapHeld==MapHeld&&p.Spawned&&!p.DeadOrDowned && CanAcceptPawn(p)))
                     {
-                        command_assignedGetIn.Disable("NoAvailablePilot".TranslateSimple());
+                        command_assignedGetIn.Disable("WG_NoAvailablePilot".TranslateSimple());
                     }
                     
                     yield return command_assignedGetIn;
@@ -439,11 +439,11 @@ namespace Exosuit
             {
                 if (bayHasCore)
                 {
-                    yield return new("BayOccupied".TranslateSimple(), null);
+                    yield return new("WG_BayOccupied".TranslateSimple(), null);
                 }
                 else
                 {
-                    yield return new("BayHasNoCore".TranslateSimple(),null);
+                    yield return new("WG_BayHasNoCore".TranslateSimple(),null);
                 }
             }
         }

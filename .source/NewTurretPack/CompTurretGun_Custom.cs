@@ -276,8 +276,8 @@ namespace Exosuit
             {
                 yield return new Command_Toggle
                 {
-                    defaultLabel = "CommandToggleTurret".Translate(),
-                    defaultDesc = "CommandToggleTurretDesc".Translate(),
+                    defaultLabel = "WG_CommandToggleTurret".Translate(),
+                    defaultDesc = "WG_CommandToggleTurretDesc".Translate(),
                     isActive = () => fireAtWill,
                     icon = ToggleTurretIcon.Texture,
                     toggleAction = delegate
@@ -303,7 +303,7 @@ namespace Exosuit
         {
             if (Props.turretDef != null)
             {
-                yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, "WalkerGear_SubTurret".Translate(), Props.turretDef.LabelCap, "WalkerGear_SubTurretDesc".Translate(), 5600, null, Gen.YieldSingle(new Dialog_InfoCard.Hyperlink(Props.turretDef)));
+                yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, "WG_SubTurret".Translate(), Props.turretDef.LabelCap, "WG_SubTurretDesc".Translate(), 5600, null, Gen.YieldSingle(new Dialog_InfoCard.Hyperlink(Props.turretDef)));
             }
         }
 
