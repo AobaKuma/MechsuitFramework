@@ -16,6 +16,7 @@ namespace Exosuit
         internal static Harmony instance;
         public ExosuitMod(ModContentPack content) : base(content)
         {
+            //Harmony.DEBUG = true;
             BackCompatibility.conversionChain.Add(new BackCompat_Exosuit_1_6());
             instance = new Harmony("ExosuitMod");
             LongEventHandler.QueueLongEvent(delegate
@@ -35,18 +36,6 @@ namespace Exosuit
                 });
             },"Exosuit Patching",true,null);
             
-            if (ModLister.GetActiveModWithIdentifier("petetimessix.simplesidearms", true) != null)
-            {
-                //ins.Patch(Method(TypeByName("WeaponAssingment"), "SetPrimary"), prefix: Method(typeof(SimpleSidearms), nameof(SimpleSidearms.SetPrimary)));
-            }
-            if (ModLister.GetActiveModWithIdentifier("usagirei.pocketsand", true)!=null)
-            {
-                instance.Patch(Method("PocketSand.Patches.Pawn_GetGizmos:IsValidTarget"), postfix: typeof(PocketSand).Method(nameof(PocketSand.IsValidTarget)));
-            }
-            if (ModLister.GetActiveModWithIdentifier("issaczhuang.ce.easyswitchweapon",true)!=null)
-            {
-                instance.Patch(Method("EesySwitchWeapon.CompEasySwitchWeapon:EquipWeapon"),prefix:typeof(EasySwitchWeapon).Method(nameof(EasySwitchWeapon.EquipWeapon)));
-            }
         }
         //[HarmonyPatchCategory("ModPatches")]
         //internal static class SimpleSidearms
@@ -247,25 +236,6 @@ namespace Exosuit
         }*/
 
 
-        [HarmonyPatchCategory("ModPatches")]
-        internal static class PocketSand
-        {
-            internal static void IsValidTarget(ref bool __result, Pawn pawn)
-            {
-                if (__result)
-                {
-                    __result = !pawn.TryGetExosuitCore(out _);
-                }
-            }
-        }
-
-        [HarmonyPatchCategory("ModPatches")]
-        internal static class EasySwitchWeapon
-        {
-            internal static bool EquipWeapon(ThingComp __instance)
-            {
-                return __instance.parent is not Pawn p|| !p.equipment.Primary.HasComp<CompApparelForcedWeapon>();
-            }
-        }
+        
     }
 }

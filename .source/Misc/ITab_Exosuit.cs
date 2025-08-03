@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -220,7 +221,25 @@ namespace Exosuit
                     nameBlock.y += nameBlock.height - 26f;
                     nameBlock.height = 26f;
                     GUI.DrawTexture(nameBlock, TexUI.TextBGBlack);
-                    Widgets.LabelFit(nameBlock, OccupiedSlots[slot].LabelCap);
+                    Widgets.LabelFit(nameBlock, thing.LabelCap);
+                    if (thing is ThingWithComps twc)
+                    {
+                        foreach (var c in twc.AllComps)
+                        {
+                            if (c is IReloadableComp reloadable)
+                            {
+                                if (reloadable.MaxCharges <= 0)
+                                {
+                                    break;
+                                }
+                                var labelAmmoRemain =reloadable.LabelRemaining.Colorize(Color.green);
+                                var labelSize = CalcSize(labelAmmoRemain);
+                                Rect labelRect = new(new(gizmoRect.xMax - labelSize.x, gizmoRect.y), labelSize);
+                                Widgets.Label(labelRect, labelAmmoRemain);
+                                break;
+                            }
+                        }
+                    }
                 }
             }
         }

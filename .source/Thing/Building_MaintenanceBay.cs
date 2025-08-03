@@ -29,8 +29,8 @@ namespace Exosuit
         }
         public BayExtension Ext=>extension??=def.GetModExtension<BayExtension>();
         private BayExtension extension;
-        public bool CanRepair => Faction.IsPlayer && autoRepair &&Ext.canRepair;//臨時停機點不能修 TODO: 给我去xml里写能不能修呀。
-        public bool CanReload => Faction.IsPlayer && autoReload && Ext.canLoad ;
+        public bool CanRepair =>Ext.canRepair&& Faction.IsPlayer && autoRepair ;//臨時停機點不能修 TODO: 给我去xml里写能不能修呀。
+        public bool CanReload => Ext.canLoad&&Faction.IsPlayer && autoReload   ;
         public bool NeedRepair //只要有一個需要修，那就能修。
         {
             get
@@ -244,11 +244,11 @@ namespace Exosuit
             //GraphicRecache(); 衣服改变会自动更新贴图cache
             isCacheDirty = false;
         }
-        private void GraphicRecache()
+/*        private void GraphicRecache()
         {
             cachePawn.Drawer.renderer.EnsureGraphicsInitialized();
             cachePawn.Drawer.renderer.SetAllGraphicsDirty();
-        }
+        }*/
         protected void RemoveModule(Thing t)
         {
             if (t == null || cachePawn == null) return;
@@ -551,6 +551,7 @@ namespace Exosuit
                     PawnComponentsUtility.CreateInitialComponents(cachePawn);
                     cachePawn.story.bodyType = BodyTypeDefOf.Male;
                     cachePawn.story.hairDef = HairDefOf.Bald;
+                    cachePawn.story.headType = HeadTypeDefOf.Skull;
                     cachePawn.ageTracker.LockCurrentLifeStageIndex(cachePawn.def.race.lifeStageAges.Count-1);
                     cachePawn.Name = new NameSingle(" ",false);
                     cachePawn.gender = Gender.None;
