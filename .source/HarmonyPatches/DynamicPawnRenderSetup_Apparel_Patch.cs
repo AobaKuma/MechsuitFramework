@@ -47,8 +47,8 @@ namespace Exosuit
         {
             //Log.Message("AddChild");
             var parTag = child.Props.parentTagDef;
-            if (parTag == null && child is PawnRenderNode_Apparel ap_node)
-                parTag = ap_node.apparel?.def.apparel.parentTagDef;
+            if (parTag == null && child.apparel!=null)
+                parTag = child.apparel.def.apparel.parentTagDef;
             if (parTag == null) return;
             //他应该在的列表
             var tmpChildTagNodes = __instance.tmpChildTagNodes;
@@ -63,5 +63,12 @@ namespace Exosuit
             child.parent = null;
         }
 
+        [HarmonyFinalizer]
+        [HarmonyPatch("AddChild")]
+        static void Fini(PawnRenderNode child, PawnRenderNode parent,Exception __exception)
+        {
+            if (__exception == null) return;
+            Log.Error($"C:{child.Props.debugLabel} P:{parent?.Props.debugLabel ?? "null"}");
+        }
     }
 }

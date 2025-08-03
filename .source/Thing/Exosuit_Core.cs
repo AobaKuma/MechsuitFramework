@@ -189,7 +189,7 @@ namespace Exosuit
                 }
                 _comp = _moduleComps.RandomElement();
                 amount-=Mathf.Min(_comp.HP - 1, amount);
-                _comp.HP-=((int)(_tmp-amount));
+                _comp.HP-=(int)(_tmp-amount);
                 if (_comp.HP <= 1)
                 {
                     _moduleComps.Remove(_comp);
