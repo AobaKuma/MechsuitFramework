@@ -5,3 +5,10 @@ D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\.source\obj\Debug\Exo
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\.source\obj\Debug\Exosuit.AssemblyInfo.cs
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\.source\obj\Debug\Exosuit.csproj.CoreCompileInputs.cache
 D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\.source\obj\Debug\Exosuit.dll
+E:\Project\C\MechsuitFramework-main\1.6\Assemblies\Exosuit.dll
+E:\Project\C\MechsuitFramework-main\.source\obj\Debug\Exosuit.csproj.AssemblyReference.cache
+E:\Project\C\MechsuitFramework-main\.source\obj\Debug\Exosuit.GeneratedMSBuildEditorConfig.editorconfig
+E:\Project\C\MechsuitFramework-main\.source\obj\Debug\Exosuit.AssemblyInfoInputs.cache
+E:\Project\C\MechsuitFramework-main\.source\obj\Debug\Exosuit.AssemblyInfo.cs
+E:\Project\C\MechsuitFramework-main\.source\obj\Debug\Exosuit.csproj.CoreCompileInputs.cache
+E:\Project\C\MechsuitFramework-main\.source\obj\Debug\Exosuit.dll

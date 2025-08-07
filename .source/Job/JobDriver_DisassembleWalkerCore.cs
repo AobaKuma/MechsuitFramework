@@ -8,7 +8,6 @@ namespace Exosuit
     /// <summary>
     /// 將倒地或死去的敵對龍騎兵拆解，需要在旁邊讀條400tick,然後完成時每個Module都將有5%機率可回收，或變成原製造資源的10%
     /// </summary>
-    [StaticConstructorOnStartup]
     public class JobDriver_DisassembleWalkerCore : JobDriver
     {
         private const TargetIndex target = TargetIndex.A;

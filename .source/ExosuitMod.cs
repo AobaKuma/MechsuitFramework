@@ -21,7 +21,13 @@ namespace Exosuit
             instance = new Harmony("ExosuitMod");
             LongEventHandler.QueueLongEvent(delegate
             {
-                PatchClassProcessor[] patchClasses = GetTypesFromAssembly(Assembly.GetAssembly(typeof(ExosuitMod))).Select(new Func<Type, PatchClassProcessor>(instance.CreateClassProcessor)).ToArray();
+                var assembly = Assembly.GetAssembly(typeof(ExosuitMod));
+                PatchClassProcessor[] patchClasses = assembly.GetTypes()
+                    .Where(type => type.GetCustomAttributes(typeof(HarmonyPatch), false).Length > 0 || 
+                                   type.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                                       .Any(method => method.GetCustomAttributes(typeof(HarmonyPatch), false).Length > 0))
+                    .Select(type => instance.CreateClassProcessor(type))
+                    .ToArray();
                 patchClasses.DoIf((PatchClassProcessor patchClass) => string.IsNullOrEmpty(patchClass.Category), delegate (PatchClassProcessor patchClass)
                 {
                     try
