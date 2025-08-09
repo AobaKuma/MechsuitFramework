@@ -63,12 +63,5 @@ namespace Exosuit
             child.parent = null;
         }
 
-        [HarmonyFinalizer]
-        [HarmonyPatch("AddChild")]
-        static void Fini(PawnRenderNode child, PawnRenderNode parent,Exception __exception)
-        {
-            if (__exception == null) return;
-            Log.Error($"C:{child.Props.debugLabel} P:{parent?.Props.debugLabel ?? "null"}");
-        }
     }
 }

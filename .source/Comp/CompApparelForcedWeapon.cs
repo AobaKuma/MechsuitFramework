@@ -97,21 +97,21 @@ namespace Exosuit
             var wearer = Parent.Wearer;
             var command = new CommandActionWithOptions()
             {
-                defaultLabel = "WG_ToggleModuleWeapon".TranslateSimple(),
-                icon = !NoModuleWeapon ? wearer.equipment.Primary.def.uiIcon : Command.BGTex,
+                defaultLabel = "ToggleModuleWeapon".TranslateSimple(),
+                icon = !NoModuleWeapon ? wearer.equipment.Primary.def.uiIcon : TexCommand.AttackMelee,
                 groupKeyIgnoreContent = wearer.thingIDNumber,
                 
             };
             if (!NoModuleWeapon)
             {
-                command.options.Add(new("WG_BareHands".TranslateSimple(), delegate
+                command.options.Add(new("BareHands".TranslateSimple(), delegate
                 {
                     wearer.equipment.Remove(wearer.equipment.Primary);
                 }, MenuOptionPriority.High));
             }
             if (wearer.equipment.Primary != Weapon)
             {
-                command.options.Add(new("WG_TakeOutModuleWeapon".Translate(Weapon.LabelShortCap), delegate {
+                command.options.Add(new("TakeOutModuleWeapon".Translate(Weapon.LabelShortCap), delegate {
                     /*Log.Message(Weapon);
                     Log.Message(Weapon.holdingOwner?.ToString() ?? "No Owner");*/
                     if (wearer.equipment.Primary != null)

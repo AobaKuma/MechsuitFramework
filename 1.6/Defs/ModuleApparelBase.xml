@@ -99,7 +99,6 @@
       <renderNodeProperties>
         <li>
           <parentTagDef>Root</parentTagDef>
-          <nodeClass>PawnRenderNode_Apparel</nodeClass>
           <useGraphic>false</useGraphic>
           <debugLabel>Mecha Root</debugLabel>
           <tagDef>WGApparel</tagDef>
