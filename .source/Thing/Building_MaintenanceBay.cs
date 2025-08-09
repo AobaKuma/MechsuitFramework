@@ -5,10 +5,8 @@ using Exosuit.Misc;
 using RimWorld;
 using RimWorld.Utility;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 using Verse;
 using Verse.AI;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 
 
@@ -551,7 +549,7 @@ namespace Exosuit
                     PawnComponentsUtility.CreateInitialComponents(cachePawn);
                     cachePawn.story.bodyType = BodyTypeDefOf.Male;
                     cachePawn.story.hairDef = HairDefOf.Bald;
-                    cachePawn.story.headType = HeadTypeDefOf.Skull;
+                    //cachePawn.story.headType = HeadTypeDefOf.Skull;
                     cachePawn.ageTracker.LockCurrentLifeStageIndex(cachePawn.def.race.lifeStageAges.Count-1);
                     cachePawn.Name = new NameSingle(" ",false);
                     cachePawn.gender = Gender.None;

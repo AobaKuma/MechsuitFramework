@@ -28,11 +28,11 @@ namespace Exosuit
             //逻辑：从QueueB取物品，装填
             Toil TryFindAmmo = Toils_General.Label();
             yield return TryFindAmmo;
-            Toil ExtractAmmoFromQueue = Toils_JobTransforms.ExtractNextTargetFromQueue(TargetIndex.B);
+            Toil ExtractAmmoFromQueue = Toils_JobTransforms.ExtractNextTargetFromQueue(TargetIndex.B).EndOnNoTargetInQueue(TargetIndex.B);
             //获取弹药到ind
             yield return ExtractAmmoFromQueue;
             //前往弹药thing
-            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch);
+            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).EndOnDespawnedOrNull(TargetIndex.B);
             //捡到手里
             Toil PickUpAmmo = ToilMaker.MakeToil("PickingUpAmmo");
             PickUpAmmo.initAction = delegate

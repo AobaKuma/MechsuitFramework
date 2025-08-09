@@ -98,7 +98,7 @@ namespace Exosuit
             var command = new CommandActionWithOptions()
             {
                 defaultLabel = "ToggleModuleWeapon".TranslateSimple(),
-                icon = !NoModuleWeapon ? wearer.equipment.Primary.def.uiIcon : Command.BGTex,
+                icon = !NoModuleWeapon ? wearer.equipment.Primary.def.uiIcon : TexCommand.AttackMelee,
                 groupKeyIgnoreContent = wearer.thingIDNumber,
                 
             };
