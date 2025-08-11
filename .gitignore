@@ -6,3 +6,7 @@
 /.source/.vs
 /.source/.vs
 /.source/obj/Debug
+*.cache
+*.editorconfig
+*.props
+*.json
