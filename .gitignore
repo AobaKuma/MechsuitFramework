@@ -10,3 +10,6 @@
 *.editorconfig
 *.props
 *.json
+*.bin
+*.db
+*.v2

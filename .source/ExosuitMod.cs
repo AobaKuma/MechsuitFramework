@@ -21,7 +21,7 @@ namespace Exosuit
             instance = new Harmony("ExosuitMod");
             LongEventHandler.QueueLongEvent(delegate
             {
-                var patchClasses = GetTypesFromAssembly(Assembly.GetAssembly(typeof(ExosuitMod))).Where(t=>t.HasHarmonyAttribute()).Select(new Func<Type, PatchClassProcessor>(instance.CreateClassProcessor));
+                var patchClasses = GetTypesFromAssembly(Assembly.GetAssembly(typeof(ExosuitMod))).Where(t => t.HasHarmonyAttribute()).Select(new Func<Type, PatchClassProcessor>(instance.CreateClassProcessor));
                 patchClasses.DoIf((PatchClassProcessor patchClass) => string.IsNullOrEmpty(patchClass.Category), delegate (PatchClassProcessor patchClass)
                 {
                     try
@@ -234,8 +234,5 @@ namespace Exosuit
                 }
             }
         }*/
-
-
-        
     }
 }
