@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Left Arm -->
+  <ArmLeft.label>左腕</ArmLeft.label>
+  <!-- EN: The utility slot. have a rack that can attach tools or equipment. -->
+  <ArmLeft.description>ユーティリティスロット。ツールや装備を取り付けることができるラックがあります。</ArmLeft.description>
+  
+  <!-- EN: Right Arm -->
+  <ArmRight.label>右腕</ArmRight.label>
+  <!-- EN: The equipment slot. Exosuit has a robotic arm for equipment holding and capable to do some complex duty. -->
+  <ArmRight.description>装備スロット。エクソスーツには装備を保持するためのロボットアームがあり、複雑な作業を行うことができます。</ArmRight.description>
+  
+  <!-- EN: Attachment -->
+  <Attachment.label>アタッチメント</Attachment.label>
+  <!-- EN: The attachment slot, also called the pack slot is located on the rear side of Exosuit, and has many useful modules from an additional power supply to the escape Pod launcher. -->
+  <Attachment.description>アタッチメントスロットは、パックスロットとも呼ばれ、エクソスーツの後部にあり、追加の電源から脱出ポッドランチャーまで、多くの便利なモジュールがあります。</Attachment.description>
+  
+  <!-- EN: Core -->
+  <Core.label>コア</Core.label>
+  <!-- EN: The core frame of an Exosuit, which is the most important part to be operation-ready. -->
+  <Core.description>エクソスーツのコアフレームであり、運用準備が整う上で最も重要な部分です。</Core.description>
+  
+  <!-- EN: Head -->
+  <Head.label>頭部</Head.label>
+  <!-- EN: The sensor module slot. not always a helmet but its located on the top of an Exosuit. -->
+  <Head.description>センサーモジュールスロット。常にヘルメットであるとは限りませんが、エクソスーツの上部にあります。</Head.description>
+  
+  <!-- EN: Left Mount -->
+  <MountLeft.label>左マウント</MountLeft.label>
+  <!-- EN: The ability gear slot, which can hold launchers or special device modules that can play a role beyond expectations in the right situation. -->
+  <MountLeft.description>アビリティギアスロット。ランチャーや特殊なデバイスモジュールを保持でき、適切な状況で期待以上の役割を果たすことができます。</MountLeft.description>
+  
+  <!-- EN: Right Mount -->
+  <MountRight.label>右マウント</MountRight.label>
+  <!-- EN: The right shoulder mount slot, it ususally capable to hold an automatic turret, or support a large pack with pack module. -->
+  <MountRight.description>右肩のマウントスロット。通常、自動タレットを保持したり、パックモジュールで大きなパックをサポートしたりできます。</MountRight.description>
+  
+</LanguageData>

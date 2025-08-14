@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: disassembling -->
+  <WG_DisassembleWalkerCore.reportString>分解中</WG_DisassembleWalkerCore.reportString>
+  
+  <!-- EN: entering mecha suit -->
+  <WG_GetInWalkerCore.reportString>メカスーツに搭乗中</WG_GetInWalkerCore.reportString>
+  
+  <!-- EN: entering mecha suit -->
+  <WG_GetInWalkerCore_NonDrafted.reportString>メカスーツに搭乗中</WG_GetInWalkerCore_NonDrafted.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_GetOffWalkerCore.reportString>ベイに戻っています</WG_GetOffWalkerCore.reportString>
+  
+  <!-- EN: repairing TargetA. -->
+  <WG_RepairAtGantry.reportString>TargetAを修理中。</WG_RepairAtGantry.reportString>
+  
+  <!-- EN: repairing TargetA. -->
+  <WG_RepairComponent.reportString>TargetAを修理中。</WG_RepairComponent.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_ReturnToBay.reportString>ベイに戻っています</WG_ReturnToBay.reportString>
+  
+  <!-- EN: sleeping in mecha suit -->
+  <WG_SleepInWalkerCore.reportString>メカスーツで睡眠中</WG_SleepInWalkerCore.reportString>
+  
+  <!-- EN: heading back to bay -->
+  <WG_TakeToMaintenanceBay.reportString>ベイに戻っています</WG_TakeToMaintenanceBay.reportString>
+  
+</LanguageData>

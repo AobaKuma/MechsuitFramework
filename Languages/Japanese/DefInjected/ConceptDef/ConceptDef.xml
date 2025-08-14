@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: capture a downed pilot -->
+  <WG_Frame_Capture.label>ダウンしたパイロットを捕獲する</WG_Frame_Capture.label>
+  <!-- EN: It's impossible to imprison a frame pilot, they can just break out the door with ease. select your pawn, and right-click a downed enemy frame to make a job to disassemble it so you can remove the pilot from their frame. -->
+  <WG_Frame_Capture.helpText>フレームパイロットを投獄することは不可能です。彼らは簡単にドアを破壊して脱出できます。ポーンを選択し、ダウンした敵のフレームを右クリックして分解するジョブを作成し、パイロットをフレームから取り除くことができます。</WG_Frame_Capture.helpText>
+  
+  <!-- EN: Pilot schedule -->
+  <WG_Frame_PilotSchedule.label>パイロットのスケジュール</WG_Frame_PilotSchedule.label>
+  <!-- EN: You can designate a pawn to automatically pilot by setting their time schedule to "Pilot" and assigning them a gantry or parking spot, if a pilot has time assignment to neither "Pilot" nor "Any", they will try to dock their frame to any available spot or gantry. -->
+  <WG_Frame_PilotSchedule.helpText>ポーンのタイムスケジュールを「パイロット」に設定し、ガントリーまたは駐車スポットを割り当てることで、自動的に操縦するように指定できます。パイロットが「パイロット」でも「任意」でもない時間割り当ての場合、利用可能なスポットまたはガントリーにフレームをドッキングしようとします。</WG_Frame_PilotSchedule.helpText>
+  
+  <!-- EN: Disabled frame -->
+  <WG_Frame_Wreckage.label>無効化されたフレーム</WG_Frame_Wreckage.label>
+  <!-- EN: When the structure point is empty, frame will be totally disabled and turn into a wreckage, this doesn't mean the pilot is dead, you can still rescue them by ordering your pawn to open it. -->
+  <WG_Frame_Wreckage.helpText>構造ポイントが空になると、フレームは完全に無効化され、残骸になります。これはパイロットが死亡したことを意味するものではなく、ポーンに開けるように命令することで救助することができます。</WG_Frame_Wreckage.helpText>
+  
+  <!-- EN: Module storage -->
+  <WG_Gantry_LinkBuilding.label>モジュールストレージ</WG_Gantry_LinkBuilding.label>
+  <!-- EN: The gantry will only show modules from connected module storage, so make sure you have module storage connected before opening the customization menu. -->
+  <WG_Gantry_LinkBuilding.helpText>ガントリーは接続されたモジュールストレージのモジュールのみを表示するため、カスタマイズメニューを開く前にモジュールストレージが接続されていることを確認してください。</WG_Gantry_LinkBuilding.helpText>
+  
+  <!-- EN: Loading module -->
+  <WG_Gantry_LoadModule.label>モジュールのロード</WG_Gantry_LoadModule.label>
+  <!-- EN: By right click slot, a floating menu will show you what's available to this slot, and some of the slots can make more slots available, and some may disable other slots. -->
+  <WG_Gantry_LoadModule.helpText>スロットを右クリックすると、このスロットで利用可能なものがフローティングメニューに表示されます。一部のスロットはより多くのスロットを利用可能にし、一部は他のスロットを無効にする場合があります。</WG_Gantry_LoadModule.helpText>
+  
+  <!-- EN: Overloaded -->
+  <WG_Gantry_Overloaded.label>過負荷</WG_Gantry_Overloaded.label>
+  <!-- EN: If the loaded weight is more than the frame can handle, then the frame will be overloaded, you can still pilot it but it means you have no carrying capacity also with only 50% of the moving speed. -->
+  <WG_Gantry_Overloaded.helpText>積載重量がフレームの処理能力を超えると、フレームは過負荷になります。操縦はできますが、運搬能力がなくなり、移動速度も50%になります。</WG_Gantry_Overloaded.helpText>
+  
+  <!-- EN: Payload Capacity -->
+  <WG_Gantry_PayloadCapacity.label>ペイロード容量</WG_Gantry_PayloadCapacity.label>
+  <!-- EN: Every core frame had a maximum amount of power output, in short as payload capacity. every assembled module will be taking this capacity. -->
+  <WG_Gantry_PayloadCapacity.helpText>すべてのコアフレームには最大出力があり、これはペイロード容量として要約されます。組み立てられたすべてのモジュールがこの容量を消費します。</WG_Gantry_PayloadCapacity.helpText>
+  
+  <!-- EN: Repairing at gantry -->
+  <WG_Gantry_Repair.label>ガントリーでの修理</WG_Gantry_Repair.label>
+  <!-- EN: Pawn with crafting work will repair assembled modules at the gantry if auto repair is enabled, but this will take a longer working duration. -->
+  <WG_Gantry_Repair.helpText>自動修理が有効になっている場合、クラフト作業を行うポーンはガントリーで組み立てられたモジュールを修理しますが、これにはより長い作業時間が必要です。</WG_Gantry_Repair.helpText>
+  
+  <!-- EN: Repairing module -->
+  <WG_Module_Repair.label>モジュールの修理</WG_Module_Repair.label>
+  <!-- EN: Pawn with crafting work will take jobs to repair damaged modules, the repair speed is affected by pawn's work speed. -->
+  <WG_Module_Repair.helpText>クラフト作業を行うポーンは、損傷したモジュールを修理する仕事を引き受けます。修理速度はポーンの作業速度に影響されます。</WG_Module_Repair.helpText>
+  
+  <!-- EN: Module -->
+  <WG_ModuleItem.label>モジュール</WG_ModuleItem.label>
+  <!-- EN: It looks like you acquired a module box, these types of items will only be useful when you have a gantry to assemble them, but you can also recycle them at the smelter if you have no technology to make good use of it. -->
+  <WG_ModuleItem.helpText>モジュールボックスを入手したようです。これらのアイテムは、ガントリーで組み立てる場合にのみ役立ちますが、有効に活用する技術がない場合は、製錬所でリサイクルすることもできます。</WG_ModuleItem.helpText>
+  
+  <!-- EN: Parking spot -->
+  <WG_ParkingSpot.label>駐車スポット</WG_ParkingSpot.label>
+  <!-- EN: this is a parking spot for temporary parking your frame. While working in the caravan site, it has no tools to repair the damaged parts but the pilot can get proper rest and medical treatment. -->
+  <WG_ParkingSpot.helpText>これはフレームを一時的に駐車するための駐車スポットです。キャラバンサイトで作業している間、損傷した部品を修理するツールはありませんが、パイロットは適切な休息と治療を受けることができます。</WG_ParkingSpot.helpText>
+  
+  <!-- EN: Walker Frame -->
+  <WG_WalkerFrame.label>ウォーカーフレーム</WG_WalkerFrame.label>
+  <!-- EN: It looks like you acquired the tech to produce a type of heavy exosuit, these suits are different from regular suits, and require a specific building to assemble and gear up or gear down. -->
+  <WG_WalkerFrame.helpText>重いエクソスーツを製造する技術を習得したようです。これらのスーツは通常のスーツとは異なり、組み立てや装備の着脱には特定の建物が必要です。</WG_WalkerFrame.helpText>
+  
+</LanguageData>
