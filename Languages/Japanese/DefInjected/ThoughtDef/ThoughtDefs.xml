@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: slept in the MechGear -->
+  <SleptInMechGear.stages.slept_in_the_MechGear.label>メカギアで寝た</SleptInMechGear.stages.slept_in_the_MechGear.label>
+  <!-- EN: Sleeping in a mecha is cool, but the space is too cramped -->
+  <SleptInMechGear.stages.slept_in_the_MechGear.description>メカで寝るのはかっこいいけど、スペースが狭すぎる</SleptInMechGear.stages.slept_in_the_MechGear.description>
+  
+</LanguageData>
