@@ -32,15 +32,15 @@ namespace Exosuit
             {
                 worksDone = 80;
             };
-            repair.tickAction = delegate
+            repair.tickIntervalAction = (interval)=>
             {
                 Pawn actor = repair.actor;
                 if (Gantry.NeedRepair)
                 {
-                    actor.skills?.Learn(SkillDefOf.Crafting, 0.05f);
+                    actor.skills?.Learn(SkillDefOf.Crafting, 0.05f*interval);
                     actor.rotationTracker.FaceTarget(actor.CurJob.GetTarget(TargetIndex.A));
 
-                    worksDone += (int)(actor.GetStatValue(StatDefOf.WorkSpeedGlobal) * Gantry.GetStatValue(StatDefOf.WorkTableEfficiencyFactor, true, 1));
+                    worksDone += Math.Min((int)(actor.GetStatValue(StatDefOf.WorkSpeedGlobal) * Gantry.GetStatValue(StatDefOf.WorkTableEfficiencyFactor, true, 1))* interval, 1);
                     if (worksDone >= workPerRepair) Gantry.Repair(Math.DivRem(worksDone, workPerRepair, out worksDone));
                     return;
                 }
