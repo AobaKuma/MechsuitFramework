@@ -5,8 +5,12 @@ namespace Exosuit
 {
     [DefOf, StaticConstructorOnStartup]
     public static class ThingDefOf
-	{
-		public static ThingDef MF_Building_MaintenanceBay;
+    {
+        static ThingDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
+        }
+        public static ThingDef MF_Building_MaintenanceBay;
 		public static ThingDef MF_Building_ComponentStorage;
 		public static ThingDef MF_Building_Wreckage;
         public static ThingDef WG_PawnFlyer;

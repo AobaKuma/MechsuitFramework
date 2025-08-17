@@ -47,7 +47,7 @@
     <Reference Include="System.Runtime" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4545-beta" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4553-beta" />
     <PackageReference Include="Lib.Harmony" Version="2.3.7-prerelease" ExcludeAssets="runtime" />
     <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
       <PrivateAssets>all</PrivateAssets>

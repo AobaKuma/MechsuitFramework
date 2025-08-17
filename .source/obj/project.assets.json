@@ -16,7 +16,7 @@
           "build/Krafs.Publicizer.targets": {}
         }
       },
-      "Krafs.Rimworld.Ref/1.6.4495-beta": {
+      "Krafs.Rimworld.Ref/1.6.4553-beta": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -127,7 +127,7 @@
           "ref/net472/netstandard.dll": {}
         }
       },
-      "Lib.Harmony/2.3.6": {
+      "Lib.Harmony/2.3.7-prerelease": {
         "type": "package",
         "compile": {
           "lib/net472/0Harmony.dll": {
@@ -161,17 +161,17 @@
         "krafs.publicizer.nuspec"
       ]
     },
-    "Krafs.Rimworld.Ref/1.6.4495-beta": {
-      "sha512": "RcpMybAF1iaPuYbt86Qwc2IHU9ajUO2h8anYwTrGuVEBSB6dVCoWxATDRvmEec4qtIkyWw+1Qmq/VSWiklZFkA==",
+    "Krafs.Rimworld.Ref/1.6.4553-beta": {
+      "sha512": "ardsvQKCypj6WcpleS2y+jU1ugom/fp7/kTKwE9dtGsjgDzwgPzdOMdpKSBsqrV8mRSPVcDml5H67U+XDEl6fA==",
       "type": "package",
-      "path": "krafs.rimworld.ref/1.6.4495-beta",
+      "path": "krafs.rimworld.ref/1.6.4553-beta",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "README.md",
         "icon.png",
-        "krafs.rimworld.ref.1.6.4495-beta.nupkg.sha512",
+        "krafs.rimworld.ref.1.6.4553-beta.nupkg.sha512",
         "krafs.rimworld.ref.nuspec",
         "ref/net472/Assembly-CSharp-firstpass.dll",
         "ref/net472/Assembly-CSharp.dll",
@@ -281,17 +281,17 @@
         "ref/net472/netstandard.dll"
       ]
     },
-    "Lib.Harmony/2.3.6": {
-      "sha512": "HqXPz33Z+R8ZDCLS5pJZthg33AMdF1bQXUbz2V7Neb9E+sMQOf4S1wquhM4pLIZFX7BZcOQubclbVreiM1+qmw==",
+    "Lib.Harmony/2.3.7-prerelease": {
+      "sha512": "e2why7Bq8XOEpEuCZ9bcscfP16lcdkdDfRBn58axy2Ec/Eo8OZtHJ7fJMkyzfNRXIiy8TqLeOqjyzhEUv62Xxw==",
       "type": "package",
-      "path": "lib.harmony/2.3.6",
+      "path": "lib.harmony/2.3.7-prerelease",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "HarmonyLogo.png",
         "LICENSE",
         "README.md",
-        "lib.harmony.2.3.6.nupkg.sha512",
+        "lib.harmony.2.3.7-prerelease.nupkg.sha512",
         "lib.harmony.nuspec",
         "lib/net35/0Harmony.dll",
         "lib/net35/0Harmony.pdb",
@@ -333,37 +333,29 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "Krafs.Publicizer >= 2.3.0",
-      "Krafs.Rimworld.Ref >= 1.6.4495-beta",
-      "Lib.Harmony >= 2.3.6"
+      "Krafs.Rimworld.Ref >= 1.6.4553-beta",
+      "Lib.Harmony >= 2.3.7-prerelease"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
-    "D:\\APPS\\AppGroup_4_Program\\VisualStudio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Project\\C\\MechsuitFramework-main\\.source\\Exosuit.csproj",
+      "projectUniqueName": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Exosuit.csproj",
       "projectName": "Exosuit",
-      "projectPath": "E:\\Project\\C\\MechsuitFramework-main\\.source\\Exosuit.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\Project\\C\\MechsuitFramework-main\\.source\\obj\\",
+      "projectPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Exosuit.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\APPS\\AppGroup_4_Program\\VisualStudio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net472"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -376,7 +368,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net472": {
@@ -390,15 +388,15 @@
           },
           "Krafs.Rimworld.Ref": {
             "target": "Package",
-            "version": "[1.6.4495-beta, )"
+            "version": "[1.6.4553-beta, )"
           },
           "Lib.Harmony": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[2.3.6, )"
+            "version": "[2.3.7-prerelease, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

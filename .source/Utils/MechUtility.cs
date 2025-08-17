@@ -43,6 +43,14 @@ namespace Exosuit
             return GenClosest.ClosestThing_Global_Reachable(pawn.PositionHeld, pawn.MapHeld, bays, PathEndMode.InteractionCell, TraverseParms.For(pawn), 9999f, validator: c => c is Building_MaintenanceBay bay && !bay.HasGearCore && bay.TryGetComp<CompAssignableToPawn_Parking>(out var park) && park.AssignedPawns.EnumerableNullOrEmpty() && pawn.CanReserveAndReach(c, PathEndMode.InteractionCell, Danger.Deadly));
 
         }
+        public static bool IsNotAnything(Pawn pawn)
+        {
+            return pawn.GetTimeAssignment() != WG_TimeAssignmentDefOf.Anything;
+        }
+        public static bool IsWorkWithFrame(Pawn pawn)
+        {
+            return pawn.GetTimeAssignment() == WG_TimeAssignmentDefOf.WG_WorkWithFrame;
+        }
         public static Thing GetClosestCoreForPawn(Pawn pawn)
         {
             IEnumerable<Building_MaintenanceBay> bays = GetMapBays(pawn.Map);

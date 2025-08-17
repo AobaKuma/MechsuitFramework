@@ -9,7 +9,6 @@ using Verse;
 
 namespace Exosuit
 {
-    //[StaticConstructorOnStartup]
     public class SlotDef : Def
     {
         public bool isCoreFrame;//用來顯示的CoreFrame只會有一個

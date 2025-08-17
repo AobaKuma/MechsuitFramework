@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Ng3HUj6oIYHQNrxZpZ8cAmxQpWS4mXztB0eHDAe/VvtrejY9PONJ6OcEb4TqT6tlqUH7tDws+ZtKiuqf8KCfuA==",
+  "dgSpecHash": "4izQJISVRMk=",
   "success": true,
-  "projectFilePath": "E:\\Project\\C\\MechsuitFramework-main\\.source\\Exosuit.csproj",
+  "projectFilePath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Exosuit.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Administrator\\.nuget\\packages\\krafs.publicizer\\2.3.0\\krafs.publicizer.2.3.0.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4495-beta\\krafs.rimworld.ref.1.6.4495-beta.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\lib.harmony\\2.3.6\\lib.harmony.2.3.6.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\krafs.publicizer\\2.3.0\\krafs.publicizer.2.3.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4553-beta\\krafs.rimworld.ref.1.6.4553-beta.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\lib.harmony\\2.3.7-prerelease\\lib.harmony.2.3.7-prerelease.nupkg.sha512"
   ],
   "logs": []
 }

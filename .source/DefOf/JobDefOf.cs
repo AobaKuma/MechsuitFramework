@@ -40,7 +40,6 @@ namespace Exosuit
         /// </summary>
         public static JobDef WG_GetOffWalkerCore;
 
-
         /// <summary>
         /// 在walker里睡觉
         /// </summary>
@@ -55,8 +54,6 @@ namespace Exosuit
         /// 對倒地的自家龍騎兵右鍵後，攜帶對方到維護塢並使其離開Walker。
         /// </summary>
         public static JobDef WG_TakeToMaintenanceBay;
-
-
 
         /// <summary>
         /// 對倒地的自家龍騎兵右鍵後，攜帶對方到維護塢並使其離開Walker。

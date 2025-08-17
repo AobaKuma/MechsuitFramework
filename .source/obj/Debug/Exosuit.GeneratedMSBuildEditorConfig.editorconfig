@@ -1,5 +1,8 @@
 is_global = true
 build_property.RootNamespace = Exosuit
-build_property.ProjectDir = E:\Project\C\MechsuitFramework-main\.source\
+build_property.ProjectDir = D:\Steam\steamapps\common\RimWorld\Mods\_MechsuitFramework\.source\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
