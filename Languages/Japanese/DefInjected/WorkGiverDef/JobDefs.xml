@@ -9,7 +9,7 @@
   <WG_MaintainComponent.verb>修理</WG_MaintainComponent.verb>
   
   <!-- EN: repair module at gantry -->
-  <WG_RepairAtGantry.label>ガントリーでモジュールを修理</WG_RepairAtGantry.label>
+  <WG_RepairAtGantry.label>駐機場で修理</WG_RepairAtGantry.label>
   <!-- EN: repairing -->
   <WG_RepairAtGantry.gerund>修理中</WG_RepairAtGantry.gerund>
   <!-- EN: repair -->

@@ -2,9 +2,9 @@
 <LanguageData>
   
   <!-- EN: walker frame -->
-  <WG_HeavyExoskeleton.label>ウォーカーフレーム</WG_HeavyExoskeleton.label>
+  <WG_HeavyExoskeleton.label>戦術外骨格</WG_HeavyExoskeleton.label>
   <!-- EN: A primitive and bulky heavy-duty exoskeleton, known as Exosuit. Although such heavy exoskeletons have been repeatedly invented since the 22nd century, their design and technical foundations are interoperable.\n\nThe application environment of powered frames in the military is close to small mechas or some genetically modified large humanoid soldiers. Still, its degree of automation is low and requires pilot to use full body control, and relies on a specialized maintenance platform to put on and take off. -->
-  <WG_HeavyExoskeleton.description>エクソスーツとして知られる、原始的でかさばる頑丈な外骨格。このような重い外骨格は22世紀以来繰り返し発明されてきましたが、その設計と技術的基盤は相互運用可能です。\n\n軍におけるパワードフレームの適用環境は、小型メカや遺伝子組み換えされた大型人型兵士に近いものです。それでも、その自動化の度合いは低く、パイロットが全身を使って制御を使用する必要があり、着脱には専門のメンテナンスプラットフォームに依存します。</WG_HeavyExoskeleton.description>
+  <WG_HeavyExoskeleton.description>戦術外骨格として知られる、原始的でかさばる頑丈な外骨格。このような重い外骨格は22世紀以来繰り返し発明されてきましたが、その設計と技術的基盤は相互運用可能です。\n\n軍における強化外骨格の適用環境は、小型機甲や遺伝子組み換えされた大型人型兵士に近いものです。それでも、その自動化の度合いは低く、操縦者が全身を使って機体の制御をする必要があり、着脱には専門の整備基盤に依存します。</WG_HeavyExoskeleton.description>
   <!-- EN:
     <li>subject->innovation's path</li>
     <li>subject_story->unveiled simple truths behind complex phenomena</li>

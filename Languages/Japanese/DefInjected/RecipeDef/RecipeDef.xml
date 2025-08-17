@@ -2,10 +2,10 @@
 <LanguageData>
   
   <!-- EN: smelt module -->
-  <WG_SmeltModule.label>モジュールを製錬</WG_SmeltModule.label>
+  <WG_SmeltModule.label>兵装を製錬</WG_SmeltModule.label>
   <!-- EN: Use heat and strong electromagnets to break down modules into useful resources. -->
-  <WG_SmeltModule.description>熱と強力な電磁石を使用して、モジュールを有用な資源に分解します。</WG_SmeltModule.description>
+  <WG_SmeltModule.description>熱と強力な電磁石を使用して、兵装を有用な資源に分解します。</WG_SmeltModule.description>
   <!-- EN: Smelting apparel. -->
-  <WG_SmeltModule.jobString>モジュールを製錬中。</WG_SmeltModule.jobString>
-  
+  <WG_SmeltModule.jobString>兵装を製錬中。</WG_SmeltModule.jobString>
+
 </LanguageData>
