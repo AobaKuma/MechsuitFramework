@@ -80,12 +80,12 @@ namespace Exosuit
         }
         static readonly MechData mechData = new();
         public static readonly Dictionary<QualityCategory, float> qualityToHPFactor = new() {
-            {QualityCategory.Awful, 0.5f},
-            {QualityCategory.Poor,0.75f },
+            {QualityCategory.Awful, 0.7f},
+            {QualityCategory.Poor,0.9f },
             {QualityCategory.Normal,1f},
-            {QualityCategory.Good,1.25f},
-            {QualityCategory.Excellent,1.5f},
-            {QualityCategory.Masterwork,1.75f},
+            {QualityCategory.Good,1.1f},
+            {QualityCategory.Excellent,1.3f},
+            {QualityCategory.Masterwork,1.6f},
             {QualityCategory.Legendary,2f }
         };
         public static bool PawnWearingExosuitCore(this Pawn pawn)
@@ -292,7 +292,7 @@ namespace Exosuit
             if (item.TryGetComp<CompSuitModule>(out var comp))
             {
                 comp.remainingCharges = remainingCharges;
-                comp.HP = Mathf.FloorToInt((hp / MechUtility.qualityToHPFactor[quality]));
+                comp.HP = Mathf.CeilToInt((hp / MechUtility.qualityToHPFactor[quality]));
             }
         }
         public void SetDataToMech( Thing mech) {
@@ -314,7 +314,7 @@ namespace Exosuit
             }
             if (mech.TryGetComp<CompSuitModule>(out var c))
             {
-                c.HP = Mathf.FloorToInt(hp * MechUtility.qualityToHPFactor[quality]);
+                c.HP = Mathf.CeilToInt(hp * MechUtility.qualityToHPFactor[quality]);
             }
         }
     }
