@@ -28,11 +28,7 @@ namespace Exosuit
                 || !parms.pawn.PawnWearingExosuitCore()) return;
             if (Find.WindowStack.currentlyDrawnWindow is not Dialog_StylingStation dialog_Styling)
                 return;
-
             parms.skipFlags |= MiscDefOf.WGRoot;
-
-
-
         }
         
     }

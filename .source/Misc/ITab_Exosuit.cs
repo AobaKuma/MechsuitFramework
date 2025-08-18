@@ -10,8 +10,6 @@ using static Verse.Text;
 namespace Exosuit
 {
     [StaticConstructorOnStartup]
-    //最好让tab跟core。。。
-    //那样就能给pawn用了
 
     public partial class ITab_Exosuit : ITab
     {
@@ -158,14 +156,14 @@ namespace Exosuit
         {
             var slot = PositionWSlot.TryGetValue(Order);
 
-            if (Order > 0&&Parent.HasGearCore)
+            if (Order > 0 &&Parent.HasGearCore)
             {
                 slot ??= PositionWSlot[0].supportedSlots.Find(s => s.uiPriority == Order);
             }
-            else if(Order==0)
-            {
-                slot = MiscDefOf.Core;
-            }
+            //else if(Order==0)
+            //{
+            //    slot = MiscDefOf.Core;
+            //}
             using (new TextBlock(TextAnchor.MiddleCenter))
             {
                 Vector2 position = positions[Order];
@@ -211,7 +209,7 @@ namespace Exosuit
                 if (disabled) return;
                 Texture2D icon = hasThing && slot != null ? new CachedTexture(OccupiedSlots[slot].def.graphicData.texPath).Texture : EmptySlotIcon;
 
-                GizmoInteraction(gizmoRect, icon, slot);
+                GizmoInteraction(Order,gizmoRect, icon, slot);
                 if (slot == null) return;
                 Widgets.DrawHighlightIfMouseover(gizmoRect);
                 //部件名字
@@ -261,7 +259,7 @@ namespace Exosuit
             var hColor = healthPerc < 0.3f ? Color.red : healthPerc < 0.7f ? Color.yellow : Color.green;
             Widgets.DrawBoxSolid(bar, hColor);
         }
-        private void GizmoInteraction(Rect rect, Texture2D icon, SlotDef slot)
+        private void GizmoInteraction(int order, Rect rect, Texture2D icon, SlotDef slot)
         {
             if (slot != null && slot.isCoreFrame && Parent.HasGearCore)
             {
@@ -275,7 +273,7 @@ namespace Exosuit
                 GUI.color = Color.white;
             }
             else Widgets.DrawTextureFitted(rect, EmptySlotIcon, 1f);
-            if (slot == null) return;
+            if (slot == null && order != 0) return;
             if (!Widgets.ButtonInvisible(rect)) return;
 
             switch (Event.current.button)
