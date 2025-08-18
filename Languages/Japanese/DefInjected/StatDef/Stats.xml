@@ -9,13 +9,13 @@
   <MF_FlightRange.formatString>{0}</MF_FlightRange.formatString>
   
   <!-- EN: module slot -->
-  <MF_Stat_Module.label>モジュールスロット</MF_Stat_Module.label>
+  <MF_Stat_Module.label>兵装装着区画</MF_Stat_Module.label>
   <!-- EN: the taken slot of this module, a module might take multiple slots. -->
-  <MF_Stat_Module.description>このモジュールが占有するスロット。モジュールは複数のスロットを占有する場合があります。</MF_Stat_Module.description>
-  
+  <MF_Stat_Module.description>この兵装が占有する区画。兵装は複数の区画を占有する場合があります。</MF_Stat_Module.description>
+
   <!-- EN: slot user -->
-  <MF_Stat_Slot.label>スロットユーザー</MF_Stat_Slot.label>
+  <MF_Stat_Slot.label>区画使用兵装</MF_Stat_Slot.label>
   <!-- EN: the modules using this slot, will include module that taken multiple slots. -->
-  <MF_Stat_Slot.description>このスロットを使用しているモジュール。複数のスロットを占有するモジュールも含まれます。</MF_Stat_Slot.description>
-  
+  <MF_Stat_Slot.description>この区画を使用する兵装。複数の区画を占有する兵装も含まれます。</MF_Stat_Slot.description>
+
 </LanguageData>

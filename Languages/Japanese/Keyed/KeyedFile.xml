@@ -3,80 +3,79 @@
 <LanguageData>
   <WG_GetIn>搭乗</WG_GetIn>
 
-  <WG_WeaponDropped>フレームから離れた後、{0}は武器を装備できず、ドロップしました。</WG_WeaponDropped>
+  <WG_WeaponDropped>戦術外骨格から離れた後、{0}は武器を装備できず、手放しました。</WG_WeaponDropped>
 
-  <WG_TooBigForPilot>{0}はこのエクソスーツを操縦するには大きすぎます</WG_TooBigForPilot>
-  <WG_TooYoungToPilot>{0}はこのエクソスーツを操縦するには若すぎます</WG_TooYoungToPilot>
-  <WG_RequirePilotSuit>{0}はこのエクソスーツに適したパイロットスーツを着用していません</WG_RequirePilotSuit>
-  <WG_RequireBionic>{0}はこのエクソスーツを操縦するための適切なインプラントを持っていません</WG_RequireBionic>
-  <WG_ApparelLayerTaken>{0}はこのエクソスーツに収まらない装備を脱ぐことを拒否しました</WG_ApparelLayerTaken>
+  <WG_TooBigForPilot>{0}はこの戦術外骨格を操縦するには大きすぎます</WG_TooBigForPilot>
+  <WG_TooYoungToPilot>{0}はこの戦術外骨格を操縦するには若すぎます</WG_TooYoungToPilot>
+  <WG_RequirePilotSuit>{0}はこの戦術外骨格に適した操縦服を着用していません</WG_RequirePilotSuit>
+  <WG_RequireBionic>{0}はこの戦術外骨格を操縦するための適切な神経接続端末を持っていません</WG_RequireBionic>
+  <WG_ApparelLayerTaken>{0}はこの戦術外骨格に適合しない装備を脱ぐことを拒否しました</WG_ApparelLayerTaken>
 
   <WG_Disabled_AlreadyHasCoreFrame>{0}はすでに操縦中です</WG_Disabled_AlreadyHasCoreFrame>
-  <WG_Disabled_NoCoreFrame>このガントリーにフレームがありません</WG_Disabled_NoCoreFrame>
-  <WG_NoModuleForSlot>利用可能なモジュールがありません</WG_NoModuleForSlot>
+  <WG_Disabled_NoCoreFrame>この整備架台に戦術外骨格がありません</WG_Disabled_NoCoreFrame>
+  <WG_NoModuleForSlot>利用可能な兵装がありません</WG_NoModuleForSlot>
 
-  <WG_Job_TakeToMaintenanceBay>ガントリーへ運ぶ</WG_Job_TakeToMaintenanceBay>
-  <WG_Job_DisassembleFrame>ダウンしたエクソスーツを分解する</WG_Job_DisassembleFrame>
-  <WG_Disabled_NoMaintenanceBay>運搬不可: 利用可能なガントリーがありません</WG_Disabled_NoMaintenanceBay>
+  <WG_Job_TakeToMaintenanceBay>整備架台へ運ぶ</WG_Job_TakeToMaintenanceBay>
+  <WG_Job_DisassembleFrame>撃破された戦術外骨格を分解する</WG_Job_DisassembleFrame>
+  <WG_Disabled_NoMaintenanceBay>運搬不可: 利用可能な整備架台がありません</WG_Disabled_NoMaintenanceBay>
 
   <WG_Disabled_NeedControlledAndDrafted>使用不可: 徴兵が必要です</WG_Disabled_NeedControlledAndDrafted>
-  <WG_SafetyLock>安全ロック</WG_SafetyLock>
-  <WG_SafetyLock_Desc>誤用を防ぐための安全装置</WG_SafetyLock_Desc>
+  <WG_SafetyLock>安全機構</WG_SafetyLock>
+  <WG_SafetyLock_Desc>誤操作防止用安全機構</WG_SafetyLock_Desc>
 
   <WG_EmergencyEject>緊急脱出</WG_EmergencyEject>
-  <WG_EmergencyEject_Desc>脱出プロトコルを起動すると、固体燃料ロケットがパイロットを範囲内の指定された場所に射出し、フレームは破壊されます。</WG_EmergencyEject_Desc>
+  <WG_EmergencyEject_Desc>脱出機構を起動すると、操縦者を固体燃料推進器を用いて範囲内の指定された場所に射出し、戦術外骨格は自壊します。</WG_EmergencyEject_Desc>
 
-  <WG_EjectToTile>長距離射出</WG_EjectToTile>
-  <WG_EjectToTile>短距離射出</WG_EjectToTile>
-  <WG_PilotInBuilding>パイロット:</WG_PilotInBuilding>
+  <WG_EjectToTile>射出</WG_EjectToTile>
+  <WG_PilotInBuilding>操縦者:</WG_PilotInBuilding>
   <WG_Occupied>占有中</WG_Occupied>
-  <WG_RequireMechsuit>エクソスーツが必要</WG_RequireMechsuit>
+  <WG_RequireMechsuit>戦術外骨格が必要</WG_RequireMechsuit>
 
-  <WG_PilotingFrame>エクソスーツを操縦中</WG_PilotingFrame>
+  <WG_PilotingFrame>戦術外骨格を操縦中</WG_PilotingFrame>
   <WG_Finalized>最終決定</WG_Finalized>
-  <WG_Stats_TakingSlotsOf>占有中のモジュールスロット:</WG_Stats_TakingSlotsOf>
-  <WG_Stats_DisableSlotsOf>無効化されたモジュールスロット:</WG_Stats_DisableSlotsOf>
+  <WG_Stats_TakingSlotsOf>占有中の兵装:</WG_Stats_TakingSlotsOf>
+  <WG_Stats_DisableSlotsOf>無効化された兵装:</WG_Stats_DisableSlotsOf>
 
   <WG_StructurePoint>構造的完全性</WG_StructurePoint>
-  <WG_StructurePoint.Tooltip>エクソスーツの全体的な構造ポイント。ヒット時のダメージ効果を無効にしてエクソスーツのパイロットを保護します。しかし、25%未満になると、25%の確率で外部装甲を貫通し、パイロットにダメージを与える可能性があります。構造値がゼロになると、エクソスーツは完全に無効化され、破壊された残骸の中にパイロットが閉じ込められます。\n\n構造ポイントを回復するには、エクソスーツをメンテナンスガントリーにドッキングさせる必要があります。クラフト能力を持つ入植者は、損傷したコアフレームとサブモジュールを修理できます。</WG_StructurePoint.Tooltip>
+  <WG_StructurePoint.Tooltip>戦術外骨格の全体的な構造値。被弾時の損傷効果を無効にして戦術外骨格の操縦者を保護します。しかし、25%未満になると、25%の確率で外部装甲を貫通し、操縦者に損傷を与える可能性があります。構造値がゼロになると、戦術外骨格は完全に無効化され、破壊された残骸の中に操縦者が閉じ込められます。\n\n構造値を回復するには、戦術外骨格を整備架台に格納させる必要があります。工作能力を持つ入植者は、損傷した戦術外骨格と兵装を修理できます。</WG_StructurePoint.Tooltip>
 
-  <WG_TabMechGear>エクソスーツ</WG_TabMechGear>
-  <WG_BayTip>リンクされた棚のモジュールにアクセスするには、コアスロットをクリックします</WG_BayTip>
-  <WG_MechSolution>カスタマイズ</WG_MechSolution>
+  <WG_TabMechGear>戦術外骨格</WG_TabMechGear>
+  <WG_BayTip>連携した棚の兵装を扱うには、各兵装区画を右クリックします</WG_BayTip>
+  <WG_MechSolution>兵装調整</WG_MechSolution>
   <WG_Overload>[過負荷]</WG_Overload>
 
-  <WG_Performance>ペイロード容量:</WG_Performance>
-  <WG_OverallArmor>構造ポイント</WG_OverallArmor>
+  <WG_Performance>搭載容量:</WG_Performance>
+  <WG_OverallArmor>構造値</WG_OverallArmor>
 
-  <WG_ArmorSpeed>エクソスーツの移動速度:</WG_ArmorSpeed>
+  <WG_ArmorSpeed>戦術外骨格の移動速度:</WG_ArmorSpeed>
   <WG_ArmorDeadWeight>自重:</WG_ArmorDeadWeight>
-  <WG_ArmorCapacity>ペイロード容量:</WG_ArmorCapacity>
+  <WG_ArmorCapacity>搭載容量:</WG_ArmorCapacity>
 
-  <WG_HasMechWeapon>武装モジュール</WG_HasMechWeapon>
+  <WG_HasMechWeapon>火器兵装</WG_HasMechWeapon>
 
-  <WG_Disabled_VictimInWalkerCore>救助不可: エクソスーツ内で負傷。</WG_Disabled_VictimInWalkerCore>
+  <WG_Disabled_VictimInWalkerCore>救助不可: 戦術外骨格内で負傷。</WG_Disabled_VictimInWalkerCore>
 
   <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
   <WG_Blunt_CE>MPA</WG_Blunt_CE>
 
   <WG_AutoRepair>自動修理</WG_AutoRepair>
-  <WG_AutoRepair_Desc>このガントリーで損傷したモジュールを入植者が自動的に修理するかどうかを切り替えます。</WG_AutoRepair_Desc>
+  <WG_AutoRepair_Desc>この駐機場で損傷した兵装を入植者が自動的に修理するかどうかを切り替えます。</WG_AutoRepair_Desc>
 
-  <WG_AvailableModuleForThisSlot>このスロットで利用可能なモジュール</WG_AvailableModuleForThisSlot>
+  <WG_AvailableModuleForThisSlot>この区画で利用可能な兵装</WG_AvailableModuleForThisSlot>
   
-  <WG_ChangeModuleColor>モジュールの色を変更</WG_ChangeModuleColor>
+  <WG_ChangeModuleColor>兵装の色を変更</WG_ChangeModuleColor>
 
-  <WG_NoAvailablePilot>利用可能なパイロットがいません</WG_NoAvailablePilot>
-  <WG_GetInAssigned>ガントリーに入る</WG_GetInAssigned>
-  <WG_BayOccupied>ベイが占有されています</WG_BayOccupied>
-  <WG_BayHasNoCore>コアフレームがありません</WG_BayHasNoCore>
-  <WG_ToggleModuleWeapon>モジュール武器の切り替え</WG_ToggleModuleWeapon>
+  <WG_NoAvailablePilot>利用可能な操縦者がいません</WG_NoAvailablePilot>
+  <WG_GetInAssigned>駐機場に入る</WG_GetInAssigned>
+  <WG_BayOccupied>駐機場が占有されています</WG_BayOccupied>
+  <WG_BayHasNoCore>機体主機がありません</WG_BayHasNoCore>
+  <WG_ToggleModuleWeapon>兵装の切り替え</WG_ToggleModuleWeapon>
   <WG_BareHands>なし</WG_BareHands>
-  <WG_TakeOutModuleWeapon>モジュール武器を取り出す</WG_TakeOutModuleWeapon>
-  <WG_AssignPilot>パイロットを割り当て</WG_AssignPilot>
-  <WG_CommandToggleTurret>タレットの切り替え</WG_CommandToggleTurret>
-  <WG_CommandToggleTurretDesc>指令タレットの切り替え</WG_CommandToggleTurretDesc>
-  <WG_SubTurret>サブタレット</WG_SubTurret>
-  <WG_SubTurretDesc>このフレームに取り付けられたサブタレット</WG_SubTurretDesc>
-  
+  <WG_TakeOutModuleWeapon>兵装を取り出す</WG_TakeOutModuleWeapon>
+  <WG_AssignPilot>操縦者を割り当て</WG_AssignPilot>
+  <WG_CommandToggleTurret>火器の切り替え</WG_CommandToggleTurret>
+  <WG_CommandToggleTurretDesc>火器の切り替え</WG_CommandToggleTurretDesc>
+  <WG_SubTurret>副火器</WG_SubTurret>
+  <WG_SubTurretDesc>この戦術外骨格に取り付けられた副火器</WG_SubTurretDesc>
+
 </LanguageData>

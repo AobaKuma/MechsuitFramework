@@ -2,12 +2,12 @@
 <LanguageData>
   
   <!-- EN: attachment modules -->
-  <WG_WalkerGearLayer.label>アタッチメントモジュール</WG_WalkerGearLayer.label>
+  <ExosuitLayer_Attach.label>背面装備</ExosuitLayer_Attach.label>
   
   <!-- EN: core modules -->
-  <WG_WalkerGearLayer_Core.label>コアモジュール</WG_WalkerGearLayer_Core.label>
+  <ExosuitLayer_Core.label>機体主機</ExosuitLayer_Core.label>
   
   <!-- EN: utility modules -->
-  <WG_WalkerGearLayer_Utility.label>ユーティリティモジュール</WG_WalkerGearLayer_Utility.label>
+  <ExosuitLayer_Utility.label>作業装備</ExosuitLayer_Utility.label>
   
 </LanguageData>
