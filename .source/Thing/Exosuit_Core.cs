@@ -137,7 +137,7 @@ namespace Exosuit
         public void ModuleRecache()
         {
             modules.Clear();
-            modules.AddRangeWhereFast(Wearer.apparel.WornApparel, a=>a.HasComp<CompSuitModule>());
+            modules.AddRangeWhereFast(Wearer.apparel?.WornApparel, a=>a.HasComp<CompSuitModule>());
 
             RefreshHP();
             RefreshCapacity();

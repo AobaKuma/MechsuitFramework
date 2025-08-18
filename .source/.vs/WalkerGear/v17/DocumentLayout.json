@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\thing\\exosuit_core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:thing\\exosuit_core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\harmonypatches\\pawnrender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:harmonypatches\\pawnrender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -47,6 +51,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Exosuit_Core.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Exosuit_Core.cs",
+              "RelativeDocumentMoniker": "Thing\\Exosuit_Core.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Exosuit_Core.cs",
+              "RelativeToolTip": "Thing\\Exosuit_Core.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAArwIUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T12:14:04.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PawnRender.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\HarmonyPatches\\PawnRender.cs",
               "RelativeDocumentMoniker": "HarmonyPatches\\PawnRender.cs",
@@ -59,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CompApparelForcedWeapon.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompApparelForcedWeapon.cs",
               "RelativeDocumentMoniker": "Comp\\CompApparelForcedWeapon.cs",
@@ -67,12 +84,11 @@
               "RelativeToolTip": "Comp\\CompApparelForcedWeapon.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAAAFEAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:50:20.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:50:20.036Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MiscDefOf.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\MiscDefOf.cs",
               "RelativeDocumentMoniker": "DefOf\\MiscDefOf.cs",
@@ -80,12 +96,11 @@
               "RelativeToolTip": "DefOf\\MiscDefOf.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:50:06.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:50:06.635Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Building_MaintenanceBay.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Building_MaintenanceBay.cs",
               "RelativeDocumentMoniker": "Thing\\Building_MaintenanceBay.cs",
@@ -93,12 +108,11 @@
               "RelativeToolTip": "Thing\\Building_MaintenanceBay.cs",
               "ViewState": "AgIAAL4AAAAAAAAAAIAywO0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:45:38.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:45:38.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Building_EjectorBay.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Catapult\\Building_EjectorBay.cs",
               "RelativeDocumentMoniker": "Catapult\\Building_EjectorBay.cs",
@@ -106,12 +120,11 @@
               "RelativeToolTip": "Catapult\\Building_EjectorBay.cs",
               "ViewState": "AgIAAKgAAAAAAAAAAAAAAKgAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:45:37.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:45:37.151Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BackCompat_Exosuit_1_6.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Utils\\BackCompat_Exosuit_1_6.cs",
               "RelativeDocumentMoniker": "Utils\\BackCompat_Exosuit_1_6.cs",
@@ -119,12 +132,11 @@
               "RelativeToolTip": "Utils\\BackCompat_Exosuit_1_6.cs",
               "ViewState": "AgIAABMAAAAAAAAAAIA6wCUAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:45:33.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:45:33.366Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ITab_Exosuit.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Misc\\ITab_Exosuit.cs",
               "RelativeDocumentMoniker": "Misc\\ITab_Exosuit.cs",
@@ -132,8 +144,7 @@
               "RelativeToolTip": "Misc\\ITab_Exosuit.cs",
               "ViewState": "AgIAAJIAAAAAAAAAAAAnwKQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:44:43.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:44:43.512Z"
             }
           ]
         }
