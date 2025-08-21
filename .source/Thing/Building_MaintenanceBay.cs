@@ -557,8 +557,8 @@ namespace Exosuit
                     cachePawn = (Pawn)ThingMaker.MakeThing(ThingDefOf.Dummy);
                     PawnComponentsUtility.CreateInitialComponents(cachePawn);
                     cachePawn.story.bodyType = BodyTypeDefOf.Male;
+                    cachePawn.story.headType = HeadTypeDefOf.Stump;
                     cachePawn.story.hairDef = HairDefOf.Bald;
-                    //cachePawn.story.headType = HeadTypeDefOf.Skull;
                     cachePawn.ageTracker.LockCurrentLifeStageIndex(cachePawn.def.race.lifeStageAges.Count-1);
                     cachePawn.Name = new NameSingle(" ",false);
                     cachePawn.gender = Gender.None;
