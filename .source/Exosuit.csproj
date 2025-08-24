@@ -38,7 +38,6 @@
 
   <ItemGroup>
     <Compile Remove="HarmonyPatches\DynRenderNode_Apparel_Patch.cs" />
-    <Compile Remove="RenderNode\PawnRenderNode_ApparelColor.cs" />
   </ItemGroup>
   <ItemGroup>
 

@@ -178,11 +178,20 @@ namespace Exosuit
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.Look(ref cachePawn, "cachedPawn");
             Scribe_Values.Look(ref autoRepair, "autoRepair",true);
+
+            Scribe_Deep.Look(ref cachePawn, "cachedPawn");
             if (Scribe.mode==LoadSaveMode.PostLoadInit)
             {
+                if (Dummy.story.headType != null)
+                {
+                    var apparel = cachePawn.apparel;
+                    cachePawn = null;                    
+                    apparel.pawn = Dummy;
+                    Dummy.apparel = apparel;
+                }
                 pawnsInBuilding.Add(Dummy);
+                
                 LongEventHandler.ExecuteWhenFinished(()=>TryUpdateCache(true));
             }
         }
@@ -580,7 +589,14 @@ namespace Exosuit
             base.SpawnSetup(map, respawningAfterLoad);
             LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LinkBuilding"), OpportunityType.GoodToKnow);
         }
-        public Pawn_ApparelTracker DummyApparels => Dummy.apparel;
+        public Pawn_ApparelTracker DummyApparels
+        {
+            get => Dummy.apparel;
+            private set {
+                value.pawn = Dummy;
+                Dummy.apparel = value;
+            }
+        }
         public List<Apparel> DummyModules => [.. ComponentsCache.ConvertAll(c => c.parent as Apparel)];
 
         public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)

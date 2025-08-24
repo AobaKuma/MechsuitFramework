@@ -18,13 +18,14 @@
       <children>
         <li>
           <debugLabel>Body</debugLabel>
-          <nodeClass>PawnRenderNode_Body</nodeClass>
-          <workerClass>PawnRenderNodeWorker_Body</workerClass>
+          <useGraphic>false</useGraphic>
           <tagDef>Body</tagDef>
           <skipFlag>Body</skipFlag>
-          <colorType>Skin</colorType>
+          <!-- <nodeClass>PawnRenderNode_Body</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Body</workerClass> -->
+          <!-- <colorType>Skin</colorType>
           <useRottenColor>true</useRottenColor>
-          <useSkinShader>true</useSkinShader>
+          <useSkinShader>true</useSkinShader> -->
           <children>
             <li Class="PawnRenderNodeProperties_Parent">
               <debugLabel>Apparel root</debugLabel>
@@ -35,29 +36,31 @@
         </li>
         <li>
           <debugLabel>Head stump</debugLabel>
-          <nodeClass>PawnRenderNode_Stump</nodeClass>
+          <useGraphic>false</useGraphic>
+          <!-- <nodeClass>PawnRenderNode_Stump</nodeClass>
           <workerClass>PawnRenderNodeWorker_Stump</workerClass>
-          <texPath>Things/Pawn/Humanlike/Heads/None_Average_Stump</texPath>
+          <texPath>Things/Pawn/Humanlike/Heads/None_Average_Stump</texPath> -->
           <baseLayer>50</baseLayer>
-          <colorType>Skin</colorType>
+          <!-- <colorType>Skin</colorType> -->
           <skipFlag>Head</skipFlag>
-          <useSkinShader>true</useSkinShader>
+          <!-- <useSkinShader>true</useSkinShader>
           <useRottenColor>true</useRottenColor>
-          <rotDrawMode>Fresh, Rotting</rotDrawMode>
+          <rotDrawMode>Fresh, Rotting</rotDrawMode> -->
         </li>
         <li>
           <debugLabel>Head</debugLabel>
-          <nodeClass>PawnRenderNode_Head</nodeClass>
-          <workerClass>PawnRenderNodeWorker_Head</workerClass>
+          <useGraphic>false</useGraphic>
+          <!-- <nodeClass>PawnRenderNode_Head</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Head</workerClass> -->
           <tagDef>Head</tagDef>
           <skipFlag>Head</skipFlag>
           <baseLayer>50</baseLayer>
-          <colorType>Skin</colorType>
+          <!-- <colorType>Skin</colorType>
           <useRottenColor>true</useRottenColor>
           <useSkinShader>true</useSkinShader>
           <subworkerClasses>
             <li>Exosuit.PawnRenderSubWorker_OffsetRoot</li>
-          </subworkerClasses>
+          </subworkerClasses> -->
           <children>
             <li Class="PawnRenderNodeProperties_Parent">
               <debugLabel>Apparel root</debugLabel>

@@ -40,7 +40,7 @@ namespace Exosuit
                     actor.skills?.Learn(SkillDefOf.Crafting, 0.05f * interval);
                     actor.rotationTracker.FaceTarget(actor.CurJob.GetTarget(TargetIndex.A));
 
-                    worksDone += Math.Min((int)(actor.GetStatValue(StatDefOf.WorkSpeedGlobal) * Gantry.GetStatValue(StatDefOf.WorkTableEfficiencyFactor, true, 1)) * interval, 1);
+                    worksDone += Math.Max((int)(actor.GetStatValue(StatDefOf.WorkSpeedGlobal) * Gantry.GetStatValue(StatDefOf.WorkTableEfficiencyFactor, true, 1)) * interval, 1);
                     if (worksDone >= workPerRepair) Gantry.Repair(Math.DivRem(worksDone, workPerRepair, out worksDone));
                     return;
                 }
