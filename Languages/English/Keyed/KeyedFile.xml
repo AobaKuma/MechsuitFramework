@@ -70,9 +70,9 @@
   <WG_GetInAssigned>get in gantry</WG_GetInAssigned>
   <WG_BayOccupied>Bay occupied</WG_BayOccupied>
   <WG_BayHasNoCore>No core frame</WG_BayHasNoCore>
-  <WG_ToggleModuleWeapon>switch module weapon</WG_ToggleModuleWeapon>
+  <WG_ToggleModuleWeapon>Switch module weapon</WG_ToggleModuleWeapon>
   <WG_BareHands>none</WG_BareHands>
-  <WG_TakeOutModuleWeapon>Take module weapon</WG_TakeOutModuleWeapon>
+  <WG_TakeOutModuleWeapon>{0}</WG_TakeOutModuleWeapon>
   <WG_AssignPilot>assign pilot</WG_AssignPilot>
   <WG_CommandToggleTurret>toggle turret</WG_CommandToggleTurret>
   <WG_CommandToggleTurretDesc>Command toggle turret</WG_CommandToggleTurretDesc>

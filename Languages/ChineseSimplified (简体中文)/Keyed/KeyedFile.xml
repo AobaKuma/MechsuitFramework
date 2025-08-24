@@ -68,7 +68,7 @@
   <WG_BayHasNoCore>没有核心框架</WG_BayHasNoCore>
   <WG_ToggleModuleWeapon>切换模块武器</WG_ToggleModuleWeapon>
   <WG_BareHands>空手</WG_BareHands>
-  <WG_TakeOutModuleWeapon>使用模块武器</WG_TakeOutModuleWeapon>
+  <WG_TakeOutModuleWeapon>使用{0}</WG_TakeOutModuleWeapon>
   <WG_AssignPilot>设置专用驾驶员</WG_AssignPilot>
   <WG_CommandToggleTurret>自由开火</WG_CommandToggleTurret>
   <WG_CommandToggleTurretDesc>切换子砲塔的自动开火</WG_CommandToggleTurretDesc>

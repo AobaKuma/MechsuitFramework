@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
     <!-- add subworkerClasses field if it doesn't exist -->
-    <!-- <Operation Class="PatchOperationConditional">
+    <Operation Class="PatchOperationConditional">
         <xpath>
             Defs/PawnRenderTreeDef[defName="Humanlike"]/root/subworkerClasses</xpath>
         <nomatch Class="PatchOperationAdd">
@@ -18,7 +18,7 @@
         <value>
             <li>Exosuit.PawnRenderSubWorker_OffsetRoot</li>
         </value>
-    </Operation> -->
+    </Operation>
 
     <!-- add subworkerClasses field if it doesn't exist -->
     <Operation Class="PatchOperationConditional">

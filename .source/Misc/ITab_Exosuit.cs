@@ -276,8 +276,8 @@ namespace Exosuit
                     float scale = 0.75f;
                     if (t is Exosuit_Core core)
                     {
-                        offset += core.Extesnsion.bayRenderOffset;
-                        scale *= core.Extesnsion.bayRenderScale;
+                        if (core.Extesnsion?.bayRenderOffset != null) offset += core.Extesnsion.bayRenderOffset;
+                        if (core.Extesnsion?.bayRenderScale != null) scale *= core.Extesnsion.bayRenderScale;
                     }
                     RenderTexture portrait = PortraitsCache.Get(Parent.Dummy, rect.size, direction, cameraOffset: offset, cameraZoom: scale);
                     Widgets.DrawTextureFitted(rect, portrait, 1f);

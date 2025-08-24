@@ -2,6 +2,7 @@
 using RimWorld.BaseGen;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -13,11 +14,22 @@ namespace Exosuit
     {
         public static bool HasCore(this List<Apparel> things)
         {
-            return HasCore(things,out _);
+            return HasCore(things, out _);
+        }
+        public static bool HasCore(this Pawn pawn)
+        {
+            return HasCore(pawn, out _);
+        }
+        public static bool HasCore(this Pawn pawn, out Exosuit_Core core)
+        {
+            Apparel p = pawn?.apparel?.WornApparel?.FirstOrDefault(a => a is Exosuit_Core c);
+            core = p as Exosuit_Core;
+            return core != null;
         }
         public static bool HasCore(this List<Apparel> things, out Exosuit_Core core)
         {
-            if (things?.Find(a=> a is Exosuit_Core) is Exosuit_Core core1 and not null){
+            if (things?.Find(a => a is Exosuit_Core) is Exosuit_Core core1 and not null)
+            {
                 core = core1;
                 return true;
             }
@@ -25,7 +37,7 @@ namespace Exosuit
             return false;
         }
 
-        public static List<Building_MaintenanceBay> GetMapBays(this Map map) => [..map.listerBuildings.AllBuildingsColonistOfClass<Building_MaintenanceBay>()];
+        public static List<Building_MaintenanceBay> GetMapBays(this Map map) => [.. map.listerBuildings.AllBuildingsColonistOfClass<Building_MaintenanceBay>()];
         public static Thing GetClosestBay(Pawn pawn, bool AssignedPriority = true)
         {
             IEnumerable<Building_MaintenanceBay> bays = pawn.Map.GetMapBays();
@@ -59,7 +71,7 @@ namespace Exosuit
             var AssignedBays = bays.Where(b => b.TryGetComp<CompAssignableToPawn_Parking>(out var comp) && comp.AssignedPawns.Contains(pawn) && b.HasGearCore);
             if (!AssignedBays.Any()) return null;
 
-            return GenClosest.ClosestThing_Global_Reachable(pawn.PositionHeld, pawn.MapHeld, AssignedBays, PathEndMode.InteractionCell, TraverseParms.For(pawn), 9999f, validator: c => (c as Building_MaintenanceBay).CanGear(pawn,out _) && pawn.CanReserveAndReach(c, PathEndMode.InteractionCell, Danger.Deadly));
+            return GenClosest.ClosestThing_Global_Reachable(pawn.PositionHeld, pawn.MapHeld, AssignedBays, PathEndMode.InteractionCell, TraverseParms.For(pawn), 9999f, validator: c => (c as Building_MaintenanceBay).CanGear(pawn, out _) && pawn.CanReserveAndReach(c, PathEndMode.InteractionCell, Danger.Deadly));
         }
 
         public static void WeaponDropCheck(Pawn pawn)
@@ -90,7 +102,7 @@ namespace Exosuit
         };
         public static bool PawnWearingExosuitCore(this Pawn pawn)
         {
-            return pawn.apparel?.WornApparel.HasCore()??false;
+            return pawn.apparel?.WornApparel.HasCore() ?? false;
         }
         public static bool TryGetExosuitCore(this Pawn pawn, out Exosuit_Core core)
         {
@@ -102,7 +114,7 @@ namespace Exosuit
             }
             return false;
         }
-        
+
         /// <summary>
         /// 移除装甲，返回移除衣物的列表
         /// </summary>
@@ -124,8 +136,8 @@ namespace Exosuit
         }
         private static List<Apparel> SplitDamage(Pawn pawn)
         {
-            List<Apparel> tmpApparelList = [..from a in pawn.apparel.WornApparel 
-                                              where a.HasComp<CompSuitModule>() 
+            List<Apparel> tmpApparelList = [..from a in pawn.apparel.WornApparel
+                                              where a.HasComp<CompSuitModule>()
                                               select a];
             if (!tmpApparelList.HasCore(out Exosuit_Core core)) return null;
             if (!core.Damaged) return tmpApparelList;
@@ -152,7 +164,7 @@ namespace Exosuit
                 {
                     c.HP -= Mathf.FloorToInt(values[j]);
                 }
-                
+
             }
             return tmpApparelList;
         }
@@ -189,7 +201,7 @@ namespace Exosuit
             if (!PawnWearingExosuitCore(pawn)) return;
 
             //生成拆除物。
-            
+
             foreach (Apparel a in RemoveExosuit(pawn))
             {
                 if (Rand.Chance(0.5f))
@@ -206,7 +218,7 @@ namespace Exosuit
                 }
             }
         }
-        public static bool IsModule(this Thing source) => source.TryGetComp<CompSuitModule>()!=null;
+        public static bool IsModule(this Thing source) => source.TryGetComp<CompSuitModule>() != null;
         public static bool IsModule(this Thing source, out CompSuitModule comp) => source.TryGetComp(out comp);
         //添加的
         public static Thing PeakConverted(this CompSuitModule source)
@@ -265,13 +277,13 @@ namespace Exosuit
         }
         public void Init(Thing thing)
         {
-            quality =default;
+            quality = default;
             color = default;
             remainingCharges = default;
             hp = default;
 
             thing.TryGetQuality(out quality);
-            if (thing.TryGetComp(out CompColorable colorable)) color = colorable.Active?colorable.Color:Color.clear;
+            if (thing.TryGetComp(out CompColorable colorable)) color = colorable.Active ? colorable.Color : Color.clear;
             if (thing.TryGetComp(out CompSuitModule comp))
             {
                 hp = comp.HP;
@@ -286,27 +298,31 @@ namespace Exosuit
                 if (remainingCharges < 0) remainingCharges = 0;
             }
         }
-        public void GetDataFromMech( Thing item) {
+        public void GetDataFromMech(Thing item)
+        {
             if (item.TryGetComp(out CompQuality compQuality)) compQuality.SetQuality(quality, null);
-            item.SetColor(color);
+            if (item.TryGetComp(out CompColorable compColorable)) compColorable.SetColor(color);
             if (item.TryGetComp<CompSuitModule>(out var comp))
             {
                 comp.remainingCharges = remainingCharges;
                 comp.HP = Mathf.CeilToInt((hp / MechUtility.qualityToHPFactor[quality]));
             }
         }
-        public void SetDataToMech( Thing mech) {
-            
+        public void SetDataToMech(Thing mech)
+        {
+
             if (mech.TryGetComp(out CompQuality compQuality)) compQuality.SetQuality(quality, null);
-            if (color==Color.clear)
+            if (mech.TryGetComp(out CompColorable compColorable))
             {
-                mech.SetColor(mech.def.colorGenerator?.NewRandomizedColor() ?? Color.white); 
+                if (color == Color.clear)
+                {
+                    compColorable.SetColor(mech.def.colorGenerator?.NewRandomizedColor() ?? Color.white);
+                }
+                else
+                {
+                    compColorable.SetColor(color);
+                }
             }
-            else
-            {
-                mech.SetColor(color);
-            }
-            
 
             if (mech.TryGetComp<CompApparelReloadable>(out var comp))
             {

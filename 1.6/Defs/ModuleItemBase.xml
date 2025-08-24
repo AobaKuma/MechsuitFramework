@@ -45,10 +45,10 @@
       <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Styleable" />
       <li>
-        <compClass>CompColorable</compClass>
+        <compClass>CompQuality</compClass>
       </li>
       <li>
-        <compClass>CompQuality</compClass>
+        <compClass>CompColorable</compClass>
       </li>
       <!-- <li Class="Exosuit.CompProperties_ExosuitModule">
         <EquipedThingDef>ThingDef 提供的裝備</EquipedThingDef>

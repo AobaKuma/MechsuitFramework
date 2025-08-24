@@ -19,7 +19,6 @@ namespace Exosuit
             {
                 return;
             }
-
             if (!flags.HasFlag(PawnRenderFlags.NeverAimWeapon) && pawn.stances?.curStance is Stance_Busy stance_Busy && !stance_Busy.neverAimWeapon && stance_Busy.focusTarg.IsValid)
             {
                 drawPos += modExt.equipmentOffsetData.OffsetForRot(facing);
