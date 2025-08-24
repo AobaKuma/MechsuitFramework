@@ -10,6 +10,8 @@ using static Verse.Text;
 namespace Exosuit
 {
     [StaticConstructorOnStartup]
+    //最好让tab跟core。。。
+    //那样就能给pawn用了
 
     public partial class ITab_Exosuit : ITab
     {
@@ -156,21 +158,21 @@ namespace Exosuit
         {
             var slot = PositionWSlot.TryGetValue(Order);
 
-            if (Order > 0 &&Parent.HasGearCore)
+            if (Order > 0&&Parent.HasGearCore)
             {
                 slot ??= PositionWSlot[0].supportedSlots.Find(s => s.uiPriority == Order);
             }
-            //else if(Order==0)
-            //{
-            //    slot = MiscDefOf.Core;
-            //}
+            else if(Order==0)
+            {
+                slot ??= MiscDefOf.Core;
+            }
             using (new TextBlock(TextAnchor.MiddleCenter))
             {
                 Vector2 position = positions[Order];
                 Rect gizmoRect = new(position, GizmoSize * (Order > 0 ? 1f : 2f));
 
-                bool disabled = Order > 0 &&Parent.HasGearCore && (OccupiedSlots[PositionWSlot[0]]
-                        ?.TryGetComp<CompSuitModule>().Props.ItemDef?.GetCompProperties<CompProperties_ExosuitModule>()?.disabledSlots?.Contains(slot) ?? false);
+                bool disabled = Order > 0 && Parent.HasGearCore && (slot==null ||(OccupiedSlots[PositionWSlot[0]]
+                        ?.TryGetComp<CompSuitModule>().Props.ItemDef?.GetCompProperties<CompProperties_ExosuitModule>()?.disabledSlots?.Contains(slot) ?? false));
                 Thing thing = null;
                 bool hasThing = slot != null && OccupiedSlots.TryGetValue(slot, out thing);
                 //标签
@@ -203,13 +205,18 @@ namespace Exosuit
 
                 //底色
                 {
-                    Material material = disabled ? TexUI.GrayscaleGUI : null;
-                    GenUI.DrawTextureWithMaterial(gizmoRect, Command.BGTex, material);
+                    GenUI.DrawTextureWithMaterial(gizmoRect, Command.BGTex, null);
+                    if (disabled)
+                    {
+                        //Widgets.DrawBoxSolid(gizmoRect, Color.yellow);
+                        GenUI.DrawTextureWithMaterial(gizmoRect, Resources.WG_SlotUnavailable, null);
+                    }
+                    
                 }
                 if (disabled) return;
                 Texture2D icon = hasThing && slot != null ? new CachedTexture(OccupiedSlots[slot].def.graphicData.texPath).Texture : EmptySlotIcon;
 
-                GizmoInteraction(Order,gizmoRect, icon, slot);
+                GizmoInteraction(gizmoRect, icon, slot);
                 if (slot == null) return;
                 Widgets.DrawHighlightIfMouseover(gizmoRect);
                 //部件名字
@@ -259,21 +266,32 @@ namespace Exosuit
             var hColor = healthPerc < 0.3f ? Color.red : healthPerc < 0.7f ? Color.yellow : Color.green;
             Widgets.DrawBoxSolid(bar, hColor);
         }
-        private void GizmoInteraction(int order, Rect rect, Texture2D icon, SlotDef slot)
+        private void GizmoInteraction(Rect rect, Texture2D icon, SlotDef slot)
         {
-            if (slot != null && slot.isCoreFrame && Parent.HasGearCore)
+            if (slot != null &&  OccupiedSlots.TryGetValue(slot, out var t))
             {
-                RenderTexture portrait = PortraitsCache.Get(Parent.Dummy, rect.size, direction, cameraOffset: new Vector3(0, 0, 0.6f), cameraZoom: 0.75f);
-                Widgets.DrawTextureFitted(rect, portrait, 1f);
-            }
-            else if (slot != null && OccupiedSlots.TryGetValue(slot,out var t))
-            {
-                GUI.color = t.DrawColor;
-                GUI.DrawTexture(rect, Widgets.GetIconFor(t.def, t.Stuff, t.StyleDef));
-                GUI.color = Color.white;
+                if (slot.isCoreFrame)
+                {
+                    Vector3 offset = new(0, 0, 0.6f);
+                    float scale = 0.75f;
+                    if (t is Exosuit_Core core)
+                    {
+                        offset += core.Extesnsion.bayRenderOffset;
+                        scale *= core.Extesnsion.bayRenderScale;
+                    }
+                    RenderTexture portrait = PortraitsCache.Get(Parent.Dummy, rect.size, direction, cameraOffset: offset, cameraZoom: scale);
+                    Widgets.DrawTextureFitted(rect, portrait, 1f);
+                }
+                else
+                {
+                    GUI.color = t.DrawColor;
+                    GUI.DrawTexture(rect, Widgets.GetIconFor(t.def, t.Stuff, t.StyleDef));
+                    GUI.color = Color.white;
+                }
+                
             }
             else Widgets.DrawTextureFitted(rect, EmptySlotIcon, 1f);
-            if (slot == null && order != 0) return;
+            if (slot == null) return;
             if (!Widgets.ButtonInvisible(rect)) return;
 
             switch (Event.current.button)
@@ -331,11 +349,10 @@ namespace Exosuit
             }
             foreach (var thing in modules)
             {
-                Action action = () =>
+                options.Add(new(thing.LabelCap, delegate
                 {
                     AddOrReplaceModule(thing);
-                };
-                options.Add(new(thing.LabelCap, action));
+                }));
             }
             return options;
         }
@@ -410,13 +427,13 @@ namespace Exosuit
             {5,new(412f,164f)},
             {6,new(412f,282f)},
         };
-        private static readonly List<StatDef> toDraw = new()
-        {
+        private static readonly List<StatDef> toDraw =
+        [
             StatDefOf.MoveSpeed,
             StatDefOf.ArmorRating_Sharp,
             StatDefOf.ArmorRating_Blunt,
             StatDefOf.ArmorRating_Heat
-        };
+        ];
     }
     //和维护坞连接
     public partial class ITab_Exosuit

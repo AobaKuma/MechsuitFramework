@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using Verse;
 
 namespace Exosuit
@@ -12,5 +13,7 @@ namespace Exosuit
         public bool CanGearOff = true;//false for things like 40k dreadnought.
         public float minArmorBreakdownThreshold = 0.25f;
         public ThingDef wreckageOverride = ThingDefOf.MF_Building_Wreckage;
+        public Vector3 bayRenderOffset = Vector3.zero;
+        public float bayRenderScale = 1f;
     }
 }

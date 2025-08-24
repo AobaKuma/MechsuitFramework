@@ -1,10 +1,5 @@
 ﻿using HarmonyLib;
-using RimWorld.QuestGen;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace Exosuit
@@ -26,8 +21,7 @@ namespace Exosuit
         static void PostSetupApparelTags(Pawn ___pawn, PawnRenderTree __instance)
         {
             //Log.Message("Rebuild Apparel Tags");
-            //PrintRenderTree(__instance.rootNode);
-            //Action action=null;
+
             foreach(var (tag,node) in __instance.nodesByTag)
             {
                 if (__instance.tmpChildTagNodes.TryGetValue(tag,out var children))
@@ -62,6 +56,8 @@ namespace Exosuit
             chilren.Add(child);
             child.parent = null;
         }
+
+
 
     }
 }

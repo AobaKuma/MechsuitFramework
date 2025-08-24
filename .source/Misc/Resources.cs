@@ -26,5 +26,7 @@ namespace Exosuit
         //整備架的Icon
         public static readonly Texture2D WG_GetInWalker = ContentFinder<Texture2D>.Get("UI/GetInWalker");
         public static readonly Texture2D WG_AutoRepair = ContentFinder<Texture2D>.Get("UI/AutoRepair");
+
+        public static readonly Texture2D WG_SlotUnavailable = ContentFinder<Texture2D>.Get("UI/Unavailable");
     }
 }

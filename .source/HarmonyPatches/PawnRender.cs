@@ -19,14 +19,14 @@ namespace Exosuit
         public static void AdjustParms_Patch(ref PawnDrawParms parms)
         {
             if (parms.pawn == null) return;
-            if (Building_MaintenanceBay.PawnInBuilding(parms.pawn))
+            /*if (Building_MaintenanceBay.PawnInBuilding(parms.pawn))
             {
                 parms.skipFlags |= MiscDefOf.Head | MiscDefOf.Body;
                 return;
-            }
+            }*/
             if (!parms.flags.HasFlag(PawnRenderFlags.StylingStation) 
                 || !parms.pawn.PawnWearingExosuitCore()) return;
-            if (Find.WindowStack.currentlyDrawnWindow is not Dialog_StylingStation dialog_Styling)
+            if (Find.WindowStack.currentlyDrawnWindow is not Dialog_StylingStation)
                 return;
             parms.skipFlags |= MiscDefOf.WGRoot;
         }
