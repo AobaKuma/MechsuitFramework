@@ -28,6 +28,8 @@ namespace Exosuit
             {
                 rect2.x += rect2.width * 4;
             }
+			if (ModsConfig.IsActive("Safair.ReadingSchedule"))
+				rect2.x += rect2.width;
             DrawTimeAssignmentSelectorFor(rect2, WG_TimeAssignmentDefOf.WG_WorkWithFrame);
         }
         private static void DrawTimeAssignmentSelectorFor(Rect rect, TimeAssignmentDef ta)
