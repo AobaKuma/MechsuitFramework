@@ -119,8 +119,9 @@ namespace Exosuit
         /// 移除装甲，返回移除衣物的列表
         /// </summary>
         /// <param name="pawn"></param>
+        /// <param name="applyDamage">是否应用损坏（用于维护龙门架卸甲时跳过损坏）</param>
         /// <returns></returns>
-        public static List<Apparel> RemoveExosuit(this Pawn pawn)
+        public static List<Apparel> RemoveExosuit(this Pawn pawn, bool applyDamage = true)
         {
             void Remove(Apparel a)
             {
@@ -130,9 +131,16 @@ namespace Exosuit
                 a.Notify_Unequipped(pawn);
                 pawn.apparel.Notify_ApparelRemoved(a);
             }
-            var apps = SplitDamage(pawn);
+            var apps = applyDamage ? SplitDamage(pawn) : GetExosuitApparel(pawn);
             apps.ForEach(Remove);
             return apps;
+        }
+
+        private static List<Apparel> GetExosuitApparel(Pawn pawn)
+        {
+            return [..from a in pawn.apparel.WornApparel
+                    where a.HasComp<CompSuitModule>()
+                    select a];
         }
         private static List<Apparel> SplitDamage(Pawn pawn)
         {

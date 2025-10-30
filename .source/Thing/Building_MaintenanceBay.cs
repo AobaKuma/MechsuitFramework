@@ -529,7 +529,7 @@ namespace Exosuit
         {
             if (HasGearCore) return;
             bool equippedModuleWeapon = pawn.equipment?.Primary?.TryGetComp<CompApparelForcedWeapon>(out _) ?? false;
-            foreach (Apparel a in pawn.RemoveExosuit())
+            foreach (Apparel a in pawn.RemoveExosuit(applyDamage: false)) // 在维护龙门架卸甲时不应用额外损坏
             {
                 if (equippedModuleWeapon && a.TryGetComp<CompModuleWeapon>(out var moduleWeapon)&&pawn.equipment.Primary== moduleWeapon.Weapon)
                 {
@@ -538,7 +538,7 @@ namespace Exosuit
                 DummyApparels.Wear(a, false, true);
                 if (a is Exosuit_Core core)Core = core;
             }
-            
+
             SetCacheDirty();
             MechUtility.WeaponDropCheck(pawn);
             PlaceInventoryItemToShelf(pawn);
