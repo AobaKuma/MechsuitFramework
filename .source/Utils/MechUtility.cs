@@ -144,9 +144,7 @@ namespace Exosuit
         }
         private static List<Apparel> SplitDamage(Pawn pawn)
         {
-            List<Apparel> tmpApparelList = [..from a in pawn.apparel.WornApparel
-                                              where a.HasComp<CompSuitModule>()
-                                              select a];
+            List<Apparel> tmpApparelList = GetExosuitApparel(pawn);
             if (!tmpApparelList.HasCore(out Exosuit_Core core)) return null;
             if (!core.Damaged) return tmpApparelList;
             List<float> values = [];
