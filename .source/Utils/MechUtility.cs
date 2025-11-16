@@ -130,44 +130,13 @@ namespace Exosuit
                 a.Notify_Unequipped(pawn);
                 pawn.apparel.Notify_ApparelRemoved(a);
             }
-            var apps = SplitDamage(pawn);
-            apps.ForEach(Remove);
-            return apps;
+            List<Apparel> suitModules =  [..from a in pawn.apparel.WornApparel
+                where a.HasComp<CompSuitModule>()
+                select a];
+            suitModules.ForEach(Remove);
+            return suitModules;
         }
-        private static List<Apparel> SplitDamage(Pawn pawn)
-        {
-            List<Apparel> tmpApparelList = [..from a in pawn.apparel.WornApparel
-                                              where a.HasComp<CompSuitModule>()
-                                              select a];
-            if (!tmpApparelList.HasCore(out Exosuit_Core core)) return null;
-            if (!core.Damaged) return tmpApparelList;
-            List<float> values = [];
 
-            if (core.HealthDamaged > 0)
-            {
-                Rand.SplitRandomly(core.HealthDamaged, tmpApparelList.Count, values);
-            }
-            for (int j = 0; j < tmpApparelList.Count; j++)
-            {
-                var a = tmpApparelList[j];
-                var c = a.GetComp<CompSuitModule>();
-
-                if (values[j] >= c.HP)
-                {
-                    if (j < tmpApparelList.Count - 1)
-                    {
-                        values[j + 1] += values[j] - c.HP;
-                    }
-                    c.HP = 1;
-                }
-                else
-                {
-                    c.HP -= Mathf.FloorToInt(values[j]);
-                }
-
-            }
-            return tmpApparelList;
-        }
         /// <summary>
         /// 給屍體或倒地龍騎兵脫下模塊(並機率損壞的)方法
         /// </summary>
