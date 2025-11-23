@@ -66,11 +66,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
@@ -82,8 +90,7 @@
               "RelativeToolTip": "Utils\\MechUtility.cs",
               "ViewState": "AgIAAHoAAAAAAAAAAIAwwBMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T06:47:26.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T06:47:26.274Z"
             },
             {
               "$type": "Document",
@@ -108,8 +115,7 @@
               "RelativeToolTip": "Extensions\\ApparelRenderOffsetsExt.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T06:36:36.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T06:36:36.583Z"
             },
             {
               "$type": "Document",
@@ -121,8 +127,7 @@
               "RelativeToolTip": "Misc\\ITab_Exosuit.cs",
               "ViewState": "AgIAAAkBAAAAAAAAAAAnwBMBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:44:43.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:44:43.512Z"
             },
             {
               "$type": "Document",
@@ -134,8 +139,7 @@
               "RelativeToolTip": "Thing\\Building_MaintenanceBay.cs",
               "ViewState": "AgIAAHAAAAAAAAAAAAArwI4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:45:38.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:45:38.328Z"
             },
             {
               "$type": "Document",
@@ -147,8 +151,7 @@
               "RelativeToolTip": "Comp\\CompApparelForcedWeapon.cs",
               "ViewState": "AgIAAFoAAAAAAAAAAAAuwHEAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:50:20.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T11:50:20.036Z"
             },
             {
               "$type": "Document",
@@ -160,8 +163,7 @@
               "RelativeToolTip": "HarmonyPatches\\WeaponDrawPosPatch.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T06:36:45.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T06:36:45.666Z"
             },
             {
               "$type": "Document",
@@ -174,10 +176,6 @@
               "ViewState": "AgIAABUAAAAAAAAAAAAYwCcAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-19T03:35:51.856Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
