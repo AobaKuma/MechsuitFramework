@@ -118,9 +118,29 @@ namespace Exosuit.CE
             
             var titleRect = new Rect(innerRect.x, curY, innerRect.width, 20f);
             
-            // 标题文本：显示弹药组名称
-            var ammoSet = backpack.GetCurrentAmmoSet();
-            string title = ammoSet != null ? ammoSet.LabelCap : backpack.BackpackDisplayName;
+            // 标题文本：混装模式显示弹药组名称，单装模式显示当前弹药名称
+            string title;
+            if (backpack.IsMixMode)
+            {
+                var ammoSet = backpack.LinkedAmmoSet;
+                title = ammoSet != null ? ammoSet.LabelCap : backpack.BackpackDisplayName;
+            }
+            else
+            {
+                // 单装模式：显示当前选择的弹药口径
+                var selectedAmmo = backpack.SelectedAmmo;
+                if (selectedAmmo != null)
+                {
+                    title = CompAmmoBackpack.GetAmmoShortLabel(selectedAmmo, true).Replace(
+                        selectedAmmo.ammoClass?.LabelCap ?? "", "").Trim();
+                    if (string.IsNullOrEmpty(title))
+                        title = selectedAmmo.LabelCap;
+                }
+                else
+                {
+                    title = backpack.BackpackDisplayName;
+                }
+            }
             
             // 如果有多个背包，显示翻页箭头和指示器
             if (HasMultipleBackpacks)
@@ -199,21 +219,24 @@ namespace Exosuit.CE
         
         private void DrawNormalModeContent(CompAmmoBackpack backpack, Rect innerRect, ref float curY)
         {
-            // 弹种名称（如 "FMJ"）- 参考 Gizmo_HealthPanel 结构
+            // 弹种名称（如 "FMJ"）
             var selectedAmmo = backpack.SelectedAmmo;
             string ammoLabel = selectedAmmo != null 
-                ? CompAmmoBackpack.GetAmmoShortLabel(selectedAmmo, false)  // 只显示弹种名，不显示口径
+                ? CompAmmoBackpack.GetAmmoShortLabel(selectedAmmo, false)
                 : "WG_AmmoBackpack_NoAmmoSelected".Translate().ToString();
             
-            var labelRect = new Rect(innerRect.x, curY, innerRect.width, innerRect.height / 2f - 2f);
+            // 文本区域：从当前Y位置开始，高度18
+            var labelRect = new Rect(innerRect.x, curY, innerRect.width, 18f);
             Text.Anchor = TextAnchor.MiddleLeft;
             if (selectedAmmo == null) GUI.color = Color.gray;
             Widgets.Label(labelRect, ammoLabel);
             GUI.color = Color.white;
             Text.Anchor = TextAnchor.UpperLeft;
             
-            // 进度条（文字在条中间）- 参考 Gizmo_HealthPanel 结构
-            var barRect = new Rect(innerRect.x, innerRect.y + innerRect.height / 2f, innerRect.width, innerRect.height / 2f);
+            curY += 20f;
+            
+            // 进度条：从文本下方开始
+            var barRect = new Rect(innerRect.x, curY, innerRect.width, BarHeight);
             float fillPercent = backpack.MaxCapacity > 0 
                 ? (float)backpack.CurrentAmmoCount / backpack.MaxCapacity 
                 : 0f;

@@ -9,6 +9,26 @@ namespace Exosuit.CE
     // CompAmmoBackpack的混装模式逻辑部分
     public partial class CompAmmoBackpack
     {
+        #region 混装模式辅助方法
+        
+        // 获取当前弹药组中最重弹药的质量
+        private float GetHeaviestAmmoMass()
+        {
+            if (linkedAmmoSet == null) return Props.minMass;
+            
+            float maxMass = 0f;
+            foreach (var link in linkedAmmoSet.ammoTypes)
+            {
+                if (!IsAmmoCompatible(link.ammo)) continue;
+                float mass = GetAmmoMass(link.ammo);
+                if (mass > maxMass) maxMass = mass;
+            }
+            
+            return maxMass > 0 ? maxMass : Props.minMass;
+        }
+        
+        #endregion
+        
         #region 混装模式方法
         
         public IEnumerable<AmmoDef> GetSameSetAmmoTypes()
@@ -48,6 +68,11 @@ namespace Exosuit.CE
             mixEntries.Clear();
             mixFireIndex = 0;
             mixCycleCounter = 0;
+            
+            // 清空所有数据，让用户重新选择
+            linkedAmmoSet = null;
+            selectedAmmo = null;
+            cachedMaxCapacity = 0;
         }
         
         public void AddMixEntry(AmmoDef ammoDef, int ratio)
@@ -166,12 +191,24 @@ namespace Exosuit.CE
             
             foreach (var entry in mixEntries)
             {
-                float mass = GetAmmoMass(entry.AmmoDef);
-                if (mass <= 0) mass = Props.minMass;
-                
                 float ratioFraction = (float)entry.Ratio / totalRatio;
                 float allocatedMass = Props.totalMassCapacity * ratioFraction;
-                entry.MaxCount = Mathf.FloorToInt(allocatedMass / mass);
+                
+                if (entry.IsWildcard)
+                {
+                    // 有啥用啥槽位：存储分配的质量，MaxCount 用最重弹药估算显示
+                    entry.AllocatedMass = allocatedMass;
+                    float heaviestMass = GetHeaviestAmmoMass();
+                    if (heaviestMass <= 0) heaviestMass = Props.minMass;
+                    entry.MaxCount = Mathf.FloorToInt(allocatedMass / heaviestMass);
+                }
+                else
+                {
+                    float mass = GetAmmoMass(entry.AmmoDef);
+                    if (mass <= 0) mass = Props.minMass;
+                    entry.AllocatedMass = allocatedMass;
+                    entry.MaxCount = Mathf.FloorToInt(allocatedMass / mass);
+                }
                 
                 if (entry.MaxCount < entry.Ratio) entry.MaxCount = entry.Ratio;
             }
