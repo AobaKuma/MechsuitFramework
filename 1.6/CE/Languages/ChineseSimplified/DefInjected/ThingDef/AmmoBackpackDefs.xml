@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <MF_Module_AmmoBackpack.label>弹药背包模块</MF_Module_AmmoBackpack.label>
+  <MF_Module_AmmoBackpack.description>一个弹链供弹背包，可连接兼容的武器，提供持续的弹药供给而无需手动装填。不兼容火箭、导弹或手榴弹。</MF_Module_AmmoBackpack.description>
+  
+  <MF_ModuleApparel_AmmoBackpack.label>弹药背包</MF_ModuleApparel_AmmoBackpack.label>
+  <MF_ModuleApparel_AmmoBackpack.description>安装在外骨骼上的弹链供弹背包模块。</MF_ModuleApparel_AmmoBackpack.description>
+  
+</LanguageData>

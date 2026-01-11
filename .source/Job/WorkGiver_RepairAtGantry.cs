@@ -49,14 +49,22 @@ namespace Exosuit
             {
                 return _cacheJob = JobMaker.MakeJob(JobDefOf.WG_RepairAtGantry, t);
             }
+            
+            // 优先处理清空弹药背包（切换弹种时需要先清空）
+            if (bay.NeedClearAmmoBackpack)
+            {
+                return _cacheJob = JobMaker.MakeJob(JobDefOf.WG_ClearAmmoBackpack, t);
+            }
+            
             if (bay.NeedReload)
             {
-                var ammos = ReloadableUtility.FindEnoughAmmo(pawn,pawn.Position,bay.GetFirstNeedReload(),false);
+                var reloadable = bay.GetFirstNeedReload();
+                var ammos = ReloadableUtility.FindEnoughAmmo(pawn, pawn.Position, reloadable, true);
                 if (!ammos.NullOrEmpty())
                 {
                     var reloadJob = JobMaker.MakeJob(JobDefOf.WG_ReloadAtGantry, bay);
                     reloadJob.targetQueueB = ammos.Select(t=>new LocalTargetInfo(t)).ToList();
-                    reloadJob.count = Math.Min(ammos.Sum(t => t.stackCount), bay.GetFirstNeedReload().MaxAmmoNeeded(true));
+                    reloadJob.count = Math.Min(ammos.Sum(t => t.stackCount), reloadable.MaxAmmoNeeded(true));
                     return _cacheJob = reloadJob;
                 }
                     

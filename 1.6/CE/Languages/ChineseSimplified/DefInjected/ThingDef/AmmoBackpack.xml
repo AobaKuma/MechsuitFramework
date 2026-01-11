@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 弹药背包模块 - 物品形态 -->
+  <MF_Module_AmmoBackpack.label>弹药背包模块</MF_Module_AmmoBackpack.label>
+  <MF_Module_AmmoBackpack.description>一种弹链供弹背包，可连接到兼容武器，提供持续弹药供应而无需手动装填。不兼容火箭、导弹或榴弹。</MF_Module_AmmoBackpack.description>
+
+  <!-- 重型弹药背包模块 - 物品形态 -->
+  <MF_Module_AmmoBackpack_Heavy.label>重型弹药背包模块</MF_Module_AmmoBackpack_Heavy.label>
+  <MF_Module_AmmoBackpack_Heavy.description>一种大型弹链供弹背包，容量翻倍。占用背挂槽位和右肩挂载点。不兼容火箭、导弹或榴弹。</MF_Module_AmmoBackpack_Heavy.description>
+
+  <!-- 轻量化弹药匣模块 - 物品形态 -->
+  <MF_Module_AmmoBackpack_Light.label>轻量化弹药匣模块</MF_Module_AmmoBackpack_Light.label>
+  <MF_Module_AmmoBackpack_Light.description>一种安装在左臂的轻量化弹药匣。容量较小但不占用背挂槽位。不兼容火箭、导弹或榴弹。</MF_Module_AmmoBackpack_Light.description>
+
+  <!-- 弹药背包模块 - 装甲形态 -->
+  <MF_Apparel_AmmoBackpack.label>弹药背包</MF_Apparel_AmmoBackpack.label>
+  <MF_Apparel_AmmoBackpack.description>安装在外骨骼上的弹链供弹背包模块。</MF_Apparel_AmmoBackpack.description>
+
+  <!-- 重型弹药背包模块 - 装甲形态 -->
+  <MF_Apparel_AmmoBackpack_Heavy.label>重型弹药背包</MF_Apparel_AmmoBackpack_Heavy.label>
+  <MF_Apparel_AmmoBackpack_Heavy.description>容量翻倍的大型弹链供弹背包模块。</MF_Apparel_AmmoBackpack_Heavy.description>
+
+  <!-- 轻量化弹药匣模块 - 装甲形态 -->
+  <MF_Apparel_AmmoBackpack_Light.label>轻量化弹药匣</MF_Apparel_AmmoBackpack_Light.label>
+  <MF_Apparel_AmmoBackpack_Light.description>安装在左臂的轻量化弹药匣。</MF_Apparel_AmmoBackpack_Light.description>
+
+</LanguageData>

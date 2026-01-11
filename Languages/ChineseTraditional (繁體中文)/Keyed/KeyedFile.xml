@@ -76,4 +76,39 @@
   <WG_SubTurret>子砲塔</WG_SubTurret>
   <WG_SubTurretDesc>一個安裝在框架上的自動砲塔。</WG_SubTurretDesc>
   
+  <!-- 模塊裝卸工作相關 -->
+  <WG_RequestInstall>請求安裝: {0}</WG_RequestInstall>
+  <WG_RequestReplace>請求替換: {0}</WG_RequestReplace>
+  <WG_RequestReplaceCoreRemoveAll>替換核心 (卸載全部模塊): {0}</WG_RequestReplaceCoreRemoveAll>
+  <WG_RequestReplaceCoreKeepModules>替換核心 (保留模塊): {0}</WG_RequestReplaceCoreKeepModules>
+  <WG_RequestRemove>請求卸載: {0}</WG_RequestRemove>
+  <WG_CancelInstall>取消安裝: {0}</WG_CancelInstall>
+  <WG_CancelRemove>取消卸載: {0}</WG_CancelRemove>
+  <WG_CancelReplace>取消替換: {0}</WG_CancelReplace>
+  <WG_Pending>待安裝</WG_Pending>
+  <WG_PendingRemove>待卸載</WG_PendingRemove>
+  <WG_PendingReplace>待替換</WG_PendingReplace>
+  
+  <!-- 自動維修臂 -->
+  <WG_AutoRepair_NoTarget>未檢測到整備龍門架</WG_AutoRepair_NoTarget>
+  <WG_AutoRepair_NoCore>目標龍門架沒有機甲</WG_AutoRepair_NoCore>
+  <WG_AutoRepair_NoDamage>機甲已完全修復</WG_AutoRepair_NoDamage>
+  <WG_AutoRepair_Working>正在維修...</WG_AutoRepair_Working>
+  
+  <WG_AvailableModuleForThisSlot>此槽位可用的模塊</WG_AvailableModuleForThisSlot>
+  
+  <!-- 核心工作進行中 -->
+  <WG_CoreWorkInProgress>核心工作進行中，無法操作</WG_CoreWorkInProgress>
+  <WG_CancelCoreWork>取消核心工作</WG_CancelCoreWork>
+  
+  <!-- 燃料電池 -->
+  <WG_FuelCell_Fuel>燃料</WG_FuelCell_Fuel>
+  <WG_FuelCell_Tip>燃料電池為龍騎兵提供額外能量，在駕駛時持續消耗。\n殖民者會自動搬運化合燃料來裝填。</WG_FuelCell_Tip>
+  
+  <!-- 模塊信息預覽 -->
+  <WG_ModuleInfo_Load>載荷: {0}</WG_ModuleInfo_Load>
+  <WG_ModuleInfo_Slots>將替換: {0}</WG_ModuleInfo_Slots>
+  <WG_ModuleInfo_LoadTip>模塊質量: {0} kg\n安裝後載荷: {1} / {2}</WG_ModuleInfo_LoadTip>
+  <WG_ModuleInfo_OverloadWarning>警告: 將超出載荷上限!</WG_ModuleInfo_OverloadWarning>
+  
 </LanguageData>

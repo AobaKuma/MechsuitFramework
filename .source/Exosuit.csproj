@@ -34,6 +34,10 @@
     <Compile Remove="Effects\**" />
     <EmbeddedResource Remove="Effects\**" />
     <None Remove="Effects\**" />
+    <!-- 排除 CE 兼容模块，它有独立的项目文件 -->
+    <Compile Remove="CE\**" />
+    <EmbeddedResource Remove="CE\**" />
+    <None Remove="CE\**" />
   </ItemGroup>
 
   <ItemGroup>

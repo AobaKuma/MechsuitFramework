@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <ArmLeft.label>Left Arm</ArmLeft.label>
+  <ArmLeft.description>The utility slot. have a rack that can attach tools or equipment.</ArmLeft.description>
+  
+  <ArmRight.label>Right Arm</ArmRight.label>
+  <ArmRight.description>The equipment slot. Exosuit has a robotic arm for equipment holding and capable to do some complex duty.</ArmRight.description>
+  
+  <Attachment.label>Attachment</Attachment.label>
+  <Attachment.description>The attachment slot, also called the pack slot is located on the rear side of Exosuit, and has many useful modules from an additional power supply to the escape Pod launcher.</Attachment.description>
+  
+  <Core.label>Core</Core.label>
+  <Core.description>The core frame of an Exosuit, which is the most important part to be operation-ready.</Core.description>
+  
+  <Head.label>Head</Head.label>
+  <Head.description>The sensor module slot. not always a helmet but its located on the top of an Exosuit.</Head.description>
+  
+  <MountLeft.label>Left Mount</MountLeft.label>
+  <MountLeft.description>The ability gear slot, which can hold launchers or special device modules that can play a role beyond expectations in the right situation.</MountLeft.description>
+  
+  <MountRight.label>Right Mount</MountRight.label>
+  <MountRight.description>The right shoulder mount slot, it ususally capable to hold an automatic turret, or support a large pack with pack module.</MountRight.description>
+  
+</LanguageData>

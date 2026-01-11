@@ -64,5 +64,14 @@ namespace Exosuit
         /// 對倒地的敵對龍騎兵右鍵後，原地在對方位置上讀條並在完成時原地使Walker分解為廢鐵與模塊，並使其離開Walker。
         /// </summary>
         public static JobDef WG_DisassembleWalkerCore;
+
+        // 在整备架上安装模块
+        public static JobDef WG_InstallModuleAtGantry;
+
+        // 从整备架上卸载模块
+        public static JobDef WG_RemoveModuleAtGantry;
+        
+        // 清空弹药背包（切换弹种时需要先清空）
+        public static JobDef WG_ClearAmmoBackpack;
     }
 }

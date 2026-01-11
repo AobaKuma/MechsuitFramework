@@ -451,4 +451,59 @@
       </li>
     </modExtensions>
   </ThingDef>
+
+  <!-- 自动维修臂 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>MF_Building_AutoRepairArm</defName>
+    <label>auto repair arm</label>
+    <description>An automated repair arm that can automatically repair exosuits on the maintenance gantry it faces. Place it so that its wide side faces the gantry. Requires power to operate.</description>
+    <thingClass>Exosuit.Building_AutoRepairArm</thingClass>
+    <graphicData>
+      <texPath>Things/Building/AutoRepairArm</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <drawOffset>(0,0.002,0)</drawOffset>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <WorkToBuild>4800</WorkToBuild>
+      <MaxHitPoints>150</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>true</rotatable>
+    <size>(3,1)</size>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>13</uiOrder>
+    <passability>PassThroughOnly</passability>
+    <hasInteractionCell>false</hasInteractionCell>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <placeWorkers>
+      <li>Exosuit.PlaceWorker_AutoRepairArm</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>WG_HeavyExoskeleton</li>
+    </researchPrerequisites>
+    <building>
+      <relatedBuildCommands>
+        <li>MF_Building_MaintenanceBay</li>
+      </relatedBuildCommands>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
 </Defs>

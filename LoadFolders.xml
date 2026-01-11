@@ -10,5 +10,6 @@
 		<li>/</li>
 		<li>1.6</li>
 		<li IfModActive="erdelf.HumanoidAlienRaces,erdelf.HumanoidAlienRaces_steam,erdelf.HumanoidAlienRaces.dev,erdelf.HumanoidAlienRaces.dev_steam">1.6/Mods/HAR</li>
+		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.6/CE</li>
 	</v1.6>
 </loadFolders>

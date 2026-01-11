@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <ArmLeft.label>左腕</ArmLeft.label>
+  <ArmLeft.description>ユーティリティスロット。ツールや装備を取り付けられるラックがあります。</ArmLeft.description>
+  
+  <ArmRight.label>右腕</ArmRight.label>
+  <ArmRight.description>装備スロット。戦術外骨格には装備を保持し、複雑な作業を行うことができるロボットアームがあります。</ArmRight.description>
+  
+  <Attachment.label>背部装備</Attachment.label>
+  <Attachment.description>背部装備スロット（パックスロットとも呼ばれる）は戦術外骨格の背面に位置し、追加電源から脱出ポッドランチャーまで多くの有用な兵装があります。</Attachment.description>
+  
+  <Core.label>主機</Core.label>
+  <Core.description>戦術外骨格の主機フレーム。作戦準備完了状態にするための最も重要な部分です。</Core.description>
+  
+  <Head.label>頭部</Head.label>
+  <Head.description>センサー兵装スロット。常にヘルメットとは限りませんが、戦術外骨格の上部に位置しています。</Head.description>
+  
+  <MountLeft.label>左マウント</MountLeft.label>
+  <MountLeft.description>能力装備スロット。適切な状況で予想以上の役割を果たすことができるランチャーや特殊装置兵装を保持できます。</MountLeft.description>
+  
+  <MountRight.label>右マウント</MountRight.label>
+  <MountRight.description>右肩マウントスロット。通常、自動砲塔を保持したり、パック兵装で大型パックをサポートしたりできます。</MountRight.description>
+  
+</LanguageData>

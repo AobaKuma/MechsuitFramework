@@ -77,5 +77,38 @@
   <WG_CommandToggleTurretDesc>火器の切り替え</WG_CommandToggleTurretDesc>
   <WG_SubTurret>副火器</WG_SubTurret>
   <WG_SubTurretDesc>この戦術外骨格に取り付けられた副火器</WG_SubTurretDesc>
+  
+  <!-- 兵装装着作業関連 -->
+  <WG_RequestInstall>装着を要求: {0}</WG_RequestInstall>
+  <WG_RequestReplace>交換を要求: {0}</WG_RequestReplace>
+  <WG_RequestReplaceCoreRemoveAll>主機交換 (全兵装を取り外す): {0}</WG_RequestReplaceCoreRemoveAll>
+  <WG_RequestReplaceCoreKeepModules>主機交換 (兵装を保持): {0}</WG_RequestReplaceCoreKeepModules>
+  <WG_RequestRemove>取り外しを要求: {0}</WG_RequestRemove>
+  <WG_CancelInstall>装着をキャンセル: {0}</WG_CancelInstall>
+  <WG_CancelRemove>取り外しをキャンセル: {0}</WG_CancelRemove>
+  <WG_CancelReplace>交換をキャンセル: {0}</WG_CancelReplace>
+  <WG_Pending>装着待ち</WG_Pending>
+  <WG_PendingRemove>取り外し待ち</WG_PendingRemove>
+  <WG_PendingReplace>交換待ち</WG_PendingReplace>
+  
+  <!-- 主機作業中 -->
+  <WG_CoreWorkInProgress>主機作業中、操作不可</WG_CoreWorkInProgress>
+  <WG_CancelCoreWork>主機作業をキャンセル</WG_CancelCoreWork>
+  
+  <!-- 燃料電池 -->
+  <WG_FuelCell_Fuel>燃料</WG_FuelCell_Fuel>
+  <WG_FuelCell_Tip>燃料電池は戦術外骨格に追加エネルギーを供給し、操縦中に消費されます。\n入植者は自動的に化学燃料を補充します。</WG_FuelCell_Tip>
+  
+  <!-- 兵装情報プレビュー -->
+  <WG_ModuleInfo_Load>搭載量: {0}</WG_ModuleInfo_Load>
+  <WG_ModuleInfo_Slots>交換対象: {0}</WG_ModuleInfo_Slots>
+  <WG_ModuleInfo_LoadTip>兵装質量: {0} kg\n装着後搭載量: {1} / {2}</WG_ModuleInfo_LoadTip>
+  <WG_ModuleInfo_OverloadWarning>警告: 搭載容量を超過します!</WG_ModuleInfo_OverloadWarning>
+  
+  <!-- 自動修理アーム -->
+  <WG_AutoRepair_NoTarget>整備架台が検出されません</WG_AutoRepair_NoTarget>
+  <WG_AutoRepair_NoCore>対象の整備架台に戦術外骨格がありません</WG_AutoRepair_NoCore>
+  <WG_AutoRepair_NoDamage>戦術外骨格は完全に修復されています</WG_AutoRepair_NoDamage>
+  <WG_AutoRepair_Working>修理中...</WG_AutoRepair_Working>
 
 </LanguageData>
