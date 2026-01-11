@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- Ammo Backpack UI -->
+  <WG_AmmoBackpack_Title>Ammo Backpack</WG_AmmoBackpack_Title>
+  <WG_AmmoBackpack_EditorTitle>Ammo Storage Editor</WG_AmmoBackpack_EditorTitle>
+  <WG_AmmoBackpack_NoWeapon>No compatible weapon</WG_AmmoBackpack_NoWeapon>
+  <WG_AmmoBackpack_WeaponModule>Weapon Module: {0}</WG_AmmoBackpack_WeaponModule>
+  <WG_AmmoBackpack_NoWeaponModule>No weapon module</WG_AmmoBackpack_NoWeaponModule>
+  <WG_AmmoBackpack_SelectAmmo>Select ammo type</WG_AmmoBackpack_SelectAmmo>
+  <WG_AmmoBackpack_WeaponAmmo>Weapon Ammo</WG_AmmoBackpack_WeaponAmmo>
+  <WG_AmmoBackpack_OtherAmmo>Other Ammo</WG_AmmoBackpack_OtherAmmo>
+  <WG_AmmoBackpack_NoAmmoSelected>No ammo selected</WG_AmmoBackpack_NoAmmoSelected>
+  <WG_AmmoBackpack_AmmoStatus>{0}: {1} / {2}</WG_AmmoBackpack_AmmoStatus>
+  <WG_AmmoBackpack_MixStatus>Mixed: {0} / {1}</WG_AmmoBackpack_MixStatus>
+  <WG_AmmoBackpack_AvailableAmmo>Available Ammo</WG_AmmoBackpack_AvailableAmmo>
+  <WG_AmmoBackpack_NoAmmoAvailable>No ammo available</WG_AmmoBackpack_NoAmmoAvailable>
+  <WG_AmmoBackpack_Load>Load</WG_AmmoBackpack_Load>
+  <WG_AmmoBackpack_NoSearchResult>No matching results</WG_AmmoBackpack_NoSearchResult>
+  <WG_AmmoBackpack_AmmoTip>{0}\nMass: {1} kg\nMax Capacity: {2}</WG_AmmoBackpack_AmmoTip>
+  <WG_AmmoBackpack_PendingSwitch>Pending: {0} (unload required)</WG_AmmoBackpack_PendingSwitch>
+  
+  <!-- Mix Mode -->
+  <WG_AmmoBackpack_NormalMode>Normal</WG_AmmoBackpack_NormalMode>
+  <WG_AmmoBackpack_MixModeBtn>Mix</WG_AmmoBackpack_MixModeBtn>
+  <WG_AmmoBackpack_MixMode>Mixed Belt</WG_AmmoBackpack_MixMode>
+  <WG_AmmoBackpack_MixRatio>Ratio: {0}</WG_AmmoBackpack_MixRatio>
+  <WG_AmmoBackpack_CurrentRatio>Current Ratio: {0}</WG_AmmoBackpack_CurrentRatio>
+  <WG_AmmoBackpack_AddMixAmmo>+ Add Ammo Type</WG_AmmoBackpack_AddMixAmmo>
+  <WG_AmmoBackpack_AddSlot>+ Add Slot</WG_AmmoBackpack_AddSlot>
+  <WG_AmmoBackpack_NoMoreAmmo>No more ammo available</WG_AmmoBackpack_NoMoreAmmo>
+  <WG_AmmoBackpack_NoMixConfig>No mix configured</WG_AmmoBackpack_NoMixConfig>
+  <WG_AmmoBackpack_SelectType>Select...</WG_AmmoBackpack_SelectType>
+  <WG_AmmoBackpack_AlreadyUsed>(in use)</WG_AmmoBackpack_AlreadyUsed>
+  <WG_AmmoBackpack_Eject>Eject Ammo</WG_AmmoBackpack_Eject>
+  <WG_AmmoBackpack_ClearType>Clear Type</WG_AmmoBackpack_ClearType>
+  <WG_AmmoBackpack_SelectAmmoSet>Select Ammo Set</WG_AmmoBackpack_SelectAmmoSet>
+  <WG_AmmoBackpack_WeaponAmmoSet>Weapon Ammo Sets</WG_AmmoBackpack_WeaponAmmoSet>
+  <WG_AmmoBackpack_OtherAmmoSet>Other Ammo Sets</WG_AmmoBackpack_OtherAmmoSet>
+  <WG_AmmoBackpack_SelectAmmoSetFirst>Please select ammo set first</WG_AmmoBackpack_SelectAmmoSetFirst>
+  <WG_AmmoBackpack_NoCompatibleAmmoSet>No compatible ammo set</WG_AmmoBackpack_NoCompatibleAmmoSet>
+  
+  <!-- Wildcard Mode -->
+  <WG_AmmoBackpack_WildcardMode>Wildcard Mode\nLoads any ammo from the ammo set randomly\nFires random ammo from loaded types</WG_AmmoBackpack_WildcardMode>
+  <WG_AmmoBackpack_WildcardTypes>{0} types</WG_AmmoBackpack_WildcardTypes>
+  <WG_AmmoBackpack_WildcardEmpty>Wildcard</WG_AmmoBackpack_WildcardEmpty>
+  
+  <!-- Presets -->
+  <WG_AmmoBackpack_SavePreset>Save</WG_AmmoBackpack_SavePreset>
+  <WG_AmmoBackpack_LoadPreset>Load</WG_AmmoBackpack_LoadPreset>
+  <WG_AmmoBackpack_SavePresetTitle>Save Mix Preset</WG_AmmoBackpack_SavePresetTitle>
+  <WG_AmmoBackpack_PresetName>Name:</WG_AmmoBackpack_PresetName>
+  <WG_AmmoBackpack_PresetDefault>Preset</WG_AmmoBackpack_PresetDefault>
+  <WG_AmmoBackpack_Cancel>Cancel</WG_AmmoBackpack_Cancel>
+  <WG_AmmoBackpack_Save>Save</WG_AmmoBackpack_Save>
+  <WG_AmmoBackpack_PresetSaved>Preset "{0}" saved</WG_AmmoBackpack_PresetSaved>
+  <WG_AmmoBackpack_PresetSaveFailed>Failed to save preset</WG_AmmoBackpack_PresetSaveFailed>
+  <WG_AmmoBackpack_PresetOverwrite>Preset "{0}" already exists. Overwrite?</WG_AmmoBackpack_PresetOverwrite>
+  <WG_AmmoBackpack_NoPresets>No presets saved</WG_AmmoBackpack_NoPresets>
+  <WG_AmmoBackpack_PresetNeedEmpty>(need empty)</WG_AmmoBackpack_PresetNeedEmpty>
+  <WG_AmmoBackpack_PresetApplied>Applied preset "{0}"</WG_AmmoBackpack_PresetApplied>
+  <WG_AmmoBackpack_PresetApplyFailed>Failed to apply preset</WG_AmmoBackpack_PresetApplyFailed>
+  <WG_AmmoBackpack_PresetEmpty>Empty preset</WG_AmmoBackpack_PresetEmpty>
+  <WG_AmmoBackpack_ManagePresets>Manage Presets...</WG_AmmoBackpack_ManagePresets>
+  <WG_AmmoBackpack_ManagePresetsTitle>Manage Mix Presets</WG_AmmoBackpack_ManagePresetsTitle>
+  <WG_AmmoBackpack_Rename>Rename</WG_AmmoBackpack_Rename>
+  <WG_AmmoBackpack_Delete>Delete</WG_AmmoBackpack_Delete>
+  <WG_AmmoBackpack_DeletePresetConfirm>Delete preset "{0}"?</WG_AmmoBackpack_DeletePresetConfirm>
+  <WG_AmmoBackpack_RenameExists>Name already exists</WG_AmmoBackpack_RenameExists>
+  <WG_AmmoBackpack_NoPresetManager>Preset manager not available</WG_AmmoBackpack_NoPresetManager>
+  <WG_AmmoBackpack_Global>Global</WG_AmmoBackpack_Global>
+  
+  <!-- Multi-Backpack -->
+  <WG_AmmoBackpack_MainPack>Backpack</WG_AmmoBackpack_MainPack>
+  <WG_AmmoBackpack_HeavyPack>Heavy Pack</WG_AmmoBackpack_HeavyPack>
+  <WG_AmmoBackpack_LightBox>Ammo Box</WG_AmmoBackpack_LightBox>
+  <WG_AmmoBackpack_Activated>{0} activated</WG_AmmoBackpack_Activated>
+  
+  <!-- Color Legend -->
+  <WG_AmmoBackpack_ColorLegend>Ammo Color Legend:</WG_AmmoBackpack_ColorLegend>
+  <WG_AmmoBackpack_ColorYellow>Yellow</WG_AmmoBackpack_ColorYellow>
+  <WG_AmmoBackpack_ColorBlue>Blue</WG_AmmoBackpack_ColorBlue>
+  <WG_AmmoBackpack_ColorGreen>Green</WG_AmmoBackpack_ColorGreen>
+  <WG_AmmoBackpack_ColorOrange>Orange</WG_AmmoBackpack_ColorOrange>
+  <WG_AmmoBackpack_ColorRed>Red</WG_AmmoBackpack_ColorRed>
+  <WG_AmmoBackpack_ColorGray>Gray</WG_AmmoBackpack_ColorGray>
+  
+</LanguageData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- 燃料电池模块 - 物品形态 -->
+  <MF_Module_FuelCell.label>燃料电池模块</MF_Module_FuelCell.label>
+  <MF_Module_FuelCell.description>一个高容量燃料电池，为外骨骼系统提供额外动力。当装填化合燃料时，可以提升驾驶员的移动速度和工作效率。燃料电池在安装且有燃料时自动激活。</MF_Module_FuelCell.description>
+  
+  <!-- 燃料电池模块 - 装甲形态 -->
+  <MF_Apparel_FuelCell.label>燃料电池模块</MF_Apparel_FuelCell.label>
+  <MF_Apparel_FuelCell.description>一个高容量燃料电池，为外骨骼系统提供额外动力。</MF_Apparel_FuelCell.description>
+  
+</LanguageData>

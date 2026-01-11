@@ -29,6 +29,10 @@
   <!-- EN: wreckage -->
   <MF_Building_Wreckage.label>机甲残骸</MF_Building_Wreckage.label>
   
+  <!-- EN: auto repair arm -->
+  <MF_Building_AutoRepairArm.label>自动维修臂</MF_Building_AutoRepairArm.label>
+  <MF_Building_AutoRepairArm.description>一个自动化的维修设备，可以自动修复指向的整备龙门架上的外骨骼。需要电力供应。</MF_Building_AutoRepairArm.description>
+  
   <!-- EN: flying -->
   <WG_PawnFlyer.label>机甲(飞行中)</WG_PawnFlyer.label>
   

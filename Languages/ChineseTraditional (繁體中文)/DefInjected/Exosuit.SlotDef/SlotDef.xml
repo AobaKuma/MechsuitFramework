@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <ArmLeft.label>左臂</ArmLeft.label>
+  <ArmLeft.description>實用工具的掛載點。步行框架的不對稱設計使其並沒有一個完整的左機械手臂，而是一個能有限活動並能夠安裝模塊的活動安裝點。</ArmLeft.description>
+  
+  <ArmRight.label>右臂</ArmRight.label>
+  <ArmRight.description>大型裝備的掛載點。步行框架有一個較為完整的右臂與五隻手指來進行握持與精密操作。</ArmRight.description>
+  
+  <Attachment.label>背掛</Attachment.label>
+  <Attachment.description>背掛槽（也稱為背包槽）位於框架的背部位置，並具有從附加助力骨骼到逃生裝置等許多實用的模塊。</Attachment.description>
+  
+  <Core.label>核心</Core.label>
+  <Core.description>機甲核心骨架，集成了一個外骨骼機甲服應有的動力結構與控制系統。</Core.description>
+  
+  <Head.label>頭部</Head.label>
+  <Head.description>頂部模塊槽。雖然並不總是頭盔，但它位於框架本身的頂部位置。</Head.description>
+  
+  <MountLeft.label>左掛載</MountLeft.label>
+  <MountLeft.description>左肩掛載槽，其不對稱的設計使其能容納大型發射具或特殊裝置模塊，以在適當的情況下能發揮超出預期的作用。</MountLeft.description>
+  
+  <MountRight.label>右掛載</MountRight.label>
+  <MountRight.description>右肩掛載槽，通常能夠容納具備自動鎖敵能力砲塔，或具有輔助功能的額外模塊。</MountRight.description>
+  
+</LanguageData>

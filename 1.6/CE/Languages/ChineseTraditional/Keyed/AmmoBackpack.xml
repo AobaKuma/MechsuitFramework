@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- 彈藥背包 UI -->
+  <WG_AmmoBackpack_Title>彈藥背包</WG_AmmoBackpack_Title>
+  <WG_AmmoBackpack_EditorTitle>彈藥儲存編輯</WG_AmmoBackpack_EditorTitle>
+  <WG_AmmoBackpack_NoWeapon>無相容武器</WG_AmmoBackpack_NoWeapon>
+  <WG_AmmoBackpack_WeaponModule>武器模組: {0}</WG_AmmoBackpack_WeaponModule>
+  <WG_AmmoBackpack_NoWeaponModule>無武器模組</WG_AmmoBackpack_NoWeaponModule>
+  <WG_AmmoBackpack_SelectAmmo>選擇彈藥類型</WG_AmmoBackpack_SelectAmmo>
+  <WG_AmmoBackpack_WeaponAmmo>武器彈藥</WG_AmmoBackpack_WeaponAmmo>
+  <WG_AmmoBackpack_OtherAmmo>其他彈藥</WG_AmmoBackpack_OtherAmmo>
+  <WG_AmmoBackpack_NoAmmoSelected>未選擇彈藥</WG_AmmoBackpack_NoAmmoSelected>
+  <WG_AmmoBackpack_AmmoStatus>{0}: {1} / {2}</WG_AmmoBackpack_AmmoStatus>
+  <WG_AmmoBackpack_MixStatus>混裝: {0} / {1}</WG_AmmoBackpack_MixStatus>
+  <WG_AmmoBackpack_AvailableAmmo>可用彈藥</WG_AmmoBackpack_AvailableAmmo>
+  <WG_AmmoBackpack_NoAmmoAvailable>無可用彈藥</WG_AmmoBackpack_NoAmmoAvailable>
+  <WG_AmmoBackpack_Load>裝填</WG_AmmoBackpack_Load>
+  <WG_AmmoBackpack_NoSearchResult>無符合結果</WG_AmmoBackpack_NoSearchResult>
+  <WG_AmmoBackpack_AmmoTip>{0}\n重量: {1} kg\n最大容量: {2} 發</WG_AmmoBackpack_AmmoTip>
+  <WG_AmmoBackpack_PendingSwitch>待切換: {0} (需卸載)</WG_AmmoBackpack_PendingSwitch>
+  
+  <!-- 混裝模式 -->
+  <WG_AmmoBackpack_NormalMode>普通</WG_AmmoBackpack_NormalMode>
+  <WG_AmmoBackpack_MixModeBtn>混裝</WG_AmmoBackpack_MixModeBtn>
+  <WG_AmmoBackpack_MixMode>混裝彈鏈</WG_AmmoBackpack_MixMode>
+  <WG_AmmoBackpack_MixRatio>比例: {0}</WG_AmmoBackpack_MixRatio>
+  <WG_AmmoBackpack_CurrentRatio>當前比例: {0}</WG_AmmoBackpack_CurrentRatio>
+  <WG_AmmoBackpack_AddMixAmmo>+ 新增彈藥類型</WG_AmmoBackpack_AddMixAmmo>
+  <WG_AmmoBackpack_AddSlot>+ 新增槽位</WG_AmmoBackpack_AddSlot>
+  <WG_AmmoBackpack_NoMoreAmmo>無更多可用彈藥</WG_AmmoBackpack_NoMoreAmmo>
+  <WG_AmmoBackpack_NoMixConfig>未設定混裝</WG_AmmoBackpack_NoMixConfig>
+  <WG_AmmoBackpack_SelectType>選擇...</WG_AmmoBackpack_SelectType>
+  <WG_AmmoBackpack_AlreadyUsed>(已使用)</WG_AmmoBackpack_AlreadyUsed>
+  <WG_AmmoBackpack_Eject>卸載彈藥</WG_AmmoBackpack_Eject>
+  <WG_AmmoBackpack_ClearType>清空類型</WG_AmmoBackpack_ClearType>
+  <WG_AmmoBackpack_SelectAmmoSet>選擇彈藥組</WG_AmmoBackpack_SelectAmmoSet>
+  <WG_AmmoBackpack_WeaponAmmoSet>武器彈藥組</WG_AmmoBackpack_WeaponAmmoSet>
+  <WG_AmmoBackpack_OtherAmmoSet>其他彈藥組</WG_AmmoBackpack_OtherAmmoSet>
+  <WG_AmmoBackpack_SelectAmmoSetFirst>請先選擇彈藥組</WG_AmmoBackpack_SelectAmmoSetFirst>
+  <WG_AmmoBackpack_NoCompatibleAmmoSet>無相容彈藥組</WG_AmmoBackpack_NoCompatibleAmmoSet>
+  
+  <!-- 有啥用啥模式 -->
+  <WG_AmmoBackpack_WildcardMode>有啥用啥模式\n裝彈時隨機抓取彈藥組內任何彈藥\n射擊時隨機使用已裝填的彈藥</WG_AmmoBackpack_WildcardMode>
+  <WG_AmmoBackpack_WildcardTypes>{0}種彈藥</WG_AmmoBackpack_WildcardTypes>
+  <WG_AmmoBackpack_WildcardEmpty>有啥用啥</WG_AmmoBackpack_WildcardEmpty>
+  
+  <!-- 預設 -->
+  <WG_AmmoBackpack_SavePreset>儲存</WG_AmmoBackpack_SavePreset>
+  <WG_AmmoBackpack_LoadPreset>載入</WG_AmmoBackpack_LoadPreset>
+  <WG_AmmoBackpack_SavePresetTitle>儲存混裝預設</WG_AmmoBackpack_SavePresetTitle>
+  <WG_AmmoBackpack_PresetName>名稱:</WG_AmmoBackpack_PresetName>
+  <WG_AmmoBackpack_PresetDefault>預設</WG_AmmoBackpack_PresetDefault>
+  <WG_AmmoBackpack_Cancel>取消</WG_AmmoBackpack_Cancel>
+  <WG_AmmoBackpack_Save>儲存</WG_AmmoBackpack_Save>
+  <WG_AmmoBackpack_PresetSaved>已儲存預設 "{0}"</WG_AmmoBackpack_PresetSaved>
+  <WG_AmmoBackpack_PresetSaveFailed>儲存預設失敗</WG_AmmoBackpack_PresetSaveFailed>
+  <WG_AmmoBackpack_PresetOverwrite>預設 "{0}" 已存在，是否覆蓋？</WG_AmmoBackpack_PresetOverwrite>
+  <WG_AmmoBackpack_NoPresets>暫無儲存的預設</WG_AmmoBackpack_NoPresets>
+  <WG_AmmoBackpack_PresetNeedEmpty>(需清空)</WG_AmmoBackpack_PresetNeedEmpty>
+  <WG_AmmoBackpack_PresetApplied>已套用預設 "{0}"</WG_AmmoBackpack_PresetApplied>
+  <WG_AmmoBackpack_PresetApplyFailed>套用預設失敗</WG_AmmoBackpack_PresetApplyFailed>
+  <WG_AmmoBackpack_PresetEmpty>空預設</WG_AmmoBackpack_PresetEmpty>
+  <WG_AmmoBackpack_ManagePresets>管理預設...</WG_AmmoBackpack_ManagePresets>
+  <WG_AmmoBackpack_ManagePresetsTitle>管理混裝預設</WG_AmmoBackpack_ManagePresetsTitle>
+  <WG_AmmoBackpack_Rename>重新命名</WG_AmmoBackpack_Rename>
+  <WG_AmmoBackpack_Delete>刪除</WG_AmmoBackpack_Delete>
+  <WG_AmmoBackpack_DeletePresetConfirm>確定刪除預設 "{0}"？</WG_AmmoBackpack_DeletePresetConfirm>
+  <WG_AmmoBackpack_RenameExists>名稱已存在</WG_AmmoBackpack_RenameExists>
+  <WG_AmmoBackpack_NoPresetManager>預設管理器不可用</WG_AmmoBackpack_NoPresetManager>
+  <WG_AmmoBackpack_Global>跨存檔</WG_AmmoBackpack_Global>
+  
+  <!-- 多背包 -->
+  <WG_AmmoBackpack_MainPack>彈藥背包</WG_AmmoBackpack_MainPack>
+  <WG_AmmoBackpack_HeavyPack>重型背包</WG_AmmoBackpack_HeavyPack>
+  <WG_AmmoBackpack_LightBox>彈藥匣</WG_AmmoBackpack_LightBox>
+  <WG_AmmoBackpack_Activated>{0} 已啟用</WG_AmmoBackpack_Activated>
+  
+  <!-- 顏色圖例 -->
+  <WG_AmmoBackpack_ColorLegend>彈藥顏色對照:</WG_AmmoBackpack_ColorLegend>
+  <WG_AmmoBackpack_ColorYellow>黃色</WG_AmmoBackpack_ColorYellow>
+  <WG_AmmoBackpack_ColorBlue>藍色</WG_AmmoBackpack_ColorBlue>
+  <WG_AmmoBackpack_ColorGreen>綠色</WG_AmmoBackpack_ColorGreen>
+  <WG_AmmoBackpack_ColorOrange>橙色</WG_AmmoBackpack_ColorOrange>
+  <WG_AmmoBackpack_ColorRed>紅色</WG_AmmoBackpack_ColorRed>
+  <WG_AmmoBackpack_ColorGray>灰色</WG_AmmoBackpack_ColorGray>
+  
+</LanguageData>

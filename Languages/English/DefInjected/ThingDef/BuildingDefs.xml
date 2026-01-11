@@ -29,6 +29,10 @@
   <!-- EN: wreckage -->
   <MF_Building_Wreckage.label>wreckage</MF_Building_Wreckage.label>
   
+  <!-- EN: auto repair arm -->
+  <MF_Building_AutoRepairArm.label>auto repair arm</MF_Building_AutoRepairArm.label>
+  <MF_Building_AutoRepairArm.description>An automated repair device that can automatically repair the exosuit on the targeted maintenance gantry. Requires power.</MF_Building_AutoRepairArm.description>
+  
   <!-- EN: flying -->
   <WG_PawnFlyer.label>flying</WG_PawnFlyer.label>
   

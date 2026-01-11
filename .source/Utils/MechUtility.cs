@@ -236,10 +236,33 @@ namespace Exosuit
     }
     public class MechData
     {
+        #region 静态回调注册
+        
+        // 调试开关
+        private const bool DebugLog = false;
+        
+        private static void Log(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message($"[MechData] {message}");
+        }
+        
+        // 外部模块可以注册的回调，用于在模块转换时保存/恢复自定义数据
+        public static event System.Action<Thing> OnInitData;
+        public static event System.Action<Thing> OnRestoreToItem;
+        public static event System.Action<Thing> OnRestoreToMech;
+        
+        #endregion
+        
         private int remainingCharges;
         private QualityCategory quality;
         private Color color;
         private int hp;
+        private float fuelAmount;
+        
+        // 存储实现了 IModuleDataTransfer 接口的组件数据
+        private List<IModuleDataTransfer> dataTransfers = new();
+        
         public MechData()
         {
 
@@ -250,6 +273,8 @@ namespace Exosuit
             color = default;
             remainingCharges = default;
             hp = default;
+            fuelAmount = default;
+            dataTransfers.Clear();
 
             thing.TryGetQuality(out quality);
             if (thing.TryGetComp(out CompColorable colorable)) color = colorable.Active ? colorable.Color : Color.clear;
@@ -266,6 +291,28 @@ namespace Exosuit
                 }
                 if (remainingCharges < 0) remainingCharges = 0;
             }
+            // 燃料电池
+            if (thing.TryGetComp<CompFuelCell>(out var fuelCell))
+            {
+                fuelAmount = fuelCell.Fuel;
+            }
+            
+            // 收集所有实现 IModuleDataTransfer 的组件并保存数据
+            if (thing is ThingWithComps twc)
+            {
+                foreach (var thingComp in twc.AllComps)
+                {
+                    if (thingComp is IModuleDataTransfer transfer)
+                    {
+                        transfer.SaveDataFrom(thing);
+                        dataTransfers.Add(transfer);
+                    }
+                }
+            }
+            
+            // 调用外部模块注册的回调
+            Log($"Init: 调用OnInitData回调, thing={thing.def.defName}, 注册数={OnInitData?.GetInvocationList()?.Length ?? 0}");
+            OnInitData?.Invoke(thing);
         }
         public void GetDataFromMech(Thing item)
         {
@@ -276,6 +323,21 @@ namespace Exosuit
                 comp.remainingCharges = remainingCharges;
                 comp.HP = Mathf.CeilToInt((hp / MechUtility.qualityToHPFactor[quality]));
             }
+            // 燃料电池
+            if (item.TryGetComp<CompFuelCell>(out var fuelCell))
+            {
+                fuelCell.Fuel = fuelAmount;
+            }
+            
+            // 恢复 IModuleDataTransfer 组件的数据
+            foreach (var transfer in dataTransfers)
+            {
+                transfer.RestoreDataTo(item);
+            }
+            
+            // 调用外部模块注册的回调
+            Log($"GetDataFromMech: 调用OnRestoreToItem回调, item={item.def.defName}, 注册数={OnRestoreToItem?.GetInvocationList()?.Length ?? 0}");
+            OnRestoreToItem?.Invoke(item);
         }
         public void SetDataToMech(Thing mech)
         {
@@ -301,6 +363,21 @@ namespace Exosuit
             {
                 c.HP = Mathf.CeilToInt(hp * MechUtility.qualityToHPFactor[quality]);
             }
+            // 燃料电池
+            if (mech.TryGetComp<CompFuelCell>(out var fuelCell))
+            {
+                fuelCell.Fuel = fuelAmount;
+            }
+            
+            // 恢复 IModuleDataTransfer 组件的数据
+            foreach (var transfer in dataTransfers)
+            {
+                transfer.RestoreDataTo(mech);
+            }
+            
+            // 调用外部模块注册的回调
+            Log($"SetDataToMech: 调用OnRestoreToMech回调, mech={mech.def.defName}, 注册数={OnRestoreToMech?.GetInvocationList()?.Length ?? 0}");
+            OnRestoreToMech?.Invoke(mech);
         }
     }
 }

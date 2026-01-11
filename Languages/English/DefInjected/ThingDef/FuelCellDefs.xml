@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <MF_Module_FuelCell.label>fuel cell module</MF_Module_FuelCell.label>
+  <MF_Module_FuelCell.description>A high-capacity fuel cell that provides additional power to exosuit systems. When fueled with chemfuel, it boosts the pilot's movement speed and work efficiency. The fuel cell automatically activates when installed and has fuel.</MF_Module_FuelCell.description>
+  
+  <MF_Apparel_FuelCell.label>fuel cell module</MF_Apparel_FuelCell.label>
+  <MF_Apparel_FuelCell.description>A high-capacity fuel cell that provides additional power to exosuit systems.</MF_Apparel_FuelCell.description>
+  
+</LanguageData>

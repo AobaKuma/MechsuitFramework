@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <!-- 燃料电池提供的 Hediff -->
+  <HediffDef>
+    <defName>MF_FuelCellBoost</defName>
+    <label>fuel cell boost</label>
+    <description>The fuel cell is providing additional power to the exosuit systems, boosting movement and work speed.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.5, 0.9, 0.5)</defaultLabelColor>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>2</MoveSpeed>
+          <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 燃料电池模块 - 物品形态 -->
+  <ThingDef ParentName="ModuleItemAttachment">
+    <defName>MF_Module_FuelCell</defName>
+    <label>fuel cell module</label>
+    <description>A high-capacity fuel cell that provides additional power to exosuit systems. When fueled with chemfuel, it boosts the pilot's movement speed and work efficiency. The fuel cell automatically activates when installed and has fuel.</description>
+
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <MarketValue>800</MarketValue>
+      <Mass>8</Mass>
+      <WorkToMake>12000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Chemfuel>30</Chemfuel>
+    </costList>
+    <comps>
+      <li Class="Exosuit.CompProperties_ExosuitModule">
+        <EquipedThingDef>MF_Apparel_FuelCell</EquipedThingDef>
+        <ItemDef>MF_Module_FuelCell</ItemDef>
+        <occupiedSlots>
+          <li>Attachment</li>
+        </occupiedSlots>
+      </li>
+      <li Class="Exosuit.CompProperties_FuelCell">
+        <fuelCapacity>150</fuelCapacity>
+        <fuelDef>Chemfuel</fuelDef>
+        <fuelPerUnit>1</fuelPerUnit>
+        <hediffDef>MF_FuelCellBoost</hediffDef>
+      </li>
+    </comps>
+    <recipeMaker>
+      <researchPrerequisite>WG_HeavyExoskeleton</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- 燃料电池模块 - 装甲形态 -->
+  <ThingDef ParentName="ModuleApparelAttachment">
+    <defName>MF_Apparel_FuelCell</defName>
+    <label>fuel cell module</label>
+    <description>A high-capacity fuel cell that provides additional power to exosuit systems.</description>
+    <graphicData>
+      <texPath>Things/Item/Module_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <Mass>8</Mass>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <CarryingCapacity>30</CarryingCapacity>
+    </equippedStatOffsets>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="Exosuit.CompProperties_ExosuitModule">
+        <EquipedThingDef>MF_Apparel_FuelCell</EquipedThingDef>
+        <ItemDef>MF_Module_FuelCell</ItemDef>
+        <occupiedSlots>
+          <li>Attachment</li>
+        </occupiedSlots>
+      </li>
+      <li Class="Exosuit.CompProperties_FuelCell">
+        <fuelCapacity>150</fuelCapacity>
+        <fuelDef>Chemfuel</fuelDef>
+        <fuelPerUnit>1</fuelPerUnit>
+        <hediffDef>MF_FuelCellBoost</hediffDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -74,4 +74,38 @@
   <WG_CommandToggleTurretDesc>切换子砲塔的自动开火</WG_CommandToggleTurretDesc>
   <WG_SubTurret>子砲塔</WG_SubTurret>
   <WG_SubTurretDesc>一个安装在框架上的自动砲塔。</WG_SubTurretDesc>
+  
+  <!-- 模块装卸工作相关 -->
+  <WG_RequestInstall>请求安装: {0}</WG_RequestInstall>
+  <WG_RequestReplace>请求替换: {0}</WG_RequestReplace>
+  <WG_RequestReplaceCoreRemoveAll>替换核心 (卸载全部模块): {0}</WG_RequestReplaceCoreRemoveAll>
+  <WG_RequestReplaceCoreKeepModules>替换核心 (保留模块): {0}</WG_RequestReplaceCoreKeepModules>
+  <WG_RequestRemove>请求卸载: {0}</WG_RequestRemove>
+  <WG_CancelInstall>取消安装: {0}</WG_CancelInstall>
+  <WG_CancelRemove>取消卸载: {0}</WG_CancelRemove>
+  <WG_CancelReplace>取消替换: {0}</WG_CancelReplace>
+  <WG_Pending>待安装</WG_Pending>
+  <WG_PendingRemove>待卸载</WG_PendingRemove>
+  <WG_PendingReplace>待替换</WG_PendingReplace>
+  
+  <!-- 核心工作进行中 -->
+  <WG_CoreWorkInProgress>核心工作进行中，无法操作</WG_CoreWorkInProgress>
+  <WG_CancelCoreWork>取消核心工作</WG_CancelCoreWork>
+  
+  <!-- 燃料电池 -->
+  <WG_FuelCell_Fuel>燃料</WG_FuelCell_Fuel>
+  <WG_FuelCell_Tip>燃料电池为龙骑兵提供额外能量，在驾驶时持续消耗。\n殖民者会自动搬运化合燃料来装填。</WG_FuelCell_Tip>
+  
+  <!-- 模块信息预览 -->
+  <WG_ModuleInfo_Load>载荷: {0}</WG_ModuleInfo_Load>
+  <WG_ModuleInfo_Slots>将替换: {0}</WG_ModuleInfo_Slots>
+  <WG_ModuleInfo_LoadTip>模块质量: {0} kg\n安装后载荷: {1} / {2}</WG_ModuleInfo_LoadTip>
+  <WG_ModuleInfo_OverloadWarning>警告: 将超出载荷上限!</WG_ModuleInfo_OverloadWarning>
+  
+  <!-- 自动维修臂 -->
+  <WG_AutoRepair_NoTarget>未检测到整备龙门架</WG_AutoRepair_NoTarget>
+  <WG_AutoRepair_NoCore>目标龙门架没有机甲</WG_AutoRepair_NoCore>
+  <WG_AutoRepair_NoDamage>机甲已完全修复</WG_AutoRepair_NoDamage>
+  <WG_AutoRepair_Working>正在维修...</WG_AutoRepair_Working>
+  <WG_AutoRepair_SideOccupied>该侧已有维修臂</WG_AutoRepair_SideOccupied>
 </LanguageData>

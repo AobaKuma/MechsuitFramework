@@ -79,4 +79,38 @@
   <WG_SubTurret>sub turret</WG_SubTurret>
   <WG_SubTurretDesc>a sub turret attached on this frame</WG_SubTurretDesc>
   
+  <!-- 模块装卸工作相关 -->
+  <WG_RequestInstall>Request install: {0}</WG_RequestInstall>
+  <WG_RequestReplace>Request replace: {0}</WG_RequestReplace>
+  <WG_RequestReplaceCoreRemoveAll>Replace core (remove all modules): {0}</WG_RequestReplaceCoreRemoveAll>
+  <WG_RequestReplaceCoreKeepModules>Replace core (keep modules): {0}</WG_RequestReplaceCoreKeepModules>
+  <WG_RequestRemove>Request remove: {0}</WG_RequestRemove>
+  <WG_CancelInstall>Cancel install: {0}</WG_CancelInstall>
+  <WG_CancelRemove>Cancel remove: {0}</WG_CancelRemove>
+  <WG_CancelReplace>Cancel replace: {0}</WG_CancelReplace>
+  <WG_Pending>Pending</WG_Pending>
+  <WG_PendingRemove>Removing</WG_PendingRemove>
+  <WG_PendingReplace>Replacing</WG_PendingReplace>
+  
+  <!-- Core work in progress -->
+  <WG_CoreWorkInProgress>Core work in progress, cannot operate</WG_CoreWorkInProgress>
+  <WG_CancelCoreWork>Cancel core work</WG_CancelCoreWork>
+  
+  <!-- 燃料电池 -->
+  <WG_FuelCell_Fuel>Fuel</WG_FuelCell_Fuel>
+  <WG_FuelCell_Tip>Fuel cell provides extra energy for the exosuit, consumed while piloting.\nColonists will automatically haul chemfuel to refill it.</WG_FuelCell_Tip>
+  
+  <!-- 模块信息预览 -->
+  <WG_ModuleInfo_Load>Payload: {0}</WG_ModuleInfo_Load>
+  <WG_ModuleInfo_Slots>Will replace: {0}</WG_ModuleInfo_Slots>
+  <WG_ModuleInfo_LoadTip>Module mass: {0} kg\nPayload after install: {1} / {2}</WG_ModuleInfo_LoadTip>
+  <WG_ModuleInfo_OverloadWarning>Warning: Will exceed payload capacity!</WG_ModuleInfo_OverloadWarning>
+  
+  <!-- 自动维修臂 -->
+  <WG_AutoRepair_NoTarget>No maintenance gantry detected</WG_AutoRepair_NoTarget>
+  <WG_AutoRepair_NoCore>Target gantry has no exosuit</WG_AutoRepair_NoCore>
+  <WG_AutoRepair_NoDamage>Exosuit fully repaired</WG_AutoRepair_NoDamage>
+  <WG_AutoRepair_Working>Repairing...</WG_AutoRepair_Working>
+  <WG_AutoRepair_SideOccupied>This side already has a repair arm</WG_AutoRepair_SideOccupied>
+  
 </LanguageData>

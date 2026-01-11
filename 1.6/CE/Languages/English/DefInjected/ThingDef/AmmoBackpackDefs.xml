@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- Ammo Backpack Module - Item Form -->
+  <MF_Module_AmmoBackpack.label>ammo backpack module</MF_Module_AmmoBackpack.label>
+  <MF_Module_AmmoBackpack.description>A belt-fed ammunition backpack that connects to compatible weapons, providing continuous ammo supply without manual reloading. Not compatible with rockets, missiles, or grenades.</MF_Module_AmmoBackpack.description>
+
+  <!-- Heavy Ammo Backpack Module - Item Form -->
+  <MF_Module_AmmoBackpack_Heavy.label>heavy ammo backpack module</MF_Module_AmmoBackpack_Heavy.label>
+  <MF_Module_AmmoBackpack_Heavy.description>A large belt-fed ammunition backpack with double capacity. Occupies both the attachment slot and right shoulder mount. Not compatible with rockets, missiles, or grenades.</MF_Module_AmmoBackpack_Heavy.description>
+
+  <!-- Compact Ammo Box Module - Item Form -->
+  <MF_Module_AmmoBackpack_Light.label>compact ammo box module</MF_Module_AmmoBackpack_Light.label>
+  <MF_Module_AmmoBackpack_Light.description>A lightweight ammunition box mounted on the left arm. Smaller capacity but leaves the backpack slot free. Not compatible with rockets, missiles, or grenades.</MF_Module_AmmoBackpack_Light.description>
+
+  <!-- Ammo Backpack Module - Apparel Form -->
+  <MF_Apparel_AmmoBackpack.label>ammo backpack</MF_Apparel_AmmoBackpack.label>
+  <MF_Apparel_AmmoBackpack.description>A belt-fed ammunition backpack module installed on an exosuit.</MF_Apparel_AmmoBackpack.description>
+
+  <!-- Heavy Ammo Backpack Module - Apparel Form -->
+  <MF_Apparel_AmmoBackpack_Heavy.label>heavy ammo backpack</MF_Apparel_AmmoBackpack_Heavy.label>
+  <MF_Apparel_AmmoBackpack_Heavy.description>A large belt-fed ammunition backpack module with double capacity.</MF_Apparel_AmmoBackpack_Heavy.description>
+
+  <!-- Compact Ammo Box Module - Apparel Form -->
+  <MF_Apparel_AmmoBackpack_Light.label>compact ammo box</MF_Apparel_AmmoBackpack_Light.label>
+  <MF_Apparel_AmmoBackpack_Light.description>A lightweight ammunition box mounted on the left arm.</MF_Apparel_AmmoBackpack_Light.description>
+
+</LanguageData>

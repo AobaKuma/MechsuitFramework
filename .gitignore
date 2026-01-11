@@ -3,9 +3,8 @@
 /.source/bin
 /.source/obj
 /.source/.vs
-/.source/.vs
-/.source/.vs
-/.source/obj/Debug
+/.source/CE/obj
+/.source/CE/bin
 *.cache
 *.editorconfig
 *.props
@@ -13,3 +12,5 @@
 *.bin
 *.db
 *.v2
+*.user
+*.DotSettings*

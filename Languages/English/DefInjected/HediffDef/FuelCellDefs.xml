@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <MF_FuelCellBoost.label>fuel cell</MF_FuelCellBoost.label>
+  <MF_FuelCellBoost.description>The fuel cell is providing additional power to the exosuit systems, boosting movement and work speed.</MF_FuelCellBoost.description>
+  
+</LanguageData>

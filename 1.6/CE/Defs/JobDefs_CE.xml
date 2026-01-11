@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 有啥用啥模式专用装填工作 -->
+    <JobDef>
+        <defName>WG_LoadWildcardAmmo</defName>
+        <driverClass>Exosuit.CE.JobDriver_LoadWildcardAmmo</driverClass>
+        <reportString>loading wildcard ammo for TargetA.</reportString>
+        <suspendable>true</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+    
+    <!-- 有啥用啥模式专用 WorkGiver -->
+    <WorkGiverDef>
+        <defName>WG_LoadWildcardAmmo</defName>
+        <label>load wildcard ammo at gantry</label>
+        <giverClass>Exosuit.CE.WorkGiver_LoadWildcardAmmo</giverClass>
+        <workType>Crafting</workType>
+        <priorityInType>399</priorityInType>
+        <verb>load</verb>
+        <gerund>loading wildcard ammo</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <directOrderable>true</directOrderable>
+        <nonColonistsCanDo>true</nonColonistsCanDo>
+        <canBeDoneByMechs>true</canBeDoneByMechs>
+    </WorkGiverDef>
+</Defs>
