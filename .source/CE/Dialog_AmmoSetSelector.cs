@@ -98,11 +98,11 @@ namespace Exosuit.CE
                 weaponAmmoSets.Add(weaponAmmoSet);
             }
             
-            // 其他弹药组
-            foreach (var ammoSet in DefDatabase<AmmoSetDef>.AllDefs)
+            // 获取游戏中所有武器定义使用的弹药组
+            var usedAmmoSets = GetAllUsedAmmoSets();
+            foreach (var ammoSet in usedAmmoSets)
             {
                 if (prioritySets.Contains(ammoSet)) continue;
-                if (!CompAmmoBackpack.IsAmmoSetCompatible(ammoSet)) continue;
                 
                 otherAmmoSets.Add(ammoSet);
             }
@@ -110,6 +110,26 @@ namespace Exosuit.CE
             otherAmmoSets = otherAmmoSets.OrderBy(a => a.label).ToList();
             
             UpdateFilteredLists();
+        }
+        
+        // 获取游戏中所有武器定义使用的弹药组
+        private HashSet<AmmoSetDef> GetAllUsedAmmoSets()
+        {
+            var result = new HashSet<AmmoSetDef>();
+            
+            // 遍历所有武器定义
+            foreach (var weaponDef in DefDatabase<ThingDef>.AllDefs)
+            {
+                if (!weaponDef.IsWeapon) continue;
+                
+                var compProps = weaponDef.GetCompProperties<CompProperties_AmmoUser>();
+                if (compProps?.ammoSet == null) continue;
+                if (!CompAmmoBackpack.IsAmmoSetCompatible(compProps.ammoSet)) continue;
+                
+                result.Add(compProps.ammoSet);
+            }
+            
+            return result;
         }
         
         private AmmoSetDef GetWeaponModuleAmmoSet()

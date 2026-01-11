@@ -397,8 +397,22 @@ namespace Exosuit.CE
             }
             else
             {
+                // 检查当前弹药组中是否有重复的ammoClass
+                bool hasDuplicateClass = false;
+                if (entry.AmmoDef != null && linkedAmmoSet != null)
+                {
+                    string myClass = entry.AmmoDef.ammoClass?.defName ?? "";
+                    int count = 0;
+                    foreach (var link in linkedAmmoSet.ammoTypes)
+                    {
+                        if ((link.ammo.ammoClass?.defName ?? "") == myClass)
+                            count++;
+                    }
+                    hasDuplicateClass = count > 1;
+                }
+                
                 string buttonLabel = entry.AmmoDef != null
-                    ? CompAmmoBackpack.GetAmmoShortLabel(entry.AmmoDef, false)
+                    ? (hasDuplicateClass ? entry.AmmoDef.LabelCap : CompAmmoBackpack.GetAmmoShortLabel(entry.AmmoDef, false))
                     : "WG_AmmoBackpack_SelectType".Translate();
                 
                 if (entry.CurrentCount == 0)
@@ -478,13 +492,29 @@ namespace Exosuit.CE
             
             var options = new List<FloatMenuOption>();
             
+            // 检查是否有重复的ammoClass
+            var ammoClassCount = new Dictionary<string, int>();
+            foreach (var link in ammoSet.ammoTypes)
+            {
+                if (!IsAmmoCompatible(link.ammo)) continue;
+                string className = link.ammo.ammoClass?.defName ?? "Unknown";
+                if (!ammoClassCount.ContainsKey(className))
+                    ammoClassCount[className] = 0;
+                ammoClassCount[className]++;
+            }
+            
             foreach (var link in ammoSet.ammoTypes)
             {
                 if (!IsAmmoCompatible(link.ammo)) continue;
                 
                 var ammo = link.ammo;
-                // 菜单中只显示类型
-                string label = GetAmmoShortLabel(ammo, false);
+                string className = ammo.ammoClass?.defName ?? "Unknown";
+                
+                // 如果同类型有多个弹药，显示完整名称
+                string label = ammoClassCount[className] > 1 
+                    ? ammo.LabelCap 
+                    : GetAmmoShortLabel(ammo, false);
+                    
                 options.Add(new FloatMenuOption(label, () =>
                 {
                     SetMixEntryAmmo(slotIndex, ammo);

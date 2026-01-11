@@ -123,45 +123,21 @@ namespace Exosuit.CE
             UpdateFilteredLists();
         }
         
-        // 获取游戏中所有武器正在使用的弹药组
+        // 获取游戏中所有武器定义使用的弹药组
         private HashSet<AmmoSetDef> GetAllUsedAmmoSets()
         {
             var result = new HashSet<AmmoSetDef>();
-            var map = comp.Wearer?.MapHeld ?? Find.CurrentMap;
-            if (map == null) return result;
             
-            // 扫描地图上所有殖民者的武器
-            foreach (var pawn in map.mapPawns.FreeColonists)
+            // 遍历所有武器定义
+            foreach (var weaponDef in DefDatabase<ThingDef>.AllDefs)
             {
-                // 主武器
-                if (pawn.equipment?.Primary != null)
-                {
-                    var compAmmo = pawn.equipment.Primary.TryGetComp<CompAmmoUser>();
-                    if (compAmmo?.Props?.ammoSet != null && CompAmmoBackpack.IsAmmoSetCompatible(compAmmo.Props.ammoSet))
-                        result.Add(compAmmo.Props.ammoSet);
-                }
+                if (!weaponDef.IsWeapon) continue;
                 
-                // 穿戴的武器模块
-                if (pawn.apparel != null)
-                {
-                    foreach (var apparel in pawn.apparel.WornApparel)
-                    {
-                        var compWeapon = apparel.TryGetComp<CompModuleWeapon>();
-                        if (compWeapon?.Weapon == null) continue;
-                        
-                        var compAmmo = compWeapon.Weapon.TryGetComp<CompAmmoUser>();
-                        if (compAmmo?.Props?.ammoSet != null && CompAmmoBackpack.IsAmmoSetCompatible(compAmmo.Props.ammoSet))
-                            result.Add(compAmmo.Props.ammoSet);
-                    }
-                }
-            }
-            
-            // 扫描库存中的武器
-            foreach (var thing in map.listerThings.ThingsInGroup(ThingRequestGroup.Weapon))
-            {
-                var compAmmo = thing.TryGetComp<CompAmmoUser>();
-                if (compAmmo?.Props?.ammoSet != null && CompAmmoBackpack.IsAmmoSetCompatible(compAmmo.Props.ammoSet))
-                    result.Add(compAmmo.Props.ammoSet);
+                var compProps = weaponDef.GetCompProperties<CompProperties_AmmoUser>();
+                if (compProps?.ammoSet == null) continue;
+                if (!CompAmmoBackpack.IsAmmoSetCompatible(compProps.ammoSet)) continue;
+                
+                result.Add(compProps.ammoSet);
             }
             
             return result;

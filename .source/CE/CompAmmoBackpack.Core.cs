@@ -19,18 +19,16 @@ namespace Exosuit.CE
     {
         #region 常量
         
-        // 不支持弹链供弹的弹药类型关键词
-        private static readonly string[] ExcludedAmmoClasses = 
+        // 不支持弹链供弹的弹药分类
+        private static readonly HashSet<string> ExcludedCategories = new()
         {
-            "Rocket", "Missile", "Grenade", "Mortar", "Shell", "Bomb",
-            "Arrow", "Bolt", "Plasma", "Charge", "Ion", "Laser", "Energy"
+            "AmmoRockets", "AmmoMissiles", "AmmoShells", "AmmoGrenades", "AmmoNeolithic", "AmmoMedieval"
         };
         
-        // 支持弹链供弹的弹药类型关键词
-        private static readonly string[] AllowedAmmoPatterns =
+        // 支持弹链供弹的弹药分类（白名单，优先于排除列表）
+        private static readonly HashSet<string> AllowedCategories = new()
         {
-            "mm", "NATO", "Magnum", "ACP", "Parabellum", "Mauser", 
-            "Rifle", "Pistol", "SMG", "MG", "Cannon", "Autocannon"
+            "AmmoHighCaliber", "AmmoPistols", "AmmoRifles", "AmmoShotguns", "AmmoAdvanced"
         };
         
         private const float ExtensionWidth = 400f;
@@ -473,20 +471,54 @@ namespace Exosuit.CE
         {
             if (ammoDef == null) return false;
             
-            var defName = ammoDef.defName ?? "";
-            var ammoClassName = ammoDef.ammoClass?.defName ?? "";
+            // 迫击炮弹药不支持
+            if (ammoDef.isMortarAmmo) return false;
             
-            if (ExcludedAmmoClasses.Any(ex => 
-                ammoClassName.IndexOf(ex, System.StringComparison.OrdinalIgnoreCase) >= 0 ||
-                defName.IndexOf(ex, System.StringComparison.OrdinalIgnoreCase) >= 0))
+            // 检查物品分类及其父分类
+            var categories = ammoDef.thingCategories;
+            if (categories != null)
+            {
+                foreach (var cat in categories)
+                {
+                    // 先检查白名单
+                    if (IsCategoryAllowed(cat))
+                        return true;
+                    
+                    // 再检查黑名单
+                    if (IsCategoryExcluded(cat))
+                        return false;
+                }
+            }
+            
+            // 重型弹药不支持
+            var tags = ammoDef.tradeTags;
+            if (tags != null && tags.Contains("CE_HeavyAmmo"))
                 return false;
             
-            bool matchesPattern = AllowedAmmoPatterns.Any(pattern =>
-                defName.IndexOf(pattern, System.StringComparison.OrdinalIgnoreCase) >= 0);
-            
-            if (!matchesPattern) return false;
-            
             return true;
+        }
+        
+        // 递归检查分类及其父分类是否在白名单中
+        private static bool IsCategoryAllowed(ThingCategoryDef category)
+        {
+            if (category == null) return false;
+            
+            if (AllowedCategories.Contains(category.defName))
+                return true;
+            
+            return IsCategoryAllowed(category.parent);
+        }
+        
+        // 递归检查分类及其父分类是否被排除
+        private static bool IsCategoryExcluded(ThingCategoryDef category)
+        {
+            if (category == null) return false;
+            
+            if (ExcludedCategories.Contains(category.defName))
+                return true;
+            
+            // 递归检查父分类
+            return IsCategoryExcluded(category.parent);
         }
         
         public static bool IsAmmoSetCompatible(AmmoSetDef ammoSet)
