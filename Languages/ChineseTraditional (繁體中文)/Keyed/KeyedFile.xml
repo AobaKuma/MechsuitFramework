@@ -94,6 +94,7 @@
   <WG_AutoRepair_NoCore>目標龍門架沒有機甲</WG_AutoRepair_NoCore>
   <WG_AutoRepair_NoDamage>機甲已完全修復</WG_AutoRepair_NoDamage>
   <WG_AutoRepair_Working>正在維修...</WG_AutoRepair_Working>
+  <WG_AutoRepair_SideOccupied>該側已有維修臂</WG_AutoRepair_SideOccupied>
   
   <WG_AvailableModuleForThisSlot>此槽位可用的模塊</WG_AvailableModuleForThisSlot>
   

@@ -22,9 +22,12 @@ namespace Exosuit
 
         private Building_MaintenanceBay cachedTargetBay;
         private bool cacheValid;
-        private int ticksUntilRepair; // 距离下次维修的剩余 ticks
-        private Effecter repairEffecter; // 维修特效
-        private int effectTicksRemaining; // 特效剩余 ticks
+        private int ticksUntilRepair;
+        private int ticksUntilCacheRefresh;
+        private Effecter repairEffecter;
+        private int effectTicksRemaining;
+        
+        private const int CacheRefreshInterval = 250;
 
         #endregion
 
@@ -35,6 +38,17 @@ namespace Exosuit
         {
             get
             {
+                // 检查缓存是否仍然有效
+                if (cacheValid && cachedTargetBay != null && !cachedTargetBay.Spawned)
+                    cacheValid = false;
+                
+                // 定期刷新缓存以检测新建的龙门架
+                if (cacheValid && cachedTargetBay == null && ticksUntilCacheRefresh <= 0)
+                {
+                    cacheValid = false;
+                    ticksUntilCacheRefresh = CacheRefreshInterval;
+                }
+                
                 if (!cacheValid)
                 {
                     cachedTargetBay = FindTargetBay();
@@ -103,10 +117,12 @@ namespace Exosuit
         }
         
         // 支持 1.6 Dynamic Tick Rate
-        // 当建筑不在玩家视野内时，delta 会大于 1
         public override void TickInterval(int delta)
         {
             if (!Spawned || !HasPower) return;
+            
+            // 更新缓存刷新计时器
+            ticksUntilCacheRefresh -= delta;
             
             // 根据工作状态调整功耗
             UpdatePowerConsumption();
@@ -192,19 +208,6 @@ namespace Exosuit
         public override void DrawExtraSelectionOverlays()
         {
             base.DrawExtraSelectionOverlays();
-            
-            // 绘制目标格子的高亮圈
-            IntVec3 targetCell = GetTargetCell();
-            if (targetCell.InBounds(Map))
-            {
-                GenDraw.DrawTargetHighlight(targetCell);
-            }
-            
-            // 如果检测到目标龙门架，绘制连接线
-            if (TargetBay != null)
-            {
-                GenDraw.DrawLineBetween(this.TrueCenter(), TargetBay.TrueCenter(), SimpleColor.Green);
-            }
         }
 
         #endregion
@@ -226,32 +229,20 @@ namespace Exosuit
         {
             if (!Spawned) return null;
             
-            // 获取建筑朝向的目标格子
-            IntVec3 targetCell = GetTargetCell();
+            // 前方一格
+            IntVec3 frontCell = Position + Rotation.FacingCell;
+            if (!frontCell.InBounds(Map)) return null;
             
-            // 在目标区域查找龙门架（考虑龙门架是 3x3 的）
-            for (int dx = -1; dx <= 1; dx++)
-            {
-                for (int dz = -1; dz <= 1; dz++)
-                {
-                    IntVec3 checkCell = targetCell + new IntVec3(dx, 0, dz);
-                    if (!checkCell.InBounds(Map)) continue;
-                    
-                    var bay = checkCell.GetFirstThing<Building_MaintenanceBay>(Map);
-                    if (bay != null) return bay;
-                }
-            }
+            var bay = frontCell.GetFirstThing<Building_MaintenanceBay>(Map);
+            if (bay == null) return null;
             
-            return null;
-        }
-
-        // 获取指向的目标格子（建筑宽面方向）
-        private IntVec3 GetTargetCell()
-        {
-            // 建筑是 3x1，宽面是 3 格的那一边
-            // 旋转后，FacingCell 指向建筑的"前方"
-            IntVec3 offset = Rotation.FacingCell * 2; // 向前 2 格
-            return Position + offset;
+            // 检查是否对准龙门架边缘中间
+            IntVec3 bayCenter = bay.Position;
+            bool aligned = (Rotation == Rot4.North || Rotation == Rot4.South) 
+                ? Position.x == bayCenter.x 
+                : Position.z == bayCenter.z;
+            
+            return aligned ? bay : null;
         }
 
         #endregion

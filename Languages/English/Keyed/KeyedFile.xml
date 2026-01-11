@@ -111,5 +111,6 @@
   <WG_AutoRepair_NoCore>Target gantry has no exosuit</WG_AutoRepair_NoCore>
   <WG_AutoRepair_NoDamage>Exosuit fully repaired</WG_AutoRepair_NoDamage>
   <WG_AutoRepair_Working>Repairing...</WG_AutoRepair_Working>
+  <WG_AutoRepair_SideOccupied>This side already has a repair arm</WG_AutoRepair_SideOccupied>
   
 </LanguageData>
