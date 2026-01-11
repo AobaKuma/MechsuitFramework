@@ -23,6 +23,9 @@ namespace Exosuit.CE
         // 最大容量（根据比例分配）
         public int MaxCount;
         
+        // 分配的质量容量（有啥用啥模式使用）
+        public float AllocatedMass;
+        
         // 是否为随机模式（有啥压啥）
         public bool IsWildcard;
         
@@ -34,7 +37,18 @@ namespace Exosuit.CE
         #region 属性
         
         // 是否已满
-        public bool IsFull => CurrentCount >= MaxCount;
+        public bool IsFull
+        {
+            get
+            {
+                if (IsWildcard)
+                {
+                    // 有啥用啥槽位：基于质量判断
+                    return WildcardUsedMass >= AllocatedMass * 0.99f;
+                }
+                return CurrentCount >= MaxCount;
+            }
+        }
         
         // 是否为空
         public bool IsEmpty => CurrentCount <= 0;
@@ -44,6 +58,30 @@ namespace Exosuit.CE
         
         // 随机模式下获取总弹药数
         public int WildcardTotalCount => IsWildcard ? WildcardAmmo.Values.Sum() : 0;
+        
+        // 有啥用啥槽位的已用质量
+        public float WildcardUsedMass
+        {
+            get
+            {
+                if (!IsWildcard) return 0f;
+                float total = 0f;
+                foreach (var kvp in WildcardAmmo)
+                {
+                    float mass = GetAmmoMass(kvp.Key);
+                    total += mass * kvp.Value;
+                }
+                return total;
+            }
+        }
+        
+        // 获取弹药质量
+        private static float GetAmmoMass(AmmoDef ammoDef)
+        {
+            if (ammoDef == null) return 0.025f;
+            var massStat = ammoDef.statBases?.FirstOrDefault(s => s.stat == RimWorld.StatDefOf.Mass);
+            return massStat?.value ?? 0.025f;
+        }
         
         #endregion
         
@@ -55,6 +93,7 @@ namespace Exosuit.CE
             Scribe_Values.Look(ref Ratio, "ratio", 1);
             Scribe_Values.Look(ref CurrentCount, "currentCount", 0);
             Scribe_Values.Look(ref MaxCount, "maxCount", 0);
+            Scribe_Values.Look(ref AllocatedMass, "allocatedMass", 0f);
             Scribe_Values.Look(ref IsWildcard, "isWildcard", false);
             Scribe_Collections.Look(ref WildcardAmmo, "wildcardAmmo", LookMode.Def, LookMode.Value);
             
@@ -109,8 +148,12 @@ namespace Exosuit.CE
         {
             if (!IsWildcard || ammo == null) return 0;
             
-            int canAdd = MaxCount - CurrentCount;
-            int toAdd = System.Math.Min(canAdd, amount);
+            // 基于质量计算能添加多少
+            float ammoMass = GetAmmoMass(ammo);
+            float remainingMass = AllocatedMass - WildcardUsedMass;
+            int canAddByMass = ammoMass > 0 ? (int)(remainingMass / ammoMass) : 0;
+            
+            int toAdd = System.Math.Min(canAddByMass, amount);
             if (toAdd <= 0) return 0;
             
             if (WildcardAmmo.ContainsKey(ammo))
@@ -131,6 +174,7 @@ namespace Exosuit.CE
                 Ratio = Ratio,
                 CurrentCount = CurrentCount,
                 MaxCount = MaxCount,
+                AllocatedMass = AllocatedMass,
                 IsWildcard = IsWildcard,
                 WildcardAmmo = new Dictionary<AmmoDef, int>(WildcardAmmo)
             };

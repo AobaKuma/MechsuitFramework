@@ -72,6 +72,18 @@ namespace Exosuit.CE
                     cachedMaxCapacity = CalculateMaxCapacity(value);
                     if (currentAmmoCount > cachedMaxCapacity)
                         currentAmmoCount = cachedMaxCapacity;
+                    
+                    // 单装模式下同步更新 linkedAmmoSet
+                    if (!isMixMode && value != null)
+                    {
+                        var sets = value.AmmoSetDefs;
+                        if (sets != null && sets.Count > 0)
+                        {
+                            var compatibleSet = sets.FirstOrDefault(s => IsAmmoSetCompatible(s));
+                            if (compatibleSet != null)
+                                linkedAmmoSet = compatibleSet;
+                        }
+                    }
                 }
             }
         }
@@ -311,6 +323,19 @@ namespace Exosuit.CE
             selectedAmmo = ammo;
             pendingAmmo = null;
             cachedMaxCapacity = CalculateMaxCapacity(ammo);
+            
+            // 单装模式下同步更新 linkedAmmoSet
+            if (!isMixMode && ammo != null)
+            {
+                var sets = ammo.AmmoSetDefs;
+                if (sets != null && sets.Count > 0)
+                {
+                    var compatibleSet = sets.FirstOrDefault(s => IsAmmoSetCompatible(s));
+                    if (compatibleSet != null)
+                        linkedAmmoSet = compatibleSet;
+                }
+            }
+            
             SoundDefOf.Click.PlayOneShotOnCamera();
         }
         
@@ -560,17 +585,25 @@ namespace Exosuit.CE
         
         public AmmoSetDef GetCurrentAmmoSet()
         {
-            // 优先使用已绑定的弹药组
-            if (linkedAmmoSet != null)
+            // 混装模式：使用已绑定的弹药组
+            if (isMixMode && linkedAmmoSet != null)
                 return linkedAmmoSet;
             
-            // 从当前选择的弹药推断弹药组
-            if (selectedAmmo != null)
+            // 单装模式：优先从当前选择的弹药推断弹药组
+            if (!isMixMode && selectedAmmo != null)
             {
                 var sets = selectedAmmo.AmmoSetDefs;
                 if (sets != null && sets.Count > 0)
-                    return sets.FirstOrDefault(s => IsAmmoSetCompatible(s));
+                {
+                    var compatibleSet = sets.FirstOrDefault(s => IsAmmoSetCompatible(s));
+                    if (compatibleSet != null)
+                        return compatibleSet;
+                }
             }
+            
+            // 单装模式：如果没有选择弹药，使用已绑定的弹药组
+            if (!isMixMode && linkedAmmoSet != null)
+                return linkedAmmoSet;
             
             // 从混装条目推断弹药组
             if (isMixMode && mixEntries.Count > 0)

@@ -66,30 +66,37 @@ namespace Exosuit.CE
             {
                 if (isMixMode)
                 {
-                    // 先找普通槽位
+                    // 收集所有需要装填的弹药类型
+                    var neededAmmo = new List<AmmoDef>();
+                    
+                    // 普通槽位
                     foreach (var entry in mixEntries)
                     {
                         if (entry.IsWildcard) continue;
                         if (entry.AmmoDef != null && entry.CurrentCount < entry.MaxCount)
-                            return entry.AmmoDef;
+                            neededAmmo.Add(entry.AmmoDef);
                     }
                     
-                    // 再找有啥用啥槽位
+                    // 有啥用啥槽位：返回弹药组中任意兼容弹药
                     foreach (var entry in mixEntries)
                     {
                         if (!entry.IsWildcard) continue;
-                        if (entry.CurrentCount >= entry.MaxCount) continue;
+                        if (entry.IsFull) continue;
                         
                         if (linkedAmmoSet != null)
                         {
-                            var compatibleAmmo = linkedAmmoSet.ammoTypes
-                                .Where(l => IsAmmoCompatible(l.ammo))
-                                .ToList();
-                            
-                            if (compatibleAmmo.Count > 0)
-                                return compatibleAmmo.RandomElement().ammo;
+                            foreach (var link in linkedAmmoSet.ammoTypes)
+                            {
+                                if (IsAmmoCompatible(link.ammo) && !neededAmmo.Contains(link.ammo))
+                                    neededAmmo.Add(link.ammo);
+                            }
                         }
                     }
+                    
+                    // 随机返回一种需要的弹药，让龙门架能搬运不同类型
+                    if (neededAmmo.Count > 0)
+                        return neededAmmo.RandomElement();
+                    
                     return null;
                 }
                 return selectedAmmo;
@@ -310,7 +317,21 @@ namespace Exosuit.CE
             {
                 foreach (var entry in mixEntries)
                 {
-                    if (entry.AmmoDef != null && entry.CurrentCount > 0)
+                    if (entry.IsWildcard)
+                    {
+                        // 有啥用啥槽位：从 WildcardAmmo 字典退出每种弹药
+                        foreach (var kvp in entry.WildcardAmmo)
+                        {
+                            if (kvp.Value <= 0) continue;
+                            var ammoThing = ThingMaker.MakeThing(kvp.Key);
+                            ammoThing.stackCount = kvp.Value;
+                            GenPlace.TryPlaceThing(ammoThing, pos, map, ThingPlaceMode.Near);
+                            Log.Message($"[AmmoBackpack] 退出有啥用啥弹药: {kvp.Key.LabelCap} x{kvp.Value} 在 {pos}");
+                        }
+                        entry.WildcardAmmo.Clear();
+                        entry.CurrentCount = 0;
+                    }
+                    else if (entry.AmmoDef != null && entry.CurrentCount > 0)
                     {
                         var ammoThing = ThingMaker.MakeThing(entry.AmmoDef);
                         ammoThing.stackCount = entry.CurrentCount;
