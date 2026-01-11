@@ -649,7 +649,7 @@ namespace Exosuit.CE
         #region IModuleDataTransfer 实现
         
         // 调试开关
-        private const bool TransferDebugLog = true;
+        private const bool TransferDebugLog = false;
         
         private static void LogTransfer(string message)
         {

@@ -239,7 +239,7 @@ namespace Exosuit
         #region 静态回调注册
         
         // 调试开关
-        private const bool DebugLog = true;
+        private const bool DebugLog = false;
         
         private static void Log(string message)
         {

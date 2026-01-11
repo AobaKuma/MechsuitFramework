@@ -10,7 +10,7 @@ namespace Exosuit.CE
     public static class CEPatches
     {
         // 调试开关
-        private const bool DebugLog = true;
+        private const bool DebugLog = false;
         
         private static void Log(string message)
         {
