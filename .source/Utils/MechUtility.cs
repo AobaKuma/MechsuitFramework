@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿// 当白昼倾坠之时
+using RimWorld;
 using RimWorld.BaseGen;
 using System.Collections.Generic;
 using System.Linq;
@@ -238,15 +239,6 @@ namespace Exosuit
     {
         #region 静态回调注册
         
-        // 调试开关
-        private const bool DebugLog = false;
-        
-        private static void Log(string message)
-        {
-            if (DebugLog)
-                Verse.Log.Message($"[MechData] {message}");
-        }
-        
         // 外部模块可以注册的回调，用于在模块转换时保存/恢复自定义数据
         public static event System.Action<Thing> OnInitData;
         public static event System.Action<Thing> OnRestoreToItem;
@@ -311,7 +303,6 @@ namespace Exosuit
             }
             
             // 调用外部模块注册的回调
-            Log($"Init: 调用OnInitData回调, thing={thing.def.defName}, 注册数={OnInitData?.GetInvocationList()?.Length ?? 0}");
             OnInitData?.Invoke(thing);
         }
         public void GetDataFromMech(Thing item)
@@ -336,7 +327,6 @@ namespace Exosuit
             }
             
             // 调用外部模块注册的回调
-            Log($"GetDataFromMech: 调用OnRestoreToItem回调, item={item.def.defName}, 注册数={OnRestoreToItem?.GetInvocationList()?.Length ?? 0}");
             OnRestoreToItem?.Invoke(item);
         }
         public void SetDataToMech(Thing mech)
@@ -376,7 +366,6 @@ namespace Exosuit
             }
             
             // 调用外部模块注册的回调
-            Log($"SetDataToMech: 调用OnRestoreToMech回调, mech={mech.def.defName}, 注册数={OnRestoreToMech?.GetInvocationList()?.Length ?? 0}");
             OnRestoreToMech?.Invoke(mech);
         }
     }

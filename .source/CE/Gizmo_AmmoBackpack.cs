@@ -1,3 +1,4 @@
+// 当白昼倾坠之时
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -312,16 +313,19 @@ namespace Exosuit.CE
             {
                 if (entry.AmmoDef == null) continue;
                 
+                // 确保 ratio 至少为 1
+                int effectiveRatio = System.Math.Max(1, entry.Ratio);
+                
                 if (entry.AmmoDef == lastAmmo)
                 {
-                    count++;
+                    count += effectiveRatio;
                 }
                 else
                 {
                     if (lastAmmo != null && count > 0)
                         cycleGroups.Add((lastAmmo, count));
                     lastAmmo = entry.AmmoDef;
-                    count = 1;
+                    count = effectiveRatio;
                 }
             }
             if (lastAmmo != null && count > 0)
@@ -419,8 +423,12 @@ namespace Exosuit.CE
                 return new Color(1f, 0.3f, 0.3f);
             if (name.Contains("tracer"))
                 return new Color(1f, 1f, 0.3f);
-            if (name.Contains("emp"))
-                return new Color(0.5f, 0.5f, 1f);
+            if (name.Contains("emp") || name.Contains("electro"))
+                return new Color(0.2f, 0.9f, 1f); // 鲜艳的天蓝色
+            if (name.Contains("slug"))
+                return new Color(0.9f, 0.4f, 0.1f); // 明显的深橙色
+            if (name.Contains("buck"))
+                return new Color(0.3f, 1f, 0.3f); // 亮绿色
             
             return new Color(0.8f, 0.8f, 0.8f);
         }

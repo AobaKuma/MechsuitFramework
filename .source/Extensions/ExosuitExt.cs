@@ -1,4 +1,5 @@
-﻿using System;
+﻿// 当白昼倾坠之时
+using System;
 using UnityEngine;
 using Verse;
 
@@ -12,7 +13,7 @@ namespace Exosuit
         public bool RequireAdult = true;
         public bool CanGearOff = true;//false for things like 40k dreadnought.
         public float minArmorBreakdownThreshold = 0.25f;
-        public ThingDef wreckageOverride = ThingDefOf.MF_Building_Wreckage;
+        public ThingDef wreckageOverride = null; // 不要在这里使用 ThingDefOf，会导致初始化顺序警告
         public Vector3 bayRenderOffset = Vector3.zero;
         public float bayRenderScale = 1f;
     }

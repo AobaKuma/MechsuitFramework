@@ -1,3 +1,4 @@
+// 当白昼倾坠之时
 using System.Collections.Generic;
 using System.Linq;
 using CombatExtended;
@@ -15,7 +16,7 @@ namespace Exosuit.CE
     // 实现IReloadableComp支持龙门架自动搬运弹药
     // 实现IAmmoBackpackClearable支持龙门架清空弹药
     // 实现IModuleDataTransfer支持模块转换时保存和恢复弹药数据
-    public partial class CompAmmoBackpack : ThingComp, IModuleExtensionUI, IReloadableComp, IAmmoBackpackClearable, IModuleDataTransfer
+    public partial class CompAmmoBackpack : ThingComp, IModuleExtensionUI, IReloadableComp, IAmmoBackpackClearable, IModuleDataTransfer, IExosuitDestructionHandler, IAmmoStorage
     {
         #region 常量
         
@@ -163,9 +164,15 @@ namespace Exosuit.CE
                     return "WG_AmmoBackpack_HeavyPack".Translate();
                 if (defName.Contains("Light"))
                     return "WG_AmmoBackpack_LightBox".Translate();
-                
                 return "WG_AmmoBackpack_MainPack".Translate();
             }
+        }
+
+        public string StorageName => BackpackDisplayName;
+        public bool IsActive
+        {
+            get => IsActiveBackpack;
+            set => IsActiveBackpack = value;
         }
         
         #endregion

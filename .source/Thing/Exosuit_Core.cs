@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿// 当白昼倾坠之时
+using RimWorld;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -65,18 +66,14 @@ namespace Exosuit
             }
             yield return new Gizmo_HealthPanel(this);
         }
-        /// <summary>
-        /// 衣物状态下对伤害的吸收判断
-        /// </summary>
-        /// <param name="dinfo"></param>
-        /// <returns></returns>
+        // 判定伤害吸收逻辑
         public override bool CheckPreAbsorbDamage(DamageInfo dinfo)
         {
             if (!dinfo.Def.harmsHealth)
             {
                 return true;
             }
-            //先过护盾, 把对其他衣物护盾的检测提前了
+            // 优先处理护盾判定
             foreach (var a in Wearer.apparel.WornApparel)
             {
                 if (a != this && a.TryGetComp(out CompShield c))
@@ -85,10 +82,10 @@ namespace Exosuit
                     if (absorbed) return true;
                 }
             }
-            //低护甲状态有概率被穿透
+            // 低耐久触发穿透判定
             if (HPPercent < ArmorBreakdownThreshold && Rand.Chance(0.25f)) return false;
 
-            //过护甲减伤
+            // 计算护甲减伤
             float dmg = GetPostArmorDamage(ref dinfo);
             if (dmg <= 0)
             {
@@ -103,9 +100,9 @@ namespace Exosuit
                     GenPlace.TryPlaceThing(ThingMaker.MakeThing(RimWorld.ThingDefOf.Filth_Fuel), Wearer.Position, Wearer.Map, ThingPlaceMode.Near);
                 }
             }
-            //摧毁的判断被移动到了OnHealthChanged里
+            // 判定机体毁坏状态
             Health -= dmg;
-            //要是炸了伤害不会溢出给铁驭了（
+            // 防止爆炸伤害溢出
             return true;
         }
         
@@ -117,7 +114,7 @@ namespace Exosuit
             {
                 StatDef armorRatingStat = damageDef.armorCategory.armorRatingStat;
 
-                //如果穿甲*2高於護甲值。有25%機率擊穿
+                // 判定穿甲击穿效果
                 if (Rand.Chance(0.25f) && dinfo.ArmorPenetrationInt * 2 > this.GetStatValue(armorRatingStat))
                 {
                     ArmorUtility.ApplyArmor(ref amount, dinfo.ArmorPenetrationInt, this.GetStatValue(armorRatingStat)/2, null, ref damageDef, Wearer, out _);
@@ -131,9 +128,7 @@ namespace Exosuit
             return amount;
         }
         
-        /// <summary>
-        /// 理论上只该在维护架上，模块有变动时，或者载入存档时被call
-        /// </summary>
+        // 重算模组缓存数据
         public void ModuleRecache()
         {
             modules.Clear();
@@ -200,9 +195,7 @@ namespace Exosuit
         public virtual void PreDestroy(){
             GenExplosion.DoExplosion(Wearer.Position, Wearer.Map, 5, DefDatabase<DamageDef>.GetNamed("Bomb"), null, 5);
         }
-        /// <summary>
-        /// 生成残骸，把小人塞进去，移除全部模块和模块武器
-        /// </summary>
+        // 执行机兵毁坏逻辑
         public void ExosuitDestory()
         {
             PreDestroy();
@@ -224,7 +217,18 @@ namespace Exosuit
             foreach (var m in modules)
             {
                 if (m == this) continue;
-                Wearer.apparel.Remove((Apparel)m);
+                var a = (Apparel)m;
+
+                // 处理组件毁坏逻辑
+                foreach (var comp in a.AllComps)
+                {
+                    if (comp is IExosuitDestructionHandler handler)
+                    {
+                        handler.OnExosuitDestroyed(wreckage);
+                    }
+                }
+
+                Wearer.apparel.Remove(a);
                 m.HitPoints = 1;
                 if (Rand.Chance(0.25f)) wreckage.moduleContainer.Add(MechUtility.Conversion(m));
             }

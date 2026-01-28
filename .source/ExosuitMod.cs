@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿// 当白昼倾坠之时
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Xml;
 using Verse;
+using Mechsuit;
 using static HarmonyLib.AccessTools;
 
 namespace Exosuit
