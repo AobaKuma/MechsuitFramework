@@ -10,6 +10,12 @@ namespace Exosuit
 {
     public static class DebugActionsMech
     {
+        private const bool DebugLog = true;
+        private static void DLog(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message(message);
+        }
         [DebugAction("Mechsuit", "Spawn Hostile Ammo Dragoon", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void SpawnHostileAmmoDragoon()
         {
@@ -26,7 +32,7 @@ namespace Exosuit
             // 强制分配攻击任务，防止其离开地图
             Lord lord = LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(faction, canKidnap: false, canTimeoutOrFlee: false), Find.CurrentMap, new List<Pawn> { pawn });
             
-            Log.Message($"[Mechsuit] Debug: 已生成敌对单位 ({kind.defName}). 派系: {faction.Name}, 任务: 进攻殖民地");
+            DLog($"[Mechsuit] Debug: 已生成敌对单位 ({kind.defName}). 派系: {faction.Name}, 任务: 进攻殖民地");
         }
         
         [DebugAction("Mechsuit", "Check Apparel Comps", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
@@ -38,7 +44,7 @@ namespace Exosuit
                 {
                     foreach (var apparel in p.apparel.WornApparel)
                     {
-                        Log.Message($"[Mechsuit] Apparel: {apparel.def.defName}, Comps: {string.Join(", ", apparel.AllComps.Select(c => c.GetType().Name))}");
+                        DLog($"[Mechsuit] Apparel: {apparel.def.defName}, Comps: {string.Join(", ", apparel.AllComps.Select(c => c.GetType().Name))}");
                     }
                 }
             }

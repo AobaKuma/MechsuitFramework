@@ -16,8 +16,12 @@ namespace Exosuit
     [StaticConstructorOnStartup]
     public class WG_PawnFlyer : PawnFlyer
     {
-        #region 太空弹射...
-        #endregion
+        private const bool DebugLog = false;
+        private static void DLog(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message($"[PawnFlyer] {message}");
+        }
         //发射源建筑		修改人：Anxie,日期：2024-09-09
         public Thing eBay;
 
@@ -167,7 +171,7 @@ namespace Exosuit
             }
             if (!isLanding)
             {
-                Log.Message(GetDirectlyHeldThings().ContentsString);
+                DLog(GetDirectlyHeldThings().ContentsString);
                 pawn.DeSpawn();
                 GenSpawn.Spawn(pawn, new IntVec3(actionTarget.Cell.x, actionTarget.Cell.y, actionTarget.Cell.z + 25 < destMap.AllCells.MaxBy(o => o.z).z ? actionTarget.Cell.z + 25 : destMap.AllCells.MaxBy(o => o.z).z), destMap);
                 pawn.Rotation = Rot4.South;
@@ -230,9 +234,9 @@ namespace Exosuit
                                 pawnStored.SetPositionDirect(target.Cell);
                                 CameraJumper.TryJump(pawnStored);
                             }, null, TargeterMouseAttachment);
-                        }
-                    }, "GeneratingMap".Translate(), true, (Exception x) => { Log.Message("Generatem Map Error:" + x.ToString()); });
                 }
+            }, "GeneratingMap".Translate(), true, (Exception x) => { Verse.Log.Message("Generatem Map Error:" + x.ToString()); });
+        }
             }
             else if (Find.World.worldObjects.AnySettlementAt(destinationTile))
             {
@@ -266,8 +270,8 @@ namespace Exosuit
                                 pawnStored.SetPositionDirect(target.Cell);
                                 CameraJumper.TryJump(pawnStored);
                             }, null, TargeterMouseAttachment);
-                        }
-                    }, "GeneratingMap".Translate(), true, (Exception x) => { Log.Message("Generatem Map Error:" + x.ToString()); });
+                }
+            }, "GeneratingMap".Translate(), true, (Exception x) => { Verse.Log.Message("Generatem Map Error:" + x.ToString()); });
 
 
 

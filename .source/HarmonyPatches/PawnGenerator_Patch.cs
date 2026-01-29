@@ -17,6 +17,13 @@ namespace Exosuit
 
         // 处理外部模块生成钩子
         public static List<IExosuitGenerationHook> GenerationHooks = new();
+        
+        private const bool DebugLog = false;
+        private static void DLog(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message($"[PawnGenerator] {message}");
+        }
 
         static void Postfix(Pawn pawn, PawnGenerationRequest request)
         {
@@ -98,7 +105,7 @@ namespace Exosuit
                             if (ThingMaker.MakeThing(finalFallback) is Apparel replacement)
                             {
                                 pawn.apparel.Wear(replacement, false, true);
-                                if (DebugSettings.godMode) Log.Message($"[Mechsuit] {pawn.LabelShort}: {apparel.def.defName} 不兼容，已替换为 {finalFallback.defName}");
+                                if (DebugSettings.godMode) DLog($"[Mechsuit] {pawn.LabelShort}: {apparel.def.defName} 不兼容，已替换为 {finalFallback.defName}");
                             }
                         }
                         break; // 处理完当前的 apparel

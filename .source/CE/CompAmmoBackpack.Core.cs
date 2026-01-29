@@ -55,6 +55,13 @@ namespace Exosuit.CE
         
         // 多背包支持字段
         private bool isActiveBackpack;  // 默认 false，在 PostSpawnSetup 中初始化
+
+        private const bool DebugLog = false;
+        private static void DLog(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message($"[AmmoBackpack] {message}");
+        }
         
         #endregion
         
@@ -725,7 +732,7 @@ namespace Exosuit.CE
         
         private static void LogTransfer(string message)
         {
-            if (TransferDebugLog)
+            if (DebugLog || TransferDebugLog)
                 Verse.Log.Message($"[AmmoBackpack.Transfer] {message}");
         }
         

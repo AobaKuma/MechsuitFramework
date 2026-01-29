@@ -8,15 +8,19 @@ namespace Exosuit.CE
     [StaticConstructorOnStartup]
     public static class CEMod
     {
+        private const bool DebugLog = false; // CE模块的调试日志开关
+        private static void DLog(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message($"[Exosuit.CE] {message}");
+        }
         static CEMod()
         {
-            Log.Message("[Exosuit] CE兼容模块已加载");
-            
-            // 注册MechData回调，用于模块转换时保存/恢复弹药背包数据
-            Log.Message("[Exosuit] 正在注册生成钩子与数据回调...");
+            DLog("CE兼容模块已加载");
+            DLog("正在注册生成钩子与数据回调...");
             PawnGenerator_Patch.GenerationHooks.Add(new CEAmmoBackpackHook());
             CEPatches.RegisterMechDataCallbacks();
-            Log.Message("[Exosuit] MechData回调注册完成");
+            DLog("MechData回调注册完成");
             
             var harmony = new Harmony("Exosuit.CE");
             harmony.PatchAll();
