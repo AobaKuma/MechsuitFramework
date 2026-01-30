@@ -33,6 +33,7 @@
 	<loadAfter>
 		<li>brrainz.harmony</li>
 		<li>oskarpotocki.vanillafactionsexpanded.core</li>
+		<li>CETeam.CombatExtended</li>
 	</loadAfter>
 	<description>A framework mod that allows you to make your own customizable exosuit with a wide
 		modifiability and repair / maintenance hanger systems.</description>
