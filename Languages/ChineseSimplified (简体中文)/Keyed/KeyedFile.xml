@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 当白昼倾坠之时 -->
 <LanguageData>
+
   <WG_GetIn>驾驶</WG_GetIn>
   <WG_WeaponDropped>在脱离框架后，{0}无法装备所使用的当前武器。</WG_WeaponDropped>
 
@@ -54,9 +56,6 @@
 
   <WG_Disabled_VictimInWalkerCore>无法救助: 伤者受困于框架。</WG_Disabled_VictimInWalkerCore>
 
-  <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
-  <WG_Blunt_CE>MPA</WG_Blunt_CE>
-
   <WG_AutoRepair>自动维修</WG_AutoRepair>
   <WG_AutoRepair_Desc>切换殖民者是否应自动修复龙门架中的受损模块。</WG_AutoRepair_Desc>
 
@@ -108,4 +107,11 @@
   <WG_AutoRepair_NoDamage>机甲已完全修复</WG_AutoRepair_NoDamage>
   <WG_AutoRepair_Working>正在维修...</WG_AutoRepair_Working>
   <WG_AutoRepair_SideOccupied>该侧已有维修臂</WG_AutoRepair_SideOccupied>
+  
+  
+  <WG_CommandStopAttack>停止攻击</WG_CommandStopAttack>
+  <WG_CommandStopAttackDesc>停止当前对目标的强制锁定攻击，恢复自动射击模式。</WG_CommandStopAttackDesc>
+  
+  <WG_CommandManualAttack>手动攻击 ({0})</WG_CommandManualAttack>
+  <WG_CommandManualAttackDesc>命令该炮塔攻击特定目标。</WG_CommandManualAttackDesc>
 </LanguageData>

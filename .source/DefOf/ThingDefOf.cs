@@ -1,15 +1,12 @@
-﻿using RimWorld;
+﻿// 当白昼倾坠之时
+using RimWorld;
 using Verse;
 
 namespace Exosuit
 {
-    [DefOf, StaticConstructorOnStartup]
+    [DefOf]
     public static class ThingDefOf
     {
-        static ThingDefOf()
-        {
-            DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
-        }
         public static ThingDef MF_Building_MaintenanceBay;
 		public static ThingDef MF_Building_ComponentStorage;
 		public static ThingDef MF_Building_Wreckage;

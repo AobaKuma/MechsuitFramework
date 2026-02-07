@@ -1,4 +1,5 @@
-﻿// TODO: 等待拆分为：
+﻿// 当白昼倾坠之时
+// TODO: 等待拆分为：
 // - ITab_Exosuit.cs (~200行) - 构造函数、FillTab、基础字段
 // - ITab_Exosuit.Gizmo.cs (~350行) - Draw_GizmoSlot、交互、菜单
 // - ITab_Exosuit.Stats.cs (~200行) - DrawStatEntries、DrawLoadBar
@@ -33,6 +34,19 @@ namespace Exosuit
         // 当前激活的拓展 UI 组件
         private IModuleExtensionUI activeExtensionUI;
         
+        // 当前激活的顶部拓展 UI 列表
+        private List<IModuleTopExtensionUI> activeTopExtensions = new();
+
+        // 记录主 UI 的屏幕位置供拓展窗口跟随
+        public Rect LastScreenRect { get; private set; }
+
+        // 延展窗口实例引用
+        private Window_ExosuitSideExtension sideExtensionWindow;
+        private Window_ExosuitTopExtension topExtensionWindow;
+
+        // 公开受保护成员供延展窗口使用
+        public Thing SelThingPublic => SelThing;
+        
         #endregion
         
         public ITab_Exosuit()
@@ -41,22 +55,35 @@ namespace Exosuit
             labelKey = "WG_TabMechGear".Translate();
         }
         
-        // 更新窗口大小以适应拓展 UI
+        // 更新窗口大小：保持基础大小以固定 X 按钮位置
         public override void UpdateSize()
         {
             base.UpdateSize();
             
             // 检查是否有拓展 UI
             activeExtensionUI = GetActiveExtensionUI();
+            activeTopExtensions = GetActiveTopExtensions();
             
-            if (activeExtensionUI != null && activeExtensionUI.ShouldShowExtensionUI)
+            // 始终保持基础大小，不随拓展 UI 增长
+            size = new Vector2(BaseWidth, BaseHeight);
+        }
+        
+        private List<IModuleTopExtensionUI> GetActiveTopExtensions()
+        {
+            List<IModuleTopExtensionUI> list = new();
+            if (Parent?.Dummy?.apparel == null) return list;
+            
+            foreach (Apparel apparel in Parent.Dummy.apparel.WornApparel)
             {
-                size = new Vector2(BaseWidth + activeExtensionUI.ExtensionUIWidth, BaseHeight);
+                foreach (ThingComp comp in apparel.AllComps)
+                {
+                    if (comp is IModuleTopExtensionUI topUI && topUI.ShouldShowTopExtension)
+                    {
+                        list.Add(topUI);
+                    }
+                }
             }
-            else
-            {
-                size = new Vector2(BaseWidth, BaseHeight);
-            }
+            return list;
         }
         
         // 获取当前激活的拓展 UI 组件
@@ -104,6 +131,15 @@ namespace Exosuit
             Text.Font = GameFont.Small;
             Rect rect = new(Vector2.zero, size);
             Rect inner = rect.ContractedBy(3f);
+            
+            // 管理延展窗口显示与对齐
+            ManageExtensionWindows();
+
+            // 绘制主内容
+            LastScreenRect = TabRect;
+            Rect mainContentRect = inner;
+            GUI.BeginGroup(mainContentRect);
+            inner = new Rect(0f, 0f, mainContentRect.width, mainContentRect.height);
             //Draw Title
             {
                 using (TextBlock textBlock = new(TextAnchor.UpperRight))
@@ -116,30 +152,6 @@ namespace Exosuit
                 
             }
 
-            //Draw S/L solution 由於這個還沒做所以就沒裝了
-            if (false)
-            {
-                Vector2 slPosition = new(14f, inner.y);
-
-                string text = "Save".Translate();
-                Vector2 size = CalcSize(text);
-                size.Scale(new(1.2f, 1.2f));
-                Rect slgizmoRect = new(slPosition, size);
-                Widgets.ButtonText(slgizmoRect, text);
-                text = "Load".Translate();
-                slgizmoRect.x = slgizmoRect.xMax + 10f;
-                size = CalcSize(text);
-                size.Scale(new(1.2f, 1.2f));
-                slgizmoRect.size = size;
-                Widgets.ButtonText(slgizmoRect, text);
-                text = "UnArm".Translate();
-                slgizmoRect.x = slgizmoRect.xMax + 10f;
-                size = CalcSize(text);
-                size.Scale(new(1.2f, 1.2f));
-                slgizmoRect.size = size;
-                Widgets.ButtonText(slgizmoRect, text);
-            }
-            
             //7个格子
             for (int i = 0; i <= 6; i++)
             {
@@ -152,6 +164,7 @@ namespace Exosuit
                 Rect labelRect = new(new(14f, inner.y), CalcSize(text));
                 Widgets.Label(labelRect, text);
                 LessonAutoActivator.TeachOpportunity(ConceptDef.Named("WG_Gantry_LoadModule"), this.Parent, OpportunityType.GoodToKnow);
+                GUI.EndGroup();
                 return;
             }
             else
@@ -212,45 +225,81 @@ namespace Exosuit
                 }
             }
             
-            // 绘制拓展 UI（如果有）
-            DrawExtensionUI();
+            GUI.EndGroup();
+        }
 
+        // 覆盖关闭逻辑
+        public override void CloseTab()
+        {
+            base.CloseTab();
+            CloseExtensionWindows();
+        }
+
+        public override void TabUpdate()
+        {
+            base.TabUpdate();
+            // 每帧检查：如果当前对象被更换，或者不再可见，立即关闭延展窗口
+            if (SelThing == null || !IsVisible || Find.Selector.SingleSelectedThing != SelThing)
+            {
+                CloseExtensionWindows();
+            }
+        }
+
+        private void CloseExtensionWindows()
+        {
+            if (sideExtensionWindow != null)
+            {
+                sideExtensionWindow.Close(false);
+                sideExtensionWindow = null;
+            }
+            if (topExtensionWindow != null)
+            {
+                topExtensionWindow.Close(false);
+                topExtensionWindow = null;
+            }
+        }
+
+        // 管理侧边和顶部关联窗口的开关
+        private void ManageExtensionWindows()
+        {
+            // 如果主对象不存在，清空并返回
+            if (SelThing == null || !IsVisible)
+            {
+                CloseExtensionWindows();
+                return;
+            }
+
+            // 处理侧边延展
+            if (activeExtensionUI != null && activeExtensionUI.ShouldShowExtensionUI)
+            {
+                if (sideExtensionWindow == null || !Find.WindowStack.IsOpen(sideExtensionWindow))
+                {
+                    sideExtensionWindow = new Window_ExosuitSideExtension(this, activeExtensionUI);
+                    Find.WindowStack.Add(sideExtensionWindow);
+                }
+            }
+            else if (sideExtensionWindow != null)
+            {
+                sideExtensionWindow.Close(false);
+                sideExtensionWindow = null;
+            }
+
+            // 处理顶部延展
+            if (!activeTopExtensions.NullOrEmpty())
+            {
+                if (topExtensionWindow == null || !Find.WindowStack.IsOpen(topExtensionWindow))
+                {
+                    topExtensionWindow = new Window_ExosuitTopExtension(this, activeTopExtensions);
+                    Find.WindowStack.Add(topExtensionWindow);
+                }
+            }
+            else if (topExtensionWindow != null)
+            {
+                topExtensionWindow.Close(false);
+                topExtensionWindow = null;
+            }
         }
         
-        // 绘制模块拓展 UI
-        private void DrawExtensionUI()
-        {
-            if (activeExtensionUI == null || !activeExtensionUI.ShouldShowExtensionUI) return;
-            
-            // 拓展 UI 区域在基础窗口右侧
-            Rect extensionRect = new(
-                BaseWidth,
-                0f,
-                activeExtensionUI.ExtensionUIWidth,
-                BaseHeight
-            );
-            
-            // 绘制分隔线
-            Widgets.DrawLineVertical(extensionRect.x, extensionRect.y + 6f, extensionRect.height - 12f);
-            
-            // 绘制拓展 UI 内容
-            Rect innerRect = extensionRect.ContractedBy(6f);
-            
-            // 标题
-            Text.Font = GameFont.Small;
-            Rect titleRect = new(innerRect.x, innerRect.y, innerRect.width, 24f);
-            Widgets.Label(titleRect, activeExtensionUI.ExtensionUITitle);
-            
-            // 内容区域
-            Rect contentRect = new(
-                innerRect.x,
-                innerRect.y + 28f,
-                innerRect.width,
-                innerRect.height - 28f
-            );
-            
-            activeExtensionUI.DrawExtensionUI(contentRect);
-        }
 
         //Gizmo Components
         public void Draw_GizmoSlot(int Order)

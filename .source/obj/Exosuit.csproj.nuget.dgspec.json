@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj": {}
+    "d:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj": {}
   },
   "projects": {
-    "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj": {
+    "d:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj",
+        "projectUniqueName": "d:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj",
         "projectName": "Exosuit",
-        "projectPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj",
+        "projectPath": "d:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\Exosuit.csproj",
         "packagesPath": "C:\\Users\\wcnnn\\.nuget\\packages\\",
-        "outputPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\obj\\",
+        "outputPath": "d:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\MechsuitFramework\\.source\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

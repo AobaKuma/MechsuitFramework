@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-
+<!-- 当白昼倾坠之时 -->
 <LanguageData>
+
   <WG_GetIn>Pilot</WG_GetIn>
 
   <WG_WeaponDropped>After leaving the frame, {0} cannot equip and dropped the weapon.</WG_WeaponDropped>
@@ -56,9 +57,6 @@
 
   <WG_Disabled_VictimInWalkerCore>Cannot rescue: injury in Exosuit.</WG_Disabled_VictimInWalkerCore>
 
-  <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
-  <WG_Blunt_CE>MPA</WG_Blunt_CE>
-
   <WG_AutoRepair>Auto repair</WG_AutoRepair>
   <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in this gantry.</WG_AutoRepair_Desc>
 
@@ -92,7 +90,7 @@
   <WG_PendingRemove>Removing</WG_PendingRemove>
   <WG_PendingReplace>Replacing</WG_PendingReplace>
   
-  <!-- Core work in progress -->
+  <!-- 核心工作流程 -->
   <WG_CoreWorkInProgress>Core work in progress, cannot operate</WG_CoreWorkInProgress>
   <WG_CancelCoreWork>Cancel core work</WG_CancelCoreWork>
   
@@ -113,4 +111,10 @@
   <WG_AutoRepair_Working>Repairing...</WG_AutoRepair_Working>
   <WG_AutoRepair_SideOccupied>This side already has a repair arm</WG_AutoRepair_SideOccupied>
   
+    
+  <WG_CommandStopAttack>Stop attacking</WG_CommandStopAttack>
+  <WG_CommandStopAttackDesc>Stop the current forced attack and return to auto-fire mode.</WG_CommandStopAttackDesc>
+  
+  <WG_CommandManualAttack>Manual Attack ({0})</WG_CommandManualAttack>
+  <WG_CommandManualAttackDesc>Order this turret to attack a specific target.</WG_CommandManualAttackDesc>
 </LanguageData>

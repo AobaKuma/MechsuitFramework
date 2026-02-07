@@ -1,3 +1,4 @@
+// 当白昼倾坠之时
 using System.Collections.Generic;
 using System.Linq;
 using CombatExtended;
@@ -8,7 +9,7 @@ using Verse.Sound;
 
 namespace Exosuit.CE
 {
-    // CompAmmoBackpack的混装模式UI绘制部分
+    // 绘制混装模式UI
     public partial class CompAmmoBackpack
     {
         #region 混装模式 UI
@@ -34,19 +35,19 @@ namespace Exosuit.CE
             
             Text.Font = GameFont.Tiny;
             
-            // 射击循环 + 弹药条（横向布局）
+            // 绘制射击循环与弹药条
             DrawCycleAndBarRow(ref curY, rect);
             curY += 4f;
             
             DrawMixEntries(ref curY, rect);
             
-            // 添加槽位 + 预设按钮（横向布局）
+            // 绘制添加槽位与预设按钮
             DrawAddAndPresetRow(ref curY, rect);
             
             curY += 6f;
         }
         
-        // 射击循环+弹药条
+        // 绘制射击循环与弹药条
         private void DrawCycleAndBarRow(ref float curY, Rect rect)
         {
             float cycleWidth = 0f;
@@ -79,7 +80,7 @@ namespace Exosuit.CE
             curY += 20f;
         }
         
-        // 添加槽位+预设按钮
+        // 绘制功能按钮组
         private void DrawAddAndPresetRow(ref float curY, Rect rect)
         {
             float btnWidth = (rect.width - 8f) / 3f;
@@ -244,7 +245,7 @@ namespace Exosuit.CE
             curY += barHeight + 4f;
         }
         
-        // 在指定矩形内绘制混装弹药条
+        // 绘制混装弹药条
         private void DrawMixAmmoBarInRect(Rect barRect)
         {
             Widgets.DrawBoxSolid(barRect, new Color(0.1f, 0.1f, 0.1f));
@@ -349,7 +350,7 @@ namespace Exosuit.CE
             
             float x = rect.x;
             
-            // 图标/随机模式切换
+            // 切换随机模式
             Rect wildcardRect = new(x + 2f, rect.y + 3f, 20f, 20f);
             if (entry.CurrentCount == 0)
             {
@@ -397,7 +398,7 @@ namespace Exosuit.CE
             }
             else
             {
-                // 检查当前弹药组中是否有重复的ammoClass
+                // 检查重复弹药分类
                 bool hasDuplicateClass = false;
                 if (entry.AmmoDef != null && linkedAmmoSet != null)
                 {
@@ -427,7 +428,7 @@ namespace Exosuit.CE
             }
             x += nameWidth + 2f;
             
-            // Ratio 编辑
+            // 编辑混装比例
             if (entry.CurrentCount == 0)
             {
                 Rect minusRect = new(x, rect.y + 3f, 18f, rowHeight - 6f);
@@ -492,7 +493,7 @@ namespace Exosuit.CE
             
             var options = new List<FloatMenuOption>();
             
-            // 检查是否有重复的ammoClass
+            // 检查重复弹药分类
             var ammoClassCount = new Dictionary<string, int>();
             foreach (var link in ammoSet.ammoTypes)
             {
@@ -510,7 +511,7 @@ namespace Exosuit.CE
                 var ammo = link.ammo;
                 string className = ammo.ammoClass?.defName ?? "Unknown";
                 
-                // 如果同类型有多个弹药，显示完整名称
+                // 处理重复分类标签
                 string label = ammoClassCount[className] > 1 
                     ? ammo.LabelCap 
                     : GetAmmoShortLabel(ammo, false);

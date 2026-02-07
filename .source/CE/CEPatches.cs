@@ -1,3 +1,4 @@
+// 当白昼倾坠之时
 using System.Collections.Generic;
 using CombatExtended;
 using HarmonyLib;
@@ -444,6 +445,21 @@ namespace Exosuit.CE
             return activeBackpack ?? firstBackpack;
         }
         
+        public static List<IAmmoStorage> GetAllAmmoStorages(Pawn pawn)
+        {
+            var result = new List<IAmmoStorage>();
+            if (pawn?.apparel == null) return result;
+            foreach (var apparel in pawn.apparel.WornApparel)
+            {
+                foreach (var comp in apparel.AllComps)
+                {
+                    if (comp is IAmmoStorage storage)
+                        result.Add(storage);
+                }
+            }
+            return result;
+        }
+
         // 获取所有弹药背包
         public static List<CompAmmoBackpack> GetAllAmmoBackpacks(Pawn pawn)
         {

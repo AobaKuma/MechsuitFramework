@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 当白昼倾坠之时 -->
 <LanguageData>
   
   <!-- Ammo Backpack UI -->
@@ -85,4 +86,18 @@
   <WG_AmmoBackpack_ColorRed>Red</WG_AmmoBackpack_ColorRed>
   <WG_AmmoBackpack_ColorGray>Gray</WG_AmmoBackpack_ColorGray>
   
+  <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
+  <WG_Blunt_CE>MPA</WG_Blunt_CE>
+
+  <!-- Turret Ammo -->
+  <WG_TurretAmmo_Label>Turret Ammo</WG_TurretAmmo_Label>
+  <WG_TurretAmmo_Selected>Ammo:</WG_TurretAmmo_Selected>
+  <WG_TurretAmmo_None>None</WG_TurretAmmo_None>
+  <WG_TurretAmmo_AllowBackpack>Allow backpack feed</WG_TurretAmmo_AllowBackpack>
+  <WG_TurretAmmo_NoAmmoSet>No ammo set configured</WG_TurretAmmo_NoAmmoSet>
+  <WG_TurretAmmo_NoCompatible>No compatible ammo types</WG_TurretAmmo_NoCompatible>
+  <WG_TurretAmmo_NoAmmo>No ammo loaded</WG_TurretAmmo_NoAmmo>
+  <WG_TurretAmmo_Status>{0}: {1}/{2}</WG_TurretAmmo_Status>
+  <WG_TurretAmmo_BackpackEnabled>Backpack feed: Enabled</WG_TurretAmmo_BackpackEnabled>
+
 </LanguageData>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 当白昼倾坠之时 -->
 <LanguageData>
   
   <!-- 弹药背包 UI -->
@@ -85,4 +86,18 @@
   <WG_AmmoBackpack_ColorRed>红色</WG_AmmoBackpack_ColorRed>
   <WG_AmmoBackpack_ColorGray>灰色</WG_AmmoBackpack_ColorGray>
   
+  <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
+  <WG_Blunt_CE>MPA</WG_Blunt_CE>
+
+  <!-- 炮塔弹药 -->
+  <WG_TurretAmmo_Label>炮塔弹药</WG_TurretAmmo_Label>
+  <WG_TurretAmmo_Selected>弹药:</WG_TurretAmmo_Selected>
+  <WG_TurretAmmo_None>无</WG_TurretAmmo_None>
+  <WG_TurretAmmo_AllowBackpack>允许弹药箱供弹</WG_TurretAmmo_AllowBackpack>
+  <WG_TurretAmmo_NoAmmoSet>未配置弹药组</WG_TurretAmmo_NoAmmoSet>
+  <WG_TurretAmmo_NoCompatible>无兼容弹药类型</WG_TurretAmmo_NoCompatible>
+  <WG_TurretAmmo_NoAmmo>未装填弹药</WG_TurretAmmo_NoAmmo>
+  <WG_TurretAmmo_Status>{0}: {1}/{2}</WG_TurretAmmo_Status>
+  <WG_TurretAmmo_BackpackEnabled>弹药箱供弹: 已启用</WG_TurretAmmo_BackpackEnabled>
+
 </LanguageData>

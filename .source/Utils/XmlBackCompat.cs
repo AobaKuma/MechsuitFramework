@@ -17,12 +17,19 @@ namespace Exosuit
         public List<string> classReplacedList;
         public Dictionary<string, string> ReplacePairs => Enumerable.Range(0, targetClassList.Count).ToDictionary(i => targetClassList[i],
                                                 i => classReplacedList[i]);
+        private const bool DebugLog = false;
+        private static void DLog(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message($"[XmlBackCompat] {message}");
+        }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void ProcessNode(XmlNode n)
         {
 
             if (n.Value != null && ReplacePairs.TryGetValue(n.Value, out var v))
             {
+                DLog($"{n.Value} => {v}");
                 n.Value = v;
             }
         }
@@ -30,7 +37,7 @@ namespace Exosuit
         {
             try
             {
-                Log.Message(string.Join(','+Environment.NewLine, ReplacePairs.Select(kvp => $"\"{kvp.Key}\" => {kvp.Value}")));
+                DLog(string.Join(','+Environment.NewLine, ReplacePairs.Select(kvp => $"\"{kvp.Key}\" => {kvp.Value}")));
             }
             catch (Exception ex)
             {

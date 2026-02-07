@@ -1,3 +1,4 @@
+// 当白昼倾坠之时
 using System.Collections.Generic;
 using System.Linq;
 using CombatExtended;
@@ -15,7 +16,7 @@ namespace Exosuit.CE
     // 实现IReloadableComp支持龙门架自动搬运弹药
     // 实现IAmmoBackpackClearable支持龙门架清空弹药
     // 实现IModuleDataTransfer支持模块转换时保存和恢复弹药数据
-    public partial class CompAmmoBackpack : ThingComp, IModuleExtensionUI, IReloadableComp, IAmmoBackpackClearable, IModuleDataTransfer
+    public partial class CompAmmoBackpack : ThingComp, IModuleExtensionUI, IReloadableComp, IAmmoBackpackClearable, IModuleDataTransfer, IExosuitDestructionHandler, IAmmoStorage
     {
         #region 常量
         
@@ -54,6 +55,13 @@ namespace Exosuit.CE
         
         // 多背包支持字段
         private bool isActiveBackpack;  // 默认 false，在 PostSpawnSetup 中初始化
+
+        private const bool DebugLog = false;
+        private static void DLog(string message)
+        {
+            if (DebugLog)
+                Verse.Log.Message($"[AmmoBackpack] {message}");
+        }
         
         #endregion
         
@@ -163,9 +171,15 @@ namespace Exosuit.CE
                     return "WG_AmmoBackpack_HeavyPack".Translate();
                 if (defName.Contains("Light"))
                     return "WG_AmmoBackpack_LightBox".Translate();
-                
                 return "WG_AmmoBackpack_MainPack".Translate();
             }
+        }
+
+        public string StorageName => BackpackDisplayName;
+        public bool IsActive
+        {
+            get => IsActiveBackpack;
+            set => IsActiveBackpack = value;
         }
         
         #endregion
@@ -718,7 +732,7 @@ namespace Exosuit.CE
         
         private static void LogTransfer(string message)
         {
-            if (TransferDebugLog)
+            if (DebugLog || TransferDebugLog)
                 Verse.Log.Message($"[AmmoBackpack.Transfer] {message}");
         }
         
