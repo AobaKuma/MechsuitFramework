@@ -155,8 +155,7 @@
     <label>heavy ammo backpack</label>
     <description>A large belt-fed ammunition backpack module with double capacity.</description>
     <graphicData>
-      <texPath>Things/Item/Module_A</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/AmmoDrum/apparel_north</texPath>
     </graphicData>
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
@@ -167,6 +166,30 @@
       <EquipDelay>3</EquipDelay>
     </statBases>
     <tickerType>Normal</tickerType>
+	<apparel>
+      <wornGraphicPath>Things/AmmoDrum/apparel</wornGraphicPath>
+      <drawData>
+        <scale>1.3</scale>
+        <dataSouth>
+          <layer>-2</layer>
+          <offset>(0,0,0.5)</offset>
+        </dataSouth>
+        <dataEast>
+          <layer>5</layer>
+          <offset>(-0.75,0,0.7)</offset>
+		  <rotationOffset>60</rotationOffset>
+        </dataEast>
+        <dataWest>
+          <layer>5</layer>
+          <offset>(0.75,0,0.7)</offset>
+		  <rotationOffset>-60</rotationOffset>
+        </dataWest>
+        <dataNorth>
+          <layer>10</layer>
+          <offset>(0,0,0.5)</offset>
+        </dataNorth>
+      </drawData>
+    </apparel>
     <comps>
       <li Class="Exosuit.CompProperties_ExosuitModule">
         <EquipedThingDef>MF_Apparel_AmmoBackpack_Heavy</EquipedThingDef>
@@ -189,8 +212,8 @@
     <label>compact ammo box</label>
     <description>A lightweight ammunition box mounted on the left arm.</description>
     <graphicData>
-      <texPath>Things/Item/Module_AL</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <texPath>Things/Ammobox/apparel_south</texPath>
     </graphicData>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
@@ -201,6 +224,57 @@
       <EquipDelay>1</EquipDelay>
     </statBases>
     <tickerType>Normal</tickerType>
+	<apparel>
+      <wornGraphicPath>Things/Ammobox/apparel</wornGraphicPath>
+      <drawData>
+        <scale>1.2</scale>
+        <dataSouth>
+          <offset>(0.65,0,0.05)</offset>
+        </dataSouth>
+        <dataNorth>
+          <offset>(-0.60,0,0.15)</offset>
+          <layer>0</layer>
+        </dataNorth>
+        <dataWest>
+          <offset>(0.0,0,-0.1)</offset>
+          <layer>64</layer>
+        </dataWest>
+        <dataEast>
+          <offset>(0.4,0,0.35)</offset>
+          <layer>-1</layer>
+        </dataEast>
+      </drawData>
+	  <!--<renderNodeProperties>
+		<li>
+			<nodeClass>WalkerGear.PawnRenderNode_ApparelColor</nodeClass>
+            <shaderTypeDef>CutoutComplex</shaderTypeDef>
+            <workerClass>PawnRenderNodeWorker</workerClass>
+            <parentTagDef>WGApparelBody</parentTagDef>
+            <baseLayer>30</baseLayer>
+            <drawSize>1.3</drawSize>
+            <pawnType>Any</pawnType>
+            <useGraphic>true</useGraphic>
+			<texPath>Things/Ammobox/apparel</texPath>
+		  <drawData>
+			<dataSouth>
+			  <offset>(0.65,0,0.05)</offset>
+			</dataSouth>
+			<dataNorth>
+			  <offset>(-0.60,0,0.15)</offset>
+			  <layer>0</layer>
+			</dataNorth>
+			<dataWest>
+			  <offset>(0.0,0,-0.1)</offset>
+			  <layer>64</layer>
+			</dataWest>
+			<dataEast>
+			  <offset>(0.4,0,0.35)</offset>
+			  <layer>-1</layer>
+			</dataEast>
+		  </drawData>
+		</li>
+	  </renderNodeProperties>-->
+    </apparel>
     <comps>
       <li Class="Exosuit.CompProperties_ExosuitModule">
         <EquipedThingDef>MF_Apparel_AmmoBackpack_Light</EquipedThingDef>
