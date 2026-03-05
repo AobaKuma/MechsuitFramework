@@ -13,8 +13,8 @@
     <designationCategory>Misc</designationCategory>
     <passability>Standable</passability>
     <surfaceType>Item</surfaceType>
-
   </ThingDef>
+
   <!-- 停泊點 -->
   <ThingDef ParentName="MaintanenceBayBase">
     <defName>MF_Building_ParkingSpot</defName>
@@ -64,7 +64,7 @@
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
     <modExtensions>
-      <li Class="Exosuit.BayExtension"/>
+      <li Class="Exosuit.BayExtension" />
     </modExtensions>
   </ThingDef>
 
@@ -87,6 +87,7 @@
     </statBases>
     <costList>
       <Steel>200</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
     </costList>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <useHitPoints>true</useHitPoints>
@@ -108,10 +109,11 @@
         <li>Production</li>
       </buildingTags>
       <relatedBuildCommands>
-          <li>MF_Building_ComponentStorage</li>
-          <li>MF_Building_PayloadStorage</li>
+        <li>MF_Building_ComponentStorage</li>
+        <li>MF_Building_PayloadStorage</li>
         <li>MF_Building_ScaffoldStair</li>
         <li>MF_Building_Scaffold</li>
+        <li>MF_Building_AutoRepairArm</li>
       </relatedBuildCommands>
     </building>
     <comps>
@@ -250,7 +252,7 @@
     </graphicData>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <statBases>
-      <MaxHitPoints>50</MaxHitPoints> 
+      <MaxHitPoints>50</MaxHitPoints>
       <Mass>4</Mass>
       <WorkToBuild>250</WorkToBuild>
     </statBases>
@@ -290,7 +292,7 @@
         <li>MF_Building_ComponentStorage</li>
       </relatedBuildCommands>
       <!-- TODO -->
-      <spawnedConceptLearnOpportunity>WG_Module_Repair</spawnedConceptLearnOpportunity> 
+      <spawnedConceptLearnOpportunity>WG_Module_Repair</spawnedConceptLearnOpportunity>
     </building>
     <comps>
       <li Class="CompProperties_Facility">
@@ -405,7 +407,7 @@
             <texPath>Things/Building/ScaffoldStair_b</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(4,4)</drawSize>
-            <drawOffset>(0,-0.0025,0.345)</drawOffset>  
+            <drawOffset>(0,-0.0025,0.345)</drawOffset>
           </li>
         </extraGraphic>
       </li>
@@ -462,7 +464,7 @@
       <texPath>Things/Building/AutoRepairArm</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(4,4)</drawSize>
-      <drawOffset>(0,0.002,0)</drawOffset>
+      <drawOffset>(0,0.004,0)</drawOffset>
     </graphicData>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <canOverlapZones>false</canOverlapZones>
@@ -473,15 +475,16 @@
       <MaxHitPoints>150</MaxHitPoints>
     </statBases>
     <costList>
-      <Steel>120</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
+      <Steel>200</Steel>
+      <ComponentIndustrial>14</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <useHitPoints>true</useHitPoints>
     <rotatable>true</rotatable>
     <size>(3,1)</size>
     <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
+    <fillPercent>0.5</fillPercent>
     <designationCategory>Misc</designationCategory>
     <uiOrder>13</uiOrder>
     <passability>PassThroughOnly</passability>
@@ -501,9 +504,19 @@
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>50</basePowerConsumption>
+        <basePowerConsumption>500</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Flickable" />
+      <li Class="Exosuit.CompProperties_BuildingExtraRenderer">
+        <extraGraphic>
+          <li>
+            <texPath>Things/Building/AutoRepairArm_top</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <drawOffset>(0,0.1,0)</drawOffset>
+          </li>
+        </extraGraphic>
+      </li>
     </comps>
   </ThingDef>
 </Defs>
