@@ -22,7 +22,13 @@ namespace Exosuit.CE
 
             foreach (var apparel in pawn.apparel.WornApparel)
             {
-                apparel.TryGetComp<CompAmmoBackpack>()?.InitializeHostileAmmo();
+                var backpack = apparel.TryGetComp<CompAmmoBackpack>();
+                if (backpack != null)
+                {
+                    backpack.InitializeHostileAmmo();
+                    // 同步背包缓存
+                    CEPatches.RegisterBackpack(pawn, backpack);
+                }
                 apparel.TryGetComp<CompTurretAmmo>()?.InitializeHostileAmmo();
             }
         }

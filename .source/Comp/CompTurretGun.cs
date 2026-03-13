@@ -1,4 +1,4 @@
-﻿// 当白昼倾坠之时
+// 当白昼倾坠之时
 using RimWorld;
 using System.Collections.Generic;
 using Verse.AI;
@@ -245,6 +245,8 @@ namespace Mechsuit
                 gun = parent;
             }
             subGunRegistry[gun] = this;
+            // 重置VerbTracker，确保得到全新Verb实例
+            verbTracker = new VerbTracker(this);
             UpdateGunVerbs();
         }
 
@@ -278,12 +280,12 @@ namespace Mechsuit
         {
             base.CompTick();
 
-            // 自动重连丢失数据
+            // 检测 Verb 丢失则重建
             if ((VerbTracker.AllVerbs.Count == 0 || AttackVerb == null) && gun != null && (gun.def.verbs?.Count > 0))
             {
-                if (parent.IsHashIntervalTick(120)) 
+                if (parent.IsHashIntervalTick(120))
                 {
-                    Log.Message($"[MF炮塔] Tick中检测到Verb丢失，尝试重连: {parent.def.defName}");
+                    verbTracker = new VerbTracker(this);
                     UpdateGunVerbs();
                 }
             }
@@ -312,7 +314,7 @@ namespace Mechsuit
             {
                 // 扫描射程内潜在威胁
                 IAttackTarget potentialTarget = null;
-                if (PawnOwner.Spawned && PawnOwner.IsHashIntervalTick(60)) // 每秒扫描一次潜在威胁
+                if (PawnOwner.Spawned && PawnOwner.IsHashIntervalTick(60) && AttackVerb != null)
                 {
                     potentialTarget = AttackTargetFinder.BestShootTargetFromCurrentPosition(this, TargetScanFlags.NeedAutoTargetable | TargetScanFlags.NeedThreat | TargetScanFlags.NeedLOSToAll);
                 }

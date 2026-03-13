@@ -190,8 +190,14 @@ namespace Exosuit.CE
         {
             base.PostSpawnSetup(respawningAfterLoad);
             
-            // 加载时不重新初始化激活状态
-            if (respawningAfterLoad) return;
+            // 加载时重建缓存
+            if (respawningAfterLoad)
+            {
+                var loadWearer = Wearer;
+                if (loadWearer != null)
+                    CEPatches.RegisterBackpack(loadWearer, this);
+                return;
+            }
             
             // 新安装的背包：检查是否已有同弹药组的激活背包
             var wearer = Wearer;

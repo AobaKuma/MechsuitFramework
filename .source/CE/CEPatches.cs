@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using CombatExtended;
 using HarmonyLib;
+using RimWorld;
 using Verse;
 
 namespace Exosuit.CE
 {
     // CE弹药系统Patch，实现弹链供弹
-    // 单装模式和混装模式完全分离处理
     [HarmonyPatch]
     public static class CEPatches
     {
@@ -22,6 +22,60 @@ namespace Exosuit.CE
         
         // 记录来自弹药背包的虚拟弹药
         private static readonly Dictionary<Thing, CompAmmoBackpack> AmmoFromBackpack = new();
+        
+        #region 背包实例缓存
+        
+        // Pawn ID → 已穿戴的全部弹药背包
+        internal static readonly Dictionary<int, List<CompAmmoBackpack>> PawnBackpackCache = new();
+        
+        [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Wear))]
+        [HarmonyPostfix]
+        public static void Wear_Postfix(Pawn_ApparelTracker __instance, Apparel newApparel)
+        {
+            var comp = newApparel.TryGetComp<CompAmmoBackpack>();
+            if (comp == null) return;
+            
+            int id = __instance.pawn.thingIDNumber;
+            if (!PawnBackpackCache.TryGetValue(id, out var list))
+            {
+                list = new List<CompAmmoBackpack>();
+                PawnBackpackCache[id] = list;
+            }
+            if (!list.Contains(comp))
+                list.Add(comp);
+        }
+        
+        [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Remove))]
+        [HarmonyPostfix]
+        public static void Remove_Postfix(Pawn_ApparelTracker __instance, Apparel ap)
+        {
+            var comp = ap.TryGetComp<CompAmmoBackpack>();
+            if (comp == null) return;
+            
+            int id = __instance.pawn.thingIDNumber;
+            if (!PawnBackpackCache.TryGetValue(id, out var list)) return;
+            
+            list.Remove(comp);
+            if (list.Count == 0)
+                PawnBackpackCache.Remove(id);
+        }
+        
+        // 注册单个como，供加载和NPC入口调用
+        internal static void RegisterBackpack(Pawn pawn, CompAmmoBackpack comp)
+        {
+            if (pawn == null || comp == null) return;
+            
+            int id = pawn.thingIDNumber;
+            if (!PawnBackpackCache.TryGetValue(id, out var list))
+            {
+                list = new List<CompAmmoBackpack>();
+                PawnBackpackCache[id] = list;
+            }
+            if (!list.Contains(comp))
+                list.Add(comp);
+        }
+        
+        #endregion
         
         #region Notify_ShotFired Patch，开火时从背包消耗弹药
         
@@ -388,74 +442,58 @@ namespace Exosuit.CE
         // 获取与武器弹药组匹配的激活背包
         public static CompAmmoBackpack GetAmmoBackpackForWeapon(Pawn pawn, CompAmmoUser compAmmo)
         {
-            if (pawn?.apparel == null || compAmmo == null) return null;
+            if (pawn == null || compAmmo == null) return null;
+            if (!PawnBackpackCache.TryGetValue(pawn.thingIDNumber, out var backpacks)) return null;
             
             var weaponAmmoSet = compAmmo.Props?.ammoSet;
             if (weaponAmmoSet == null) return null;
             
-            CompAmmoBackpack matchingActiveBackpack = null;
-            CompAmmoBackpack matchingFirstBackpack = null;
-            
-            foreach (var apparel in pawn.apparel.WornApparel)
+            CompAmmoBackpack firstMatch = null;
+            bool hasDestroyed = false;
+            foreach (var bp in backpacks)
             {
-                var comp = apparel.TryGetComp<CompAmmoBackpack>();
-                if (comp == null) continue;
-                
-                // 检查背包弹药组是否与武器匹配
-                var backpackAmmoSet = comp.GetCurrentAmmoSet();
-                Log($"GetBackpack: 背包={apparel.def.defName}, backpackAmmoSet={backpackAmmoSet?.defName}, weaponAmmoSet={weaponAmmoSet.defName}, IsMixMode={comp.IsMixMode}, SelectedAmmo={comp.SelectedAmmo?.defName}");
-                if (backpackAmmoSet != weaponAmmoSet) continue;
-                
-                matchingFirstBackpack ??= comp;
-                
-                if (comp.IsActiveBackpack)
-                {
-                    matchingActiveBackpack = comp;
-                    break;
-                }
+                if (bp.parent.Destroyed) { hasDestroyed = true; continue; }
+                if (bp.GetCurrentAmmoSet() != weaponAmmoSet) continue;
+                if (bp.IsActiveBackpack) return bp;
+                firstMatch ??= bp;
+            }
+            // 延迟清理已销毁引用
+            if (hasDestroyed)
+            {
+                backpacks.RemoveAll(b => b.parent.Destroyed);
+                if (backpacks.Count == 0) PawnBackpackCache.Remove(pawn.thingIDNumber);
             }
             
-            var result = matchingActiveBackpack ?? matchingFirstBackpack;
-            Log($"GetBackpack: 返回={result != null}, IsActive={result?.IsActiveBackpack}");
-            return result;
+            if (DebugLog) Log($"GetBackpack: 返回={firstMatch != null}, IsActive={firstMatch?.IsActiveBackpack}");
+            return firstMatch;
         }
         
         // 获取当前激活的弹药背包
         public static CompAmmoBackpack GetAmmoBackpack(Pawn pawn)
         {
-            if (pawn?.apparel == null) return null;
+            if (pawn == null) return null;
+            if (!PawnBackpackCache.TryGetValue(pawn.thingIDNumber, out var backpacks)) return null;
             
-            CompAmmoBackpack activeBackpack = null;
-            CompAmmoBackpack firstBackpack = null;
-            
-            foreach (var apparel in pawn.apparel.WornApparel)
+            CompAmmoBackpack first = null;
+            foreach (var bp in backpacks)
             {
-                var comp = apparel.TryGetComp<CompAmmoBackpack>();
-                if (comp == null) continue;
-                
-                firstBackpack ??= comp;
-                
-                if (comp.IsActiveBackpack)
-                {
-                    activeBackpack = comp;
-                    break;
-                }
+                if (bp.parent.Destroyed) continue;
+                first ??= bp;
+                if (bp.IsActiveBackpack) return bp;
             }
-            
-            return activeBackpack ?? firstBackpack;
+            return first;
         }
         
         public static List<IAmmoStorage> GetAllAmmoStorages(Pawn pawn)
         {
             var result = new List<IAmmoStorage>();
-            if (pawn?.apparel == null) return result;
-            foreach (var apparel in pawn.apparel.WornApparel)
+            if (pawn == null) return result;
+            if (!PawnBackpackCache.TryGetValue(pawn.thingIDNumber, out var backpacks)) return result;
+            
+            foreach (var bp in backpacks)
             {
-                foreach (var comp in apparel.AllComps)
-                {
-                    if (comp is IAmmoStorage storage)
-                        result.Add(storage);
-                }
+                if (!bp.parent.Destroyed && bp is IAmmoStorage storage)
+                    result.Add(storage);
             }
             return result;
         }
@@ -463,43 +501,33 @@ namespace Exosuit.CE
         // 获取所有弹药背包
         public static List<CompAmmoBackpack> GetAllAmmoBackpacks(Pawn pawn)
         {
-            var result = new List<CompAmmoBackpack>();
-            if (pawn?.apparel == null) return result;
+            if (pawn == null) return new List<CompAmmoBackpack>();
+            if (!PawnBackpackCache.TryGetValue(pawn.thingIDNumber, out var cached)) return new List<CompAmmoBackpack>();
             
-            foreach (var apparel in pawn.apparel.WornApparel)
+            var result = new List<CompAmmoBackpack>(cached.Count);
+            foreach (var bp in cached)
             {
-                var comp = apparel.TryGetComp<CompAmmoBackpack>();
-                if (comp != null)
-                    result.Add(comp);
+                if (!bp.parent.Destroyed)
+                    result.Add(bp);
             }
-            
             return result;
         }
         
         // 获取指定弹药组的激活背包
         public static CompAmmoBackpack GetAmmoBackpackForAmmoSet(Pawn pawn, AmmoSetDef ammoSet)
         {
-            if (pawn?.apparel == null || ammoSet == null) return null;
+            if (pawn == null || ammoSet == null) return null;
+            if (!PawnBackpackCache.TryGetValue(pawn.thingIDNumber, out var backpacks)) return null;
             
-            var backpacks = GetAllAmmoBackpacks(pawn);
-            if (backpacks.Count == 0) return null;
-            
+            CompAmmoBackpack firstMatch = null;
             foreach (var bp in backpacks)
             {
-                if (!bp.IsActiveBackpack) continue;
-                var bpAmmoSet = bp.GetCurrentAmmoSet();
-                if (bpAmmoSet == ammoSet)
-                    return bp;
+                if (bp.parent.Destroyed) continue;
+                if (bp.GetCurrentAmmoSet() != ammoSet) continue;
+                if (bp.IsActiveBackpack) return bp;
+                firstMatch ??= bp;
             }
-            
-            foreach (var bp in backpacks)
-            {
-                var bpAmmoSet = bp.GetCurrentAmmoSet();
-                if (bpAmmoSet == ammoSet)
-                    return bp;
-            }
-            
-            return null;
+            return firstMatch;
         }
         
         // 检查弹药是否在武器的弹药组中
