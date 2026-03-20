@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\stat\\statworker_module.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:stat\\statworker_module.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\comp\\compfuelcell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:comp\\compfuelcell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\defof\\wg_statcategorydefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:defof\\wg_statcategorydefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\comp\\compmodulestorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:comp\\compmodulestorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\comp\\complaunchexhaust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:comp\\complaunchexhaust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\defof\\timeassignmentdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:defof\\timeassignmentdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\stat\\statpart_movespeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:stat\\statpart_movespeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\rendernode\\pawnrendersubworker_offset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:rendernode\\pawnrendersubworker_offset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\thing\\building_maintenancebay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:thing\\building_maintenancebay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:comp\\compapparelforcedweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\misc\\itab_exosuit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,30 +59,6 @@
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:harmonypatches\\weapondrawpospatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\job\\jobdriver_repairatgantry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:job\\jobdriver_repairatgantry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\defof\\jobdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:defof\\jobdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\thing\\exosuit_core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:thing\\exosuit_core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\harmonypatches\\pawnrender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:harmonypatches\\pawnrender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\defof\\miscdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:defof\\miscdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\catapult\\building_ejectorbay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:catapult\\building_ejectorbay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|d:\\steam\\steamapps\\common\\rimworld\\mods\\_mechsuitframework\\.source\\utils\\backcompat_exosuit_1_6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}|Exosuit.csproj|solutionrelative:utils\\backcompat_exosuit_1_6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -66,19 +70,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatWorker_Module.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Stat\\StatWorker_Module.cs",
+              "RelativeDocumentMoniker": "Stat\\StatWorker_Module.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Stat\\StatWorker_Module.cs",
+              "RelativeToolTip": "Stat\\StatWorker_Module.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAuwBAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:47:04.469Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "CompLaunchExhaust.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompLaunchExhaust.cs",
+              "RelativeDocumentMoniker": "Comp\\CompLaunchExhaust.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompLaunchExhaust.cs",
+              "RelativeToolTip": "Comp\\CompLaunchExhaust.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:09:01.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompModuleStorage.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompModuleStorage.cs",
+              "RelativeDocumentMoniker": "Comp\\CompModuleStorage.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompModuleStorage.cs",
+              "RelativeToolTip": "Comp\\CompModuleStorage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:08:58.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WG_StatCategoryDefOf.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\WG_StatCategoryDefOf.cs",
+              "RelativeDocumentMoniker": "DefOf\\WG_StatCategoryDefOf.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\WG_StatCategoryDefOf.cs",
+              "RelativeToolTip": "DefOf\\WG_StatCategoryDefOf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:02:27.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TimeAssignmentDefOf.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\TimeAssignmentDefOf.cs",
+              "RelativeDocumentMoniker": "DefOf\\TimeAssignmentDefOf.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\TimeAssignmentDefOf.cs",
+              "RelativeToolTip": "DefOf\\TimeAssignmentDefOf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T09:58:29.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StatPart_MoveSpeed.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Stat\\StatPart_MoveSpeed.cs",
+              "RelativeDocumentMoniker": "Stat\\StatPart_MoveSpeed.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Stat\\StatPart_MoveSpeed.cs",
+              "RelativeToolTip": "Stat\\StatPart_MoveSpeed.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAuwFsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:45:32.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompFuelCell.cs",
+              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompFuelCell.cs",
+              "RelativeDocumentMoniker": "Comp\\CompFuelCell.cs",
+              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompFuelCell.cs",
+              "RelativeToolTip": "Comp\\CompFuelCell.cs",
+              "ViewState": "AgIAAIkBAAAAAAAAAAAUwGABAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:40:52.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "MechUtility.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Utils\\MechUtility.cs",
               "RelativeDocumentMoniker": "Utils\\MechUtility.cs",
@@ -90,20 +179,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "PawnRenderSubWorker_Offset.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderSubWorker_Offset.cs",
               "RelativeDocumentMoniker": "RenderNode\\PawnRenderSubWorker_Offset.cs",
               "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\RenderNode\\PawnRenderSubWorker_Offset.cs",
               "RelativeToolTip": "RenderNode\\PawnRenderSubWorker_Offset.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwB8AAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T06:37:06.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T06:37:06.045Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "ApparelRenderOffsetsExt.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Extensions\\ApparelRenderOffsetsExt.cs",
               "RelativeDocumentMoniker": "Extensions\\ApparelRenderOffsetsExt.cs",
@@ -115,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "ITab_Exosuit.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Misc\\ITab_Exosuit.cs",
               "RelativeDocumentMoniker": "Misc\\ITab_Exosuit.cs",
@@ -127,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Building_MaintenanceBay.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Building_MaintenanceBay.cs",
               "RelativeDocumentMoniker": "Thing\\Building_MaintenanceBay.cs",
@@ -139,19 +227,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CompApparelForcedWeapon.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompApparelForcedWeapon.cs",
               "RelativeDocumentMoniker": "Comp\\CompApparelForcedWeapon.cs",
               "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Comp\\CompApparelForcedWeapon.cs",
               "RelativeToolTip": "Comp\\CompApparelForcedWeapon.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAuwHEAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAswEAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:50:20.036Z"
+              "WhenOpened": "2025-08-18T11:50:20.036Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "WeaponDrawPosPatch.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\HarmonyPatches\\WeaponDrawPosPatch.cs",
               "RelativeDocumentMoniker": "HarmonyPatches\\WeaponDrawPosPatch.cs",
@@ -163,79 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "JobDriver_RepairAtGantry.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Job\\JobDriver_RepairAtGantry.cs",
-              "RelativeDocumentMoniker": "Job\\JobDriver_RepairAtGantry.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Job\\JobDriver_RepairAtGantry.cs",
-              "RelativeToolTip": "Job\\JobDriver_RepairAtGantry.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCcAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T03:35:51.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PawnRender.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\HarmonyPatches\\PawnRender.cs",
-              "RelativeDocumentMoniker": "HarmonyPatches\\PawnRender.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\HarmonyPatches\\PawnRender.cs",
-              "RelativeToolTip": "HarmonyPatches\\PawnRender.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAewB0AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:50:21.475Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MiscDefOf.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\MiscDefOf.cs",
-              "RelativeDocumentMoniker": "DefOf\\MiscDefOf.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\MiscDefOf.cs",
-              "RelativeToolTip": "DefOf\\MiscDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:50:06.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Exosuit_Core.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Exosuit_Core.cs",
-              "RelativeDocumentMoniker": "Thing\\Exosuit_Core.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Thing\\Exosuit_Core.cs",
-              "RelativeToolTip": "Thing\\Exosuit_Core.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T12:14:04.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "JobDefOf.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\JobDefOf.cs",
-              "RelativeDocumentMoniker": "DefOf\\JobDefOf.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\DefOf\\JobDefOf.cs",
-              "RelativeToolTip": "DefOf\\JobDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T03:35:47.417Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Building_EjectorBay.cs",
-              "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Catapult\\Building_EjectorBay.cs",
-              "RelativeDocumentMoniker": "Catapult\\Building_EjectorBay.cs",
-              "ToolTip": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Catapult\\Building_EjectorBay.cs",
-              "RelativeToolTip": "Catapult\\Building_EjectorBay.cs",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAAAKgAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T11:45:37.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "BackCompat_Exosuit_1_6.cs",
               "DocumentMoniker": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods\\_MechsuitFramework\\.source\\Utils\\BackCompat_Exosuit_1_6.cs",
               "RelativeDocumentMoniker": "Utils\\BackCompat_Exosuit_1_6.cs",

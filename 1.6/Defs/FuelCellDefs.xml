@@ -5,15 +5,15 @@
   <HediffDef>
     <defName>MF_FuelCellBoost</defName>
     <label>fuel cell boost</label>
-    <description>The fuel cell is providing additional power to the exosuit systems, boosting movement and work speed.</description>
+    <description>The fuel cell is providing additional power to the exosuit systems, boosting workspeed.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <defaultLabelColor>(0.5, 0.9, 0.5)</defaultLabelColor>
     <stages>
       <li>
+        <becomeVisible>false</becomeVisible>
         <statOffsets>
-          <MoveSpeed>2</MoveSpeed>
-          <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+          <WorkSpeedGlobal>0.25</WorkSpeedGlobal>
         </statOffsets>
       </li>
     </stages>
@@ -24,7 +24,6 @@
     <defName>MF_Module_FuelCell</defName>
     <label>fuel cell module</label>
     <description>A high-capacity fuel cell that provides additional power to exosuit systems. When fueled with chemfuel, it boosts the pilot's movement speed and work efficiency. The fuel cell automatically activates when installed and has fuel.</description>
-
     <statBases>
       <MaxHitPoints>120</MaxHitPoints>
       <MarketValue>800</MarketValue>
@@ -48,6 +47,7 @@
         <fuelCapacity>150</fuelCapacity>
         <fuelDef>Chemfuel</fuelDef>
         <fuelPerUnit>1</fuelPerUnit>
+        <moveSpeedOffset>2</moveSpeedOffset>
         <hediffDef>MF_FuelCellBoost</hediffDef>
       </li>
     </comps>
@@ -92,6 +92,8 @@
         <fuelCapacity>150</fuelCapacity>
         <fuelDef>Chemfuel</fuelDef>
         <fuelPerUnit>1</fuelPerUnit>
+        <fuelConsumptionPerDay>50</fuelConsumptionPerDay>
+        <moveSpeedOffset>2</moveSpeedOffset>
         <hediffDef>MF_FuelCellBoost</hediffDef>
       </li>
     </comps>

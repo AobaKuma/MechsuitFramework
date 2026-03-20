@@ -1,8 +1,5 @@
-﻿using RimWorld;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
-
 namespace Exosuit
 {
     public class PawnRenderNodeWorker_InhertHead : PawnRenderNodeWorker

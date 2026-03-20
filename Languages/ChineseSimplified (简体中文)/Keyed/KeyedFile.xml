@@ -10,11 +10,11 @@
   <WG_RequirePilotSuit>{0}没有穿着必要的驾驶服。</WG_RequirePilotSuit>
   <WG_RequireBionic>{0}没有安装必要的植入物。</WG_RequireBionic>
   <WG_ApparelLayerTaken>{0}拒绝脱下不相容于框架的装备。</WG_ApparelLayerTaken>
-  
+
   <WG_Disabled_AlreadyHasCoreFrame>{0}正在驾驶框架.</WG_Disabled_AlreadyHasCoreFrame>
   <WG_Disabled_NoCoreFrame>整备架上没有框架.</WG_Disabled_NoCoreFrame>
   <WG_NoModuleForSlot>无可用模块.</WG_NoModuleForSlot>
-  
+
   <WG_Job_TakeToMaintenanceBay>搬运至整备龙门架</WG_Job_TakeToMaintenanceBay>
   <WG_Job_DisassembleFrame>拆解瘫痪的框架.</WG_Job_DisassembleFrame>
   <WG_Disabled_NoMaintenanceBay>无法搬运: 没有可用的整备龙门架</WG_Disabled_NoMaintenanceBay>
@@ -73,7 +73,7 @@
   <WG_CommandToggleTurretDesc>切换子砲塔的自动开火</WG_CommandToggleTurretDesc>
   <WG_SubTurret>子砲塔</WG_SubTurret>
   <WG_SubTurretDesc>一个安装在框架上的自动砲塔。</WG_SubTurretDesc>
-  
+
   <!-- 模块装卸工作相关 -->
   <WG_RequestInstall>请求安装: {0}</WG_RequestInstall>
   <WG_RequestReplace>请求替换: {0}</WG_RequestReplace>
@@ -86,32 +86,56 @@
   <WG_Pending>待安装</WG_Pending>
   <WG_PendingRemove>待卸载</WG_PendingRemove>
   <WG_PendingReplace>待替换</WG_PendingReplace>
-  
+
   <!-- 核心工作进行中 -->
   <WG_CoreWorkInProgress>核心工作进行中，无法操作</WG_CoreWorkInProgress>
   <WG_CancelCoreWork>取消核心工作</WG_CancelCoreWork>
+
   
+  <WG_WeaponModule>内置武器</WG_WeaponModule>
+  <WG_WeaponModule_Desc>模块提供的内置武器，能够在外骨骼启动时作为武装切换。</WG_WeaponModule_Desc>
   <!-- 燃料电池 -->
+  <WG_FuelCell_Tip>在驾驶时持续消耗燃料为外骨骼提供额外的加成。\n当外骨骼在龙门架时殖民者会自动搬运燃料来装填。</WG_FuelCell_Tip>
+
   <WG_FuelCell_Fuel>燃料</WG_FuelCell_Fuel>
-  <WG_FuelCell_Tip>燃料电池为龙骑兵提供额外能量，在驾驶时持续消耗。\n殖民者会自动搬运化合燃料来装填。</WG_FuelCell_Tip>
-  
+  <WG_FuelCell_Fuel_Desc>此模块接受的燃料物品。</WG_FuelCell_Fuel_Desc>
+
+  <WG_FuelCell_FuelPercent>燃料量</WG_FuelCell_FuelPercent>
+  <WG_FuelCell_FuelPercent_Desc>模块目前剩余的燃料百分比。</WG_FuelCell_FuelPercent_Desc>
+
+  <WG_FuelCell_FuelCapacity>燃料容量</WG_FuelCell_FuelCapacity>
+  <WG_FuelCell_FuelCapacity_Desc>模块可储存的最大燃料容量。</WG_FuelCell_FuelCapacity_Desc>
+
+  <WG_FuelCell_FuelPerUnit>每单位补充量</WG_FuelCell_FuelPerUnit>
+  <WG_FuelCell_FuelPerUnit_Desc>每单位燃料可补充的燃料值。</WG_FuelCell_FuelPerUnit_Desc>
+
+  <WG_FuelCell_FuelConsumptionPerDay>每日燃料消耗</WG_FuelCell_FuelConsumptionPerDay>
+  <WG_FuelCell_FuelConsumptionPerDay_Desc>处于运作状态时每日消耗的燃料量。</WG_FuelCell_FuelConsumptionPerDay_Desc>
+
+  <!-- 模组额外资讯 -->
+  <WG_FuelCell_MoveSpeedOffset_Desc>燃料充足时，此外骨骼模组提供的移动速度加成。</WG_FuelCell_MoveSpeedOffset_Desc>
+
+  <WG_FuelCell_Hediff>状态效果</WG_FuelCell_Hediff>
+  <WG_FuelCell_Hediff_Desc>此模组启用时会施加的 Hediff。</WG_FuelCell_Hediff_Desc>
+
+
   <!-- 模块信息预览 -->
   <WG_ModuleInfo_Load>载荷: {0}</WG_ModuleInfo_Load>
   <WG_ModuleInfo_Slots>将替换: {0}</WG_ModuleInfo_Slots>
   <WG_ModuleInfo_LoadTip>模块质量: {0} kg\n安装后载荷: {1} / {2}</WG_ModuleInfo_LoadTip>
   <WG_ModuleInfo_OverloadWarning>警告: 将超出载荷上限!</WG_ModuleInfo_OverloadWarning>
-  
+
   <!-- 自动维修臂 -->
   <WG_AutoRepair_NoTarget>未检测到整备龙门架</WG_AutoRepair_NoTarget>
   <WG_AutoRepair_NoCore>目标龙门架没有机甲</WG_AutoRepair_NoCore>
   <WG_AutoRepair_NoDamage>机甲已完全修复</WG_AutoRepair_NoDamage>
   <WG_AutoRepair_Working>正在维修...</WG_AutoRepair_Working>
   <WG_AutoRepair_SideOccupied>该侧已有维修臂</WG_AutoRepair_SideOccupied>
-  
-  
+
+
   <WG_CommandStopAttack>停止攻击</WG_CommandStopAttack>
   <WG_CommandStopAttackDesc>停止当前对目标的强制锁定攻击，恢复自动射击模式。</WG_CommandStopAttackDesc>
-  
+
   <WG_CommandManualAttack>手动攻击 ({0})</WG_CommandManualAttack>
   <WG_CommandManualAttackDesc>命令该炮塔攻击特定目标。</WG_CommandManualAttackDesc>
 </LanguageData>

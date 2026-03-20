@@ -5,10 +5,10 @@
   <WG_DisassembleWalkerCore.reportString>分解中</WG_DisassembleWalkerCore.reportString>
   
   <!-- EN: entering mecha suit -->
-  <WG_GetInWalkerCore.reportString>戦術外骨格に搭乗中</WG_GetInWalkerCore.reportString>
+  <WG_GetInWalkerCore.reportString>外骨格に搭乗中</WG_GetInWalkerCore.reportString>
   
   <!-- EN: entering mecha suit -->
-  <WG_GetInWalkerCore_NonDrafted.reportString>戦術外骨格に搭乗中</WG_GetInWalkerCore_NonDrafted.reportString>
+  <WG_GetInWalkerCore_NonDrafted.reportString>外骨格に搭乗中</WG_GetInWalkerCore_NonDrafted.reportString>
   
   <!-- EN: heading back to bay -->
   <WG_GetOffWalkerCore.reportString>駐機場に戻っています</WG_GetOffWalkerCore.reportString>
@@ -23,7 +23,7 @@
   <WG_ReturnToBay.reportString>駐機場に戻っています</WG_ReturnToBay.reportString>
 
   <!-- EN: sleeping in mecha suit -->
-  <WG_SleepInWalkerCore.reportString>戦術外骨格内で睡眠中</WG_SleepInWalkerCore.reportString>
+  <WG_SleepInWalkerCore.reportString>外骨格内で睡眠中</WG_SleepInWalkerCore.reportString>
 
   <!-- EN: heading back to bay -->
   <WG_TakeToMaintenanceBay.reportString>整備庫に戻っています</WG_TakeToMaintenanceBay.reportString>

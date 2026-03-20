@@ -17,5 +17,10 @@
   <MF_Stat_Slot.label>slot user</MF_Stat_Slot.label>
   <!-- EN: the modules using this slot, will include module that taken multiple slots. -->
   <MF_Stat_Slot.description>the modules using this slot, will include module that taken multiple slots.</MF_Stat_Slot.description>
+
+  <!-- EN: Exosuit move speed -->
+  <ExosuitMoveSpeed.label>Exosuit move speed</ExosuitMoveSpeed.label>
+  <!-- EN: Movement speed provided by exosuit modules. -->
+  <ExosuitMoveSpeed.description>Movement speed provided by exosuit modules.</ExosuitMoveSpeed.description>
   
 </LanguageData>

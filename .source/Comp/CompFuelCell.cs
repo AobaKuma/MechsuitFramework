@@ -9,14 +9,14 @@ namespace Exosuit
     // 燃料电池组件
     // 物品形态：显示百分比 Gizmo + 燃料填充设置
     // 龙门架预览：图标右上角显示百分比
-    // 上机形态：消耗燃料，给驾驶员 Hediff
+    // 上机形态：消耗燃料，给外骨骼movespeedOffset
     // 实现 IReloadableComp 以复用整备架装填系统
     public class CompFuelCell : ThingComp, IReloadableComp
     {
         #region 常量
 
-        private const float FuelConsumptionPerDay = 15f;
-        private const float FuelConsumptionPerTick = FuelConsumptionPerDay / 60000f;
+        //private const float FuelConsumptionPerDay = 15f;
+        //private const float FuelConsumptionPerTick = FuelConsumptionPerDay / 60000f;
 
         #endregion
 
@@ -56,6 +56,10 @@ namespace Exosuit
             }
         }
 
+        private float FuelConsumptionPerTick => Mathf.Max(0f, Props.fuelConsumptionPerDay) / 60000f;
+
+        public float MoveSpeedOffset => HasFuel ? Props.moveSpeedOffset : 0f;
+
         #endregion
 
         #region 重写方法
@@ -79,18 +83,15 @@ namespace Exosuit
         public override void CompTick()
         {
             base.CompTick();
-            
+
             if (!IsOnExosuit) return;
-            
+
             // 消耗燃料
             if (HasFuel)
             {
-                fuel -= FuelConsumptionPerTick;
-                
-                // 确保 Hediff 存在
+                Fuel -= FuelConsumptionPerTick; // 用屬性，順便走 clamp
                 EnsureHediff(Wearer);
-                
-                // 燃料耗尽
+
                 if (!HasFuel)
                 {
                     RemoveHediff(Wearer);
@@ -101,7 +102,7 @@ namespace Exosuit
         public override void Notify_Equipped(Pawn pawn)
         {
             base.Notify_Equipped(pawn);
-            
+
             // 穿上时如果有燃料，添加 Hediff
             if (HasFuel && IsOnExosuit)
             {
@@ -112,7 +113,7 @@ namespace Exosuit
         public override void Notify_Unequipped(Pawn pawn)
         {
             base.Notify_Unequipped(pawn);
-            
+
             // 脱下时移除 Hediff
             RemoveHediff(pawn);
         }
@@ -142,12 +143,15 @@ namespace Exosuit
             if (!IsWorn)
             {
                 yield return new Gizmo_FuelCell(this);
+                yield return new Command_FuelCellActions(this);
             }
         }
 
         public override string CompInspectStringExtra()
         {
-            return "WG_FuelCell_Fuel".Translate() + ": " + FuelPercent.ToStringPercent();
+            string fuelItem = Props.fuelDef?.LabelCap ?? "None".Translate();
+            return "WG_FuelCell_Fuel".Translate() + ": " + fuelItem
+                + "\n" + "WG_FuelCell_FuelPercent".Translate() + ": " + FuelPercent.ToStringPercent();
         }
 
         #endregion
@@ -205,11 +209,11 @@ namespace Exosuit
 
             int needed = MaxCharges - RemainingCharges;
             int toConsume = Mathf.Min(ammo.stackCount, needed);
-            
+
             if (toConsume <= 0) return;
 
             ammo.SplitOff(toConsume).Destroy();
-            fuel += toConsume * Props.fuelPerUnit;
+            Fuel += toConsume * Props.fuelPerUnit;
         }
 
         public bool CanBeUsed(out string reason)
@@ -228,14 +232,14 @@ namespace Exosuit
         {
             if (pawn == null || Props.hediffDef == null) return;
             if (pawn.health.hediffSet.HasHediff(Props.hediffDef)) return;
-            
+
             pawn.health.AddHediff(Props.hediffDef);
         }
 
         private void RemoveHediff(Pawn pawn)
         {
             if (pawn == null || Props.hediffDef == null) return;
-            
+
             var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediffDef);
             if (hediff != null)
             {
@@ -244,6 +248,183 @@ namespace Exosuit
         }
 
         #endregion
+        private static readonly StatDef ExosuitMoveSpeedStatDef = DefDatabase<StatDef>.GetNamedSilentFail("ExosuitMoveSpeed");
+
+        public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
+        {
+            var baseEntries = base.SpecialDisplayStats();
+            if (baseEntries != null)
+            {
+                foreach (var entry in baseEntries)
+                {
+                    if (entry != null) yield return entry;
+                }
+            }
+
+            if (Props == null) yield break;
+
+            string fuelItemLabel = Props.fuelDef?.LabelCap ?? "None".Translate();
+
+            if (Props.fuelDef != null)
+            {
+                yield return new StatDrawEntry(
+                    WG_StatCategoryDefOf.MF_ModuleStats,
+                    "WG_FuelCell_Fuel".Translate().CapitalizeFirst(),
+                    fuelItemLabel,
+                    "WG_FuelCell_Fuel_Desc".Translate(),
+                    4000,
+                    null,
+                    new List<Dialog_InfoCard.Hyperlink> { new Dialog_InfoCard.Hyperlink(Props.fuelDef) }
+                );
+
+                yield return new StatDrawEntry(
+                    WG_StatCategoryDefOf.MF_ModuleStats,
+                    "WG_FuelCell_FuelPerUnit".Translate().CapitalizeFirst(),
+                    Props.fuelPerUnit.ToStringByStyle(ToStringStyle.FloatMaxTwo),
+                    "WG_FuelCell_FuelPerUnit_Desc".Translate(),
+                    4001
+                );
+            }
+            else
+            {
+                yield return new StatDrawEntry(
+                     WG_StatCategoryDefOf.MF_ModuleStats,
+                    "WG_FuelCell_Fuel".Translate().CapitalizeFirst(),
+                    fuelItemLabel,
+                    "WG_FuelCell_Fuel_Desc".Translate(),
+                    4000
+                );
+            }
+
+            yield return new StatDrawEntry(
+                WG_StatCategoryDefOf.MF_ModuleStats,
+                "WG_FuelCell_FuelCapacity".Translate().CapitalizeFirst(),
+                Props.fuelCapacity.ToStringByStyle(ToStringStyle.FloatMaxTwo),
+                "WG_FuelCell_FuelCapacity_Desc".Translate(),
+                4002
+            );
+            yield return new StatDrawEntry(
+                WG_StatCategoryDefOf.MF_ModuleStats,
+                "WG_FuelCell_FuelConsumptionPerDay".Translate().CapitalizeFirst(),
+                Props.fuelConsumptionPerDay.ToStringByStyle(ToStringStyle.FloatMaxTwo),
+                "WG_FuelCell_FuelConsumptionPerDay_Desc".Translate(),
+                4003
+            );
+
+            // 以下維持你原本：只在模塊型態顯示
+            if (!IsOnExosuit) yield break;
+
+            bool hasMoveSpeedOffset = Props.moveSpeedOffset != 0f;
+            bool hasHediff = Props.hediffDef != null;
+            if (!hasMoveSpeedOffset && !hasHediff) yield break;
+
+            if (hasMoveSpeedOffset)
+            {
+                string label = ExosuitMoveSpeedStatDef?.LabelCap ?? "ExosuitMoveSpeed";
+                string valueString = Props.moveSpeedOffset.ToStringByStyle(ToStringStyle.FloatMaxTwo, ToStringNumberSense.Offset);
+
+                if (ExosuitMoveSpeedStatDef != null)
+                {
+                    yield return new StatDrawEntry(
+                        WG_StatCategoryDefOf.MF_ModuleStats,
+                        label,
+                        valueString,
+                        "WG_FuelCell_MoveSpeedOffset_Desc".Translate(),
+                        4101,
+                        null,
+                        new List<Dialog_InfoCard.Hyperlink> { new Dialog_InfoCard.Hyperlink(ExosuitMoveSpeedStatDef) }
+                    );
+                }
+                else
+                {
+                    yield return new StatDrawEntry(
+                        WG_StatCategoryDefOf.MF_ModuleStats,
+                        label,
+                        valueString,
+                        "WG_FuelCell_MoveSpeedOffset_Desc".Translate(),
+                        4101
+                    );
+                }
+            }
+
+            if (hasHediff)
+            {
+                yield return new StatDrawEntry(
+                    WG_StatCategoryDefOf.MF_ModuleStats,
+                    "WG_FuelCell_Hediff".Translate().CapitalizeFirst(),
+                    Props.hediffDef.LabelCap,
+                    "WG_FuelCell_Hediff_Desc".Translate(),
+                    4102,
+                    null,
+                    new List<Dialog_InfoCard.Hyperlink> { new Dialog_InfoCard.Hyperlink(Props.hediffDef) }
+                );
+            }
+        }
+
+        private IEnumerable<FloatMenuOption> GetFuelCellRightClickOptions()
+        {
+            if (Props?.fuelDef == null)
+            {
+                yield return new FloatMenuOption("WG_FuelCell_UnloadFuel_NoFuelType".Translate(), null);
+                yield break;
+            }
+
+            if (Fuel <= 0f)
+            {
+                yield return new FloatMenuOption("WG_FuelCell_UnloadFuel_NoFuel".Translate(), null);
+                yield break;
+            }
+
+            yield return new FloatMenuOption("WG_FuelCell_UnloadFuel".Translate(), UnloadFuelToGround);
+        }
+
+        private void UnloadFuelToGround()
+        {
+            if (Props?.fuelDef == null || Fuel <= 0f) return;
+            if (!parent.Spawned || parent.MapHeld == null)
+            {
+                Messages.Message("WG_FuelCell_UnloadFuel_NotSpawned".Translate(), MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+
+            float perUnit = Mathf.Max(Props.fuelPerUnit, 0.0001f);
+            int totalUnits = Mathf.FloorToInt(Fuel / perUnit);
+            if (totalUnits <= 0) return;
+
+            int left = totalUnits;
+            int stackLimit = Mathf.Max(1, Props.fuelDef.stackLimit);
+
+            while (left > 0)
+            {
+                int count = Mathf.Min(left, stackLimit);
+                Thing thing = ThingMaker.MakeThing(Props.fuelDef);
+                thing.stackCount = count;
+                GenPlace.TryPlaceThing(thing, parent.PositionHeld, parent.MapHeld, ThingPlaceMode.Near, out _);
+                left -= count;
+            }
+
+            Fuel = 0f;
+            RemoveHediff(Wearer);
+
+            Messages.Message("WG_FuelCell_UnloadFuel_Done".Translate(), parent, MessageTypeDefOf.TaskCompletion, false);
+        }
+
+        private class Command_FuelCellActions : Command_Action
+        {
+            private readonly CompFuelCell comp;
+
+            public Command_FuelCellActions(CompFuelCell comp)
+            {
+                this.comp = comp;
+                defaultLabel = "WG_FuelCell_Actions".Translate();
+                defaultDesc = "WG_FuelCell_Actions_Desc".Translate();
+                icon = comp.Props.fuelDef.uiIcon; // 可換成你自己的圖示
+                action = comp.UnloadFuelToGround; // 左鍵直接卸載
+            }
+
+            public override IEnumerable<FloatMenuOption> RightClickFloatMenuOptions
+                => comp.GetFuelCellRightClickOptions();
+        }
     }
 
     public class CompProperties_FuelCell : CompProperties
@@ -251,7 +432,9 @@ namespace Exosuit
         public float fuelCapacity = 150f;
         public ThingDef fuelDef;
         public float fuelPerUnit = 1f; // 每单位燃料物品提供多少燃料
-        public HediffDef hediffDef;
+        public float fuelConsumptionPerDay = 15f; // 每天消耗的燃料量
+        public float moveSpeedOffset = 0.5f; // 可选的属性加成
+        public HediffDef hediffDef; // 可选的 Hediff，在有燃料时添加
 
         public CompProperties_FuelCell()
         {

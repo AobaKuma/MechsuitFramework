@@ -10,7 +10,11 @@ namespace Exosuit
     {
         public override bool ShouldShowFor(StatRequest req)
         {
-            return base.ShouldShowFor(req) && req.HasThing && req.Thing.HasComp<CompSuitModule>();
+            if (req.HasThing && req.Thing.HasComp<CompSuitModule>())
+            { 
+            return true;
+            }
+            return false;
         }
         public override IEnumerable<Dialog_InfoCard.Hyperlink> GetInfoCardHyperlinks(StatRequest statRequest)
         {

@@ -4,12 +4,12 @@
   <!-- EN: capture a downed pilot -->
   <WG_Frame_Capture.label>撃破された操縦者を捕獲する</WG_Frame_Capture.label>
   <!-- EN: It's impossible to imprison a frame pilot, they can just break out the door with ease. select your pawn, and right-click a downed enemy frame to make a job to disassemble it so you can remove the pilot from their frame. -->
-  <WG_Frame_Capture.helpText>戦術外骨格操縦者を投獄することは不可能です。彼らは簡単にドアを破壊して脱出できます。ポーンを選択し、撃破された敵の戦術外骨格を右クリックして分解するジョブを作成し、操縦者を戦術外骨格から取り除くことができます。</WG_Frame_Capture.helpText>
+  <WG_Frame_Capture.helpText>外骨格操縦者を投獄することは不可能です。彼らは簡単にドアを破壊して脱出できます。ポーンを選択し、撃破された敵の外骨格を右クリックして分解するジョブを作成し、操縦者を外骨格から取り除くことができます。</WG_Frame_Capture.helpText>
   
   <!-- EN: Pilot schedule -->
   <WG_Frame_PilotSchedule.label>操縦者の任務表</WG_Frame_PilotSchedule.label>
   <!-- EN: You can designate a pawn to automatically pilot by setting their time schedule to "Pilot" and assigning them a gantry or parking spot, if a pilot has time assignment to neither "Pilot" nor "Any", they will try to dock their frame to any available spot or gantry. -->
-  <WG_Frame_PilotSchedule.helpText>ポーンの時間表を「機体操縦」に設定し、整備架台または駐車地点を割り当てることで、自動的に操縦するように指定できます。操縦者が「操縦者」でも「任意」でもない時間割り当ての場合、利用可能な地点または整備架台に戦術外骨格を格納しようとします。</WG_Frame_PilotSchedule.helpText>
+  <WG_Frame_PilotSchedule.helpText>ポーンの時間表を「機体操縦」に設定し、整備架台または駐車地点を割り当てることで、自動的に操縦するように指定できます。操縦者が「操縦者」でも「任意」でもない時間割り当ての場合、利用可能な地点または整備架台に外骨格を格納しようとします。</WG_Frame_PilotSchedule.helpText>
   
   <!-- EN: Module storage -->
   <WG_Gantry_LinkBuilding.label>兵装保管庫</WG_Gantry_LinkBuilding.label>
@@ -24,7 +24,7 @@
   <!-- EN: Overloaded -->
   <WG_Gantry_Overloaded.label>過負荷</WG_Gantry_Overloaded.label>
   <!-- EN: If the loaded weight is more than the frame can handle, then the frame will be overloaded, you can still pilot it but it means you have no carrying capacity also with only 50% of the moving speed. -->
-  <WG_Gantry_Overloaded.helpText>積載重量が戦術外骨格の処理能力を超えると、戦術外骨格は過負荷になります。操縦はできますが、運搬能力がなくなり、移動速度も50%になります。</WG_Gantry_Overloaded.helpText>
+  <WG_Gantry_Overloaded.helpText>積載重量が外骨格の処理能力を超えると、外骨格は過負荷になります。操縦はできますが、運搬能力がなくなり、移動速度も50%になります。</WG_Gantry_Overloaded.helpText>
   
   <!-- EN: Payload Capacity -->
   <WG_Gantry_PayloadCapacity.label>搭載容量</WG_Gantry_PayloadCapacity.label>
@@ -49,9 +49,9 @@
   <!-- EN: Parking spot -->
   <WG_ParkingSpot.label>駐機地点</WG_ParkingSpot.label>
   <!-- EN: this is a parking spot for temporary parking your frame. While working in the caravan site, it has no tools to repair the damaged parts but the pilot can get proper rest and medical treatment. -->
-  <WG_ParkingSpot.helpText>これは戦術外骨格を一時的に駐機するための駐機地点です。輸送隊地点で作業している間、損傷した部品を修理する工具はありませんが、操縦者は適切な休息と治療を受けることができます。</WG_ParkingSpot.helpText>
+  <WG_ParkingSpot.helpText>これは外骨格を一時的に駐機するための駐機地点です。輸送隊地点で作業している間、損傷した部品を修理する工具はありませんが、操縦者は適切な休息と治療を受けることができます。</WG_ParkingSpot.helpText>
     <!-- EN: Walker Frame -->
-  <WG_WalkerFrame.label>戦術外骨格</WG_WalkerFrame.label>
+  <WG_WalkerFrame.label>外骨格</WG_WalkerFrame.label>
   <!-- EN: It looks like you acquired the tech to produce a type of heavy exosuit, these suits are different from regular suits, and require a specific building to assemble and gear up or gear down. -->
   <WG_WalkerFrame.helpText>重量級外骨格を製造する技術を習得したようです。これらのスーツは通常のスーツとは異なり、組み立てや装備の着脱には特定の建物が必要です。</WG_WalkerFrame.helpText>
 

@@ -102,9 +102,22 @@
   <WG_CoreWorkInProgress>核心工作進行中，無法操作</WG_CoreWorkInProgress>
   <WG_CancelCoreWork>取消核心工作</WG_CancelCoreWork>
   
+  <WG_WeaponModule>內置武器</WG_WeaponModule>
+  <WG_WeaponModule_Desc>模塊提供的內置武器，能夠在外骨骼啟動時作為武裝切換。</WG_WeaponModule_Desc>
   <!-- 燃料電池 -->
   <WG_FuelCell_Fuel>燃料</WG_FuelCell_Fuel>
   <WG_FuelCell_Tip>燃料電池為龍騎兵提供額外能量，在駕駛時持續消耗。\n殖民者會自動搬運化合燃料來裝填。</WG_FuelCell_Tip>
+  <WG_FuelCell_FuelPercent>燃料量</WG_FuelCell_FuelPercent>
+  <WG_FuelCell_FuelPercent_Desc>模塊目前剩餘的燃料百分比。</WG_FuelCell_FuelPercent_Desc>
+  <WG_FuelCell_FuelCapacity>燃料容量</WG_FuelCell_FuelCapacity>
+  <WG_FuelCell_FuelCapacity_Desc>模塊可儲存的最大燃料容量。</WG_FuelCell_FuelCapacity_Desc>
+  <WG_FuelCell_FuelPerUnit>每單位補充量</WG_FuelCell_FuelPerUnit>
+  <WG_FuelCell_FuelPerUnit_Desc>每單位燃料可補充的燃料值。</WG_FuelCell_FuelPerUnit_Desc>
+  <WG_FuelCell_FuelConsumptionPerDay>每日燃料消耗</WG_FuelCell_FuelConsumptionPerDay>
+  <WG_FuelCell_FuelConsumptionPerDay_Desc>處於運作狀態時每日消耗的燃料量。</WG_FuelCell_FuelConsumptionPerDay_Desc>
+  <WG_FuelCell_MoveSpeedOffset_Desc>燃料充足時，此外骨骼模塊提供的移動速度加成。</WG_FuelCell_MoveSpeedOffset_Desc>
+  <WG_FuelCell_Hediff>狀態效果</WG_FuelCell_Hediff>
+  <WG_FuelCell_Hediff_Desc>此模塊啟用時會施加的數值偏移</WG_FuelCell_Hediff_Desc>
   
   <!-- 模塊信息預覽 -->
   <WG_ModuleInfo_Load>載荷: {0}</WG_ModuleInfo_Load>

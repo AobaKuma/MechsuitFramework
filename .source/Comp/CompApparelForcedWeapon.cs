@@ -47,50 +47,34 @@ namespace Exosuit
             base.PostPostMake();
             weaponStorage = Weapon;
         }
-        /*        public override void CompDrawWornExtras()
+        public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
+        {
+            var baseEntries = base.SpecialDisplayStats();
+            if (baseEntries != null)
+            {
+                foreach (var entry in baseEntries)
                 {
-                    base.CompDrawWornExtras();
-                    if(Parent?.Wearer != null && Props.storedWeaponDrawData!=null) {
-                        if (Parent.Wearer.equipment.Primary != Weapon)
-                        {
-                            var rot = Parent.Wearer.Rotation;
-                            var drawData = Props.storedWeaponDrawData;
-                            var matrix = Matrix4x4.TRS(
-                                Parent.Wearer.DrawPos 
-                                + drawData.OffsetForRot(rot)
-                                -(drawData.PivotForRot(rot)-DrawData.PivotCenter).ToVector3(), Quaternion.AngleAxis((drawData.FlipForRot(rot)?-1f:1f)*drawData.RotationOffsetForRot(rot), Vector3.up), Vector3.one*drawData.scale);
-                            Graphics.DrawMesh(MeshPool.plane10, matrix * Matrix4x4.Translate(Vector3.up*PawnRenderUtility.AltitudeForLayer(drawData.LayerForRot(rot,20))), Weapon.Graphic.MatSingleFor(Weapon),0);
-                        }
-                    }
-                }*/
-        /*        public override List<PawnRenderNode> CompRenderNodes()
-                {
-                    List<PawnRenderNode> nodes = [];
-                    if (Props.onGantryRenderNodeProps != null && Parent.Wearer != null)
-                    {
-                        var node = (PawnRenderNode)Activator.CreateInstance(Props.onGantryRenderNodeProps.nodeClass, [Parent.Wearer, Props.onGantryRenderNodeProps, Parent.Wearer.drawer.renderer.renderTree]);
-                        nodes.Add(node);
-                    }
-                    if (Parent.Wearer != null&& Parent.Wearer.equipment.Primary != Weapon)
-                    {
-                        var prop = Props.weaponStoredRenderProps;
-                        if (prop == null&&Props.storedWeaponDrawData!=null) {
-                            prop = new PawnRenderNodeProperties()
-                            {
-                                debugLabel = Weapon.def.defName,
-                                nodeClass = typeof(PawnRenderNode_WeaponHolder),
-                                parentTagDef = MiscDefOf.WGApparelBody,
-                                workerClass = typeof(PawnRenderNodeWorker),
-                                baseLayer = 20,//baselayer for body apparel
-                                drawData = Props.storedWeaponDrawData,
-                            };
-                        }
-                        var node = (PawnRenderNode_WeaponHolder)Activator.CreateInstance(prop.nodeClass ?? typeof(PawnRenderNode_WeaponHolder), [Parent.Wearer, prop, Parent.Wearer.drawer.renderer.renderTree,weapon]);
-                        nodes.Add(node);
-                    }
-                    return nodes;
-                }*/
+                    if (entry != null) yield return entry;
+                }
+            }
 
+            if (Props == null) yield break;
+
+
+            if (Props.weapon != null)
+            {
+                yield return new StatDrawEntry(
+                    WG_StatCategoryDefOf.MF_ModuleStats,
+                    "WG_WeaponModule".Translate().CapitalizeFirst(),
+                    Props.weapon.LabelCap,
+                    "WG_WeaponModule_Desc".Translate(),
+                    4000,
+                    null,
+                    new List<Dialog_InfoCard.Hyperlink> { new Dialog_InfoCard.Hyperlink(Props.weapon) }
+                );
+
+            }
+        }
         public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
         {
             bool NoModuleWeapon = Parent.Wearer.equipment.Primary == null || !Parent.Wearer.equipment.Primary.TryGetComp<CompApparelForcedWeapon>(out var _);

@@ -17,5 +17,10 @@
   <MF_Stat_Slot.label>可用模块</MF_Stat_Slot.label>
   <!-- EN: the modules using this slot, will include module that taken multiple slots. -->
   <MF_Stat_Slot.description>可用于本槽位的模块，部分模块可能会占用多个槽位。</MF_Stat_Slot.description>
+
+  <!-- EN: Exosuit move speed -->
+  <ExosuitMoveSpeed.label>外骨骼移动速度</ExosuitMoveSpeed.label>
+  <!-- EN: Movement speed provided by exosuit modules. -->
+  <ExosuitMoveSpeed.description>由外骨骼模块提供的移动速度。</ExosuitMoveSpeed.description>
   
 </LanguageData>

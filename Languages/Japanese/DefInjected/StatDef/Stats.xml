@@ -18,4 +18,9 @@
   <!-- EN: the modules using this slot, will include module that taken multiple slots. -->
   <MF_Stat_Slot.description>この区画を使用する兵装。複数の区画を占有する兵装も含まれます。</MF_Stat_Slot.description>
 
+  <!-- EN: Exosuit move speed -->
+  <ExosuitMoveSpeed.label>外骨格移動速度</ExosuitMoveSpeed.label>
+  <!-- EN: Movement speed provided by exosuit modules. -->
+  <ExosuitMoveSpeed.description>外骨格モジュールが提供する移動速度。</ExosuitMoveSpeed.description>
+
 </LanguageData>

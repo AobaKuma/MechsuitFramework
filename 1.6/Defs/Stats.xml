@@ -5,7 +5,7 @@
 		<label>module slot</label>
 		<workerClass>Exosuit.StatWorker_Module</workerClass>
 		<description>the taken slot of this module, a module might take multiple slots.</description>
-		<category>BasicsImportant</category>
+		<category>MF_ModuleStats</category>
 	</StatDef>
 
 	<StatDef>
@@ -13,7 +13,7 @@
 		<label>slot user</label>
 		<workerClass>Exosuit.StatWorker_SlotUsers</workerClass>
 		<description>the modules using this slot, will include module that taken multiple slots.</description>
-		<category>BasicsImportant</category>
+		<category>MF_ModuleStats</category>
 	</StatDef>
 
 	<StatDef>
@@ -37,5 +37,16 @@
 				<factorLegendary>1.5</factorLegendary>
 			</li>
 		</parts>
+	</StatDef>
+
+	<StatDef>
+		<defName>ExosuitMoveSpeed</defName>
+		<label>Exosuit move speed</label>
+		<description>Movement speed provided by exosuit modules.</description>
+		<category>Apparel</category>
+		<toStringStyle>FloatTwo</toStringStyle>
+		<formatString>{0} c/s</formatString>
+		<showIfUndefined>false</showIfUndefined>
+		<displayPriorityInCategory>58</displayPriorityInCategory>
 	</StatDef>
 </Defs>

@@ -3,20 +3,20 @@
 <LanguageData>
   <WG_GetIn>搭乗</WG_GetIn>
 
-  <WG_WeaponDropped>戦術外骨格から離れた後、{0}は武器を装備できず、手放しました。</WG_WeaponDropped>
+  <WG_WeaponDropped>外骨格から離れた後、{0}は武器を装備できず、手放しました。</WG_WeaponDropped>
 
-  <WG_TooBigForPilot>{0}はこの戦術外骨格を操縦するには大きすぎます</WG_TooBigForPilot>
-  <WG_TooYoungToPilot>{0}はこの戦術外骨格を操縦するには若すぎます</WG_TooYoungToPilot>
-  <WG_RequirePilotSuit>{0}はこの戦術外骨格に適した操縦服を着用していません</WG_RequirePilotSuit>
-  <WG_RequireBionic>{0}はこの戦術外骨格を操縦するための適切な神経接続端末を持っていません</WG_RequireBionic>
-  <WG_ApparelLayerTaken>{0}はこの戦術外骨格に適合しない装備を脱ぐことを拒否しました</WG_ApparelLayerTaken>
+  <WG_TooBigForPilot>{0}はこの外骨格を操縦するには大きすぎます</WG_TooBigForPilot>
+  <WG_TooYoungToPilot>{0}はこの外骨格を操縦するには若すぎます</WG_TooYoungToPilot>
+  <WG_RequirePilotSuit>{0}はこの外骨格に適した操縦服を着用していません</WG_RequirePilotSuit>
+  <WG_RequireBionic>{0}はこの外骨格を操縦するための適切な神経接続端末を持っていません</WG_RequireBionic>
+  <WG_ApparelLayerTaken>{0}はこの外骨格に適合しない装備を脱ぐことを拒否しました</WG_ApparelLayerTaken>
 
   <WG_Disabled_AlreadyHasCoreFrame>{0}はすでに操縦中です</WG_Disabled_AlreadyHasCoreFrame>
-  <WG_Disabled_NoCoreFrame>この整備架台に戦術外骨格がありません</WG_Disabled_NoCoreFrame>
+  <WG_Disabled_NoCoreFrame>この整備架台に外骨格がありません</WG_Disabled_NoCoreFrame>
   <WG_NoModuleForSlot>利用可能な兵装がありません</WG_NoModuleForSlot>
 
   <WG_Job_TakeToMaintenanceBay>整備架台へ運ぶ</WG_Job_TakeToMaintenanceBay>
-  <WG_Job_DisassembleFrame>撃破された戦術外骨格を分解する</WG_Job_DisassembleFrame>
+  <WG_Job_DisassembleFrame>撃破された外骨格を分解する</WG_Job_DisassembleFrame>
   <WG_Disabled_NoMaintenanceBay>運搬不可: 利用可能な整備架台がありません</WG_Disabled_NoMaintenanceBay>
 
   <WG_Disabled_NeedControlledAndDrafted>使用不可: 徴兵が必要です</WG_Disabled_NeedControlledAndDrafted>
@@ -24,22 +24,22 @@
   <WG_SafetyLock_Desc>誤操作防止用安全機構</WG_SafetyLock_Desc>
 
   <WG_EmergencyEject>緊急脱出</WG_EmergencyEject>
-  <WG_EmergencyEject_Desc>脱出機構を起動すると、操縦者を固体燃料推進器を用いて範囲内の指定された場所に射出し、戦術外骨格は自壊します。</WG_EmergencyEject_Desc>
+  <WG_EmergencyEject_Desc>脱出機構を起動すると、操縦者を固体燃料推進器を用いて範囲内の指定された場所に射出し、外骨格は自壊します。</WG_EmergencyEject_Desc>
 
   <WG_EjectToTile>射出</WG_EjectToTile>
   <WG_PilotInBuilding>操縦者:</WG_PilotInBuilding>
-  <WG_Occupied>占有中</WG_Occupied>
-  <WG_RequireMechsuit>戦術外骨格が必要</WG_RequireMechsuit>
+  <WG_Occupied>占用中</WG_Occupied>
+  <WG_RequireMechsuit>外骨格が必要</WG_RequireMechsuit>
 
-  <WG_PilotingFrame>戦術外骨格を操縦中</WG_PilotingFrame>
+  <WG_PilotingFrame>外骨格を操縦中</WG_PilotingFrame>
   <WG_Finalized>最終決定</WG_Finalized>
-  <WG_Stats_TakingSlotsOf>占有中の兵装:</WG_Stats_TakingSlotsOf>
+  <WG_Stats_TakingSlotsOf>占用中の兵装:</WG_Stats_TakingSlotsOf>
   <WG_Stats_DisableSlotsOf>無効化された兵装:</WG_Stats_DisableSlotsOf>
 
   <WG_StructurePoint>構造的完全性</WG_StructurePoint>
-  <WG_StructurePoint.Tooltip>戦術外骨格の全体的な構造値。被弾時の損傷効果を無効にして戦術外骨格の操縦者を保護します。しかし、25%未満になると、25%の確率で外部装甲を貫通し、操縦者に損傷を与える可能性があります。構造値がゼロになると、戦術外骨格は完全に無効化され、破壊された残骸の中に操縦者が閉じ込められます。\n\n構造値を回復するには、戦術外骨格を整備架台に格納させる必要があります。工作能力を持つ入植者は、損傷した戦術外骨格と兵装を修理できます。</WG_StructurePoint.Tooltip>
+  <WG_StructurePoint.Tooltip>外骨格の全体的な構造値。被弾時の損傷効果を無効にして外骨格の操縦者を保護します。しかし、25%未満になると、25%の確率で外部装甲を貫通し、操縦者に損傷を与える可能性があります。構造値がゼロになると、外骨格は完全に無効化され、破壊された残骸の中に操縦者が閉じ込められます。\n\n構造値を回復するには、外骨格を整備架台に格納させる必要があります。工作能力を持つ入植者は、損傷した外骨格と兵装を修理できます。</WG_StructurePoint.Tooltip>
 
-  <WG_TabMechGear>戦術外骨格</WG_TabMechGear>
+  <WG_TabMechGear>外骨格</WG_TabMechGear>
   <WG_BayTip>連携した棚の兵装を扱うには、各兵装区画を右クリックします</WG_BayTip>
   <WG_MechSolution>兵装調整</WG_MechSolution>
   <WG_Overload>[過負荷]</WG_Overload>
@@ -47,13 +47,13 @@
   <WG_Performance>搭載容量:</WG_Performance>
   <WG_OverallArmor>構造値</WG_OverallArmor>
 
-  <WG_ArmorSpeed>戦術外骨格の移動速度:</WG_ArmorSpeed>
+  <WG_ArmorSpeed>外骨格の移動速度:</WG_ArmorSpeed>
   <WG_ArmorDeadWeight>自重:</WG_ArmorDeadWeight>
   <WG_ArmorCapacity>搭載容量:</WG_ArmorCapacity>
 
-  <WG_HasMechWeapon>火器兵装</WG_HasMechWeapon>
+  <WG_HasMechWeapon>武器兵装</WG_HasMechWeapon>
 
-  <WG_Disabled_VictimInWalkerCore>救助不可: 戦術外骨格内で負傷。</WG_Disabled_VictimInWalkerCore>
+  <WG_Disabled_VictimInWalkerCore>救助不可: 外骨格内で負傷。</WG_Disabled_VictimInWalkerCore>
 
   <WG_Sharp_CE>mm RHA</WG_Sharp_CE>
   <WG_Blunt_CE>MPA</WG_Blunt_CE>
@@ -62,7 +62,7 @@
   <WG_AutoRepair_Desc>この駐機場で損傷した兵装を入植者が自動的に修理するかどうかを切り替えます。</WG_AutoRepair_Desc>
 
   <WG_AvailableModuleForThisSlot>この区画で利用可能な兵装</WG_AvailableModuleForThisSlot>
-  
+
   <WG_ChangeModuleColor>兵装の色を変更</WG_ChangeModuleColor>
 
   <WG_NoAvailablePilot>利用可能な操縦者がいません</WG_NoAvailablePilot>
@@ -73,42 +73,55 @@
   <WG_BareHands>なし</WG_BareHands>
   <WG_TakeOutModuleWeapon>兵装を取り出す</WG_TakeOutModuleWeapon>
   <WG_AssignPilot>操縦者を割り当て</WG_AssignPilot>
-  <WG_CommandToggleTurret>火器の切り替え</WG_CommandToggleTurret>
-  <WG_CommandToggleTurretDesc>火器の切り替え</WG_CommandToggleTurretDesc>
-  <WG_SubTurret>副火器</WG_SubTurret>
-  <WG_SubTurretDesc>この戦術外骨格に取り付けられた副火器</WG_SubTurretDesc>
-  
+  <WG_CommandToggleTurret>武器の切り替え</WG_CommandToggleTurret>
+  <WG_CommandToggleTurretDesc>武器の切り替え</WG_CommandToggleTurretDesc>
+  <WG_SubTurret>副武器</WG_SubTurret>
+  <WG_SubTurretDesc>この外骨格に取り付けられた副武器</WG_SubTurretDesc>
+
   <!-- 兵装装着作業関連 -->
   <WG_RequestInstall>装着を要求: {0}</WG_RequestInstall>
   <WG_RequestReplace>交換を要求: {0}</WG_RequestReplace>
   <WG_RequestReplaceCoreRemoveAll>主機交換 (全兵装を取り外す): {0}</WG_RequestReplaceCoreRemoveAll>
   <WG_RequestReplaceCoreKeepModules>主機交換 (兵装を保持): {0}</WG_RequestReplaceCoreKeepModules>
   <WG_RequestRemove>取り外しを要求: {0}</WG_RequestRemove>
-  <WG_CancelInstall>装着をキャンセル: {0}</WG_CancelInstall>
-  <WG_CancelRemove>取り外しをキャンセル: {0}</WG_CancelRemove>
-  <WG_CancelReplace>交換をキャンセル: {0}</WG_CancelReplace>
+  <WG_CancelInstall>装着をアボート: {0}</WG_CancelInstall>
+  <WG_CancelRemove>取り外しをアボート: {0}</WG_CancelRemove>
+  <WG_CancelReplace>交換をアボート: {0}</WG_CancelReplace>
   <WG_Pending>装着待ち</WG_Pending>
   <WG_PendingRemove>取り外し待ち</WG_PendingRemove>
   <WG_PendingReplace>交換待ち</WG_PendingReplace>
-  
+
   <!-- 主機作業中 -->
   <WG_CoreWorkInProgress>主機作業中、操作不可</WG_CoreWorkInProgress>
-  <WG_CancelCoreWork>主機作業をキャンセル</WG_CancelCoreWork>
-  
+  <WG_CancelCoreWork>主機作業をアボート</WG_CancelCoreWork>
+
+  <WG_WeaponModule>搭載武器</WG_WeaponModule>
+  <WG_WeaponModule_Desc>この兵装によって提供される武器は、外骨格スーツがアクティブな状態であれば切り替えることができます。</WG_WeaponModule_Desc>
   <!-- 燃料電池 -->
   <WG_FuelCell_Fuel>燃料</WG_FuelCell_Fuel>
-  <WG_FuelCell_Tip>燃料電池は戦術外骨格に追加エネルギーを供給し、操縦中に消費されます。\n入植者は自動的に化学燃料を補充します。</WG_FuelCell_Tip>
-  
+  <WG_FuelCell_Tip>燃料電池は外骨格に追加エネルギーを供給し、操縦中に消費されます。\n入植者は自動的に化学燃料を補充します。</WG_FuelCell_Tip>
+  <WG_FuelCell_FuelPercent>燃料残量</WG_FuelCell_FuelPercent>
+  <WG_FuelCell_FuelPercent_Desc>兵装の燃料残量（パーセンテージ）。</WG_FuelCell_FuelPercent_Desc>
+  <WG_FuelCell_FuelCapacity>燃料容量</WG_FuelCell_FuelCapacity>
+  <WG_FuelCell_FuelCapacity_Desc>兵装に保存できる最大燃料容量。</WG_FuelCell_FuelCapacity_Desc>
+  <WG_FuelCell_FuelPerUnit>単位ごとの補充量</WG_FuelCell_FuelPerUnit>
+  <WG_FuelCell_FuelPerUnit_Desc>燃料1単位ごとに補充できる燃料値。</WG_FuelCell_FuelPerUnit_Desc>
+  <WG_FuelCell_FuelConsumptionPerDay>1日あたりの燃料消費</WG_FuelCell_FuelConsumptionPerDay>
+  <WG_FuelCell_FuelConsumptionPerDay_Desc>稼働中に1日あたり消費される燃料量。</WG_FuelCell_FuelConsumptionPerDay_Desc>
+  <WG_FuelCell_MoveSpeedOffset_Desc>燃料が十分な場合、この外骨格兵装が提供する移動速度ボーナス。</WG_FuelCell_MoveSpeedOffset_Desc>
+  <WG_FuelCell_Hediff>状態効果</WG_FuelCell_Hediff>
+  <WG_FuelCell_Hediff_Desc>この兵装が有効な時に付与される効果。</WG_FuelCell_Hediff_Desc>
+
   <!-- 兵装情報プレビュー -->
   <WG_ModuleInfo_Load>搭載量: {0}</WG_ModuleInfo_Load>
-  <WG_ModuleInfo_Slots>交換対象: {0}</WG_ModuleInfo_Slots>
+  <WG_ModuleInfo_Slots>占用対象: {0}</WG_ModuleInfo_Slots>
   <WG_ModuleInfo_LoadTip>兵装質量: {0} kg\n装着後搭載量: {1} / {2}</WG_ModuleInfo_LoadTip>
   <WG_ModuleInfo_OverloadWarning>警告: 搭載容量を超過します!</WG_ModuleInfo_OverloadWarning>
-  
+
   <!-- 自動修理アーム -->
   <WG_AutoRepair_NoTarget>整備架台が検出されません</WG_AutoRepair_NoTarget>
-  <WG_AutoRepair_NoCore>対象の整備架台に戦術外骨格がありません</WG_AutoRepair_NoCore>
-  <WG_AutoRepair_NoDamage>戦術外骨格は完全に修復されています</WG_AutoRepair_NoDamage>
+  <WG_AutoRepair_NoCore>対象の整備架台に外骨格がありません</WG_AutoRepair_NoCore>
+  <WG_AutoRepair_NoDamage>外骨格は完全に修復されています</WG_AutoRepair_NoDamage>
   <WG_AutoRepair_Working>修理中...</WG_AutoRepair_Working>
   <WG_AutoRepair_SideOccupied>この側面には既に修理アームがあります</WG_AutoRepair_SideOccupied>
 

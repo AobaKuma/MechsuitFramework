@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<StatCategoryDef>
+		<defName>MF_ModuleStats</defName>
+		<label>Module</label>
+		<description>Stats related to modules for Exosuit.</description>
+		<displayOrder>100</displayOrder>
+	</StatCategoryDef>
+</Defs>
