@@ -212,6 +212,73 @@ namespace Exosuit
                     }
                 };
                 yield return toggle_autoRepair;
+
+                // 上机默认武器偏好
+                if (HasAnyModuleWeapon)
+                {
+                    var pilotWeaponDef = DefDatabase<ThingDef>.GetNamedSilentFail("Gun_BoltActionRifle");
+                    Texture pilotTex = pilotWeaponDef?.uiIcon ?? TexCommand.AttackMelee;
+                    Texture moduleTex = GetPreferredModuleWeapon()?.Weapon?.def?.uiIcon ?? TexCommand.AttackMelee;
+
+                    var prefer = new Gizmo_DualWeaponToggle
+                    {
+                        // 左驾驶员右模块
+                        texA = pilotTex,
+                        texB = moduleTex,
+                        aIsActiveGetter = () => !preferModuleWeapon,
+                        idleLabelGetter = () => (preferModuleWeapon
+                            ? "WG_PreferModuleWeapon_Idle_Module"
+                            : "WG_PreferModuleWeapon_Idle_Pilot").TranslateSimple(),
+                        hoverLabelGetter = () => (preferModuleWeapon
+                            ? "WG_PreferModuleWeapon_Hover_ToPilot"
+                            : "WG_PreferModuleWeapon_Hover_ToModule").TranslateSimple(),
+                        descGetter = () => "WG_PreferModuleWeapon_Desc".TranslateSimple(),
+                        action = delegate
+                        {
+                            [SyncMethod]
+                            void SyncPreferModule()
+                            {
+                                preferModuleWeapon = !preferModuleWeapon;
+                            }
+                            SyncPreferModule();
+                        }
+                    };
+                    yield return prefer;
+
+                    // 近战远程优先切换
+                    if (HasMeleeModuleWeapon && HasRangedModuleWeapon)
+                    {
+                        Texture meleeTex = EnumerateModuleWeapons()
+                            .FirstOrDefault(c => c.Weapon.def.IsMeleeWeapon)?.Weapon?.def?.uiIcon ?? TexCommand.AttackMelee;
+                        Texture rangedTex = EnumerateModuleWeapons()
+                            .FirstOrDefault(c => c.Weapon.def.IsRangedWeapon)?.Weapon?.def?.uiIcon ?? TexCommand.AttackMelee;
+
+                        var meleeRanged = new Gizmo_DualWeaponToggle
+                        {
+                            // 左远程右近战
+                            texA = rangedTex,
+                            texB = meleeTex,
+                            aIsActiveGetter = () => !preferMeleeModuleWeapon,
+                            idleLabelGetter = () => (preferMeleeModuleWeapon
+                                ? "WG_PreferMeleeModuleWeapon_Idle_Melee"
+                                : "WG_PreferMeleeModuleWeapon_Idle_Ranged").TranslateSimple(),
+                            hoverLabelGetter = () => (preferMeleeModuleWeapon
+                                ? "WG_PreferMeleeModuleWeapon_Hover_ToRanged"
+                                : "WG_PreferMeleeModuleWeapon_Hover_ToMelee").TranslateSimple(),
+                            descGetter = () => "WG_PreferMeleeModuleWeapon_Desc".TranslateSimple(),
+                            action = delegate
+                            {
+                                [SyncMethod]
+                                void SyncPreferMelee()
+                                {
+                                    preferMeleeModuleWeapon = !preferMeleeModuleWeapon;
+                                }
+                                SyncPreferMelee();
+                            }
+                        };
+                        yield return meleeRanged;
+                    }
+                }
             }
 
             if (Prefs.DevMode == true && DebugSettings.godMode == true)
@@ -249,6 +316,8 @@ namespace Exosuit
         {
             base.ExposeData();
             Scribe_Values.Look(ref autoRepair, "autoRepair",true);
+            Scribe_Values.Look(ref preferModuleWeapon, "preferModuleWeapon", false);
+            Scribe_Values.Look(ref preferMeleeModuleWeapon, "preferMeleeModuleWeapon", false);
 
             Scribe_Deep.Look(ref cachePawn, "cachedPawn");
             
@@ -607,6 +676,7 @@ namespace Exosuit
             Core = null;
             SetCacheDirty();
             PlaceShelfItemToPilot(pawn);
+            ApplyWeaponPreferenceOnGearUp(pawn);
         }
         public virtual void GearDown(Pawn pawn)
         {
@@ -1036,7 +1106,7 @@ namespace Exosuit
             
             DummyApparels.GetDirectlyHeldThings().TryAdd(a, false);
             TryUpdateCache(true);
-            
+
             Log.Message($"[Exosuit] 完成安装模块: {module.LabelCap}");
         }
 

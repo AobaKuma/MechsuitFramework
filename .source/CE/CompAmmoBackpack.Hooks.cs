@@ -24,11 +24,7 @@ namespace Exosuit.CE
             {
                 var backpack = apparel.TryGetComp<CompAmmoBackpack>();
                 if (backpack != null)
-                {
                     backpack.InitializeHostileAmmo();
-                    // 同步背包缓存
-                    CEPatches.RegisterBackpack(pawn, backpack);
-                }
                 apparel.TryGetComp<CompTurretAmmo>()?.InitializeHostileAmmo();
             }
         }

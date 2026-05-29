@@ -59,6 +59,16 @@
 
   <WG_AutoRepair>Auto repair</WG_AutoRepair>
   <WG_AutoRepair_Desc>Toggles whether colonists should automatically repair damaged modules in this gantry.</WG_AutoRepair_Desc>
+  <WG_PreferModuleWeapon_Idle_Pilot>Default: pilot weapon</WG_PreferModuleWeapon_Idle_Pilot>
+  <WG_PreferModuleWeapon_Idle_Module>Default: module weapon</WG_PreferModuleWeapon_Idle_Module>
+  <WG_PreferModuleWeapon_Hover_ToModule>Switch to module weapon</WG_PreferModuleWeapon_Hover_ToModule>
+  <WG_PreferModuleWeapon_Hover_ToPilot>Switch to pilot weapon</WG_PreferModuleWeapon_Hover_ToPilot>
+  <WG_PreferModuleWeapon_Desc>When the pilot mounts the exosuit, choose which weapon to equip by default. </WG_PreferModuleWeapon_Desc>
+  <WG_PreferMeleeModuleWeapon_Idle_Melee>Default: melee module</WG_PreferMeleeModuleWeapon_Idle_Melee>
+  <WG_PreferMeleeModuleWeapon_Idle_Ranged>Default: ranged module</WG_PreferMeleeModuleWeapon_Idle_Ranged>
+  <WG_PreferMeleeModuleWeapon_Hover_ToMelee>Switch to melee module</WG_PreferMeleeModuleWeapon_Hover_ToMelee>
+  <WG_PreferMeleeModuleWeapon_Hover_ToRanged>Switch to ranged module</WG_PreferMeleeModuleWeapon_Hover_ToRanged>
+  <WG_PreferMeleeModuleWeapon_Desc>When both melee and ranged module weapons are installed, choose which one to equip on mount.</WG_PreferMeleeModuleWeapon_Desc>
 
   <WG_AvailableModuleForThisSlot>Available modules for this slot</WG_AvailableModuleForThisSlot>
   

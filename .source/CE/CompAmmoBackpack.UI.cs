@@ -22,21 +22,21 @@ namespace Exosuit.CE
         {
             var wearer = Wearer;
             if (wearer == null) return;
-            
-            var allStorages = CEPatches.GetAllAmmoStorages(wearer);
+
+            var allStorages = AmmoBackpackRegistry.GetAllStorages(wearer);
             if (allStorages.Count == 0) return;
-            
+
             if (selectedBackpackIndex >= allStorages.Count)
                 selectedBackpackIndex = 0;
-            
+
             var targetStorage = allStorages[selectedBackpackIndex];
-            
+
             float curY = rect.y;
-            
+
             // 顶层存储选择器 (无间距 Tabs)
             DrawStorageTabs(ref curY, rect, allStorages);
             curY += 6f;
-            
+
             targetStorage.DrawUI(rect, ref curY);
         }
         

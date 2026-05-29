@@ -58,6 +58,16 @@
 
   <WG_AutoRepair>自动维修</WG_AutoRepair>
   <WG_AutoRepair_Desc>切换殖民者是否应自动修复龙门架中的受损模块。</WG_AutoRepair_Desc>
+  <WG_PreferModuleWeapon_Idle_Pilot>默认驾驶员武器</WG_PreferModuleWeapon_Idle_Pilot>
+  <WG_PreferModuleWeapon_Idle_Module>默认龙骑兵武器</WG_PreferModuleWeapon_Idle_Module>
+  <WG_PreferModuleWeapon_Hover_ToModule>切换至龙骑兵武器</WG_PreferModuleWeapon_Hover_ToModule>
+  <WG_PreferModuleWeapon_Hover_ToPilot>切换至驾驶员武器</WG_PreferModuleWeapon_Hover_ToPilot>
+  <WG_PreferModuleWeapon_Desc>驾驶员上机时默认装备哪把武器。</WG_PreferModuleWeapon_Desc>
+  <WG_PreferMeleeModuleWeapon_Idle_Melee>默认近战模块武器</WG_PreferMeleeModuleWeapon_Idle_Melee>
+  <WG_PreferMeleeModuleWeapon_Idle_Ranged>默认远程模块武器</WG_PreferMeleeModuleWeapon_Idle_Ranged>
+  <WG_PreferMeleeModuleWeapon_Hover_ToMelee>切换至近战模块武器</WG_PreferMeleeModuleWeapon_Hover_ToMelee>
+  <WG_PreferMeleeModuleWeapon_Hover_ToRanged>切换至远程模块武器</WG_PreferMeleeModuleWeapon_Hover_ToRanged>
+  <WG_PreferMeleeModuleWeapon_Desc>同时安装了近战和远程模块武器时，选择上机时装备哪一种。</WG_PreferMeleeModuleWeapon_Desc>
 
   <WG_ChangeModuleColor>更改模块颜色</WG_ChangeModuleColor>
 

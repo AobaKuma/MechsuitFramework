@@ -189,16 +189,9 @@ namespace Exosuit.CE
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            
-            // 加载时重建缓存
-            if (respawningAfterLoad)
-            {
-                var loadWearer = Wearer;
-                if (loadWearer != null)
-                    CEPatches.RegisterBackpack(loadWearer, this);
-                return;
-            }
-            
+
+            if (respawningAfterLoad) return;
+
             // 新安装的背包：检查是否已有同弹药组的激活背包
             var wearer = Wearer;
             if (wearer == null)
@@ -414,34 +407,35 @@ namespace Exosuit.CE
         public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
         {
             if (Wearer == null) yield break;
-            
+
             UpdateLinkedWeapon();
-            
-            // 获取同弹药组的所有背包
+
             var myAmmoSet = GetCurrentAmmoSet();
-            var allBackpacks = CEPatches.GetAllAmmoBackpacks(Wearer);
-            
-            // 找到同弹药组的背包列表
+
+            // 弹药组未知时独立显示不去重
+            if (myAmmoSet == null)
+            {
+                yield return new Gizmo_AmmoBackpack { compBackpack = this };
+                yield break;
+            }
+
+            // 收集同弹药组的所有背包
+            var allBackpacks = AmmoBackpackRegistry.GetAll(Wearer);
             var sameSetBackpacks = new List<CompAmmoBackpack>();
             foreach (var bp in allBackpacks)
             {
                 if (bp.GetCurrentAmmoSet() == myAmmoSet)
                     sameSetBackpacks.Add(bp);
             }
-            
+
             // 只有同弹药组的第一个背包才生成 Gizmo（避免重复）
             if (sameSetBackpacks.Count > 0 && sameSetBackpacks[0] == this)
             {
-                yield return new Gizmo_AmmoBackpack 
-                { 
+                yield return new Gizmo_AmmoBackpack
+                {
                     compBackpack = this,
                     sameSetBackpacks = sameSetBackpacks
                 };
-            }
-            else if (sameSetBackpacks.Count == 0)
-            {
-                // 没有弹药组的背包单独显示
-                yield return new Gizmo_AmmoBackpack { compBackpack = this };
             }
         }
         
@@ -587,18 +581,27 @@ namespace Exosuit.CE
         public void UpdateLinkedWeapon()
         {
             if (linkedAmmoSet != null) return;
-            
+
             var wearer = Wearer;
-            if (wearer?.equipment?.Primary == null) return;
-            
-            var compAmmo = wearer.equipment.Primary.TryGetComp<CompAmmoUser>();
-            if (compAmmo?.Props?.ammoSet == null) return;
-            
-            var ammoSet = compAmmo.Props.ammoSet;
-            if (!IsAmmoSetCompatible(ammoSet)) return;
-            
+            if (wearer == null) return;
+
+            // 优先检查主武器
+            AmmoSetDef ammoSet = null;
+            if (wearer.equipment?.Primary != null)
+            {
+                var compAmmo = wearer.equipment.Primary.TryGetComp<CompAmmoUser>();
+                if (compAmmo?.Props?.ammoSet != null && IsAmmoSetCompatible(compAmmo.Props.ammoSet))
+                    ammoSet = compAmmo.Props.ammoSet;
+            }
+
+            // 回退扫描模块武器弹药组
+            if (ammoSet == null)
+                ammoSet = GetWeaponModuleAmmoSet();
+
+            if (ammoSet == null) return;
+
             LinkedAmmoSet = ammoSet;
-            
+
             if (selectedAmmo == null && linkedAmmoSet != null)
                 selectedAmmo = linkedAmmoSet.ammoTypes.FirstOrDefault()?.ammo;
         }

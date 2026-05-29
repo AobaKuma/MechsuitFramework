@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exosuit", "Exosuit.csproj", "{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exosuit_CE", "CE\Exosuit_CE.csproj", "{A2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58BB9DFB-1B5C-4610-B6B0-D6FBB3ED21AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
