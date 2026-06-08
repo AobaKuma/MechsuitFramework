@@ -923,6 +923,15 @@ namespace Exosuit
                         newCoreSupportedSlots.Add(s);
                     }
                 }
+
+                HashSet<SlotDef> newCoreDisabledSlots = [];
+                if (!comp.Props.disabledSlots.NullOrEmpty())
+                {
+                    foreach (var s in comp.Props.disabledSlots)
+                    {
+                        newCoreDisabledSlots.Add(s);
+                    }
+                }
                 
                 // 收集当前安装的非核心模块的 ThingDef（用于保留模块模式）
                 List<(SlotDef slot, ThingDef moduleDef)> modulesToReinstall = [];
@@ -935,12 +944,20 @@ namespace Exosuit
                             // 检查新核心是否支持这个槽位
                             if (!newCoreSupportedSlots.Contains(kvp.Key))
                             {
-                                continue; // 新核心不支持这个槽位，跳过
+                                continue; 
+                            }
+                            if (newCoreDisabledSlots.Contains(kvp.Key))
+                            {
+                                continue;
                             }
                             
                             // 获取物品形态的 ThingDef
                             if (kvp.Value.TryGetComp(out CompSuitModule moduleComp))
                             {
+                                if (moduleComp.Props.occupiedSlots.Any(newCoreDisabledSlots.Contains))
+                                {
+                                    continue;
+                                }
                                 modulesToReinstall.Add((kvp.Key, moduleComp.Props.ItemDef));
                             }
                         }
