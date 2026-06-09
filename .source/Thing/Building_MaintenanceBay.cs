@@ -1005,7 +1005,10 @@ namespace Exosuit
             }
             else
             {
-                // 普通模块：为每个槽位创建请求
+                // 整体撤销槽位冲突的其他待装模块
+                CancelConflictingPendingInstalls(module, comp.Props.occupiedSlots);
+
+                // 为每个槽位创建请求
                 foreach (SlotDef slot in comp.Props.occupiedSlots)
                 {
                     // 移除该槽位的现有请求
@@ -1091,6 +1094,23 @@ namespace Exosuit
         public void CancelPendingInstall(Thing module)
         {
             pendingModuleWork.RemoveAll(w => w.moduleToInstall == module);
+        }
+
+        // 撤销与目标槽位冲突的其他待装模块全部请求
+        private void CancelConflictingPendingInstalls(Thing module, List<SlotDef> targetSlots)
+        {
+            HashSet<Thing> conflicting = [];
+            foreach (var work in pendingModuleWork)
+            {
+                if (work.moduleToInstall == null) continue;
+                if (work.moduleToInstall == module) continue;
+                if (targetSlots.Contains(work.targetSlot))
+                {
+                    conflicting.Add(work.moduleToInstall);
+                }
+            }
+            if (conflicting.Count == 0) return;
+            pendingModuleWork.RemoveAll(w => conflicting.Contains(w.moduleToInstall));
         }
 
         // 取消所有核心相关的工作
