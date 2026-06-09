@@ -158,47 +158,37 @@ namespace Mechsuit
         {
             get
             {
-                if (PawnOwner != null)
+                if (PawnOwner == null) return false;
+                if (!PawnOwner.Spawned || PawnOwner.Downed || PawnOwner.Dead || !PawnOwner.Awake())
+                    return false;
+                if (!PawnOwner.Drafted && !Props.attackUndrafted)
+                    return false;
+                if (PawnOwner.stances.stunner.Stunned)
+                    return false;
+                if (TurretDestroyed)
+                    return false;
+                CompCanBeDormant compCanBeDormant = PawnOwner.TryGetComp<CompCanBeDormant>();
+                if (compCanBeDormant != null && !compCanBeDormant.Awake)
+                    return false;
+                var verb = AttackVerb as IAsyncShootVerb;
+                if (verb == null)
                 {
-                    if (!PawnOwner.Spawned || PawnOwner.Downed || PawnOwner.Dead || !PawnOwner.Awake())
-                    {
-                        return false;
-                    }
-                    if (PawnOwner.IsPlayerControlled && PawnOwner.Drafted)
-                    {
-                        // 检查征召模式射击许可
-                        return fireAtWill && PawnOwner.drafter.FireAtWill;
-                    }
-                    if (!PawnOwner.Drafted && !Props.attackUndrafted)
-                    {
-                        return false;
-                    }
-                    if (PawnOwner.stances.stunner.Stunned)
-                    {
-                        return false;
-                    }
-                    if (TurretDestroyed)
-                    {
-                        return false;
-                    }
-                    if (!fireAtWill)
-                    {
-                        return false;
-                    }
-                    CompCanBeDormant compCanBeDormant = PawnOwner.TryGetComp<CompCanBeDormant>();
-                    if (compCanBeDormant != null && !compCanBeDormant.Awake)
-                    {
-                        return false;
-                    }
-                    var verb = AttackVerb as IAsyncShootVerb;
-                    if (verb == null)
-                    {
-                        Log.WarningOnce($"[MF炮塔] {parent.def.defName} AttackVerb 为空或不是 IAsyncShootVerb", parent.thingIDNumber);
-                        return false;
-                    }
-                    return true;
+                    Log.WarningOnce($"[MF炮塔] {parent.def.defName} AttackVerb 为空或不是 IAsyncShootVerb", parent.thingIDNumber);
+                    return false;
                 }
-                return false;
+                return true;
+            }
+        }
+
+        // 是否允许自动索敌
+        private bool AllowAutoTarget
+        {
+            get
+            {
+                if (!fireAtWill) return false;
+                if (PawnOwner.IsPlayerControlled && PawnOwner.Drafted && !PawnOwner.drafter.FireAtWill)
+                    return false;
+                return true;
             }
         }
 
@@ -314,7 +304,7 @@ namespace Mechsuit
             {
                 // 扫描射程内潜在威胁
                 IAttackTarget potentialTarget = null;
-                if (PawnOwner.Spawned && PawnOwner.IsHashIntervalTick(60) && AttackVerb != null)
+                if (AllowAutoTarget && PawnOwner.Spawned && PawnOwner.IsHashIntervalTick(60) && AttackVerb != null)
                 {
                     potentialTarget = AttackTargetFinder.BestShootTargetFromCurrentPosition(this, TargetScanFlags.NeedAutoTargetable | TargetScanFlags.NeedThreat | TargetScanFlags.NeedLOSToAll);
                 }
@@ -415,11 +405,11 @@ namespace Mechsuit
             }
 
             // 搜索空闲位新目标
-            if (verb.State == VerbState.Idle && PawnOwner.IsHashIntervalTick(StartShootIntervalTicks))
+            if (AllowAutoTarget && verb.State == VerbState.Idle && PawnOwner.IsHashIntervalTick(StartShootIntervalTicks))
             {
                 TargetScanFlags flags = TargetScanFlags.NeedAutoTargetable | TargetScanFlags.NeedLOSToAll;
                 if (!PawnOwner.Drafted) flags |= TargetScanFlags.NeedThreat;
-                
+
                 var searchResult = AttackTargetFinder.BestShootTargetFromCurrentPosition(this, flags, (Thing t) => IsTargetInAllowedArc(t));
                 if (searchResult != null)
                 {
