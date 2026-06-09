@@ -173,7 +173,6 @@ namespace Exosuit
                     _moduleComps.Add(c);
                 }
             }
-            float _tmp=amount;
             CompSuitModule _comp;
             while (amount > 0)
             {
@@ -183,8 +182,9 @@ namespace Exosuit
                     break;
                 }
                 _comp = _moduleComps.RandomElement();
-                amount-=Mathf.Min(_comp.HP - 1, amount);
-                _comp.HP-=(int)(_tmp-amount);
+                float before = amount;
+                amount -= Mathf.Min(_comp.HP - 1, amount);
+                _comp.HP -= (int)(before - amount);
                 if (_comp.HP <= 1)
                 {
                     _moduleComps.Remove(_comp);
