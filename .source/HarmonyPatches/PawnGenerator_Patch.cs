@@ -70,7 +70,37 @@ namespace Exosuit
                 // 执行兼容性检查钩子
                 HandleCompatibilityHooks(pawn, modExt);
 
+                // NPC自动装备模块武器
+                AutoEquipModuleWeapon(pawn);
+
                 OnPostGenerate?.Invoke(pawn, core);
+            }
+        }
+
+        // 新-扫描已穿戴模块，将CompModuleWeapon中的武器自动装备至Primary
+        private static void AutoEquipModuleWeapon(Pawn pawn)
+        {
+            if (pawn.equipment?.Primary != null) return;
+
+            var worn = pawn.apparel?.WornApparel;
+            if (worn == null) return;
+
+            for (int i = 0; i < worn.Count; i++)
+            {
+                var mw = worn[i].GetComp<CompModuleWeapon>();
+                if (mw?.Weapon == null) continue;
+
+                var weapon = mw.Weapon;
+
+                // 复制Gizmo切换流程
+                if (weapon.holdingOwner == null)
+                {
+                    weapon.DeSpawnOrDeselect();
+                }
+                weapon.holdingOwner?.Remove(weapon);
+                ThingOwner_TryTransferToContainer.thingListening = null;
+                pawn.equipment.AddEquipment(weapon);
+                break;
             }
         }
 
