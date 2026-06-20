@@ -1,4 +1,5 @@
 // 当白昼倾坠之时
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -12,7 +13,23 @@ namespace Exosuit.CE
     {
         #region IModuleExtensionUI 实现
         
-        private static int selectedBackpackIndex = 0;
+        private static readonly Dictionary<int, int> SelectedBackpackIndexByPawn = new();
+
+        private int SelectedBackpackIndex
+        {
+            get
+            {
+                var wearer = Wearer;
+                if (wearer == null) return 0;
+                return SelectedBackpackIndexByPawn.TryGetValue(wearer.thingIDNumber, out int idx) ? idx : 0;
+            }
+            set
+            {
+                var wearer = Wearer;
+                if (wearer == null) return;
+                SelectedBackpackIndexByPawn[wearer.thingIDNumber] = value;
+            }
+        }
         
         public bool ShouldShowExtensionUI => true;
         public float ExtensionUIWidth => ExtensionWidth;
@@ -26,10 +43,10 @@ namespace Exosuit.CE
             var allStorages = AmmoBackpackRegistry.GetAllStorages(wearer);
             if (allStorages.Count == 0) return;
 
-            if (selectedBackpackIndex >= allStorages.Count)
-                selectedBackpackIndex = 0;
+            if (SelectedBackpackIndex >= allStorages.Count)
+                SelectedBackpackIndex = 0;
 
-            var targetStorage = allStorages[selectedBackpackIndex];
+            var targetStorage = allStorages[SelectedBackpackIndex];
 
             float curY = rect.y;
 
@@ -77,7 +94,7 @@ namespace Exosuit.CE
             {
                 var storage = storages[i];
                 Rect tabRect = new(x, curY, tabWidth, 24f); 
-                bool isSelected = (i == selectedBackpackIndex);
+                bool isSelected = (i == SelectedBackpackIndex);
                 
                 if (isSelected)
                     Widgets.DrawBox(tabRect, 2);
@@ -86,7 +103,7 @@ namespace Exosuit.CE
                 
                 if (Widgets.ButtonText(tabRect, storage.StorageName))
                 {
-                    selectedBackpackIndex = i;
+                    SelectedBackpackIndex = i;
                     foreach (var s in storages) s.IsActive = false;
                     storage.IsActive = true;
                     SoundDefOf.Click.PlayOneShotOnCamera();

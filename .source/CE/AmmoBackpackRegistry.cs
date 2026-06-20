@@ -26,11 +26,13 @@ namespace Exosuit.CE
             int id = pawn.thingIDNumber;
             if (Cache.TryGetValue(id, out var cached))
             {
-                // 检测缓存过期
                 bool stale = false;
                 foreach (var bp in cached)
                 {
                     if (bp.parent.Destroyed) { stale = true; break; }
+                    // 验证背包仍属于当前pawn
+                    var bpWearer = (bp.parent as Apparel)?.Wearer;
+                    if (bpWearer != pawn) { stale = true; break; }
                 }
                 if (!stale)
                 {

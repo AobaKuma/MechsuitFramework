@@ -90,20 +90,26 @@ namespace Mechsuit
 
         public CompEquippable GunCompEq => gun?.TryGetComp<CompEquippable>();
 
+        // 缓存解析结果避免每tick分配
+        private Verb cachedAttackVerb;
+
         public Verb AttackVerb
         {
             get
             {
+                if (cachedAttackVerb != null) return cachedAttackVerb;
+
                 var eq = GunCompEq;
                 if (eq != null)
                 {
-                    var verb = eq.PrimaryVerb as IAsyncShootVerb;
-                    return verb as Verb;
+                    cachedAttackVerb = eq.PrimaryVerb as IAsyncShootVerb as Verb;
                 }
-
-                // 从追踪器查找可用 Verb
-                var asyncVerb = VerbTracker.AllVerbs.OfType<IAsyncShootVerb>().FirstOrDefault();
-                return asyncVerb as Verb;
+                else
+                {
+                    // 从追踪器查找可用 Verb
+                    cachedAttackVerb = VerbTracker.AllVerbs.OfType<IAsyncShootVerb>().FirstOrDefault() as Verb;
+                }
+                return cachedAttackVerb;
             }
         }
 
@@ -243,7 +249,10 @@ namespace Mechsuit
         private void UpdateGunVerbs()
         {
             if (gun == null) return;
-            
+
+            // 重建后失效缓存
+            cachedAttackVerb = null;
+
             foreach (var v in VerbTracker.AllVerbs)
             {
                 if (v is IAsyncShootVerb asyncVerb)
@@ -304,7 +313,7 @@ namespace Mechsuit
             {
                 // 扫描射程内潜在威胁
                 IAttackTarget potentialTarget = null;
-                if (AllowAutoTarget && PawnOwner.Spawned && PawnOwner.IsHashIntervalTick(60) && AttackVerb != null)
+                if (AllowAutoTarget && PawnOwner.Spawned && parent.IsHashIntervalTick(60) && AttackVerb != null)
                 {
                     potentialTarget = AttackTargetFinder.BestShootTargetFromCurrentPosition(this, TargetScanFlags.NeedAutoTargetable | TargetScanFlags.NeedThreat | TargetScanFlags.NeedLOSToAll);
                 }
@@ -405,7 +414,7 @@ namespace Mechsuit
             }
 
             // 搜索空闲位新目标
-            if (AllowAutoTarget && verb.State == VerbState.Idle && PawnOwner.IsHashIntervalTick(StartShootIntervalTicks))
+            if (AllowAutoTarget && verb.State == VerbState.Idle && parent.IsHashIntervalTick(StartShootIntervalTicks))
             {
                 TargetScanFlags flags = TargetScanFlags.NeedAutoTargetable | TargetScanFlags.NeedLOSToAll;
                 if (!PawnOwner.Drafted) flags |= TargetScanFlags.NeedThreat;
