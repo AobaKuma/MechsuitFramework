@@ -26,8 +26,19 @@ namespace Mechsuit
         }
         public new Texture2D UIIcon => verbProps.defaultProjectile?.uiIcon;
 
-        // 获取当前是否应使用 CE 逻辑
-        public static bool IsCEActive => ModsConfig.IsActive("cpeterson.combatextended") || ModLister.HasActiveModWithName("Combat Extended");
+        // 缓存CE是否激活
+        private static bool? cachedIsCEActive;
+        public static bool IsCEActive
+        {
+            get
+            {
+                if (!cachedIsCEActive.HasValue)
+                {
+                    cachedIsCEActive = ModsConfig.IsActive("cpeterson.combatextended") || ModLister.HasActiveModWithName("Combat Extended");
+                }
+                return cachedIsCEActive.Value;
+            }
+        }
 
         public new ThingWithComps EquipmentSource => (ThingWithComps)turretComp?.parent;
 

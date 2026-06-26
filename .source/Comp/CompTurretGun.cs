@@ -51,6 +51,9 @@ namespace Mechsuit
     {
         private const int StartShootIntervalTicks = 10;
 
+        // 空转索敌退避时长
+        private const int AutoSearchBackoffTicks = 60;
+
         private static readonly CachedTexture ToggleTurretIcon = new("UI/Gizmos/ToggleTurret");
 
         public static Dictionary<Thing, CompTurretGun> subGunRegistry = new();
@@ -72,6 +75,9 @@ namespace Mechsuit
         private LocalTargetInfo lastAttackedTarget = LocalTargetInfo.Invalid;
 
         private int lastAttackTargetTick;
+
+        // 上次空转索敌失败的tick
+        private int lastFailedSearchTick = -9999;
 
         public float curRotation;
 
@@ -288,7 +294,7 @@ namespace Mechsuit
                     UpdateGunVerbs();
                 }
             }
-            
+
             if (!CanShoot)
             {
                 return;
@@ -311,38 +317,8 @@ namespace Mechsuit
             }
             else
             {
-                // 扫描射程内潜在威胁
-                IAttackTarget potentialTarget = null;
-                if (AllowAutoTarget && PawnOwner.Spawned && parent.IsHashIntervalTick(60) && AttackVerb != null)
-                {
-                    potentialTarget = AttackTargetFinder.BestShootTargetFromCurrentPosition(this, TargetScanFlags.NeedAutoTargetable | TargetScanFlags.NeedThreat | TargetScanFlags.NeedLOSToAll);
-                }
-
-                float pawnCenterAngle = PawnOwner.Rotation.AsAngle + Props.angleOffset - 90f;
-
-                if (potentialTarget != null)
-                {
-                    float enemyAngle = (potentialTarget.Thing.Position.ToVector3Shifted() - TurretLocation).AngleFlat() + Props.angleOffset - 90f;
-                    float finalEnemyAngle = enemyAngle;
-
-                    // 旋转限制检查
-                    if (Props.minAngle != 0 || Props.maxAngle != 0)
-                    {
-                        float relativeEnemy = Mathf.DeltaAngle(pawnCenterAngle, enemyAngle);
-                        float clampedRelative = Mathf.Clamp(relativeEnemy, Props.minAngle, Props.maxAngle);
-                        finalEnemyAngle = pawnCenterAngle + clampedRelative;
-                    }
-                    
-                    // 独立追踪大偏角目标
-                    if (Mathf.Abs(Mathf.DeltaAngle(pawnCenterAngle, finalEnemyAngle)) > 45f)
-                    {
-                        curRotation = Mathf.MoveTowardsAngle(curRotation, finalEnemyAngle, Props.turnSpeed);
-                        return;
-                    }
-                }
-
-                // 默认跟随驾驶员朝向
-                curRotation = pawnCenterAngle;
+                // 无目标待机跟随驾驶员朝向
+                curRotation = PawnOwner.Rotation.AsAngle + Props.angleOffset - 90f;
             }
             if (burstCooldownTicksLeft > 0)
             {
@@ -385,7 +361,7 @@ namespace Mechsuit
                     // 预热结束开启连射
                     verb.CurrentTarget = currentTarget; // 确保 Verb 知道打谁
                     verb.WarmupComplete();
-                    
+
                     lastAttackTargetTick = Find.TickManager.TicksGame;
                     lastAttackedTarget = currentTarget;
                 }
@@ -414,8 +390,22 @@ namespace Mechsuit
             }
 
             // 搜索空闲位新目标
-            if (AllowAutoTarget && verb.State == VerbState.Idle && parent.IsHashIntervalTick(StartShootIntervalTicks))
+            if (AllowAutoTarget && verb.State == VerbState.Idle && burstCooldownTicksLeft <= 0 && parent.IsHashIntervalTick(StartShootIntervalTicks))
             {
+                // 上次失败后退避期内跳过
+                if (Find.TickManager.TicksGame - lastFailedSearchTick < AutoSearchBackoffTicks)
+                {
+                    return;
+                }
+
+                // 廉价闸门射程内无敌对目标则不做LOS搜索
+                if (!AnyHostileInRange())
+                {
+                    lastFailedSearchTick = Find.TickManager.TicksGame;
+                    ResetCurrentTarget();
+                    return;
+                }
+
                 TargetScanFlags flags = TargetScanFlags.NeedAutoTargetable | TargetScanFlags.NeedLOSToAll;
                 if (!PawnOwner.Drafted) flags |= TargetScanFlags.NeedThreat;
 
@@ -427,9 +417,37 @@ namespace Mechsuit
                 }
                 else
                 {
+                    // 记录失败开启退避
+                    lastFailedSearchTick = Find.TickManager.TicksGame;
                     ResetCurrentTarget();
                 }
             }
+        }
+
+        // 缓存命中射程内有无敌对目标
+        // 平方距离粗筛
+        private bool AnyHostileInRange()
+        {
+            var map = PawnOwner?.Map;
+            if (map == null) return false;
+
+            float range = AttackVerb?.EffectiveRange ?? 0f;
+            if (range <= 0f) return false;
+
+            float rangeSq = range * range;
+            IntVec3 origin = SearchRoot;
+
+            var targets = map.attackTargetsCache.GetPotentialTargetsFor(this);
+            for (int i = 0; i < targets.Count; i++)
+            {
+                var t = targets[i];
+                if (t.ThreatDisabled(this)) continue;
+                if ((t.Thing.Position - origin).LengthHorizontalSquared <= rangeSq)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool IsTargetInAllowedArc(LocalTargetInfo target)
