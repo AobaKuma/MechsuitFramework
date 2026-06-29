@@ -73,18 +73,19 @@ namespace Exosuit
             var LoadAmmo = ToilMaker.MakeToil("LoadAmmoToBayModule");
             LoadAmmo.initAction = delegate {
                 if (job.targetA.Thing is not Building_MaintenanceBay bay) return;
-                
+
                 var carriedThing = pawn.carryTracker.CarriedThing;
                 if (carriedThing == null) return;
-                
-                var reloadComp = bay.GetFirstNeedReload();
+
+                // 按携带弹药匹配组件 避免装错炮塔
+                var reloadComp = bay.GetReloadableForAmmo(carriedThing.def);
                 if (reloadComp == null)
                 {
-                    // 没有需要装填的组件，将弹药放到地上
+                    // 没有匹配组件 将弹药放到地上
                     pawn.carryTracker.TryDropCarriedThing(bay.InteractionCell, ThingPlaceMode.Near, out _);
                     return;
                 }
-                
+
                 reloadComp.ReloadFrom(carriedThing);
             };
             yield return LoadAmmo;

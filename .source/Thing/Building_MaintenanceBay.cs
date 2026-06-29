@@ -55,26 +55,44 @@ namespace Exosuit
             // 先检查原版的 CompApparelReloadable
             var result = ReloadableUtility.FindSomeReloadableComponent(Dummy, false);
             if (result != null) return result;
-            
-            // 检查所有实现 IReloadableComp 的组件
-            if (Dummy?.apparel != null)
+
+            return GetAllNeedReload().FirstOrDefault();
+        }
+
+        // 枚举所有需装填组件
+        // 用于避免单组件缺弹堵塞整条装弹队列
+        public IEnumerable<IReloadableComp> GetAllNeedReload()
+        {
+            if (Dummy?.apparel == null) yield break;
+
+            foreach (Apparel item in Dummy.apparel.WornApparel)
             {
-                foreach (Apparel item in Dummy.apparel.WornApparel)
+                if (item is not ThingWithComps twc) continue;
+
+                foreach (var comp in twc.AllComps)
                 {
-                    if (item is not ThingWithComps twc) continue;
-                    
-                    foreach (var comp in twc.AllComps)
-                    {
-                        if (comp is IReloadableComp reloadable && reloadable.NeedsReload(true))
-                        {
-                            // 跳过需要清空的弹药背包（它们需要先清空再装填）
-                            if (comp is IAmmoBackpackClearable clearable && clearable.NeedsClear)
-                                continue;
-                            
-                            return reloadable;
-                        }
-                    }
+                    if (comp is not IReloadableComp reloadable || !reloadable.NeedsReload(true))
+                        continue;
+
+                    // 跳过需要清空的弹药背包
+                    if (comp is IAmmoBackpackClearable clearable && clearable.NeedsClear)
+                        continue;
+
+                    yield return reloadable;
                 }
+            }
+        }
+
+        // 按弹药类型匹配需装填组件
+        // 用于装弹时给携带弹药找到正确组件
+        public IReloadableComp GetReloadableForAmmo(ThingDef ammoDef)
+        {
+            if (ammoDef == null) return null;
+
+            foreach (var reloadable in GetAllNeedReload())
+            {
+                if (reloadable.AmmoDef == ammoDef)
+                    return reloadable;
             }
             return null;
         }

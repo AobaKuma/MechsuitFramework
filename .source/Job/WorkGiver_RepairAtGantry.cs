@@ -58,16 +58,17 @@ namespace Exosuit
             
             if (bay.NeedReload)
             {
-                var reloadable = bay.GetFirstNeedReload();
-                var ammos = ReloadableUtility.FindEnoughAmmo(pawn, pawn.Position, reloadable, true);
-                if (!ammos.NullOrEmpty())
+                // 遍历所有需装填组件 跳过缺弹的继续找下一个
+                foreach (var reloadable in bay.GetAllNeedReload())
                 {
+                    var ammos = ReloadableUtility.FindEnoughAmmo(pawn, pawn.Position, reloadable, true);
+                    if (ammos.NullOrEmpty()) continue;
+
                     var reloadJob = JobMaker.MakeJob(JobDefOf.WG_ReloadAtGantry, bay);
-                    reloadJob.targetQueueB = ammos.Select(t=>new LocalTargetInfo(t)).ToList();
+                    reloadJob.targetQueueB = ammos.Select(t => new LocalTargetInfo(t)).ToList();
                     reloadJob.count = Math.Min(ammos.Sum(t => t.stackCount), reloadable.MaxAmmoNeeded(true));
                     return _cacheJob = reloadJob;
                 }
-                    
             }
             return null;
         }

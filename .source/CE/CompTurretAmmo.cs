@@ -13,7 +13,7 @@ namespace Exosuit.CE
     // 炮塔弹药组件
     // 提供炮塔弹药配套接口
     // 实现顶部扩展UI接口
-    public partial class CompTurretAmmo : ThingComp, IReloadableComp, ITurretAmmoProvider, IModuleTopExtensionUI, IAmmoBackpackClearable
+    public partial class CompTurretAmmo : ThingComp, IReloadableComp, ITurretAmmoProvider, IModuleTopExtensionUI, IAmmoBackpackClearable, IModuleDataTransfer
     {
         #region 字段
         
@@ -486,7 +486,39 @@ namespace Exosuit.CE
                 }
             }
         }
-        
+
+        #endregion
+
+        #region IModuleDataTransfer 实现
+
+        // 临时存储转换数据
+        private AmmoDef savedSelectedAmmo;
+        private int savedCurrentAmmoCount;
+        private AmmoSetDef savedLinkedAmmoSet;
+        private AmmoDef savedPendingAmmo;
+        private bool savedAllowBackpackFeed;
+
+        public void SaveDataFrom(Thing source)
+        {
+            savedSelectedAmmo = selectedAmmo;
+            savedCurrentAmmoCount = currentAmmoCount;
+            savedLinkedAmmoSet = linkedAmmoSet;
+            savedPendingAmmo = pendingAmmo;
+            savedAllowBackpackFeed = allowBackpackFeed;
+        }
+
+        public void RestoreDataTo(Thing target)
+        {
+            var targetComp = target.TryGetComp<CompTurretAmmo>();
+            if (targetComp == null) return;
+
+            targetComp.selectedAmmo = savedSelectedAmmo;
+            targetComp.currentAmmoCount = savedCurrentAmmoCount;
+            targetComp.linkedAmmoSet = savedLinkedAmmoSet;
+            targetComp.pendingAmmo = savedPendingAmmo;
+            targetComp.allowBackpackFeed = savedAllowBackpackFeed;
+        }
+
         #endregion
     }
 }
