@@ -140,4 +140,9 @@
   
   <WG_CommandManualAttack>Manual Attack ({0})</WG_CommandManualAttack>
   <WG_CommandManualAttackDesc>Order this turret to attack a specific target.</WG_CommandManualAttackDesc>
+  <WG_GetInDesc>Order this assigned pilot to walk to their maintenance bay and gear up - the exosuit is donned automatically on arrival.</WG_GetInDesc>
+
+  <WG_GetOff>Return to bay</WG_GetOff>
+  <WG_GetOffDesc>Order this pilot to walk back to their assigned maintenance bay - the exosuit is doffed automatically on arrival.</WG_GetOffDesc>
+
 </LanguageData>

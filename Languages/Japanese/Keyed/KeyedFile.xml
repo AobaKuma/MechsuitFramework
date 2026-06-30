@@ -124,5 +124,9 @@
   <WG_AutoRepair_NoDamage>外骨格は完全に修復されています</WG_AutoRepair_NoDamage>
   <WG_AutoRepair_Working>修理中...</WG_AutoRepair_Working>
   <WG_AutoRepair_SideOccupied>この側面には既に修理アームがあります</WG_AutoRepair_SideOccupied>
+  <WG_GetInDesc>この専属操縦者を割り当てられた整備架台へ移動させ、機甲に搭乗させます（到着時に外骨格を自動装着）。</WG_GetInDesc>
+
+  <WG_GetOff>駐機場に戻る</WG_GetOff>
+  <WG_GetOffDesc>この操縦者を割り当てられた整備架台へ帰還させます（到着時に外骨格を自動的に脱ぎます）。</WG_GetOffDesc>
 
 </LanguageData>

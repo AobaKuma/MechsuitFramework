@@ -125,4 +125,10 @@
   <WG_ModuleInfo_LoadTip>模塊質量: {0} kg\n安裝後載荷: {1} / {2}</WG_ModuleInfo_LoadTip>
   <WG_ModuleInfo_OverloadWarning>警告: 將超出載荷上限!</WG_ModuleInfo_OverloadWarning>
   
+  
+  <WG_GetInDesc>命令這位專用駕駛員前往所屬的整備架登上機甲（抵達後自動穿戴外骨骼）。</WG_GetInDesc>
+
+  <WG_GetOff>返回整備架</WG_GetOff>
+  <WG_GetOffDesc>命令此駕駛員返回所屬的整備架停泊（抵達後自動脫下外骨骼）。</WG_GetOffDesc>
+
 </LanguageData>

@@ -148,4 +148,10 @@
 
   <WG_CommandManualAttack>手动攻击 ({0})</WG_CommandManualAttack>
   <WG_CommandManualAttackDesc>命令该炮塔攻击特定目标。</WG_CommandManualAttackDesc>
+  
+  <WG_GetInDesc>命令这位专用驾驶员前往所属的整备架登上机甲（抵达后自动穿戴外骨骼）。</WG_GetInDesc>
+
+  <WG_GetOff>返回整备架</WG_GetOff>
+  <WG_GetOffDesc>命令此驾驶员返回所属的整备架停泊（抵达后自动脱下外骨骼）。</WG_GetOffDesc>
+
 </LanguageData>
