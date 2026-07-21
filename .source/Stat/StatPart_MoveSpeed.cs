@@ -31,19 +31,9 @@ namespace Exosuit
                     line += "\n\n" + "WG_Overload".Translate() + "\n    " + StatDefOf.MoveSpeed.LabelCap + " x50%";
                 }
 
-                if (!core.Overload && ExosuitMoveSpeedDef != null)
+                if (ExosuitMoveSpeedDef != null)
                 {
-                    float coreExosuitMoveSpeed = core.GetStatValue(ExosuitMoveSpeedDef);
-                    float wearerExosuitMoveSpeed = 0f;
-                    Pawn wearer = null;
-
-                    if (req.HasThing && req.Thing is Pawn pawn)
-                    {
-                        wearer = pawn;
-                        wearerExosuitMoveSpeed = pawn.GetStatValue(ExosuitMoveSpeedDef);
-                    }
-
-                    float totalExosuitMoveSpeed = coreExosuitMoveSpeed + wearerExosuitMoveSpeed;
+                    float totalExosuitMoveSpeed = GetExosuitMoveSpeedOffset(req, core, out float coreExosuitMoveSpeed);
                     if (totalExosuitMoveSpeed != 0f)
                     {
                         line += "\n\n" + ExosuitMoveSpeedDef.LabelCap + ": " + " {0} c/s".Formatted(totalExosuitMoveSpeed.ToString("0.##"));
@@ -93,9 +83,29 @@ namespace Exosuit
                 } 
             }
 
+            baseStat += GetExosuitMoveSpeedOffset(req, core, out _);
+
             float result = core.Overload ? baseStat * 0.5f : baseStat;
 
             return result;
+        }
+
+        // 統計核心自身與駕駛員(含穿戴模組 equippedStatOffsets)提供的 ExosuitMoveSpeed 總和
+        private float GetExosuitMoveSpeedOffset(StatRequest req, Exosuit_Core core, out float coreOffset)
+        {
+            coreOffset = 0f;
+            if (ExosuitMoveSpeedDef == null)
+            {
+                return 0f;
+            }
+            coreOffset = core.GetStatValue(ExosuitMoveSpeedDef);
+            float total = coreOffset;
+            if (req.HasThing && req.Thing is Pawn pawn)
+            {
+                // 駕駛員的 GetStatValue 會彙總所有穿戴中裝備(模組)的 equippedStatOffsets
+                total += pawn.GetStatValue(ExosuitMoveSpeedDef);
+            }
+            return total;
         }
 
         private bool IsWorking(StatRequest req, out Exosuit_Core core)
