@@ -48,6 +48,7 @@
   <WG_OverallArmor>構造値</WG_OverallArmor>
 
   <WG_ArmorSpeed>外骨格の移動速度:</WG_ArmorSpeed>
+  <WG_PilotExosuitMoveSpeed>パイロットの外骨格移動速度:</WG_PilotExosuitMoveSpeed>
   <WG_ArmorDeadWeight>自重:</WG_ArmorDeadWeight>
   <WG_ArmorCapacity>搭載容量:</WG_ArmorCapacity>
 

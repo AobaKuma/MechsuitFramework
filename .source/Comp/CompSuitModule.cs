@@ -150,7 +150,7 @@ namespace Exosuit
                 }
             }
         }
-        public int HP
+        public virtual int HP
         {
             get
             {

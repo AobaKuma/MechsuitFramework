@@ -248,7 +248,9 @@ namespace Exosuit
         }
 
         #endregion
-        private static readonly StatDef ExosuitMoveSpeedStatDef = DefDatabase<StatDef>.GetNamedSilentFail("ExosuitMoveSpeed");
+        // 延遲解析,避免類別在 Def 載入完成前被初始化時取得 null(參見 StatPart_MoveSpeed)
+        private static StatDef exosuitMoveSpeedStatDefCached;
+        private static StatDef ExosuitMoveSpeedStatDef => exosuitMoveSpeedStatDefCached ??= DefDatabase<StatDef>.GetNamedSilentFail("ExosuitMoveSpeed");
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
         {

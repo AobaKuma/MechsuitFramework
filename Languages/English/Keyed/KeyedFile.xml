@@ -50,6 +50,7 @@
   <WG_OverallArmor>Structure point</WG_OverallArmor>
 
   <WG_ArmorSpeed>Exosuit moving speed:</WG_ArmorSpeed>
+  <WG_PilotExosuitMoveSpeed>Pilot exosuit move speed:</WG_PilotExosuitMoveSpeed>
   <WG_ArmorDeadWeight>Dead weight:</WG_ArmorDeadWeight>
   <WG_ArmorCapacity>Payload capacity:</WG_ArmorCapacity>
 
@@ -144,5 +145,7 @@
 
   <WG_GetOff>Return to bay</WG_GetOff>
   <WG_GetOffDesc>Order this pilot to walk back to their assigned maintenance bay - the exosuit is doffed automatically on arrival.</WG_GetOffDesc>
+
+  <MF_ModuleEjected>{0} was depleted and jettisoned from {1}'s exosuit.</MF_ModuleEjected>
 
 </LanguageData>

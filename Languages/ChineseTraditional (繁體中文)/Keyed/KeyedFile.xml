@@ -48,6 +48,7 @@
   <WG_OverallArmor>結構值</WG_OverallArmor>
 
   <WG_ArmorSpeed>框架移動速度:</WG_ArmorSpeed>
+  <WG_PilotExosuitMoveSpeed>駕駛員外骨骼移動速度:</WG_PilotExosuitMoveSpeed>
   <WG_ArmorDeadWeight>框架干質量:</WG_ArmorDeadWeight>
   <WG_ArmorCapacity>框架最大載荷:</WG_ArmorCapacity>
 
@@ -130,5 +131,7 @@
 
   <WG_GetOff>返回整備架</WG_GetOff>
   <WG_GetOffDesc>命令此駕駛員返回所屬的整備架停泊（抵達後自動脫下外骨骼）。</WG_GetOffDesc>
+
+  <MF_ModuleEjected>{0}耐久用盡，已從{1}的外骨骼上脫離拋出。</MF_ModuleEjected>
 
 </LanguageData>

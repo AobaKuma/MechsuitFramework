@@ -7,7 +7,11 @@ namespace Exosuit
 {
     public class StatPart_MoveSpeed : StatPart
     {
-        private static readonly StatDef ExosuitMoveSpeedDef = DefDatabase<StatDef>.GetNamedSilentFail("ExosuitMoveSpeed");
+        // 注意:StatPart 實例是在 Def XML 解析階段(MoveSpeed parts patch)就被建構的,
+        // 若用 static readonly 立即解析,此時 DefDatabase 尚未載入本模組的 StatDef,會永遠得到 null。
+        // 因此必須延遲到執行期第一次查詢時才解析。
+        private static StatDef exosuitMoveSpeedDefCached;
+        private static StatDef ExosuitMoveSpeedDef => exosuitMoveSpeedDefCached ??= DefDatabase<StatDef>.GetNamedSilentFail("ExosuitMoveSpeed");
         private Dictionary<Thing, float> AffectedModules = new Dictionary<Thing, float>();
         private float GetBaseValue(Exosuit_Core core) => core.GetStatValue(StatDefOf.MoveSpeed);
 
@@ -36,11 +40,27 @@ namespace Exosuit
                     float totalExosuitMoveSpeed = GetExosuitMoveSpeedOffset(req, core, out float coreExosuitMoveSpeed);
                     if (totalExosuitMoveSpeed != 0f)
                     {
-                        line += "\n\n" + ExosuitMoveSpeedDef.LabelCap + ": " + " {0} c/s".Formatted(totalExosuitMoveSpeed.ToString("0.##"));
+                        line += "\n    " + "WG_PilotExosuitMoveSpeed".Translate() + " {0} c/s".Formatted(totalExosuitMoveSpeed.ToString("0.##"));
 
                         if (coreExosuitMoveSpeed != 0f)
                         {
-                            line += "\n    " + core.LabelCap + ": " + " {0} c/s".Formatted(coreExosuitMoveSpeed.ToString("0.##"));
+                            line += "\n        " + core.LabelCap + ": " + " {0} c/s".Formatted(coreExosuitMoveSpeed.ToString("0.##"));
+                        }
+
+                        // 逐項列出駕駛員 Hediff 提供的 ExosuitMoveSpeed
+                        if (req.HasThing && req.Thing is Pawn wearer)
+                        {
+                            foreach (Hediff hediff in wearer.health.hediffSet.hediffs)
+                            {
+                                HediffStage stage = hediff.CurStage;
+                                if (stage == null) continue;
+
+                                float v = HediffStatsUtility.GetStatOffsetForSeverity(ExosuitMoveSpeedDef, stage, wearer, hediff.Severity);
+                                if (v != 0f)
+                                {
+                                    line += "\n    " + hediff.LabelCap + ": " + " {0} c/s".Formatted(v.ToString("0.##"));
+                                }
+                            }
                         }
                     }
                 }
