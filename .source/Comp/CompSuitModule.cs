@@ -156,6 +156,11 @@ namespace Exosuit
             {
                 if (parent is Apparel)
                 {
+                    // 装备形态的模块只有经由 Conversion / 读档才会写入 hp。
+                    // 直接 ThingMaker.MakeThing 生成的模块会停留在哨兵值 -1，
+                    // 被 Exosuit_Core.RefreshHP 累加后就变成负数耐久（N 个模块 = -N）。
+                    // 这里做惰性初始化，保证任何生成路径都拿到满耐久。
+                    if (hp < 0) hp = MaxHP;
                     return hp;
                 }
                 return parent.HitPoints;
@@ -176,10 +181,13 @@ namespace Exosuit
             {
                 if (maxhp < 0)
                 {
-                    float m = parent is Apparel ? Props.ItemDef.BaseMaxHitPoints : parent.MaxHitPoints;
+                    // ItemDef 未配置时回退到自身血量，避免 NRE 让 maxhp 停在 -1
+                    float m = parent is Apparel
+                        ? (Props?.ItemDef?.BaseMaxHitPoints ?? parent.MaxHitPoints)
+                        : parent.MaxHitPoints;
                     if (parent.TryGetQuality(out var qc))
                         m *= MechUtility.qualityToHPFactor[qc];
-                    maxhp = Mathf.FloorToInt(m);
+                    maxhp = Mathf.Max(1, Mathf.FloorToInt(m));
                 }
 
                 return maxhp;

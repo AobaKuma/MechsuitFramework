@@ -149,6 +149,8 @@ namespace Exosuit
                     healthInt += wc.HP;
                 }
             }
+            // 重算完成后清除脏标记，否则每次读取 Health 都会重复 RefreshHP
+            needHPRecache = false;
             return true;
         }
         public virtual void OnHealthChanged(float amount)

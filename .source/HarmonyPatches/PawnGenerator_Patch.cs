@@ -1,4 +1,4 @@
-// 当白昼倾坠之时
+﻿// 当白昼倾坠之时
 using HarmonyLib;
 using RimWorld;
 using System;
@@ -65,16 +65,39 @@ namespace Exosuit
             if (core != null)
             {
                 core.ModuleRecache();
-                core.Health = core.HealthMax * modExt.StructurePointRange.RandomInRange;
-                
+
                 // 执行兼容性检查钩子
                 HandleCompatibilityHooks(pawn, modExt);
+
+                // 钩子可能替换过模块，重建模块缓存后再写入耐久
+                core.ModuleRecache();
+
+                // 按 StructurePointRange 生成初始损伤。
+                // 必须落到各模块的 HP 上：只写 core.Health 的话数值仅存在于
+                // healthInt，之后任何一次 RefreshHP（读档 / 维修 / 换装）都会
+                // 用模块耐久把它覆盖掉。
+                ApplyGeneratedStructurePoints(core, modExt.StructurePointRange);
 
                 // NPC自动装备模块武器
                 AutoEquipModuleWeapon(pawn);
 
                 OnPostGenerate?.Invoke(pawn, core);
             }
+        }
+
+        // 按比例写入各模块耐久，作为 NPC 机体的初始损伤
+        private static void ApplyGeneratedStructurePoints(Exosuit_Core core, FloatRange range)
+        {
+            float ratio = Mathf.Clamp01(range.RandomInRange);
+            if (ratio >= 1f) return; // 满耐久，模块保持默认值即可
+
+            foreach (Thing module in core.modules)
+            {
+                if (!module.TryGetComp<CompSuitModule>(out var comp)) continue;
+                int max = comp.MaxHP;
+                comp.HP = Mathf.Clamp(Mathf.CeilToInt(max * ratio), 1, max);
+            }
+            core.RefreshHP();
         }
 
         // 新-扫描已穿戴模块，将CompModuleWeapon中的武器自动装备至Primary
