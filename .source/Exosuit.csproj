@@ -1,16 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <!--
+    同一份源码同时构建两个游戏版本：
+      net472   → RimWorld 1.6（.NET Framework / Unity / Harmony 2）→ 1.6/Assemblies
+      net10.0  → RimWorld 1.7（.NET 10 / Waylith / Harmony 3）    → 1.7/Assemblies，并定义 RW_1_7
+    1.7 没有参考程序集包，直接引用游戏本体的 DLL；默认假设本模组位于 <RimWorld>/Mods/<模组>/，
+    游戏装在别处时用 -p:RimWorldDir=<游戏目录>\ 覆盖。
+  -->
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net472</TargetFramework>
-    <OutputPath>$(MSBuildThisFileDirectory)/../1.6/Assemblies</OutputPath>
+    <TargetFrameworks>net472;net10.0</TargetFrameworks>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>Preview</LangVersion>
     <Configurations>Debug;Release;1.6</Configurations>
     <IncludeSymbols>False</IncludeSymbols>
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\</RimWorldDir>
     <!-- <PublicizeAll>true</PublicizeAll> -->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net472'">
+    <OutputPath>$(MSBuildThisFileDirectory)/../1.6/Assemblies</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <OutputPath>$(MSBuildThisFileDirectory)/../1.7/Assemblies</OutputPath>
+    <DefineConstants>$(DefineConstants);RW_1_7</DefineConstants>
+    <!-- 游戏只加载 Assemblies 内的 .dll，不需要 Exosuit.deps.json -->
+    <GenerateDependencyFile>false</GenerateDependencyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -43,16 +61,42 @@
   <ItemGroup>
     <Compile Remove="HarmonyPatches\DynRenderNode_Apparel_Patch.cs" />
   </ItemGroup>
-  <ItemGroup>
-
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="RimWorld.MultiplayerAPI" Version="0.6.*" />
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4553-beta" />
     <PackageReference Include="Lib.Harmony" Version="2.3.7-prerelease" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <!-- 与 Harmony 模组 1.7 文件夹内的 0Harmony.dll 相同（3.0.0-rc.2） -->
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <!-- 1.7 的 UnityEngine.* 类型全部由 UnityStubs 提供 -->
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)UnityStubs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldDir)Waylith.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <!--
+      RimWorld.MultiplayerAPI 包只有 net472，且会连带引入 1.6 的 Krafs 参考程序集（与 UnityStubs 类型冲突），
+      因此 1.7 直接引用随模组发布的同一份 0MultiplayerAPI.dll。
+    -->
+    <Reference Include="0MultiplayerAPI">
+      <HintPath>$(MSBuildThisFileDirectory)..\1.7\Assemblies\0MultiplayerAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
