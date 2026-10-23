@@ -37,6 +37,7 @@
     <recipeMaker>
       <workSkill>Crafting</workSkill>
       <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     </recipeMaker>
     <tickerType>Never</tickerType>
     <burnableByRecipe>false</burnableByRecipe>
