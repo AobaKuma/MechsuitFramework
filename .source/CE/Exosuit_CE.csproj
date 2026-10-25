@@ -1,17 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!--
+    同一份源码同时构建两个游戏版本（与 Exosuit.csproj 相同）：
+      net472   → RimWorld 1.6（.NET Framework / Unity / Harmony 2）→ 1.6/CE/Assemblies
+      net10.0  → RimWorld 1.7（.NET 10 / Waylith / Harmony 3）    → 1.7/CE/Assemblies，并定义 RW_1_7
+    1.7 不能沿用 net472 的 Exosuit_CE.dll：它对 1.7 版 Exosuit.dll 中接口类型的引用无法解析（TypeLoadException），
+    游戏会把整个程序集判为不可用，CE 相关的 Def 全部加载失败。
+    CE 目前只有 .NET Framework 版，两个目标都引用同一份 CombatExtended.dll；1.7 下由游戏的兼容层加载。
+    游戏装在别处时用 -p:RimWorldDir=<游戏目录>\ 覆盖。
+  -->
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net472</TargetFramework>
-    <OutputPath>$(MSBuildThisFileDirectory)/../../1.6/CE/Assemblies</OutputPath>
+    <TargetFrameworks>net472;net10.0</TargetFrameworks>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- 上一行也会让两个目标共用 obj\<配置>\，并行构建时互相覆盖；中间文件按目标分开 -->
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\$(TargetFramework)\</IntermediateOutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>Preview</LangVersion>
     <Configurations>Debug;Release</Configurations>
     <IncludeSymbols>False</IncludeSymbols>
     <RootNamespace>Exosuit.CE</RootNamespace>
     <AssemblyName>Exosuit_CE</AssemblyName>
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\</RimWorldDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net472'">
+    <OutputPath>$(MSBuildThisFileDirectory)/../../1.6/CE/Assemblies</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <OutputPath>$(MSBuildThisFileDirectory)/../../1.7/CE/Assemblies</OutputPath>
+    <DefineConstants>$(DefineConstants);RW_1_7</DefineConstants>
+    <!-- 游戏只加载 Assemblies 内的 .dll，不需要 Exosuit_CE.deps.json -->
+    <GenerateDependencyFile>false</GenerateDependencyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -26,29 +48,58 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- 引用 CE DLL（不复制到输出，由 CE 模组自身提供） -->
     <Reference Include="CombatExtended">
       <HintPath>..\..\..\_Fortified-Framework\_Sources\CombatExtended.dll</HintPath>
+      <Private>false</Private>
     </Reference>
-    <Reference Include="System.Runtime" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <Reference Include="System.Runtime" />
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4553-beta" />
     <PackageReference Include="Lib.Harmony" Version="2.3.7-prerelease" ExcludeAssets="runtime" />
-    <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <Publicize Include="Assembly-CSharp" />
-  </ItemGroup>
-
-  <ItemGroup>
     <!-- 引用主 DLL -->
     <Reference Include="Exosuit">
       <HintPath>../../1.6/Assemblies/Exosuit.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <!-- 引用 CE DLL -->
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <!-- 与 Harmony 模组 1.7 文件夹内的 0Harmony.dll 相同（3.0.0-rc.2） -->
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <!-- 1.7 的 UnityEngine.* 类型全部由 UnityStubs 提供 -->
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)UnityStubs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldDir)Waylith.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <!-- 引用主 DLL（1.7 版） -->
+    <Reference Include="Exosuit">
+      <HintPath>../../1.7/Assemblies/Exosuit.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!--
+      CE API 用到的 Unity 类型记在 UnityEngine.CoreModule 名下，编译时由 Fortified 的转发程序集映射到 UnityStubs
+      （说明见该项目）。只供编译使用，不会复制到输出文件夹。
+    -->
+    <ProjectReference Include="..\..\..\_Fortified-Framework\_Sources\UnityCoreModuleFacade\UnityCoreModuleFacade.csproj" Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
 
 </Project>

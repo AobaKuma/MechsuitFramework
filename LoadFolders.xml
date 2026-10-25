@@ -15,7 +15,7 @@
 	<!--
 		1.7 沿用 1.6 的 Defs / Patches；后列的 1.7 优先，相同相对路径的文件会覆盖 1.6 的版本
 		（Assemblies 的 .NET 10 程序集）。
-		CE 尚无 1.7 版，Exosuit_CE 暂不加载。
+		1.7/CE 同理，用 .NET 10 的 Exosuit_CE.dll 覆盖 1.6/CE 的 net472 版本（后者在 1.7 下无法加载）。
 	-->
 	<v1.7>
 		<li>/</li>
@@ -23,5 +23,6 @@
 		<li IfModActive="erdelf.HumanoidAlienRaces,erdelf.HumanoidAlienRaces_steam,erdelf.HumanoidAlienRaces.dev,erdelf.HumanoidAlienRaces.dev_steam">1.6/Mods/HAR</li>
 		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.6/CE</li>
 		<li>1.7</li>
+		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.7/CE</li>
 	</v1.7>
 </loadFolders>

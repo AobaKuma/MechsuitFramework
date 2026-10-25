@@ -180,6 +180,10 @@
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
+    <building>
+      <!-- 必須是 Blueprint_Storage，否則 Frame 沒有 storageSettings，完工時原版 CopyFrom(null) 報錯 -->
+      <blueprintClass>Blueprint_Storage</blueprintClass>
+    </building>
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>

@@ -187,6 +187,7 @@
       <li>ITab_Storage</li>
     </inspectorTabs>
     <building>
+      <blueprintClass>Blueprint_Storage</blueprintClass>
       <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
       <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
       <maxItemsInCell>1</maxItemsInCell>
